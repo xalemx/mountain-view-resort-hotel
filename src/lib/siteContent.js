@@ -24,7 +24,7 @@ export const IMAGES = {
   hero: `${FILES}bdc367c1b_mountain-view-valley.jpg`,
   prokletije: `${FILES}87bdef98b_mountain-view-prokletije.jpg`,
   gusinje: `${FILES}5b6f78991_mountain-view-gusinje-town.jpg`,
-  resort: `${FILES}f8ca46b4b_mountain-view-cabin.jpg`,
+  resort: `${FILES}8bda5b916_mountain-view-resort-room.jpg`,
   inn: `${FILES}0e20eaa80_mountain-view-gusinje.jpg`,
 };
 
