@@ -169,6 +169,17 @@ export const TRANSLATIONS = {
         "The site is written and maintained by the family that runs the houses. We keep it deliberately simple: two properties, honest descriptions, our own photographs, and a direct line to us by form, phone or WhatsApp. If anything here does not match what you find on arrival, tell us — we would much rather put it right.",
       ],
     },
+    concierge: {
+      eyebrow: "Guest support",
+      title: "Questions before you come? Ask our concierge",
+      intro:
+        "Getting here from Podgorica, whether you need a car, what is included, cash or card, what to do nearby — the concierge answers from what we know about the two houses and the valley.",
+      placeholder: "How do we get there from Podgorica?",
+      chips: ["How do we get there from Podgorica?", "Do we need a car?", "Is breakfast included?"],
+      parameters: "Details used",
+      result: "What it found",
+      note: "An automated concierge, using our own information about the houses and the valley. For anything it cannot answer, and for all prices and availability, write to us on WhatsApp or send a request.",
+    },
     contact: {
       eyebrow: "Talk to us",
       title: "Contact Mountain View",
@@ -388,6 +399,17 @@ export const TRANSLATIONS = {
         "Nema agencije u sredini. Pošaljete nam zahtjev sa datumima, mi odgovorimo sa slobodnim terminima i cijenom, a vi potvrdite porukom. Nema naknada za rezervaciju, nema provizije, a osoba koja odgovori na vaš mejl je ista koja će vas dočekati.",
         "Sajt piše i održava porodica koja vodi kuće. Namjerno ga držimo jednostavnim: dva objekta, iskreni opisi, naše fotografije i direktna veza s nama preko forme, telefona ili WhatsAppa. Ako nešto ovdje ne odgovara onome što zateknete, recite nam — radije ćemo to ispraviti.",
       ],
+    },
+    concierge: {
+      eyebrow: "Podrška gostima",
+      title: "Pitanja prije dolaska? Pitajte našeg conciergea",
+      intro:
+        "Dolazak iz Podgorice, da li vam treba auto, šta je uključeno, keš ili kartica, šta raditi u okolini — concierge odgovara na osnovu onoga što znamo o dvije kuće i dolini.",
+      placeholder: "Kako da dođemo iz Podgorice?",
+      chips: ["Kako da dođemo iz Podgorice?", "Da li nam treba auto?", "Da li je doručak uključen?"],
+      parameters: "Podaci koje je koristio",
+      result: "Šta je našao",
+      note: "Automatski concierge, sa našim podacima o kućama i dolini. Za sve što ne može da odgovori, kao i za cijene i slobodne termine, pišite nam na WhatsApp ili pošaljite zahtjev.",
     },
     contact: {
       eyebrow: "Razgovarajmo",
@@ -609,6 +631,17 @@ export const TRANSLATIONS = {
         "Сайт ведёт и поддерживает семья, которая управляет домами. Мы намеренно держим его простым: два объекта, честные описания, наши фотографии и прямая связь через форму, телефон или WhatsApp. Если что-то здесь не совпадёт с тем, что вы увидите на месте, напишите нам — мы предпочтём это исправить.",
       ],
     },
+    concierge: {
+      eyebrow: "Поддержка гостей",
+      title: "Вопросы перед приездом? Спросите нашего консьержа",
+      intro:
+        "Дорога из Подгорицы, нужна ли машина, что входит в проживание, наличные или карта, чем заняться рядом — консьерж отвечает по нашим сведениям о двух домах и долине.",
+      placeholder: "Как к вам добраться из Подгорицы?",
+      chips: ["Как добраться из Подгорицы?", "Нужна ли нам машина?", "Завтрак входит в стоимость?"],
+      parameters: "Использованные данные",
+      result: "Что он нашёл",
+      note: "Автоматический консьерж, использующий наши сведения о домах и долине. Если он не знает ответа, а также по ценам и свободным датам, напишите нам в WhatsApp или отправьте запрос.",
+    },
     contact: {
       eyebrow: "Свяжитесь с нами",
       title: "Контакты Mountain View",
@@ -828,6 +861,17 @@ export const TRANSLATIONS = {
         "Nuk ka agjenci në mes. Ju dërgoni kërkesën me datat, ne përgjigjemi me disponueshmërinë dhe çmimin, dhe ju konfirmoni me mesazh. Pa tarifa rezervimi, pa komision, dhe personi që përgjigjet është po ai që do t'ju presë në mbërritje.",
         "Këtë faqe e shkruan dhe e mirëmban familja që drejton shtëpitë. E mbajmë qëllimisht të thjeshtë: dy objekte, përshkrime të sinqerta, fotografitë tona dhe një linjë të drejtpërdrejtë me ne përmes formularit, telefonit ose WhatsApp. Nëse diçka këtu nuk përputhet me atë që gjeni kur vini, na thoni — më mirë ta korrigjojmë.",
       ],
+    },
+    concierge: {
+      eyebrow: "Ndihmë për mysafirët",
+      title: "Pyetje para se të vini? Pyetni concierge-in tonë",
+      intro:
+        "Rruga nga Podgorica, a ju nevojitet makinë, çfarë përfshihet, para në dorë apo kartë, çfarë të bëni përreth — concierge përgjigjet bazuar në atë që dimë për dy shtëpitë dhe luginën.",
+      placeholder: "Si të vijmë nga Podgorica?",
+      chips: ["Si të vijmë nga Podgorica?", "A na nevojitet makinë?", "A përfshihet mëngjesi?"],
+      parameters: "Të dhënat e përdorura",
+      result: "Çfarë gjeti",
+      note: "Concierge automatik, me informacionin tonë për shtëpitë dhe luginën. Për çdo gjë që nuk di t'i përgjigjet, si dhe për çmimet e disponueshmërinë, na shkruani në WhatsApp ose dërgoni një kërkesë.",
     },
     contact: {
       eyebrow: "Flisni me ne",
