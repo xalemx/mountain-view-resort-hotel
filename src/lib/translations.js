@@ -168,6 +168,20 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Or send a request",
     },
+    advisor: {
+      eyebrow: "Ask the guide",
+      title: "Not sure where to start? Tell us what you enjoy",
+      intro:
+        "Say what you like — an easy afternoon with children, a lake to swim in, a long day on the ridge, photography, food in town — and our guide suggests the places within half an hour of Gusinje that suit you best. It answers in English, Montenegrin, Russian or Albanian.",
+      placeholder: "Describe the kind of day you want…",
+      send: "Send",
+      thinking: "Thinking…",
+      error: "The guide could not answer just now. Please try again.",
+      chips: ["Easy walks with children", "Lakes and swimming", "A long day on the ridge"],
+      parameters: "What it looked up",
+      result: "What it found",
+      note: "An automated guide to the places in this list. For dates, prices and availability, send us a request.",
+    },
     guide: {
       eyebrow: "Field notes",
       title: "Gusinje & Prokletije: a guest's guide",
@@ -362,6 +376,20 @@ export const TRANSLATIONS = {
       instagram: "Instagram",
       threads: "Threads",
       formTitle: "Ili pošaljite zahtjev",
+    },
+    advisor: {
+      eyebrow: "Pitajte vodiča",
+      title: "Ne znate odakle da počnete? Recite nam šta volite",
+      intro:
+        "Recite šta volite — lagana šetnja sa djecom, jezero za kupanje, cijeli dan na grebenu, fotografija, hrana u gradu — a naš vodič predlaže mjesta na pola sata od Gusinja koja vam najviše odgovaraju. Odgovara na engleskom, crnogorskom, ruskom i albanskom.",
+      placeholder: "Opišite kakav dan želite…",
+      send: "Pošalji",
+      thinking: "Razmišljam…",
+      error: "Vodič trenutno ne može da odgovori. Pokušajte ponovo.",
+      chips: ["Lagane šetnje sa djecom", "Jezera i kupanje", "Cijeli dan na grebenu"],
+      parameters: "Šta je pretražio",
+      result: "Šta je našao",
+      note: "Automatski vodič kroz mjesta sa ove liste. Za termine, cijene i slobodne kapacitete pošaljite nam zahtjev.",
     },
     guide: {
       eyebrow: "Bilješke iz doline",
@@ -558,6 +586,20 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Или отправьте запрос",
     },
+    advisor: {
+      eyebrow: "Спросите гида",
+      title: "Не знаете, с чего начать? Расскажите, что вам нравится",
+      intro:
+        "Напишите, что вам по душе — лёгкая прогулка с детьми, озеро для купания, целый день на хребте, фотография, еда в городе — и наш гид подскажет места в получасе от Гусине, которые подойдут вам больше всего. Он отвечает на английском, черногорском, русском и албанском.",
+      placeholder: "Опишите, каким вы хотите видеть день…",
+      send: "Отправить",
+      thinking: "Думаю…",
+      error: "Гид сейчас не смог ответить. Попробуйте ещё раз.",
+      chips: ["Лёгкие прогулки с детьми", "Озёра и купание", "Целый день на хребте"],
+      parameters: "Что искал",
+      result: "Что нашёл",
+      note: "Автоматический гид по местам из этого списка. О датах, ценах и свободных местах спрашивайте через форму запроса.",
+    },
     guide: {
       eyebrow: "Заметки из долины",
       title: "Гусине и Проклетие: путеводитель для гостей",
@@ -752,6 +794,20 @@ export const TRANSLATIONS = {
       instagram: "Instagram",
       threads: "Threads",
       formTitle: "Ose dërgoni një kërkesë",
+    },
+    advisor: {
+      eyebrow: "Pyetni udhërrëfyesin",
+      title: "Nuk dini nga ta nisni? Na tregoni çfarë ju pëlqen",
+      intro:
+        "Shkruani çfarë ju pëlqen — një shëtitje e lehtë me fëmijë, një liqen për të notuar, një ditë e gjatë në kreshtë, fotografia, ushqimi në qytet — dhe udhërrëfyesi ynë sugjeron vendet brenda gjysmë ore nga Gusinja që ju përshtaten më mirë. Ai përgjigjet në anglisht, malazezisht, rusisht dhe shqip.",
+      placeholder: "Përshkruani ditën që dëshironi…",
+      send: "Dërgo",
+      thinking: "Po mendoj…",
+      error: "Udhërrëfyesi nuk mundi të përgjigjet tani. Provoni përsëri.",
+      chips: ["Shëtitje të lehta me fëmijë", "Liqene dhe not", "Një ditë e gjatë në kreshtë"],
+      parameters: "Çfarë kërkoi",
+      result: "Çfarë gjeti",
+      note: "Udhërrëfyes automatik për vendet në këtë listë. Për data, çmime dhe disponueshmëri dërgoni një kërkesë.",
     },
     guide: {
       eyebrow: "Shënime nga lugina",

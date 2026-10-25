@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { base44 } from "@/api/base44Client";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
+import PlaceAdvisor from "@/components/site/PlaceAdvisor";
 import PlaceCard from "@/components/site/PlaceCard";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useAnchorHref } from "@/lib/siteNav";
@@ -58,6 +59,8 @@ export default function Guide() {
             </div>
           )}
         </section>
+
+        <PlaceAdvisor />
 
         <section className="mt-20">
           <h2 className="font-heading text-2xl text-primary md:text-3xl">{t.guide.practicalTitle}</h2>
