@@ -25,7 +25,7 @@ export const IMAGES = {
   prokletije: `${FILES}87bdef98b_mountain-view-prokletije.jpg`,
   gusinje: `${FILES}5b6f78991_mountain-view-gusinje-town.jpg`,
   resort: `${FILES}8bda5b916_mountain-view-resort-room.jpg`,
-  inn: `${FILES}0e20eaa80_mountain-view-gusinje.jpg`,
+  inn: `${FILES}4bbcd5227_Screenshot_25-10-2026_34857_wwwgooglecouk.jpeg`,
 };
 
 export const PHOTO_CREDITS =
