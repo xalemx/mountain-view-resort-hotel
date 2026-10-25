@@ -40,8 +40,8 @@ export const TRANSLATIONS = {
       resort: {
         place: "Gusinje · Prokletije",
         description:
-          "Our larger property, set back from the road with a garden and an open terrace. Space for families and groups, long tables for shared dinners, and the Prokletije peaks in view from almost every window.",
-        features: ["Garden & terrace", "Family rooms", "Free parking", "Breakfast included", "Groups welcome"],
+          "Our larger property, with bungalows and rooms built for families and groups. A restaurant and bar serve local, Italian and Mediterranean dishes, with vegetarian, vegan and halal options; outside there is a garden, an open terrace and a fireplace, and peaks in view from almost every window.",
+        features: ["Restaurant & bar", "Breakfast included", "Family bungalows", "Free parking", "Airport shuttle", "Terrace & fireplace"],
       },
       inn: {
         place: "Gusinje · town centre",
@@ -179,8 +179,8 @@ export const TRANSLATIONS = {
       resort: {
         place: "Gusinje · Prokletije",
         description:
-          "Naša veća kuća, odmaknuta od puta, sa baštom i otvorenom terasom. Prostor za porodice i grupe, dugi stolovi za zajedničke večere i pogled na prokletijske vrhove iz gotovo svakog prozora.",
-        features: ["Bašta i terasa", "Porodične sobe", "Besplatan parking", "Doručak uključen", "Grupe dobrodošle"],
+          "Naša veća kuća, sa bungalovima i sobama za porodice i grupe. Restoran i bar služe domaća, italijanska i mediteranska jela, uz vegetarijanske, veganske i halal opcije; napolju su bašta, otvorena terasa i ognjište, a vrhovi se vide iz gotovo svakog prozora.",
+        features: ["Restoran i bar", "Doručak uključen", "Porodični bungalovi", "Besplatan parking", "Transfer sa aerodroma", "Terasa i ognjište"],
       },
       inn: {
         place: "Gusinje · centar",
@@ -318,8 +318,8 @@ export const TRANSLATIONS = {
       resort: {
         place: "Гусине · Проклетие",
         description:
-          "Наш большой дом в стороне от дороги, с садом и открытой террасой. Место для семей и групп, длинные столы для общих ужинов и вид на вершины Проклетие почти из каждого окна.",
-        features: ["Сад и терраса", "Семейные номера", "Бесплатная парковка", "Завтрак включён", "Группы приветствуются"],
+          "Наш большой дом с бунгало и номерами для семей и групп. Ресторан и бар предлагают местные, итальянские и средиземноморские блюда, в том числе вегетарианские, веганские и халяльные; на улице сад, открытая терраса и камин, а вершины видны почти из каждого окна.",
+        features: ["Ресторан и бар", "Завтрак включён", "Семейные бунгало", "Бесплатная парковка", "Трансфер из аэропорта", "Терраса и камин"],
       },
       inn: {
         place: "Гусине · центр",
@@ -457,8 +457,8 @@ export const TRANSLATIONS = {
       resort: {
         place: "Gusinje · Prokletijet",
         description:
-          "Shtëpia jonë më e madhe, larg rrugës, me kopsht dhe tarracë të hapur. Hapësirë për familje dhe grupe, tavolina të gjata për darka të përbashkëta dhe pamje e majave të Prokletijeve nga pothuajse çdo dritare.",
-        features: ["Kopsht dhe tarracë", "Dhoma familjare", "Parkim falas", "Mëngjes i përfshirë", "Grupet mirëpriten"],
+          "Shtëpia jonë më e madhe, me bungalove dhe dhoma për familje e grupe. Restoranti dhe bari ofrojnë gatime vendase, italiane dhe mesdhetare, me opsione vegjetariane, vegane dhe halal; jashtë ka kopsht, tarracë të hapur dhe vatër, ndërsa majat shihen nga pothuajse çdo dritare.",
+        features: ["Restorant dhe bar", "Mëngjes i përfshirë", "Bungalove familjare", "Parkim falas", "Transfert nga aeroporti", "Tarracë dhe vatër"],
       },
       inn: {
         place: "Gusinje · qendra",
