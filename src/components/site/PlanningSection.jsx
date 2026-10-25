@@ -1,5 +1,6 @@
 import React from "react";
 import SectionHeading from "@/components/site/SectionHeading";
+import LocationMap from "@/components/site/LocationMap";
 import { useLanguage } from "@/lib/LanguageContext";
 import { BRAND } from "@/lib/siteContent";
 
@@ -33,6 +34,10 @@ export default function PlanningSection() {
             </details>
           ))}
         </div>
+      </div>
+
+      <div className="section mt-12 lg:mt-16">
+        <LocationMap />
       </div>
     </section>
   );
