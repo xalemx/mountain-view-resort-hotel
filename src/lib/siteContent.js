@@ -21,15 +21,15 @@ export const MAP_QUERIES = {
 const FILES = "https://media.base44.com/images/public/6add6db1a4366797590573f0/";
 
 export const IMAGES = {
-  hero: `${FILES}d2e1131f4_mountain-view-hero.jpg`,
+  hero: `${FILES}bdc367c1b_mountain-view-valley.jpg`,
   prokletije: `${FILES}87bdef98b_mountain-view-prokletije.jpg`,
   gusinje: `${FILES}0e20eaa80_mountain-view-gusinje.jpg`,
-  resort: `${FILES}574dcb064_mountain-view-resort.jpg`,
+  resort: `${FILES}259314bed_mountain-view-resort-vusanje.jpg`,
   inn: `${FILES}251f39e6d_mountain-view-inn.jpg`,
 };
 
 export const PHOTO_CREDITS =
-  "Photographs: Bruno Rijsman (CC BY 2.0), Hladnikm (CC BY-SA 4.0), Etan J. Tal (CC BY 3.0), GjonBala (CC BY-SA 4.0), Prasopestilence (CC BY-SA 3.0) — via Wikimedia Commons";
+  "Photographs of Mountain View Resort are our own. Landscape photographs: Bruno Rijsman (CC BY 2.0), Hladnikm (CC BY-SA 4.0), Etan J. Tal (CC BY 3.0), GjonBala (CC BY-SA 4.0), Prasopestilence (CC BY-SA 3.0) — via Wikimedia Commons";
 
 export const PROPERTIES = [
   { id: "resort", number: "01", name: "Mountain View Resort", image: IMAGES.resort, mapQuery: MAP_QUERIES.resort },

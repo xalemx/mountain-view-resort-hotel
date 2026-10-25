@@ -143,7 +143,7 @@ export const TRANSLATIONS = {
       rights: "© 2026 Mountain View · Resort & Inn",
       owner: "Owner login",
       chooseLanguage: "Choose language",
-      imagery: "Imagery is illustrative of the landscape around Gusinje, not a photograph of either property.",
+      imagery: "Photographs of Mountain View Resort are our own. The other images show the landscape around Gusinje.",
     },
   },
 
@@ -282,7 +282,7 @@ export const TRANSLATIONS = {
       rights: "© 2026 Mountain View · Resort i prenoćište",
       owner: "Prijava za domaćina",
       chooseLanguage: "Izaberite jezik",
-      imagery: "Fotografije prikazuju pejzaž oko Gusinja, a ne same objekte.",
+      imagery: "Fotografije resorta Mountain View su naše. Ostale fotografije prikazuju pejzaž oko Gusinja.",
     },
   },
 
@@ -421,7 +421,7 @@ export const TRANSLATIONS = {
       rights: "© 2026 Mountain View · Курорт и гостиница",
       owner: "Вход для владельца",
       chooseLanguage: "Выбрать язык",
-      imagery: "Фотографии показывают пейзаж вокруг Гусине, а не сами дома.",
+      imagery: "Фотографии комплекса Mountain View — наши. Остальные снимки показывают окрестности Гусине.",
     },
   },
 
@@ -560,7 +560,7 @@ export const TRANSLATIONS = {
       rights: "© 2026 Mountain View · Resort dhe bujtinë",
       owner: "Hyrja e pronarit",
       chooseLanguage: "Zgjidhni gjuhën",
-      imagery: "Fotografitë tregojnë peizazhin rreth Gusinjës, jo vetë objektet.",
+      imagery: "Fotografitë e resortit Mountain View janë tonat. Fotografitë e tjera tregojnë peizazhin rreth Gusinjës.",
     },
   },
 };
