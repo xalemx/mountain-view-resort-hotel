@@ -5,6 +5,7 @@ import IntroSection from "@/components/site/IntroSection";
 import StaysSection from "@/components/site/StaysSection";
 import DestinationSection from "@/components/site/DestinationSection";
 import PlanningSection from "@/components/site/PlanningSection";
+import BookingAssistant from "@/components/site/BookingAssistant";
 import EnquirySection from "@/components/site/EnquirySection";
 import SocialSection from "@/components/site/SocialSection";
 import SiteFooter from "@/components/site/SiteFooter";
@@ -26,6 +27,7 @@ export default function Home() {
         <StaysSection />
         <DestinationSection />
         <PlanningSection />
+        <BookingAssistant />
         <EnquirySection />
         <SocialSection />
       </main>

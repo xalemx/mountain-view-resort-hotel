@@ -116,6 +116,17 @@ export const TRANSLATIONS = {
         "Confirm by message — payment on arrival, in cash or by card",
       ],
     },
+    booking: {
+      eyebrow: "Booking help",
+      title: "Not sure which house fits? Ask us",
+      intro:
+        "Tell us your dates, how many of you are coming and what you need, and our booking assistant works out which of the two houses suits you and files the request for you. You get the same answer by email within 24 hours.",
+      placeholder: "Two nights in September, two adults…",
+      chips: ["Two nights for two in September", "Family of four with a car", "A quiet week, half board"],
+      parameters: "Details used",
+      result: "What we saved",
+      note: "The assistant files a request, nothing more. Availability and prices are confirmed by email, never by the assistant.",
+    },
     form: {
       property: "Property",
       arrival: "Arrival",
@@ -324,6 +335,17 @@ export const TRANSLATIONS = {
         "Odgovaramo u roku od 24 časa sa slobodnim terminima i cijenom",
         "Potvrdite porukom — plaćanje na dolasku, keš ili kartica",
       ],
+    },
+    booking: {
+      eyebrow: "Pomoć pri rezervaciji",
+      title: "Nijeste sigurni koja kuća vam odgovara? Pitajte nas",
+      intro:
+        "Recite nam datume, koliko vas dolazi i šta vam treba, a naš asistent za rezervacije će odrediti koja od dvije kuće vam odgovara i poslati zahtjev umjesto vas. Isti odgovor dobijate na email u roku od 24 časa.",
+      placeholder: "Dvije noći u septembru, dva odrasla…",
+      chips: ["Dvije noći za dvoje u septembru", "Porodica od četiri sa autom", "Mirna nedjelja, polupansion"],
+      parameters: "Podaci koje je koristio",
+      result: "Šta smo sačuvali",
+      note: "Asistent samo šalje zahtjev. Slobodne termine i cijene potvrđujemo emailom, nikada asistent.",
     },
     form: {
       property: "Smještaj",
@@ -534,6 +556,17 @@ export const TRANSLATIONS = {
         "Подтвердите сообщением — оплата при заселении, наличными или картой",
       ],
     },
+    booking: {
+      eyebrow: "Помощь с бронированием",
+      title: "Не знаете, какой дом выбрать? Спросите нас",
+      intro:
+        "Напишите даты, сколько вас приезжает и что вам нужно: наш помощник по бронированию подберёт подходящий из двух домов и отправит запрос за вас. Ответ придёт на email в течение 24 часов.",
+      placeholder: "Две ночи в сентябре, двое взрослых…",
+      chips: ["Две ночи для двоих в сентябре", "Семья из четырёх человек с машиной", "Спокойная неделя, полупансион"],
+      parameters: "Использованные данные",
+      result: "Что мы сохранили",
+      note: "Помощник только отправляет запрос. Свободные даты и цены подтверждаем письмом, а не помощник.",
+    },
     form: {
       property: "Жильё",
       arrival: "Заезд",
@@ -742,6 +775,17 @@ export const TRANSLATIONS = {
         "Përgjigjemi brenda 24 orëve me disponueshmërinë dhe çmimin",
         "Konfirmoni me mesazh — pagesa në mbërritje, me para në dorë ose kartë",
       ],
+    },
+    booking: {
+      eyebrow: "Ndihmë për rezervim",
+      title: "Nuk dini cila shtëpi ju përshtatet? Pyetni",
+      intro:
+        "Na thoni datat, sa persona vijnë dhe çfarë ju nevojitet: asistenti ynë i rezervimeve zgjedh shtëpinë e duhur dhe dërgon kërkesën në vendin tuaj. Përgjigjen e merrni me email brenda 24 orëve.",
+      placeholder: "Dy net në shtator, dy të rritur…",
+      chips: ["Dy net për dy persona në shtator", "Familje me katër veta me makinë", "Një javë e qetë, gjysmë pansioni"],
+      parameters: "Të dhënat e përdorura",
+      result: "Çfarë ruajtëm",
+      note: "Asistenti vetëm dërgon kërkesën. Disponueshmërinë dhe çmimet i konfirmojmë me email, kurrë asistenti.",
     },
     form: {
       property: "Qëndrimi",
