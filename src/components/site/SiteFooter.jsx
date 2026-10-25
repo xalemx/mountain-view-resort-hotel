@@ -30,9 +30,6 @@ export default function SiteFooter() {
             <button type="button" onClick={openLanguageChooser} className="transition hover:text-primary-foreground">
               {t.footer.chooseLanguage}
             </button>
-            <Link to="/enquiries" className="transition hover:text-primary-foreground">
-              {t.footer.owner}
-            </Link>
           </div>
         </div>
 

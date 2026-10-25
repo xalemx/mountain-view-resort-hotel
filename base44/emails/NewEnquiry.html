@@ -1,0 +1,107 @@
+<mjml>
+  <mj-head>
+    <mj-title>New request from {{guest_name}}</mj-title>
+    <mj-preview>{{property_label}} · {{stay_label}}</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Inter, Helvetica, Arial, sans-serif" />
+      <mj-section background-color="#ffffff" padding="0 36px" />
+      <mj-text color="#000000" font-size="15px" line-height="1.6" padding="0" />
+      <mj-button background-color="#000000" color="#ffffff" border-radius="4px" font-weight="700" inner-padding="14px 28px" align="left" />
+      <mj-class name="h" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-weight="700" />
+      <mj-class name="label" color="#6b7280" font-size="11px" letter-spacing="0.16em" text-transform="uppercase" padding="0" />
+      <mj-class name="value" font-weight="700" font-size="15px" padding="0" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#f6f7f9">
+
+    <mj-section background-color="#111111" padding="24px 36px">
+      <mj-column>
+        <mj-image src="https://media.base44.com/images/public/6add6db1a4366797590573f0/27f1ddaa5_logo.png" width="44px" align="left" padding="0 0 10px 0" alt="Mountain View" />
+        <mj-text color="#ffffff" font-size="12px" letter-spacing="0.2em" text-transform="uppercase" padding="0">Mountain View Resort &amp; Inn</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="36px 36px 12px">
+      <mj-column>
+        <mj-text mj-class="h" font-size="32px" line-height="1.15" padding="0 0 10px 0">New request from {{guest_name}}</mj-text>
+        <mj-text color="#6b7280" padding="0">Someone asked for an offer on the website. Their details are below.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="10px 36px 6px">
+      <mj-column width="32%">
+        <mj-text mj-class="label">Property</mj-text>
+      </mj-column>
+      <mj-column width="68%">
+        <mj-text mj-class="value">{{property_label}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="10px 36px 6px">
+      <mj-column width="32%">
+        <mj-text mj-class="label">Stay</mj-text>
+      </mj-column>
+      <mj-column width="68%">
+        <mj-text mj-class="value">{{stay_label}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="10px 36px 6px">
+      <mj-column width="32%">
+        <mj-text mj-class="label">Nights</mj-text>
+      </mj-column>
+      <mj-column width="68%">
+        <mj-text mj-class="value">{{nights_label}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="10px 36px 6px">
+      <mj-column width="32%">
+        <mj-text mj-class="label">Guests</mj-text>
+      </mj-column>
+      <mj-column width="68%">
+        <mj-text mj-class="value">{{guests_label}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="10px 36px 6px">
+      <mj-column width="32%">
+        <mj-text mj-class="label">Email</mj-text>
+      </mj-column>
+      <mj-column width="68%">
+        <mj-text mj-class="value">{{guest_email}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="10px 36px 28px">
+      <mj-column width="32%">
+        <mj-text mj-class="label">Phone</mj-text>
+      </mj-column>
+      <mj-column width="68%">
+        <mj-text mj-class="value">{{phone_label}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#f6f7f9" padding="26px 36px">
+      <mj-column>
+        <mj-text mj-class="label" padding="0 0 10px 0">Their notes</mj-text>
+        <mj-text padding="0">{{notes_label}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="30px 36px 40px">
+      <mj-column>
+        <mj-button href="{{reply_link}}">Reply to {{guest_name}}</mj-button>
+        <mj-text color="#6b7280" font-size="13px" padding="14px 0 0 0">Write back to {{guest_email}} with your offer.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#111111" padding="26px 36px">
+      <mj-column>
+        <mj-text color="#ffffff" font-size="13px" padding="0 0 6px 0">Mountain View Resort &amp; Inn · Gusinje, Montenegro</mj-text>
+        <mj-text font-size="12px" padding="0"><a href="https://mountainviewresort.me" style="color:#9ca3af;text-decoration:none">Open the website</a></mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>

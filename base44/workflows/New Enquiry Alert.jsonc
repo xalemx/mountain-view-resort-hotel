@@ -1,0 +1,40 @@
+{
+  "name": "New Enquiry Alert",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "entity",
+      "events": [
+        "create"
+      ],
+      "entity_name": "Enquiry"
+    }
+  },
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "new_enquiry_alert",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "notify_host": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "notifyNewEnquiry",
+            "args": {
+              "enquiry_id": "${ .trigger.entity_id }"
+            }
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Email the host",
+            "description": "Stay dates, guests, contact"
+          }
+        }
+      }
+    ]
+  },
+  "description": "Emails the host whenever a guest sends a booking enquiry from the website"
+}
