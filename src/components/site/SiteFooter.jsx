@@ -33,8 +33,7 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <p className="mt-6 max-w-2xl text-xs leading-relaxed text-primary-foreground/50">{t.footer.imagery}</p>
-        <p className="mt-2 max-w-2xl text-[10px] leading-relaxed text-primary-foreground/40">{PHOTO_CREDITS}</p>
+        <p className="mt-6 max-w-2xl text-[10px] leading-relaxed text-primary-foreground/40">{PHOTO_CREDITS}</p>
       </div>
     </footer>
   );
