@@ -9,10 +9,13 @@ export const BRAND = {
   instagramHandle: "@mountain_view_resortt",
   threads: "https://www.threads.com/@mountain_view_resortt",
   tourism: "https://gusinje.travel/post_type_offer/pjesacenje/",
-  mapsResort: "https://www.google.com/maps/search/?api=1&query=42.5458363,19.8308614",
-  mapsInn: "https://www.google.com/maps/search/?api=1&query=42.5641954,19.8325301",
-  mapsGusinje: "https://www.google.com/maps/search/?api=1&query=Gusinje+Montenegro",
-  mapsGrebaje: "https://www.google.com/maps/search/?api=1&query=Grebaje+Valley+Montenegro",
+};
+
+export const MAP_QUERIES = {
+  resort: "42.5458363,19.8308614",
+  inn: "42.5641954,19.8325301",
+  gusinje: "Gusinje, Montenegro",
+  grebaje: "Grebaje Valley, Montenegro",
 };
 
 export const IMAGES = {
@@ -23,13 +26,13 @@ export const IMAGES = {
 };
 
 export const PROPERTIES = [
-  { id: "resort", number: "01", name: "Mountain View Resort", image: IMAGES.resort, map: BRAND.mapsResort },
-  { id: "inn", number: "02", name: "Hotel Mountain View Inn", image: IMAGES.inn, map: BRAND.mapsInn },
+  { id: "resort", number: "01", name: "Mountain View Resort", image: IMAGES.resort, mapQuery: MAP_QUERIES.resort },
+  { id: "inn", number: "02", name: "Hotel Mountain View Inn", image: IMAGES.inn, mapQuery: MAP_QUERIES.inn },
 ];
 
 export const EXPERIENCES = [
-  { id: "prokletije", image: IMAGES.hero, link: BRAND.mapsGrebaje },
-  { id: "gusinje", image: IMAGES.gusinje, link: BRAND.mapsGusinje },
+  { id: "prokletije", image: IMAGES.hero, mapQuery: MAP_QUERIES.grebaje },
+  { id: "gusinje", image: IMAGES.gusinje, mapQuery: MAP_QUERIES.gusinje },
 ];
 
 export const PROPERTY_OPTIONS = [

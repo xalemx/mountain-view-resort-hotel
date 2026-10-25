@@ -1,6 +1,7 @@
 import React from "react";
 import { Image } from "@/components/ui/image";
 import SectionHeading from "@/components/site/SectionHeading";
+import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
 import { useLanguage } from "@/lib/LanguageContext";
 import { EXPERIENCES } from "@/lib/siteContent";
 
@@ -22,7 +23,13 @@ export default function DestinationSection() {
                   <p className="eyebrow">{copy.tag}</p>
                   <h3 className="mt-3 font-heading text-2xl text-primary">{copy.name}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{copy.text}</p>
-                  <a href={experience.link} target="_blank" rel="noopener" className="link-quiet mt-6 inline-flex">
+                  <a
+                    href={mapsWebUrl(experience.mapQuery)}
+                    onClick={(event) => openInMaps(event, experience.mapQuery)}
+                    target="_blank"
+                    rel="noopener"
+                    className="link-quiet mt-6 inline-flex"
+                  >
                     {t.discover.map} ↗
                   </a>
                 </div>

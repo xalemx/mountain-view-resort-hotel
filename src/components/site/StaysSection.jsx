@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Image } from "@/components/ui/image";
 import SectionHeading from "@/components/site/SectionHeading";
+import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
 import { useLanguage } from "@/lib/LanguageContext";
 import { PROPERTIES } from "@/lib/siteContent";
 
@@ -61,7 +62,13 @@ export default function StaysSection() {
               <a href="#offer" className="btn-pill">
                 {t.stays.cta} ↗
               </a>
-              <a href={active.map} target="_blank" rel="noopener" className="link-quiet">
+              <a
+                href={mapsWebUrl(active.mapQuery)}
+                onClick={(event) => openInMaps(event, active.mapQuery)}
+                target="_blank"
+                rel="noopener"
+                className="link-quiet"
+              >
                 {t.stays.map} ↗
               </a>
             </div>
