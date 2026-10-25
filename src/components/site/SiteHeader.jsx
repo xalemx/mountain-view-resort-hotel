@@ -1,22 +1,26 @@
 import React from "react";
-import { BRAND, NAV_LINKS } from "@/lib/siteContent";
+import { BRAND } from "@/lib/siteContent";
+import { LANGUAGES } from "@/lib/translations";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function SiteHeader() {
+  const { t, language, chooseLanguage } = useLanguage();
+
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur">
-      <div className="section flex items-center justify-between gap-6 py-4">
+      <div className="section flex items-center justify-between gap-4 py-4">
         <a href="#top" className="flex items-center gap-3">
           <span className="font-display text-2xl leading-none text-primary">△</span>
           <span className="leading-none">
-            <span className="block font-heading text-sm tracking-[0.18em] text-primary uppercase">{BRAND.name}</span>
+            <span className="block font-heading text-sm uppercase tracking-[0.18em] text-primary">{BRAND.name}</span>
             <span className="mt-1 block font-body text-[9px] uppercase tracking-[0.3em] text-muted-foreground">
-              {BRAND.subtitle}
+              {t.brandSubtitle}
             </span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
+        <nav className="hidden items-center gap-8 lg:flex">
+          {t.nav.slice(0, 3).map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -27,9 +31,24 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <a href="#offer" className="btn-outline-dark">
-          Request an offer
-        </a>
+        <div className="flex items-center gap-3">
+          <select
+            aria-label="Language"
+            value={language}
+            onChange={(event) => chooseLanguage(event.target.value)}
+            className="rounded-full border border-border bg-transparent px-3 py-2 font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground outline-none transition hover:border-primary hover:text-primary"
+          >
+            {LANGUAGES.map((entry) => (
+              <option key={entry.code} value={entry.code}>
+                {entry.short}
+              </option>
+            ))}
+          </select>
+
+          <a href="#offer" className="btn-outline-dark hidden sm:inline-flex">
+            {t.nav[3].label}
+          </a>
+        </div>
       </div>
     </header>
   );

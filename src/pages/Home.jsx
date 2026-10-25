@@ -8,6 +8,7 @@ import PlanningSection from "@/components/site/PlanningSection";
 import EnquirySection from "@/components/site/EnquirySection";
 import SocialSection from "@/components/site/SocialSection";
 import SiteFooter from "@/components/site/SiteFooter";
+import WelcomeGate from "@/components/site/WelcomeGate";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <SocialSection />
       </main>
       <SiteFooter />
+      <WelcomeGate />
     </div>
   );
 }

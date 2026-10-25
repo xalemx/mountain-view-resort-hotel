@@ -1,17 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/lib/LanguageContext";
 import { BRAND } from "@/lib/siteContent";
 
 export default function SiteFooter() {
+  const { t, openLanguageChooser } = useLanguage();
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="section py-12">
         <div className="flex flex-wrap items-center justify-between gap-6 border-b border-primary-foreground/15 pb-8">
           <span className="font-heading text-lg">
-            △ {BRAND.name} <span className="text-primary-foreground/60">{BRAND.subtitle}</span>
+            △ {BRAND.name} <span className="text-primary-foreground/60">{t.brandSubtitle}</span>
           </span>
           <span className="font-body text-[11px] uppercase tracking-[0.24em] text-primary-foreground/70">
-            {BRAND.place}
+            {t.place}
           </span>
           <a
             href={BRAND.phoneHref}
@@ -22,15 +25,18 @@ export default function SiteFooter() {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 font-body text-[11px] uppercase tracking-[0.24em] text-primary-foreground/60">
-          <span>© 2026 Mountain View · Resort &amp; Inn</span>
-          <Link to="/enquiries" className="transition hover:text-primary-foreground">
-            Owner login
-          </Link>
+          <span>{t.footer.rights}</span>
+          <div className="flex flex-wrap items-center gap-6">
+            <button type="button" onClick={openLanguageChooser} className="transition hover:text-primary-foreground">
+              {t.footer.chooseLanguage}
+            </button>
+            <Link to="/enquiries" className="transition hover:text-primary-foreground">
+              {t.footer.owner}
+            </Link>
+          </div>
         </div>
 
-        <p className="mt-6 max-w-2xl text-xs leading-relaxed text-primary-foreground/50">
-          Imagery is illustrative of the landscape around Gusinje, not a photograph of either property.
-        </p>
+        <p className="mt-6 max-w-2xl text-xs leading-relaxed text-primary-foreground/50">{t.footer.imagery}</p>
       </div>
     </footer>
   );
