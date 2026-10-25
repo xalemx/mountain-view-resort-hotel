@@ -1,6 +1,6 @@
 export const BRAND = {
   name: "Mountain View",
-  subtitle: "Resort & Inn",
+  subtitle: "Resort & Hotel",
   place: "Gusinje · Montenegro",
   phone: "+382 68 749 749",
   phoneHref: "tel:+38268749749",
@@ -33,7 +33,7 @@ export const PHOTO_CREDITS =
 
 export const PROPERTIES = [
   { id: "resort", number: "01", name: "Mountain View Resort", image: IMAGES.resort, mapQuery: MAP_QUERIES.resort },
-  { id: "inn", number: "02", name: "Hotel Mountain View Inn", image: IMAGES.inn, mapQuery: MAP_QUERIES.inn },
+  { id: "inn", number: "02", name: "Hotel Mountain View", image: IMAGES.inn, mapQuery: MAP_QUERIES.inn },
 ];
 
 export const EXPERIENCES = [

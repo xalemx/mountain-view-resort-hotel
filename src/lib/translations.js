@@ -10,7 +10,7 @@ export const LANGUAGES = [
 export const TRANSLATIONS = {
   en: {
     place: "Gusinje · Montenegro",
-    brandSubtitle: "Resort & Inn",
+    brandSubtitle: "Resort & Hotel",
     nav: [
       { label: "The stays", href: "#stays" },
       { label: "Discover", href: "#discover" },
@@ -20,7 +20,7 @@ export const TRANSLATIONS = {
     hero: {
       eyebrow: "Gusinje · Montenegro",
       intro:
-        "Two places to stay, one extraordinary corner of Montenegro. A resort and an inn at the foot of the Prokletije mountains, between the Grebaje valley and the small town of Gusinje.",
+        "Two places to stay, one extraordinary corner of Montenegro. A resort and a hotel at the foot of the Prokletije mountains, between the Grebaje valley and the small town of Gusinje.",
       cta: "Find your stay",
       ctaSecondary: "Request an offer",
       footLeft: "Two places to stay · A world to discover",
@@ -29,7 +29,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Welcome",
       title: "A quiet base at the foot of the Accursed Mountains",
-      text: "Mountain View is family-run, in a small town on the edge of Prokletije National Park. One property is a resort with a garden and room for everyone; the other is an inn in the town centre for people travelling light. Both are a few minutes from the bakery, ten minutes from the trailheads, and a world away from the crowds on the coast.",
+      text: "Mountain View is family-run, in a small town on the edge of Prokletije National Park. One property is a resort with a garden and room for everyone; the other a hotel in the town centre for people travelling light. Both are a few minutes from the bakery, ten minutes from the trailheads, and a world away from the crowds on the coast.",
     },
     stays: {
       eyebrow: "Two ways to stay",
@@ -46,7 +46,7 @@ export const TRANSLATIONS = {
       inn: {
         place: "Gusinje · town centre",
         description:
-          "A small, informal inn in the heart of Gusinje. Comfortable rooms, a shared kitchen you are welcome to use, and advice on the trails before you set off — the choice of hikers, cyclists and slow travellers.",
+          "A small, informal hotel in the heart of Gusinje. Comfortable rooms, a shared kitchen you are welcome to use, and advice on the trails before you set off — the choice of hikers, cyclists and slow travellers.",
         features: ["Central location", "Shared kitchen", "Cycle storage", "Trail advice", "Breakfast included"],
       },
     },
@@ -140,7 +140,7 @@ export const TRANSLATIONS = {
       text: "Snow on the peaks in March, wildflowers in May, the first plums in August. We post what the valley is doing — and what is free at short notice.",
     },
     footer: {
-      rights: "© 2026 Mountain View · Resort & Inn",
+      rights: "© 2026 Mountain View · Resort & Hotel",
       owner: "Owner login",
       chooseLanguage: "Choose language",
       imagery: "Photographs of Mountain View Resort are our own. The other images show the landscape around Gusinje.",
@@ -149,7 +149,7 @@ export const TRANSLATIONS = {
 
   me: {
     place: "Gusinje · Crna Gora",
-    brandSubtitle: "Resort i prenoćište",
+    brandSubtitle: "Resort i hotel",
     nav: [
       { label: "Smještaj", href: "#stays" },
       { label: "Otkrijte", href: "#discover" },
@@ -159,7 +159,7 @@ export const TRANSLATIONS = {
     hero: {
       eyebrow: "Gusinje · Crna Gora",
       intro:
-        "Dva mjesta za boravak, jedan izuzetan kutak Crne Gore. Resort i prenoćište u podnožju Prokletija, između doline Grebaje i malog grada Gusinja.",
+        "Dva mjesta za boravak, jedan izuzetan kutak Crne Gore. Resort i hotel u podnožju Prokletija, između doline Grebaje i malog grada Gusinja.",
       cta: "Nađite svoj smještaj",
       ctaSecondary: "Zatražite ponudu",
       footLeft: "Dva mjesta za boravak · Svijet da otkrijete",
@@ -168,7 +168,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Dobro došli",
       title: "Miran kutak u podnožju Prokletija",
-      text: "Mountain View je porodični posao u malom gradu na rubu Nacionalnog parka Prokletije. Jedno zdanje je resort sa baštom i mjestom za svakoga, a drugo prenoćište u centru grada za one koji putuju s malo prtljaga. Oba su nekoliko minuta od pekare, deset minuta od staza i daleko od gužve na primorju.",
+      text: "Mountain View je porodični posao u malom gradu na rubu Nacionalnog parka Prokletije. Jedno zdanje je resort sa baštom i mjestom za svakoga, a drugi hotel u centru grada za one koji putuju s malo prtljaga. Oba su nekoliko minuta od pekare, deset minuta od staza i daleko od gužve na primorju.",
     },
     stays: {
       eyebrow: "Dva načina da odsjednete",
@@ -185,7 +185,7 @@ export const TRANSLATIONS = {
       inn: {
         place: "Gusinje · centar",
         description:
-          "Malo, opušteno prenoćište u srcu Gusinja. Udobne sobe, zajednička kuhinja na korišćenje i savjet o stazama prije polaska — izbor planinara, biciklista i onih koji putuju polako.",
+          "Mali, opušten hotel u srcu Gusinja. Udobne sobe, zajednička kuhinja na korišćenje i savjet o stazama prije polaska — izbor planinara, biciklista i onih koji putuju polako.",
         features: ["Centar grada", "Zajednička kuhinja", "Ostava za bicikle", "Savjeti o stazama", "Doručak uključen"],
       },
     },
@@ -279,7 +279,7 @@ export const TRANSLATIONS = {
       text: "Snijeg na vrhovima u martu, divlje cvijeće u maju, prve šljive u avgustu. Objavljujemo šta dolina radi — i šta je slobodno u zadnji čas.",
     },
     footer: {
-      rights: "© 2026 Mountain View · Resort i prenoćište",
+      rights: "© 2026 Mountain View · Resort i hotel",
       owner: "Prijava za domaćina",
       chooseLanguage: "Izaberite jezik",
       imagery: "Fotografije resorta Mountain View su naše. Ostale fotografije prikazuju pejzaž oko Gusinja.",
@@ -427,7 +427,7 @@ export const TRANSLATIONS = {
 
   sq: {
     place: "Gusinje · Mali i Zi",
-    brandSubtitle: "Resort dhe bujtinë",
+    brandSubtitle: "Resort dhe hotel",
     nav: [
       { label: "Qëndrimet", href: "#stays" },
       { label: "Zbulo", href: "#discover" },
@@ -437,7 +437,7 @@ export const TRANSLATIONS = {
     hero: {
       eyebrow: "Gusinje · Mali i Zi",
       intro:
-        "Dy vende për të qëndruar, një cep i jashtëzakonshëm i Malit të Zi. Një resort dhe një bujtinë në këmbët e bjeshkëve të Prokletijeve, midis luginës së Grebajës dhe qytetit të vogël të Gusinjës.",
+        "Dy vende për të qëndruar, një cep i jashtëzakonshëm i Malit të Zi. Një resort dhe një hotel në këmbët e bjeshkëve të Prokletijeve, midis luginës së Grebajës dhe qytetit të vogël të Gusinjës.",
       cta: "Gjeni qëndrimin tuaj",
       ctaSecondary: "Kërkoni një ofertë",
       footLeft: "Dy vende për të qëndruar · Një botë për të zbuluar",
@@ -446,7 +446,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Mirë se vini",
       title: "Një bazë e qetë në këmbët e Bjeshkëve të Nemuna",
-      text: "Mountain View drejtohet nga familja, në një qytet të vogël në skaj të Parkut Kombëtar të Bjeshkëve të Nemuna. Njëra shtëpi është resort me kopsht dhe vend për të gjithë, tjetra bujtinë në qendër për ata që udhëtojnë lehtë. Të dyja janë disa minuta nga furra e bukës, dhjetë minuta nga shtigjet dhe një botë larg turmave të bregdetit.",
+      text: "Mountain View drejtohet nga familja, në një qytet të vogël në skaj të Parkut Kombëtar të Bjeshkëve të Nemuna. Njëra shtëpi është resort me kopsht dhe vend për të gjithë, tjetra hotel në qendër për ata që udhëtojnë lehtë. Të dyja janë disa minuta nga furra e bukës, dhjetë minuta nga shtigjet dhe një botë larg turmave të bregdetit.",
     },
     stays: {
       eyebrow: "Dy mënyra për të qëndruar",
@@ -463,7 +463,7 @@ export const TRANSLATIONS = {
       inn: {
         place: "Gusinje · qendra",
         description:
-          "Një bujtinë e vogël dhe e thjeshtë në zemër të Gusinjës. Dhoma komode, kuzhinë e përbashkët në dispozicionin tuaj dhe këshilla për shtigjet përpara se të niseni — zgjedhja e ecësve, çiklistëve dhe udhëtarëve të qetë.",
+          "Një hotel i vogël dhe i thjeshtë në zemër të Gusinjës. Dhoma komode, kuzhinë e përbashkët në dispozicionin tuaj dhe këshilla për shtigjet përpara se të niseni — zgjedhja e ecësve, çiklistëve dhe udhëtarëve të qetë.",
         features: ["Në qendër", "Kuzhinë e përbashkët", "Depo për biçikleta", "Këshilla për shtigjet", "Mëngjes i përfshirë"],
       },
     },
@@ -557,7 +557,7 @@ export const TRANSLATIONS = {
       text: "Borë në majat e maleve në mars, lule të egra në maj, kumbullat e para në gusht. Postojmë çfarë po bën lugina — dhe çfarë është e lirë në momentin e fundit.",
     },
     footer: {
-      rights: "© 2026 Mountain View · Resort dhe bujtinë",
+      rights: "© 2026 Mountain View · Resort dhe hotel",
       owner: "Hyrja e pronarit",
       chooseLanguage: "Zgjidhni gjuhën",
       imagery: "Fotografitë e resortit Mountain View janë tonat. Fotografitë e tjera tregojnë peizazhin rreth Gusinjës.",

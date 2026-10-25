@@ -2,7 +2,7 @@ import { createClientFromRequest } from 'npm:@base44/sdk@0.8.54';
 
 const PROPERTY_LABELS: Record<string, string> = {
   mountain_view_resort: 'Mountain View Resort',
-  mountain_view_inn: 'Hotel Mountain View Inn',
+  mountain_view_inn: 'Hotel Mountain View',
   either: 'Either property',
 };
 
