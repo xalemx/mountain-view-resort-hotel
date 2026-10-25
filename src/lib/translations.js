@@ -146,6 +146,7 @@ export const TRANSLATIONS = {
       imagery: "Photographs of Mountain View Resort are our own. The other images show the landscape around Gusinje.",
       about: "About us",
       contact: "Contact",
+      guide: "Gusinje & Prokletije guide",
     },
     about: {
       eyebrow: "Who we are",
@@ -166,6 +167,39 @@ export const TRANSLATIONS = {
       instagram: "Instagram",
       threads: "Threads",
       formTitle: "Or send a request",
+    },
+    guide: {
+      eyebrow: "Field notes",
+      title: "Gusinje & Prokletije: a guest's guide",
+      intro: [
+        "Gusinje sits in a wide valley in the north-east of Montenegro, between the Prokletije mountains and the border with Albania. It is small — a few thousand people, a handful of streets, one lake below the town — and it is the quietest way into a national park that most visitors to Montenegro have never heard of. Our two houses, Mountain View Resort and Hotel Mountain View, are the base we write from.",
+        "Below is the short list we send guests before they arrive: the places within half an hour of the door that are worth a morning, an afternoon or a full day. Distances are measured from the town centre and driving times are rough, because mountain roads are slow and beautiful. Trail conditions change with the weather, so ask us before you set off and we will tell you what is passable this week.",
+      ],
+      placesTitle: "Places within half an hour",
+      distanceLabel: "From Gusinje",
+      driveLabel: "By car",
+      seasonLabel: "Best time",
+      mapLink: "Open in Maps",
+      categories: {
+        mountain: "Mountain",
+        valley: "Valley",
+        lake: "Lake",
+        town: "Town",
+        viewpoint: "Viewpoint",
+        activity: "Activity",
+      },
+      practicalTitle: "Before you come",
+      practical: [
+        {
+          title: "Getting here",
+          text: "The nearest international airport is Podgorica, roughly two and a half hours by car on the road through Plav. Tivat and Dubrovnik are longer but scenic drives. If you are arriving without a car, say so in your request and we will help arrange a transfer.",
+        },
+        {
+          title: "When to come",
+          text: "June to early October is walking season, with the clearest weeks usually in July and September. May and October are quieter and colder on the high trails. Winter is for snow, slow mornings and the fireplace at the resort.",
+        },
+      ],
+      cta: "Ask us about the trails",
     },
   },
 
@@ -307,6 +341,7 @@ export const TRANSLATIONS = {
       imagery: "Fotografije resorta Mountain View su naše. Ostale fotografije prikazuju pejzaž oko Gusinja.",
       about: "O nama",
       contact: "Kontakt",
+      guide: "Vodič: Gusinje i Prokletije",
     },
     about: {
       eyebrow: "Ko smo",
@@ -327,6 +362,39 @@ export const TRANSLATIONS = {
       instagram: "Instagram",
       threads: "Threads",
       formTitle: "Ili pošaljite zahtjev",
+    },
+    guide: {
+      eyebrow: "Bilješke iz doline",
+      title: "Gusinje i Prokletije: vodič za goste",
+      intro: [
+        "Gusinje leži u širokoj dolini na sjeveroistoku Crne Gore, između Prokletija i granice sa Albanijom. Malo je — nekoliko hiljada ljudi, nekoliko ulica, jedno jezero pod gradom — i najtiši je ulaz u nacionalni park za koji većina posjetilaca Crne Gore nikada nije čula. Naše dvije kuće, Mountain View Resort i Hotel Mountain View, baza su iz koje pišemo.",
+        "Ispod je kratak spisak koji šaljemo gostima prije dolaska: mjesta na pola sata od vrata, koja vrijede jutro, popodne ili cijeli dan. Udaljenosti mjerimo od centra grada, a vremena vožnje su približna, jer su planinski putevi spori i lijepi. Stanje staza se mijenja s vremenom, pa nas pitajte prije polaska i reći ćemo vam šta je ove nedjelje prohodno.",
+      ],
+      placesTitle: "Mjesta na pola sata",
+      distanceLabel: "Od Gusinja",
+      driveLabel: "Autom",
+      seasonLabel: "Najbolje vrijeme",
+      mapLink: "Otvori u Mapama",
+      categories: {
+        mountain: "Planina",
+        valley: "Dolina",
+        lake: "Jezero",
+        town: "Grad",
+        viewpoint: "Vidikovac",
+        activity: "Aktivnost",
+      },
+      practicalTitle: "Prije dolaska",
+      practical: [
+        {
+          title: "Kako stići",
+          text: "Najbliži međunarodni aerodrom je Podgorica, otprilike dva i po sata vožnje putem preko Plava. Tivat i Dubrovnik su duže, ali slikovitije rute. Ako dolazite bez auta, napišite nam to u zahtjevu i pomoći ćemo oko transfera.",
+        },
+        {
+          title: "Kada doći",
+          text: "Od juna do početka oktobra je sezona pješačenja, a najvedrije nedjelje su obično u julu i septembru. Maj i oktobar su mirniji i hladniji na visokim stazama. Zima je za snijeg, spora jutra i kamin u resortu.",
+        },
+      ],
+      cta: "Pitajte nas o stazama",
     },
   },
 
@@ -468,6 +536,7 @@ export const TRANSLATIONS = {
       imagery: "Фотографии комплекса Mountain View — наши. Остальные снимки показывают окрестности Гусине.",
       about: "О нас",
       contact: "Контакты",
+      guide: "Гид: Гусине и Проклетие",
     },
     about: {
       eyebrow: "Кто мы",
@@ -488,6 +557,39 @@ export const TRANSLATIONS = {
       instagram: "Instagram",
       threads: "Threads",
       formTitle: "Или отправьте запрос",
+    },
+    guide: {
+      eyebrow: "Заметки из долины",
+      title: "Гусине и Проклетие: путеводитель для гостей",
+      intro: [
+        "Гусине стоит в широкой долине на северо-востоке Черногории, между Проклетием и границей с Албанией. Город небольшой — несколько тысяч жителей, несколько улиц, озеро под городом — и это самый тихий вход в национальный парк, о котором большинство туристов в Черногории даже не слышали. Два наших дома, Mountain View Resort и Hotel Mountain View, — та база, из которой мы пишем.",
+        "Ниже короткий список, который мы отправляем гостям перед приездом: места в получасе от порога, ради которых стоит выделить утро, полдня или целый день. Расстояния указаны от центра города, а время в пути примерное, потому что горные дороги медленные и красивые. Состояние троп меняется с погодой, поэтому спросите нас перед выходом, и мы скажем, что проходимо на этой неделе.",
+      ],
+      placesTitle: "Места в получасе",
+      distanceLabel: "От Гусине",
+      driveLabel: "На машине",
+      seasonLabel: "Лучшее время",
+      mapLink: "Открыть в Картах",
+      categories: {
+        mountain: "Гора",
+        valley: "Долина",
+        lake: "Озеро",
+        town: "Город",
+        viewpoint: "Смотровая",
+        activity: "Занятие",
+      },
+      practicalTitle: "Перед поездкой",
+      practical: [
+        {
+          title: "Как добраться",
+          text: "Ближайший международный аэропорт — Подгорица, около двух с половиной часов на машине по дороге через Плав. Тиват и Дубровник дальше, но живописнее. Если вы приезжаете без машины, напишите об этом в запросе, и мы поможем с трансфером.",
+        },
+        {
+          title: "Когда приезжать",
+          text: "С июня до начала октября — сезон ходьбы, самые ясные недели обычно в июле и сентябре. Май и октябрь тише и холоднее на высоких тропах. Зима — это снег, неспешные утра и камин в комплексе.",
+        },
+      ],
+      cta: "Спросите нас о маршрутах",
     },
   },
 
@@ -629,6 +731,7 @@ export const TRANSLATIONS = {
       imagery: "Fotografitë e resortit Mountain View janë tonat. Fotografitë e tjera tregojnë peizazhin rreth Gusinjës.",
       about: "Rreth nesh",
       contact: "Kontakt",
+      guide: "Udhërrëfyesi: Gusinja dhe Prokletijet",
     },
     about: {
       eyebrow: "Kush jemi",
@@ -649,6 +752,39 @@ export const TRANSLATIONS = {
       instagram: "Instagram",
       threads: "Threads",
       formTitle: "Ose dërgoni një kërkesë",
+    },
+    guide: {
+      eyebrow: "Shënime nga lugina",
+      title: "Gusinja dhe Prokletijet: një udhërrëfyes për mysafirët",
+      intro: [
+        "Gusinja shtrihet në një luginë të gjerë në veri-lindje të Malit të Zi, midis Prokletijeve dhe kufirit me Shqipërinë. Është i vogël — disa mijëra banorë, disa rrugë, një liqen nën qytet — dhe është hyrja më e qetë në një park kombëtar për të cilin shumica e vizitorëve të Malit të Zi nuk kanë dëgjuar kurrë. Dy shtëpitë tona, Mountain View Resort dhe Hotel Mountain View, janë baza nga e cila shkruajmë.",
+        "Më poshtë është lista e shkurtër që u dërgojmë mysafirëve para se të vijnë: vendet brenda gjysmë ore nga dera, që vlejnë një mëngjes, një pasdite ose një ditë të plotë. Distancat maten nga qendra e qytetit dhe kohët e udhëtimit janë të përafërta, sepse rrugët e malit janë të ngadalta dhe të bukura. Gjendja e shtigjeve ndryshon me motin, prandaj na pyesni para se të niseni dhe do t'ju themi çfarë kalon këtë javë.",
+      ],
+      placesTitle: "Vende brenda gjysmë ore",
+      distanceLabel: "Nga Gusinja",
+      driveLabel: "Me makinë",
+      seasonLabel: "Koha më e mirë",
+      mapLink: "Hap në Harta",
+      categories: {
+        mountain: "Mal",
+        valley: "Luginë",
+        lake: "Liqen",
+        town: "Qytet",
+        viewpoint: "Pamje",
+        activity: "Aktivitet",
+      },
+      practicalTitle: "Para se të vini",
+      practical: [
+        {
+          title: "Si të arrihet",
+          text: "Aeroporti ndërkombëtar më i afërt është Podgorica, rreth dy orë e gjysmë me makinë në rrugën përmes Plavës. Tivari dhe Dubrovniku janë më larg, por rrugë piktoreske. Nëse vini pa makinë, na shkruani në kërkesë dhe do t'ju ndihmojmë me transfert.",
+        },
+        {
+          title: "Kur të vini",
+          text: "Nga qershori deri në fillim të tetorit është sezoni i ecjes, ndërsa javët më të kthjellta janë zakonisht në korrik dhe shtator. Maji dhe tetori janë më të qetë dhe më të ftohtë në shtigjet e larta. Dimri është për borë, mëngjese të qeta dhe kaminin e resortit.",
+        },
+      ],
+      cta: "Pyetni për shtigjet",
     },
   },
 };

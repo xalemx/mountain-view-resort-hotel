@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Image } from "@/components/ui/image";
 import SectionHeading from "@/components/site/SectionHeading";
 import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
@@ -51,6 +52,10 @@ export default function DestinationSection() {
         <p className="mt-10 max-w-3xl border-l-2 border-primary/30 pl-5 text-sm leading-relaxed text-muted-foreground">
           {t.discover.trailNote}
         </p>
+
+        <Link to="/guide" className="link-quiet mt-6 inline-flex">
+          {t.guide.title} ↗
+        </Link>
       </div>
     </section>
   );

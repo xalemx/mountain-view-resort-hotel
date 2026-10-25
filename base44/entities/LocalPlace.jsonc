@@ -1,0 +1,50 @@
+{
+  "name": "LocalPlace",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Place name as it appears on maps and signposts"
+    },
+    "description": {
+      "type": "string",
+      "description": "What the place is and why a guest staying with us would go there"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "mountain",
+        "valley",
+        "lake",
+        "town",
+        "viewpoint",
+        "activity"
+      ],
+      "default": "activity"
+    },
+    "distance_km": {
+      "type": "number",
+      "description": "Approximate distance from Gusinje town centre in kilometres"
+    },
+    "drive_minutes": {
+      "type": "number",
+      "description": "Approximate driving time from Gusinje in minutes"
+    },
+    "best_season": {
+      "type": "string",
+      "description": "When it is worth visiting, for example 'May to October'"
+    },
+    "map_query": {
+      "type": "string",
+      "description": "Search text or coordinates used to open the place in Google Maps"
+    },
+    "sort_order": {
+      "type": "number",
+      "description": "Order the place appears in the guide"
+    }
+  },
+  "required": [
+    "name",
+    "description"
+  ]
+}
