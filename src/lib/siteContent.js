@@ -8,7 +8,7 @@ export const BRAND = {
   instagram: "https://www.instagram.com/mountain_view_resortt/",
   instagramHandle: "@mountain_view_resortt",
   threads: "https://www.threads.com/@mountain_view_resortt",
-  tourism: "https://gusinje.travel/post_type_offer/pjesacenje/",
+  tourism: "https://gusinje.travel/",
 };
 
 export const MAP_QUERIES = {
