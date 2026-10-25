@@ -9,6 +9,7 @@ export const BRAND = {
   instagramHandle: "@mountain_view_resortt",
   threads: "https://www.threads.com/@mountain_view_resortt",
   tourism: "https://gusinje.travel/post_type_offer/pjesacenje/",
+  mapsResort: "https://www.google.com/maps/search/?api=1&query=42.5458363,19.8308614",
   mapsGusinje: "https://www.google.com/maps/search/?api=1&query=Gusinje+Montenegro",
   mapsGrebaje: "https://www.google.com/maps/search/?api=1&query=Grebaje+Valley+Montenegro",
 };
@@ -21,7 +22,7 @@ export const IMAGES = {
 };
 
 export const PROPERTIES = [
-  { id: "resort", number: "01", name: "Mountain View Resort", image: IMAGES.resort, map: BRAND.mapsGusinje },
+  { id: "resort", number: "01", name: "Mountain View Resort", image: IMAGES.resort, map: BRAND.mapsResort },
   { id: "inn", number: "02", name: "Hotel Mountain View Inn", image: IMAGES.inn, map: BRAND.mapsGusinje },
 ];
 
