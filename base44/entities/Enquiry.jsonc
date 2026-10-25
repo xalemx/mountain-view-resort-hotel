@@ -1,0 +1,61 @@
+{
+  "name": "Enquiry",
+  "type": "object",
+  "properties": {
+    "guest_name": {
+      "type": "string",
+      "description": "Name of the guest sending the request"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "property": {
+      "type": "string",
+      "enum": [
+        "mountain_view_resort",
+        "mountain_view_inn",
+        "either"
+      ],
+      "default": "mountain_view_resort"
+    },
+    "arrival": {
+      "type": "string",
+      "format": "date"
+    },
+    "departure": {
+      "type": "string",
+      "format": "date"
+    },
+    "adults": {
+      "type": "number",
+      "default": 2
+    },
+    "children": {
+      "type": "number",
+      "default": 0
+    },
+    "notes": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "replied",
+        "confirmed",
+        "closed"
+      ],
+      "default": "new"
+    }
+  },
+  "required": [
+    "guest_name",
+    "email",
+    "arrival",
+    "departure"
+  ]
+}
