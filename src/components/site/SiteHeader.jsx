@@ -2,14 +2,16 @@ import React from "react";
 import { BRAND } from "@/lib/siteContent";
 import { LANGUAGES } from "@/lib/translations";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useAnchorHref } from "@/lib/siteNav";
 
 export default function SiteHeader() {
   const { t, language, chooseLanguage } = useLanguage();
+  const anchorHref = useAnchorHref();
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur">
       <div className="section flex items-center justify-between gap-4 py-4">
-        <a href="#top" className="flex items-center gap-3">
+        <a href={anchorHref("#top")} className="flex items-center gap-3">
           <span className="font-display text-2xl leading-none text-primary">△</span>
           <span className="leading-none">
             <span className="block font-heading text-sm uppercase tracking-[0.18em] text-primary">{BRAND.name}</span>
@@ -23,7 +25,7 @@ export default function SiteHeader() {
           {t.nav.slice(0, 3).map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={anchorHref(link.href)}
               className="font-body text-[11px] uppercase tracking-[0.24em] text-muted-foreground transition hover:text-primary"
             >
               {link.label}
@@ -45,7 +47,7 @@ export default function SiteHeader() {
             ))}
           </select>
 
-          <a href="#offer" className="btn-outline-dark hidden sm:inline-flex">
+          <a href={anchorHref("#offer")} className="btn-outline-dark hidden sm:inline-flex">
             {t.nav[3].label}
           </a>
         </div>

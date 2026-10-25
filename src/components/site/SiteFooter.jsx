@@ -27,6 +27,12 @@ export default function SiteFooter() {
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 font-body text-[11px] uppercase tracking-[0.24em] text-primary-foreground/60">
           <span>{t.footer.rights}</span>
           <div className="flex flex-wrap items-center gap-6">
+            <Link to="/about" className="transition hover:text-primary-foreground">
+              {t.footer.about}
+            </Link>
+            <Link to="/contact" className="transition hover:text-primary-foreground">
+              {t.footer.contact}
+            </Link>
             <button type="button" onClick={openLanguageChooser} className="transition hover:text-primary-foreground">
               {t.footer.chooseLanguage}
             </button>
