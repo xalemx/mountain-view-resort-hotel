@@ -18,12 +18,18 @@ export const MAP_QUERIES = {
   grebaje: "Grebaje Valley, Montenegro",
 };
 
+const FILES = "https://media.base44.com/images/public/6add6db1a4366797590573f0/";
+
 export const IMAGES = {
-  hero: "https://media.base44.com/images/public/6add6db1a4366797590573f0/6e4da1233_generated_image.png",
-  gusinje: "https://media.base44.com/images/public/6add6db1a4366797590573f0/0c96f8eac_generated_image.png",
-  resort: "https://media.base44.com/images/public/6add6db1a4366797590573f0/1bf06e1ae_generated_image.png",
-  inn: "https://media.base44.com/images/public/6add6db1a4366797590573f0/7b725a420_generated_image.png",
+  hero: `${FILES}d2e1131f4_mountain-view-hero.jpg`,
+  prokletije: `${FILES}87bdef98b_mountain-view-prokletije.jpg`,
+  gusinje: `${FILES}0e20eaa80_mountain-view-gusinje.jpg`,
+  resort: `${FILES}574dcb064_mountain-view-resort.jpg`,
+  inn: `${FILES}251f39e6d_mountain-view-inn.jpg`,
 };
+
+export const PHOTO_CREDITS =
+  "Photographs: Bruno Rijsman (CC BY 2.0), Hladnikm (CC BY-SA 4.0), Etan J. Tal (CC BY 3.0), GjonBala (CC BY-SA 4.0), Prasopestilence (CC BY-SA 3.0) — via Wikimedia Commons";
 
 export const PROPERTIES = [
   { id: "resort", number: "01", name: "Mountain View Resort", image: IMAGES.resort, mapQuery: MAP_QUERIES.resort },
@@ -31,7 +37,7 @@ export const PROPERTIES = [
 ];
 
 export const EXPERIENCES = [
-  { id: "prokletije", image: IMAGES.hero, mapQuery: MAP_QUERIES.grebaje },
+  { id: "prokletije", image: IMAGES.prokletije, mapQuery: MAP_QUERIES.grebaje },
   { id: "gusinje", image: IMAGES.gusinje, mapQuery: MAP_QUERIES.gusinje },
 ];
 

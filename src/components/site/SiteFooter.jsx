@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
-import { BRAND } from "@/lib/siteContent";
+import { BRAND, PHOTO_CREDITS } from "@/lib/siteContent";
 
 export default function SiteFooter() {
   const { t, openLanguageChooser } = useLanguage();
@@ -37,6 +37,7 @@ export default function SiteFooter() {
         </div>
 
         <p className="mt-6 max-w-2xl text-xs leading-relaxed text-primary-foreground/50">{t.footer.imagery}</p>
+        <p className="mt-2 max-w-2xl text-[10px] leading-relaxed text-primary-foreground/40">{PHOTO_CREDITS}</p>
       </div>
     </footer>
   );
