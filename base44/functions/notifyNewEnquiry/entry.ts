@@ -6,10 +6,41 @@ const PROPERTY_LABELS: Record<string, string> = {
   either: 'Either property',
 };
 
+const MAX_LENGTHS = { name: 60, email: 254, phone: 40, notes: 1000 };
+const MAX_ADULTS = 50;
+const MAX_CHILDREN = 30;
+
+// Guest input arrives from a public form and is delivered inside a trusted,
+// branded email, so it is treated as plain text only: markup and control
+// characters are stripped, whitespace collapsed and length capped.
+function cleanText(value: unknown, maxLength: number) {
+  if (typeof value !== 'string') return '';
+  return value
+    .replace(/[\u0000-\u001F\u007F]/g, ' ')
+    .replace(/[<>]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, maxLength);
+}
+
+const EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+// Only a plain, well-formed address may reach the mailto: reply link.
+function cleanEmail(value: unknown) {
+  if (typeof value !== 'string') return '';
+  const email = value.trim().slice(0, MAX_LENGTHS.email);
+  return EMAIL_PATTERN.test(email) ? email : '';
+}
+
+function cleanCount(value: unknown, max: number) {
+  const count = Math.floor(Number(value));
+  return Number.isFinite(count) && count > 0 ? Math.min(count, max) : 0;
+}
+
 function formatDate(value: string) {
-  if (!value) return '';
+  if (typeof value !== 'string' || !value) return '';
   const date = new Date(`${value}T00:00:00Z`);
-  if (Number.isNaN(date.getTime())) return value;
+  if (Number.isNaN(date.getTime())) return '';
   return new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(date);
 }
 
@@ -37,23 +68,30 @@ export default async function (req: Request): Promise<Response> {
     const recipient = admins.find((admin: any) => admin.email)?.email || '';
     if (!recipient) return Response.json({ error: 'No host email found' }, { status: 500 });
 
-    const adults = Number(enquiry.adults) || 0;
-    const children = Number(enquiry.children) || 0;
+    const adults = cleanCount(enquiry.adults, MAX_ADULTS);
+    const children = cleanCount(enquiry.children, MAX_CHILDREN);
     const nights = nightsBetween(enquiry.arrival, enquiry.departure);
+
+    const guestName = cleanText(enquiry.guest_name, MAX_LENGTHS.name) || 'A guest';
+    const guestEmail = cleanEmail(enquiry.email);
+    const propertyKey = typeof enquiry.property === 'string' ? enquiry.property : '';
+    const propertyLabel = Object.keys(PROPERTY_LABELS).includes(propertyKey)
+      ? PROPERTY_LABELS[propertyKey]
+      : PROPERTY_LABELS.either;
 
     const result = await base44.asServiceRole.integrations.Core.SendEmail({
       to: recipient,
       template_name: 'NewEnquiry',
       variables: {
-        guest_name: enquiry.guest_name || 'A guest',
-        guest_email: enquiry.email || '',
-        reply_link: enquiry.email ? `mailto:${enquiry.email}` : 'https://mountainviewresort.me',
-        property_label: PROPERTY_LABELS[enquiry.property] || PROPERTY_LABELS.either,
+        guest_name: guestName,
+        guest_email: guestEmail || 'Not provided',
+        reply_link: guestEmail ? `mailto:${guestEmail}` : 'https://mountainviewresort.me',
+        property_label: propertyLabel,
         stay_label: [formatDate(enquiry.arrival), formatDate(enquiry.departure)].filter(Boolean).join(' to '),
         nights_label: nights > 0 ? `${nights} ${nights === 1 ? 'night' : 'nights'}` : 'To be confirmed',
         guests_label: `${adults} ${adults === 1 ? 'adult' : 'adults'}${children ? `, ${children} ${children === 1 ? 'child' : 'children'}` : ''}`,
-        phone_label: enquiry.phone || 'Not provided',
-        notes_label: enquiry.notes || 'No extra notes',
+        phone_label: cleanText(enquiry.phone, MAX_LENGTHS.phone) || 'Not provided',
+        notes_label: cleanText(enquiry.notes, MAX_LENGTHS.notes) || 'No extra notes',
       },
     });
 
