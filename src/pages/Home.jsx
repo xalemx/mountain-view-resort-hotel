@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import Hero from "@/components/site/Hero";
 import IntroSection from "@/components/site/IntroSection";
@@ -11,6 +11,12 @@ import SiteFooter from "@/components/site/SiteFooter";
 import WelcomeGate from "@/components/site/WelcomeGate";
 
 export default function Home() {
+  const [hasEntered, setHasEntered] = useState(false);
+
+  if (!hasEntered) {
+    return <WelcomeGate isLanding onEnter={() => setHasEntered(true)} />;
+  }
+
   return (
     <div id="top" className="min-h-screen bg-background font-body text-foreground">
       <SiteHeader />

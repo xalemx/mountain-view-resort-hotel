@@ -4,9 +4,9 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { LANGUAGES } from "@/lib/translations";
 import { BRAND, IMAGES } from "@/lib/siteContent";
 
-export default function WelcomeGate() {
+export default function WelcomeGate({ isLanding = false, onEnter }) {
   const { hasChosenLanguage, isChooserOpen, chooseLanguage } = useLanguage();
-  const isOpen = !hasChosenLanguage || isChooserOpen;
+  const isOpen = isLanding || !hasChosenLanguage || isChooserOpen;
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -38,7 +38,10 @@ export default function WelcomeGate() {
             <button
               key={entry.code}
               type="button"
-              onClick={() => chooseLanguage(entry.code)}
+              onClick={() => {
+                chooseLanguage(entry.code);
+                if (onEnter) onEnter();
+              }}
               className="group flex items-center justify-between gap-4 rounded-sm border border-primary-foreground/25 px-5 py-4 text-left transition hover:border-primary-foreground hover:bg-primary-foreground/10"
             >
               <span className="font-heading text-lg text-primary-foreground">{entry.greeting}</span>
