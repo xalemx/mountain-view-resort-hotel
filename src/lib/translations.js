@@ -157,7 +157,7 @@ export const TRANSLATIONS = {
         {
           question: "How do I get to Gusinje?",
           answer:
-            "Most guests arrive by car: roughly two and a half hours from Podgorica, and about an hour from the Albanian border via Plav. There is a bus to Plav, and we can arrange a pick-up from Plav on request.",
+            "Most guests arrive by car: about three hours from Podgorica, and about twenty minutes from the Albanian border at Vermosh. There is a bus to Plav, and we can arrange a pick-up from Plav on request.",
         },
         {
           question: "When is the best time to visit?",
@@ -316,7 +316,7 @@ export const TRANSLATIONS = {
       practical: [
         {
           title: "Getting here",
-          text: "The nearest international airport is Podgorica, roughly two and a half hours by car on the road through Plav. Tivat and Dubrovnik are longer but scenic drives. If you are arriving without a car, say so in your request and we will help arrange a transfer.",
+          text: "The nearest international airport is Podgorica, about three hours by car (roughly 150 km) on the road through Plav. Tivat and Dubrovnik are longer but scenic drives. If you are arriving without a car, say so in your request and we will help arrange a transfer.",
         },
         {
           title: "When to come",
@@ -475,7 +475,7 @@ export const TRANSLATIONS = {
         {
           question: "Kako da stignem u Gusinje?",
           answer:
-            "Većina gostiju dolazi autom: oko dva i po sata iz Podgorice i oko sat vremena od granice sa Albanijom preko Plava. Postoji autobus do Plava, a na zahtjev možemo organizovati i prevoz iz Plava.",
+            "Većina gostiju dolazi autom: oko tri sata iz Podgorice i oko dvadeset minuta od granice sa Albanijom kod Vermoshija. Postoji autobus do Plava, a na zahtjev možemo organizovati i prevoz iz Plava.",
         },
         {
           question: "Kada je najbolje doći?",
@@ -634,7 +634,7 @@ export const TRANSLATIONS = {
       practical: [
         {
           title: "Kako stići",
-          text: "Najbliži međunarodni aerodrom je Podgorica, otprilike dva i po sata vožnje putem preko Plava. Tivat i Dubrovnik su duže, ali slikovitije rute. Ako dolazite bez auta, napišite nam to u zahtjevu i pomoći ćemo oko transfera.",
+          text: "Najbliži međunarodni aerodrom je Podgorica, oko tri sata vožnje (približno 150 km) putem preko Plava. Tivat i Dubrovnik su duže, ali slikovitije rute. Ako dolazite bez auta, napišite nam to u zahtjevu i pomoći ćemo oko transfera.",
         },
         {
           title: "Kada doći",
@@ -793,7 +793,7 @@ export const TRANSLATIONS = {
         {
           question: "Как добраться до Гусине?",
           answer:
-            "Большинство гостей приезжают на машине: примерно два с половиной часа из Подгорицы и около часа от границы с Албанией через Плав. Есть автобус до Плава, а по запросу мы можем организовать трансфер из Плава.",
+            "Большинство гостей приезжают на машине: примерно три часа из Подгорицы и около двадцати минут от границы с Албанией (переход Вермош). Есть автобус до Плава, а по запросу мы можем организовать трансфер из Плава.",
         },
         {
           question: "Когда лучше приехать?",
@@ -952,7 +952,7 @@ export const TRANSLATIONS = {
       practical: [
         {
           title: "Как добраться",
-          text: "Ближайший международный аэропорт — Подгорица, около двух с половиной часов на машине по дороге через Плав. Тиват и Дубровник дальше, но живописнее. Если вы приезжаете без машины, напишите об этом в запросе, и мы поможем с трансфером.",
+          text: "Ближайший международный аэропорт — Подгорица, около трёх часов на машине (примерно 150 км) по дороге через Плав. Тиват и Дубровник дальше, но живописнее. Если вы приезжаете без машины, напишите об этом в запросе, и мы поможем с трансфером.",
         },
         {
           title: "Когда приезжать",
@@ -1112,7 +1112,7 @@ export const TRANSLATIONS = {
         {
           question: "Si të arrij në Gusinje?",
           answer:
-            "Shumica e mysafirëve vijnë me makinë: rreth dy orë e gjysmë nga Podgorica dhe rreth një orë nga kufiri me Shqipërinë nëpërmjet Plavës. Ka autobus për në Plavë, dhe me kërkesë mund të organizojmë transport nga Plava.",
+            "Shumica e mysafirëve vijnë me makinë: rreth tre orë nga Podgorica dhe rreth njëzet minuta nga kufiri me Shqipërinë në Vermosh. Ka autobus për në Plavë, dhe me kërkesë mund të organizojmë transport nga Plava.",
         },
         {
           question: "Kur është koha më e mirë për të ardhur?",
@@ -1271,7 +1271,7 @@ export const TRANSLATIONS = {
       practical: [
         {
           title: "Si të arrihet",
-          text: "Aeroporti ndërkombëtar më i afërt është Podgorica, rreth dy orë e gjysmë me makinë në rrugën përmes Plavës. Tivari dhe Dubrovniku janë më larg, por rrugë piktoreske. Nëse vini pa makinë, na shkruani në kërkesë dhe do t'ju ndihmojmë me transfert.",
+          text: "Aeroporti ndërkombëtar më i afërt është Podgorica, rreth tre orë me makinë (afërsisht 150 km) në rrugën përmes Plavës. Tivari dhe Dubrovniku janë më larg, por rrugë piktoreske. Nëse vini pa makinë, na shkruani në kërkesë dhe do t'ju ndihmojmë me transfert.",
         },
         {
           title: "Kur të vini",

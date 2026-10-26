@@ -1,3 +1,5 @@
+import { PROPERTY_FACTS } from "@/lib/propertyFacts";
+
 export const BRAND = {
   name: "Mountain View",
   subtitle: "Resort & Hotel",
@@ -11,9 +13,11 @@ export const BRAND = {
   tourism: "https://gusinje.travel/",
 };
 
+// The two property pins live in src/lib/propertyFacts.js, beside the facts they
+// describe, so every map link on the site opens the same coordinates as the copy.
 export const MAP_QUERIES = {
-  resort: "42.5458363,19.8308614",
-  inn: "42.5641954,19.8325301",
+  resort: PROPERTY_FACTS.resort.pin.query,
+  inn: PROPERTY_FACTS.inn.pin.query,
   gusinje: "Gusinje, Montenegro",
   grebaje: "Grebaje Valley, Montenegro",
 };
