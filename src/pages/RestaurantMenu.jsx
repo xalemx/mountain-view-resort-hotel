@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import MenuCategories from "@/components/site/MenuCategories";
-import MenuGallery from "@/components/site/MenuGallery";
+import MenuPdf from "@/components/site/MenuPdf";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
 import { usePageSeo } from "@/lib/seo";
@@ -67,7 +67,7 @@ export default function RestaurantMenu() {
           </div>
         </section>
 
-        <MenuGallery />
+        <MenuPdf />
       </main>
 
       <SiteFooter />

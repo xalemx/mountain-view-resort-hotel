@@ -18,22 +18,8 @@ export const MENU_PATH = "/mountain-view-resort/restaurant";
 // the printed page, never as the only way to read the menu.
 export const ORIGINAL_MENU_URL = "https://mojmeni.me/2026/06/16/mountain-view-resort-eng/";
 
-// The four pages of the printed menu, kept in the app's own storage.
-const MENU_FILES = "https://base44.app/api/apps/6add6db1a4366797590573f0/files/mp/public/6add6db1a4366797590573f0/";
-
-export const MENU_IMAGES = [
-  `${MENU_FILES}ce9b4ff11_mountain-view-menu-page-1.jpg`,
-  `${MENU_FILES}8e7d7fbdc_mountain-view-menu-page-2.jpg`,
-  `${MENU_FILES}0e8af54e1_mountain-view-menu-page-3.jpg`,
-  `${MENU_FILES}98cebb37e_mountain-view-menu-page-4.jpg`,
-];
-
-export const MENU_IMAGE_CAPTIONS = {
-  en: ["Menu page 1", "Menu page 2", "Menu page 3", "Menu page 4"],
-  me: ["Meni, strana 1", "Meni, strana 2", "Meni, strana 3", "Meni, strana 4"],
-  ru: ["Меню, страница 1", "Меню, страница 2", "Меню, страница 3", "Меню, страница 4"],
-  sq: ["Menuja, faqja 1", "Menuja, faqja 2", "Menuja, faqja 3", "Menuja, faqja 4"],
-};
+// The printed menu, as the PDF the restaurant gave us.
+export const MENU_PDF_URL = "https://media.base44.com/files/public/6add6db1a4366797590573f0/d2cdfafbf_Mountain_View_Resort_Menu.pdf";
 
 export const RESTAURANT_COPY = {
   en: {
@@ -48,8 +34,8 @@ export const RESTAURANT_COPY = {
     menuHeading: "The menu",
     originalMenu: "Original English Menu",
     imagesTitle: "The printed menu",
-    imagesText: "The same menu as it is printed at the restaurant. Choose a page to see it enlarged.",
-    openImage: "Enlarge",
+    imagesText: "The same menu as it is printed at the restaurant, as a PDF you can read here, open or save.",
+    openImage: "Open the PDF",
     backToResort: "Mountain View Resort",
     where: "The restaurant is at Mountain View Resort, in Vusanje.",
     contactNote: "The restaurant belongs to Mountain View Resort, so the resort's line is the one that reaches the family.",
@@ -67,8 +53,8 @@ export const RESTAURANT_COPY = {
     menuHeading: "Jelovnik",
     originalMenu: "Originalni jelovnik na engleskom",
     imagesTitle: "Štampani jelovnik",
-    imagesText: "Isti jelovnik kakav je štampan u restoranu. Izaberite stranu da je vidite uvećanu.",
-    openImage: "Uvećaj",
+    imagesText: "Isti jelovnik kakav je štampan u restoranu, kao PDF koji možete čitati ovdje, otvoriti ili sačuvati.",
+    openImage: "Otvori PDF",
     backToResort: "Mountain View Resort",
     where: "Restoran se nalazi u resortu Mountain View, u Vusanju.",
     contactNote: "Restoran pripada resortu Mountain View, pa je resortov broj onaj koji vodi do porodice.",
@@ -86,8 +72,8 @@ export const RESTAURANT_COPY = {
     menuHeading: "Меню",
     originalMenu: "Оригинальное меню на английском",
     imagesTitle: "Печатное меню",
-    imagesText: "То же меню, что напечатано в ресторане. Выберите страницу, чтобы увеличить её.",
-    openImage: "Увеличить",
+    imagesText: "То же меню, что напечатано в ресторане, в виде PDF: его можно читать здесь, открыть или сохранить.",
+    openImage: "Открыть PDF",
     backToResort: "Mountain View Resort",
     where: "Ресторан находится в Mountain View Resort, в Вусане.",
     contactNote: "Ресторан относится к Mountain View Resort, поэтому до семьи можно добраться по номеру курорта.",
@@ -105,8 +91,8 @@ export const RESTAURANT_COPY = {
     menuHeading: "Menuja",
     originalMenu: "Menuja origjinale në anglisht",
     imagesTitle: "Menuja e shtypur",
-    imagesText: "E njëjta menu siç shtypet në restorant. Zgjidhni një faqe për ta zmadhuar.",
-    openImage: "Zmadho",
+    imagesText: "E njëjta menu siç shtypet në restorant, si PDF që mund ta lexoni këtu, ta hapni ose ta ruani.",
+    openImage: "Hap PDF-në",
     backToResort: "Mountain View Resort",
     where: "Restoranti ndodhet në Mountain View Resort, në Vusanje.",
     contactNote: "Restoranti i përket Mountain View Resort, prandaj linja e resortit është ajo që të çon te familja.",
