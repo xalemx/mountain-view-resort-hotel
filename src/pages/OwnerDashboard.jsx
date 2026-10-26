@@ -123,6 +123,9 @@ export default function OwnerDashboard() {
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <span className="hidden font-body text-xs text-muted-foreground sm:inline">{user?.email}</span>
+            <Link to="/owner/property" className="link-quiet">
+              Resort record
+            </Link>
             <Link to="/" className="link-quiet">
               View website
             </Link>

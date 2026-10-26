@@ -1,0 +1,167 @@
+{
+  "name": "PropertyRecord",
+  "type": "object",
+  "properties": {
+    "property": {
+      "type": "string",
+      "enum": [
+        "mountain_view_resort",
+        "mountain_view_inn"
+      ],
+      "default": "mountain_view_resort",
+      "description": "Which house this record describes. One record per house; only the resort has a saved listing snapshot."
+    },
+    "record_state": {
+      "type": "string",
+      "enum": [
+        "snapshot",
+        "in_review",
+        "confirmed"
+      ],
+      "default": "snapshot",
+      "description": "Snapshot: captured from the listing. In review: being compared with what the site publishes. Confirmed: the owner has settled every flagged item."
+    },
+    "source": {
+      "type": "string",
+      "description": "Where the snapshot came from, for example Booking.com listing"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "captured_on": {
+      "type": "string",
+      "format": "date",
+      "description": "The day the listing was captured. Not availability and not pricing: the site never reads it that way."
+    },
+    "listing_name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "description": "The property's own description, as the listing carries it"
+    },
+    "room_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Room types with bed arrangements and how many each takes"
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "house_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "check_in": {
+      "type": "string"
+    },
+    "check_out": {
+      "type": "string"
+    },
+    "cancellation": {
+      "type": "string"
+    },
+    "payment": {
+      "type": "string"
+    },
+    "children": {
+      "type": "string"
+    },
+    "pets": {
+      "type": "string"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "breakfast": {
+      "type": "string"
+    },
+    "parking": {
+      "type": "string"
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "guest_rating": {
+      "type": "string",
+      "description": "What the listing shows for ratings, with the number of reviews it is based on"
+    },
+    "owner_notes": {
+      "type": "string",
+      "description": "Anything the owner wants to keep beside the snapshot"
+    },
+    "facts_to_confirm": {
+      "type": "array",
+      "description": "Every place the snapshot and the published site do not yet agree, or where the listing adds something the site does not say. The owner settles each one.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "published": {
+            "type": "string",
+            "description": "What the site says today, and where"
+          },
+          "listed": {
+            "type": "string",
+            "description": "What the saved listing says"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "undecided",
+              "keep_published",
+              "use_listed"
+            ],
+            "default": "undecided"
+          }
+        },
+        "required": [
+          "topic"
+        ]
+      }
+    }
+  },
+  "required": [
+    "property"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

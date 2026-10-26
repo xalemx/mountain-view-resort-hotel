@@ -21,6 +21,7 @@ import ResetPassword from '@/pages/ResetPassword';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Guide from '@/pages/Guide';
+import OwnerProperty from '@/pages/OwnerProperty';
 import Privacy from '@/pages/Privacy';
 import Terms from '@/pages/Terms';
 import OwnerDashboard from '@/pages/OwnerDashboard';
@@ -54,6 +55,7 @@ const AuthenticatedApp = () => {
       <Route path="/guide" element={<Guide />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/owner/property" element={<OwnerProperty />} />
       <Route path="/mountain-view-resort" element={<Property propertyId="resort" />} />
       <Route path="/hotel-mountain-view" element={<Property propertyId="inn" />} />
       <Route path="/:lang" element={<LanguageRoutes />}>
