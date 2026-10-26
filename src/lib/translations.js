@@ -173,7 +173,7 @@ export const TRANSLATIONS = {
       success: "Thank you — your request is with us. We will reply within 24 hours.",
       errorDates: "Your departure date needs to be after your arrival date.",
       error: "We could not send that. Please try again, or message us on WhatsApp.",
-      optionEither: "Either — you decide",
+      optionEither: "Either property",
     },
     social: {
       eyebrow: "Between stays",
@@ -435,7 +435,7 @@ export const TRANSLATIONS = {
       success: "Hvala — vaš zahtjev je kod nas. Odgovorićemo u roku od 24 časa.",
       errorDates: "Datum odlaska mora biti poslije datuma dolaska.",
       error: "Nijesmo uspjeli da pošaljemo zahtjev. Pokušajte ponovo ili nam pišite na WhatsApp.",
-      optionEither: "Bilo koje — vi odlučite",
+      optionEither: "Bilo koji smještaj",
     },
     social: {
       eyebrow: "Između boravaka",
@@ -697,7 +697,7 @@ export const TRANSLATIONS = {
       success: "Спасибо — ваш запрос у нас. Ответим в течение 24 часов.",
       errorDates: "Дата выезда должна быть позже даты заезда.",
       error: "Не удалось отправить запрос. Попробуйте ещё раз или напишите нам в WhatsApp.",
-      optionEither: "Любой — решите сами",
+      optionEither: "Любой вариант",
     },
     social: {
       eyebrow: "Между поездками",
@@ -959,7 +959,7 @@ export const TRANSLATIONS = {
       success: "Faleminderit — kërkesa juaj është me ne. Do të përgjigjemi brenda 24 orëve.",
       errorDates: "Data e nisjes duhet të jetë pas datës së mbërritjes.",
       error: "Nuk arritëm ta dërgonim kërkesën. Provoni përsëri ose na shkruani në WhatsApp.",
-      optionEither: "Të dyja — vendosni ju",
+      optionEither: "Pa preferencë",
     },
     social: {
       eyebrow: "Midis qëndrimeve",

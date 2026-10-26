@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { base44 } from "@/api/base44Client";
 import EnquiryField from "@/components/site/EnquiryField";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useProperty } from "@/lib/PropertyContext";
 import { PROPERTY_OPTIONS } from "@/lib/siteContent";
 
 const EMPTY_FORM = {
@@ -20,8 +21,16 @@ const today = new Date().toISOString().slice(0, 10);
 
 export default function EnquiryForm() {
   const { t } = useLanguage();
+  const { selectedProperty, setSelectedProperty } = useProperty();
   const [form, setForm] = useState(EMPTY_FORM);
   const [status, setStatus] = useState({ type: "idle", text: "" });
+
+  // Follows the property picked on the site, without touching the other fields.
+  useEffect(() => {
+    setForm((previous) =>
+      previous.property === selectedProperty ? previous : { ...previous, property: selectedProperty }
+    );
+  }, [selectedProperty]);
 
   const options = PROPERTY_OPTIONS.map((option) =>
     option.value === "either" ? { ...option, label: t.form.optionEither } : option
@@ -29,6 +38,11 @@ export default function EnquiryForm() {
 
   const update = (field) => (event) => setForm((previous) => ({ ...previous, [field]: event.target.value }));
   const isSending = status.type === "sending";
+
+  const changeProperty = (event) => {
+    setSelectedProperty(event.target.value);
+    setForm((previous) => ({ ...previous, property: event.target.value }));
+  };
 
   const submit = async (event) => {
     event.preventDefault();
@@ -50,7 +64,7 @@ export default function EnquiryForm() {
         notes: form.notes.trim(),
         status: "new",
       });
-      setForm(EMPTY_FORM);
+      setForm({ ...EMPTY_FORM, property: selectedProperty });
       setStatus({ type: "done", text: t.form.success });
     } catch (error) {
       setStatus({ type: "error", text: t.form.error });
@@ -60,7 +74,7 @@ export default function EnquiryForm() {
   return (
     <form onSubmit={submit} className="space-y-5 rounded-sm border border-border/70 bg-card p-6 md:p-8">
       <EnquiryField label={t.form.property}>
-        <select value={form.property} onChange={update("property")} className="field-input">
+        <select value={form.property} onChange={changeProperty} className="field-input">
           {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}

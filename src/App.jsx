@@ -8,6 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import WelcomeGate from '@/components/site/WelcomeGate';
 import { LanguageProvider } from '@/lib/LanguageContext';
+import { PropertyProvider } from '@/lib/PropertyContext';
 import Home from '@/pages/Home';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
@@ -63,6 +64,7 @@ function App() {
   return (
     <AuthProvider>
       <LanguageProvider>
+      <PropertyProvider>
       <QueryClientProvider client={queryClientInstance}>
         <Router>
           <ScrollToTop />
@@ -71,6 +73,7 @@ function App() {
         </Router>
         <Toaster />
       </QueryClientProvider>
+      </PropertyProvider>
       </LanguageProvider>
     </AuthProvider>
   )

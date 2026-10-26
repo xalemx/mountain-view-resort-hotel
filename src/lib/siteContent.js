@@ -32,8 +32,22 @@ export const PHOTO_CREDITS =
   "Photographs of Mountain View Resort are our own. Landscape photographs: Bruno Rijsman (CC BY 2.0), Hladnikm (CC BY-SA 4.0), Etan J. Tal (CC BY 3.0), GjonBala (CC BY-SA 4.0), Planeti (CC BY-SA 4.0), Prasopestilence (CC BY-SA 3.0) — via Wikimedia Commons";
 
 export const PROPERTIES = [
-  { id: "resort", number: "01", name: "Mountain View Resort", image: IMAGES.resort, mapQuery: MAP_QUERIES.resort },
-  { id: "inn", number: "02", name: "Hotel Mountain View", image: IMAGES.inn, mapQuery: MAP_QUERIES.inn },
+  {
+    id: "resort",
+    value: "mountain_view_resort",
+    number: "01",
+    name: "Mountain View Resort",
+    image: IMAGES.resort,
+    mapQuery: MAP_QUERIES.resort,
+  },
+  {
+    id: "inn",
+    value: "mountain_view_inn",
+    number: "02",
+    name: "Hotel Mountain View",
+    image: IMAGES.inn,
+    mapQuery: MAP_QUERIES.inn,
+  },
 ];
 
 export const EXPERIENCES = [
@@ -42,9 +56,8 @@ export const EXPERIENCES = [
 ];
 
 export const PROPERTY_OPTIONS = [
-  { value: "mountain_view_resort", label: PROPERTIES[0].name },
-  { value: "mountain_view_inn", label: PROPERTIES[1].name },
-  { value: "either", label: "Either — you decide" },
+  ...PROPERTIES.map((property) => ({ value: property.value, label: property.name })),
+  { value: "either", label: "Either property" },
 ];
 
 export const PROPERTY_LABELS = PROPERTY_OPTIONS.reduce((labels, option) => {

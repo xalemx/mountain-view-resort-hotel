@@ -3,10 +3,12 @@ import { Image } from "@/components/ui/image";
 import SectionHeading from "@/components/site/SectionHeading";
 import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useProperty } from "@/lib/PropertyContext";
 import { PROPERTIES } from "@/lib/siteContent";
 
 export default function StaysSection() {
   const { t } = useLanguage();
+  const { setSelectedProperty } = useProperty();
   const [activeId, setActiveId] = useState(PROPERTIES[0].id);
   const active = PROPERTIES.find((property) => property.id === activeId) || PROPERTIES[0];
   const copy = t.stays[active.id];
@@ -59,7 +61,7 @@ export default function StaysSection() {
             </ul>
 
             <div className="mt-9 flex flex-wrap items-center gap-5">
-              <a href="#offer" className="btn-pill">
+              <a href="#offer" onClick={() => setSelectedProperty(active.value)} className="btn-pill">
                 {t.stays.cta} ↗
               </a>
               <a
