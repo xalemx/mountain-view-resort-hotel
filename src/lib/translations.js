@@ -1,4 +1,3 @@
-import { ASK_COPY } from "@/lib/assistantTranslations";
 import { PRIVACY_COPY } from "@/lib/privacyCopy";
 import { TERMS_COPY } from "@/lib/termsCopy";
 import { HOSTS_COPY, MAP_COPY } from "@/lib/trustCopy";
@@ -300,7 +299,6 @@ export const TRANSLATIONS = {
     map: MAP_COPY.en,
     privacy: PRIVACY_COPY.en,
     terms: TERMS_COPY.en,
-    ask: ASK_COPY.en,
     advisor: {
       eyebrow: "Ask the guide",
       title: "Not sure where to start? Tell us what you enjoy",
@@ -603,7 +601,6 @@ export const TRANSLATIONS = {
     map: MAP_COPY.me,
     privacy: PRIVACY_COPY.me,
     terms: TERMS_COPY.me,
-    ask: ASK_COPY.me,
     advisor: {
       eyebrow: "Pitajte vodiča",
       title: "Ne znate odakle da počnete? Recite nam šta volite",
@@ -906,7 +903,6 @@ export const TRANSLATIONS = {
     map: MAP_COPY.ru,
     privacy: PRIVACY_COPY.ru,
     terms: TERMS_COPY.ru,
-    ask: ASK_COPY.ru,
     advisor: {
       eyebrow: "Спросите гида",
       title: "Не знаете, с чего начать? Расскажите, что вам нравится",
@@ -1210,7 +1206,6 @@ export const TRANSLATIONS = {
     map: MAP_COPY.sq,
     privacy: PRIVACY_COPY.sq,
     terms: TERMS_COPY.sq,
-    ask: ASK_COPY.sq,
     advisor: {
       eyebrow: "Pyetni udhërrëfyesin",
       title: "Nuk dini nga ta nisni? Na tregoni çfarë ju pëlqen",

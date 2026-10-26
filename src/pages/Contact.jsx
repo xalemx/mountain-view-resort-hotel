@@ -2,7 +2,6 @@ import React from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import EnquiryForm from "@/components/site/EnquiryForm";
-import AskMountainView from "@/components/site/AskMountainView";
 import { useLanguage } from "@/lib/LanguageContext";
 import { BRAND, PROPERTIES } from "@/lib/siteContent";
 import { usePageSeo } from "@/lib/seo";
@@ -67,7 +66,6 @@ export default function Contact() {
           </div>
         </div>
 
-        <AskMountainView defaultTopic="practical" />
       </main>
 
       <SiteFooter />

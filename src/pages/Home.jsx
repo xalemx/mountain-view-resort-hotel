@@ -6,7 +6,6 @@ import StaysSection from "@/components/site/StaysSection";
 import GallerySection from "@/components/site/GallerySection";
 import DestinationSection from "@/components/site/DestinationSection";
 import PlanningSection from "@/components/site/PlanningSection";
-import AskMountainView from "@/components/site/AskMountainView";
 import HostIntroduction from "@/components/site/HostIntroduction";
 import MapSection from "@/components/site/MapSection";
 import EnquirySection from "@/components/site/EnquirySection";
@@ -28,7 +27,6 @@ export default function Home() {
         <GallerySection />
         <DestinationSection />
         <PlanningSection />
-        <AskMountainView defaultTopic="booking" />
         <HostIntroduction />
         <EnquirySection />
         <SocialSection />

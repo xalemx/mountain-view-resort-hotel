@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
-import AskMountainView from "@/components/site/AskMountainView";
 import GuideFilters from "@/components/site/GuideFilters";
 import GuidePlaces from "@/components/site/GuidePlaces";
 import useGuidePlaces from "@/lib/useGuidePlaces";
@@ -43,8 +42,6 @@ export default function Guide() {
 
           <GuidePlaces status={status} places={places} retry={retry} />
         </section>
-
-        <AskMountainView defaultTopic="activities" />
 
         <section className="mt-20">
           <h2 className="font-heading text-2xl text-primary md:text-3xl">{t.guide.practicalTitle}</h2>
