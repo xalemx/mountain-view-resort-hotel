@@ -199,6 +199,7 @@ export const TRANSLATIONS = {
       parameters: "Details used",
       result: "What it found",
       note: "An automated concierge, using our own information about the houses and the valley. For anything it cannot answer, and for all prices and availability, write to us on WhatsApp or send a request.",
+      whatsapp: "Chat on WhatsApp",
     },
     contact: {
       eyebrow: "Talk to us",
@@ -450,6 +451,7 @@ export const TRANSLATIONS = {
       parameters: "Podaci koje je koristio",
       result: "Šta je našao",
       note: "Automatski concierge, sa našim podacima o kućama i dolini. Za sve što ne može da odgovori, kao i za cijene i slobodne termine, pišite nam na WhatsApp ili pošaljite zahtjev.",
+      whatsapp: "Pišite nam na WhatsApp",
     },
     contact: {
       eyebrow: "Razgovarajmo",
@@ -701,6 +703,7 @@ export const TRANSLATIONS = {
       parameters: "Использованные данные",
       result: "Что он нашёл",
       note: "Автоматический консьерж, использующий наши сведения о домах и долине. Если он не знает ответа, а также по ценам и свободным датам, напишите нам в WhatsApp или отправьте запрос.",
+      whatsapp: "Написать в WhatsApp",
     },
     contact: {
       eyebrow: "Свяжитесь с нами",
@@ -951,6 +954,7 @@ export const TRANSLATIONS = {
       chips: ["Si të vijmë nga Podgorica?", "A na nevojitet makinë?", "A përfshihet mëngjesi?"],
       parameters: "Të dhënat e përdorura",
       result: "Çfarë gjeti",
+      whatsapp: "Shkruajani në WhatsApp",
       note: "Concierge automatik, me informacionin tonë për shtëpitë dhe luginën. Për çdo gjë që nuk di t'i përgjigjet, si dhe për çmimet e disponueshmërinë, na shkruani në WhatsApp ose dërgoni një kërkesë.",
     },
     contact: {
