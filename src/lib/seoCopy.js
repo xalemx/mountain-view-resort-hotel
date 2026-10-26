@@ -19,6 +19,7 @@ export const SEO_IMAGES = {
   privacy: social("5b6f78991_mountain-view-gusinje-town.jpg"),
   terms: social("bdc367c1b_mountain-view-valley.jpg"),
   resort: social("8bda5b916_mountain-view-resort-room.jpg"),
+  restaurant: social("8bda5b916_mountain-view-resort-room.jpg"),
   hotel: social("4bbcd5227_Screenshot_25-10-2026_34857_wwwgooglecouk.jpeg"),
 };
 
@@ -58,6 +59,11 @@ export const SEO_COPY = {
       title: "Mountain View Resort · Vusanje, Gusinje, Montenegro",
       description:
         "A resort of bungalows on the Vusanjska road in Vusanje, in the Gusinje area of Montenegro: free private parking, one restaurant serving breakfast, lunch and dinner, under the Prokletije peaks.",
+    },
+    restaurant: {
+      title: "Restaurant menu · Mountain View Resort, Vusanje",
+      description:
+        "The restaurant at Mountain View Resort in Vusanje: traditional dishes, grilled specialities, pizzas, breakfasts and drinks, with a price for every dish. Breakfast is €5.00 per serving, charged separately from accommodation.",
     },
     hotel: {
       title: "Hotel Mountain View · Gusinje town centre",
@@ -102,6 +108,11 @@ export const SEO_COPY = {
       description:
         "Porodični resort sa bungalovima na Vusanjskom putu u Vusanju, u gusinjskom kraju: besplatan privatni parking, jedan restoran za doručak, ručak i večeru, u podnožju Prokletija.",
     },
+    restaurant: {
+      title: "Jelovnik restorana · Mountain View Resort, Vusanje",
+      description:
+        "Restoran u resortu Mountain View u Vusanju: tradicionalna jela, jela sa žara, pice, doručak i pića, sa cijenom za svako jelo. Doručak je €5.00 po porciji i plaća se odvojeno od smještaja.",
+    },
     hotel: {
       title: "Hotel Mountain View · Centar Gusinja",
       description:
@@ -145,6 +156,11 @@ export const SEO_COPY = {
       description:
         "Семейный resort с бунгало на Вусаньской дороге в Вусане, в районе Гусине: бесплатная частная парковка, один ресторан с завтраком, обедом и ужином, у подножия Проклетие.",
     },
+    restaurant: {
+      title: "Меню ресторана · Mountain View Resort, Вусане",
+      description:
+        "Ресторан курорта Mountain View в Вусане: традиционные блюда, блюда на гриле, пицца, завтраки и напитки, с ценой для каждого блюда. Завтрак — €5.00 за порцию, оплачивается отдельно от проживания.",
+    },
     hotel: {
       title: "Отель Mountain View · Центр Гусине",
       description:
@@ -187,6 +203,11 @@ export const SEO_COPY = {
       title: "Mountain View Resort · Vusanje, Gusinje, Mali i Zi",
       description:
         "Një resort familjar me bungalove në rrugën e Vusanjes në Vusanje, në zonën e Gusinjës: parkim privat falas, një restorant për mëngjes, drekë dhe darkë, nën majat e Prokletijeve.",
+    },
+    restaurant: {
+      title: "Menuja e restorantit · Mountain View Resort, Vusanje",
+      description:
+        "Restoranti i resortit Mountain View në Vusanje: pjata tradicionale, specialitete në zgarë, pica, mëngjese dhe pije, me çmim për çdo pjatë. Mëngjesi është €5.00 për porcion dhe paguhet veçmas nga qëndrimi.",
     },
     hotel: {
       title: "Hotel Mountain View · Qendra e Gusinjës",

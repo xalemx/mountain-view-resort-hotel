@@ -78,7 +78,7 @@ export const PROPERTY_FACTS = {
         label: "Restaurant & bar",
         status: FACT_STATUS.OWNER,
         detail:
-          "One restaurant, open for breakfast, lunch and dinner, plus a bar and a coffee shop (owner, 26 October 2026). Listed cuisines: Italian, Mediterranean, pizza, seafood, international, European, Croatian, and grill and barbecue, with halal, vegetarian and vegan options and special diet menus on request. The menu itself and every price are not published.",
+          "One restaurant, open for breakfast, lunch and dinner, plus a bar and a coffee shop (owner, 26 October 2026). Listed cuisines: Italian, Mediterranean, pizza, seafood, international, European, Croatian, and grill and barbecue, with halal, vegetarian and vegan options and special diet menus on request. The menu and every price are published on the site (owner, 26 October 2026): see src/lib/menu.js, and the menu page under the resort's own address.",
         shownIn: [
           "translations: stays.resort.features[0], stays.resort.description (en, me, ru, sq)",
           "src/lib/dining.js",
@@ -89,7 +89,7 @@ export const PROPERTY_FACTS = {
         key: "breakfast",
         label: "Breakfast available",
         status: FACT_STATUS.OWNER,
-        note: "Owner, 26 October 2026: breakfast is available, not included; whether it is included depends on the offer. Listed options: continental, Full English/Irish, vegetarian, halal and breakfast to go. No price is published: the paid-breakfast rates shown on booking sites are theirs, in their own converted currency.",
+        note: "Owner, 26 October 2026: breakfast is served at the resort's restaurant at €5 per serving and is charged separately from the accommodation. Listed options: continental, Full English/Irish, vegetarian, halal and breakfast to go. The accommodation prices in src/lib/pricing.js are published without breakfast in them. The paid-breakfast rates shown on booking sites remain theirs, in their own converted currency.",
         shownIn: [
           "translations: stays.resort.features[1]",
           "src/lib/dining.js",
@@ -149,6 +149,17 @@ export const PROPERTY_FACTS = {
       },
     ],
 
+    rates: {
+      status: FACT_STATUS.OWNER,
+      source:
+        "Owner, 26 October 2026: the bungalow price table, quoted as the total per night for the stated number of guests, not per person, with breakfast not included.",
+      text: "A bungalow, per night: 1 guest €40 winter and €50 summer; 2 guests €40 and €50; 3 guests €52 and €65; 4 guests €64 and €80; 5 guests €76 and €95; 6 guests €88 and €110. Winter rates run about 20% below summer. The season boundaries are not set, so no stay is totalled by season anywhere on the site.",
+      shownIn: [
+        "src/lib/pricing.js — the only place the figures live",
+        "the Accommodation prices section on /mountain-view-resort",
+      ],
+    },
+
     activities: [
       {
         key: "activitiesIncluded",
@@ -194,7 +205,7 @@ export const PROPERTY_FACTS = {
     policies: {
       breakfast: {
         status: FACT_STATUS.OWNER,
-        text: "Breakfast is available; whether it is included depends on your offer. No price is published.",
+        text: "Breakfast is served at the resort's restaurant at €5 per serving, charged separately from the accommodation, and it is not included in the published nightly prices.",
       },
       payment: {
         status: FACT_STATUS.OWNER,
@@ -284,8 +295,19 @@ export const PROPERTY_FACTS = {
       },
     ],
 
+    rates: {
+      status: FACT_STATUS.OWNER,
+      source:
+        "Owner, 26 October 2026: the room price table, quoted as the total per night for the stated number of guests, not per person, with breakfast not included.",
+      text: "A room, per night: 1 guest €30 winter and €40 summer; 2 guests €40 and €50; 3 guests €50 and €60; 5 guests €60 and €70. Summer rates run €10 above winter. There is no room for four guests: no rate exists for four, and a request for four is answered with a combination of rooms, subject to confirmation. The season boundaries are not set, so no stay is totalled by season.",
+      shownIn: [
+        "src/lib/pricing.js — the only place the figures live",
+        "the Accommodation prices section on /hotel-mountain-view",
+      ],
+    },
+
     policies: {
-      breakfast: { status: FACT_STATUS.OWNER, text: "Breakfast is included in your stay." },
+      breakfast: { status: FACT_STATUS.OWNER, text: "Breakfast is included in your stay, as the property is listed. Still open: the note under the published prices says breakfast is not included, so which of the two holds for the hotel is to be settled." },
       payment: {
         status: FACT_STATUS.OWNER,
         text: "Payment for your stay is on arrival at the property, as the offers show. Which payment methods are accepted is not established, so the site says the way to pay is confirmed with the offer.",
@@ -436,8 +458,18 @@ export const FACTS_TO_CONFIRM = [
   {
     id: "breakfastPrice",
     question:
-      "Settled on 26 October 2026: no breakfast price is published. The rates that showed optional paid breakfast are Booking's, in its own converted currency, and are not our direct-booking price.",
-    affects: ["src/lib/dining.js", "base44/agents/concierge.jsonc"],
+      "Answered on 26 October 2026: breakfast at the resort's restaurant is €5 per serving and is charged separately from the accommodation, and that price is published on the menu and in the dining card. Still open: the hotel is published as having breakfast included, while the note under the published prices says breakfast is not included. Which is right for the hotel, and does its breakfast still come with the room?",
+    affects: ["src/lib/dining.js", "src/lib/pricing.js", "base44/agents/concierge.jsonc"],
+  },
+  {
+    id: "seasonDates",
+    question:
+      "The accommodation prices are published in two seasons, winter and summer, exactly as you gave them, and the four season fields in src/lib/pricing.js are left empty on purpose. Asked: from which date does each season run, and does anything change between them? Until you say, the site publishes both tables, says the season is confirmed with the offer, and totals no stay by season.",
+    affects: [
+      "src/lib/pricing.js — SEASON_DATES",
+      "the Accommodation prices section on both house pages",
+      "base44/agents/concierge.jsonc",
+    ],
   },
   {
     id: "activities",

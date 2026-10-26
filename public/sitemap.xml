@@ -288,4 +288,40 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://mountainviewresort.me/sq/hotel-mountain-view"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/hotel-mountain-view"/>
   </url>
+  <url>
+    <loc>https://mountainviewresort.me/mountain-view-resort/restaurant</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mountainviewresort.me/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="cnr" href="https://mountainviewresort.me/me/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mountainviewresort.me/ru/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://mountainviewresort.me/sq/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/mountain-view-resort/restaurant"/>
+  </url>
+  <url>
+    <loc>https://mountainviewresort.me/me/mountain-view-resort/restaurant</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mountainviewresort.me/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="cnr" href="https://mountainviewresort.me/me/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mountainviewresort.me/ru/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://mountainviewresort.me/sq/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/mountain-view-resort/restaurant"/>
+  </url>
+  <url>
+    <loc>https://mountainviewresort.me/ru/mountain-view-resort/restaurant</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mountainviewresort.me/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="cnr" href="https://mountainviewresort.me/me/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mountainviewresort.me/ru/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://mountainviewresort.me/sq/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/mountain-view-resort/restaurant"/>
+  </url>
+  <url>
+    <loc>https://mountainviewresort.me/sq/mountain-view-resort/restaurant</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mountainviewresort.me/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="cnr" href="https://mountainviewresort.me/me/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mountainviewresort.me/ru/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://mountainviewresort.me/sq/mountain-view-resort/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/mountain-view-resort/restaurant"/>
+  </url>
 </urlset>

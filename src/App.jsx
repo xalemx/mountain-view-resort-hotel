@@ -14,6 +14,7 @@ import { LanguageProvider } from '@/lib/LanguageContext';
 import { PropertyProvider } from '@/lib/PropertyContext';
 import Home from '@/pages/Home';
 import Property from '@/pages/Property';
+import RestaurantMenu from '@/pages/RestaurantMenu';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
 import ForgotPassword from '@/pages/ForgotPassword';
@@ -58,6 +59,7 @@ const AuthenticatedApp = () => {
       <Route path="/owner/property" element={<OwnerProperty />} />
       <Route path="/mountain-view-resort" element={<Property propertyId="resort" />} />
       <Route path="/hotel-mountain-view" element={<Property propertyId="inn" />} />
+      <Route path="/mountain-view-resort/restaurant" element={<RestaurantMenu />} />
       <Route path="/:lang" element={<LanguageRoutes />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
@@ -67,6 +69,7 @@ const AuthenticatedApp = () => {
         <Route path="terms" element={<Terms />} />
         <Route path="mountain-view-resort" element={<Property propertyId="resort" />} />
         <Route path="hotel-mountain-view" element={<Property propertyId="inn" />} />
+        <Route path="mountain-view-resort/restaurant" element={<RestaurantMenu />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

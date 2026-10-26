@@ -5,6 +5,8 @@ import PropertyHero from "@/components/site/PropertyHero";
 import PropertySwitch from "@/components/site/PropertySwitch";
 import PropertyGallerySection from "@/components/site/PropertyGallerySection";
 import PropertyRooms from "@/components/site/PropertyRooms";
+import AccommodationPrices from "@/components/site/AccommodationPrices";
+import RestaurantTeaser from "@/components/site/RestaurantTeaser";
 import PropertyFacilities from "@/components/site/PropertyFacilities";
 import PropertyActivities from "@/components/site/PropertyActivities";
 import PropertyLocation from "@/components/site/PropertyLocation";
@@ -38,6 +40,8 @@ export default function Property({ propertyId }) {
         <PropertySwitch propertyId={property.id} />
         <PropertyGallerySection key={property.id} property={property} />
         <PropertyRooms property={property} />
+        <AccommodationPrices property={property} />
+        {property.id === "resort" && <RestaurantTeaser />}
         <PropertyFacilities property={property} />
         {property.id === "resort" && <PropertyActivities property={property} />}
         <PropertyLocation property={property} />
