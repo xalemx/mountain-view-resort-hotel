@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { PROPERTIES } from "@/lib/siteContent";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useLocaleNav } from "@/lib/useLocaleNav";
 
 // The two houses side by side: the one you are reading is filled in, the other
 // one is always one tap away.
 export default function PropertySwitch({ propertyId }) {
   const { t } = useLanguage();
+  const { to } = useLocaleNav();
 
   return (
     <div className="border-b border-border/60 bg-secondary/50">
@@ -27,7 +29,7 @@ export default function PropertySwitch({ propertyId }) {
                 {property.name}
               </span>
             ) : (
-              <Link key={property.id} to={property.path} className={className}>
+              <Link key={property.id} to={to(property.path)} className={className}>
                 {property.name} ↗
               </Link>
             );

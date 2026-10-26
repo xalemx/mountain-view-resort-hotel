@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
-import { LANGUAGE_CODES, localePath, splitLanguage } from "@/lib/localePaths";
+import { localePath, splitLanguage } from "@/lib/localePaths";
 import { SEO_COPY, SEO_IMAGES } from "@/lib/seoCopy";
 import { DEFAULT_LANGUAGE, LANGUAGES } from "@/lib/translations";
 
@@ -70,6 +70,7 @@ export function applyPageSeo({ title, description, image, pathname }) {
   return canonical;
 }
 
+
 // Every public page calls this once, naming itself. The words come from
 // src/lib/seoCopy.js in the language the page is being read in.
 export function usePageSeo(page) {
@@ -83,5 +84,3 @@ export function usePageSeo(page) {
     applyPageSeo({ title: copy.title, description: copy.description, image, pathname });
   }, [copy.title, copy.description, image, pathname]);
 }
-
-export { LANGUAGE_CODES, LANGUAGES };

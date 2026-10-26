@@ -2,9 +2,11 @@ import React from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import { useLanguage } from "@/lib/LanguageContext";
+import { usePageSeo } from "@/lib/seo";
 
 export default function About() {
   const { t } = useLanguage();
+  usePageSeo("about");
 
   return (
     <div id="top" className="min-h-screen bg-background font-body text-foreground">

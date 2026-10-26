@@ -8,6 +8,8 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import ScrollToTop from './components/ScrollToTop';
 import WelcomeGate from '@/components/site/WelcomeGate';
+import LanguageRoutes from '@/components/site/LanguageRoutes';
+import LanguageUrlSync from '@/components/site/LanguageUrlSync';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { PropertyProvider } from '@/lib/PropertyContext';
 import Home from '@/pages/Home';
@@ -23,18 +25,11 @@ import OwnerDashboard from '@/pages/OwnerDashboard';
 // Add page imports here
 
 const AuthenticatedApp = () => {
-  const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
+  const { authError, navigateToLogin } = useAuth();
 
-  // Show loading spinner while checking app public settings or auth
-  if (isLoadingPublicSettings || isLoadingAuth) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
-  // Handle authentication errors
+  // The public pages render immediately, without waiting for the account check:
+  // a guest — and a search engine reading the page — gets the houses, the guide
+  // and the contact details straight away. The owner's dashboard guards itself.
   if (authError) {
     if (authError.type === 'user_not_registered') {
       return <UserNotRegisteredError />;
@@ -48,12 +43,23 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
+      {/* One page, four addresses. The public pages are registered twice: at the
+          root in English (/guide) and under a language prefix (/ru/guide), so
+          each language can be linked, shared and indexed on its own. */}
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/guide" element={<Guide />} />
       <Route path="/mountain-view-resort" element={<Property propertyId="resort" />} />
       <Route path="/hotel-mountain-view" element={<Property propertyId="inn" />} />
+      <Route path="/:lang" element={<LanguageRoutes />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="guide" element={<Guide />} />
+        <Route path="mountain-view-resort" element={<Property propertyId="resort" />} />
+        <Route path="hotel-mountain-view" element={<Property propertyId="inn" />} />
+      </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -78,8 +84,11 @@ function App() {
       <QueryClientProvider client={queryClientInstance}>
         <Router>
           <ScrollToTop />
-          <AuthenticatedApp />
+          <LanguageUrlSync />
+          {/* The language chooser sits above the content on a first visit, never
+              in front of it, so the page is readable without clicking it. */}
           <WelcomeGate />
+          <AuthenticatedApp />
         </Router>
         <Toaster />
       </QueryClientProvider>

@@ -7,9 +7,11 @@ import GuidePlaces from "@/components/site/GuidePlaces";
 import useGuidePlaces from "@/lib/useGuidePlaces";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useAnchorHref } from "@/lib/siteNav";
+import { usePageSeo } from "@/lib/seo";
 
 export default function Guide() {
   const { t } = useLanguage();
+  usePageSeo("guide");
   const anchorHref = useAnchorHref();
   const [tag, setTag] = useState("");
   const { places, status, retry } = useGuidePlaces(tag);

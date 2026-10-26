@@ -6,8 +6,6 @@
 // /guide the English one. Only facts that src/lib/propertyFacts.js records as
 // confirmed or externally sourced are used here.
 
-import { IMAGES } from "@/lib/siteContent";
-
 const FILES = "https://media.base44.com/images/public/6add6db1a4366797590573f0/";
 
 // The same crop the platform uses for shared images: 1200 by 630.
@@ -21,9 +19,6 @@ export const SEO_IMAGES = {
   resort: social("8bda5b916_mountain-view-resort-room.jpg"),
   hotel: social("4bbcd5227_Screenshot_25-10-2026_34857_wwwgooglecouk.jpeg"),
 };
-
-// Kept beside the SEO copy so a page's picture and its words stay together.
-export const PAGE_IMAGES = { ...IMAGES };
 
 export const SEO_COPY = {
   en: {

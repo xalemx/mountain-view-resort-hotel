@@ -12,12 +12,15 @@ import EnquirySection from "@/components/site/EnquirySection";
 import { propertyById } from "@/lib/propertyDetails";
 import { useProperty } from "@/lib/PropertyContext";
 import { useLanguage } from "@/lib/LanguageContext";
+import { usePageSeo } from "@/lib/seo";
 
 // One page per house. Everything on it comes from what the owner has confirmed.
 export default function Property({ propertyId }) {
   const { t } = useLanguage();
   const { setSelectedProperty } = useProperty();
   const property = propertyById(propertyId);
+
+  usePageSeo(property.id === "resort" ? "resort" : "hotel");
 
   // Whoever reads this page is asking about this house, so their request arrives filled in.
   useEffect(() => {

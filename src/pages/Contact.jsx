@@ -5,9 +5,11 @@ import EnquiryForm from "@/components/site/EnquiryForm";
 import AskMountainView from "@/components/site/AskMountainView";
 import { useLanguage } from "@/lib/LanguageContext";
 import { BRAND } from "@/lib/siteContent";
+import { usePageSeo } from "@/lib/seo";
 
 export default function Contact() {
   const { t } = useLanguage();
+  usePageSeo("contact");
 
   const methods = [
     { label: t.contact.whatsapp, value: BRAND.phone, href: BRAND.whatsapp, external: true },

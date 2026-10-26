@@ -10,8 +10,11 @@ import AskMountainView from "@/components/site/AskMountainView";
 import EnquirySection from "@/components/site/EnquirySection";
 import SocialSection from "@/components/site/SocialSection";
 import SiteFooter from "@/components/site/SiteFooter";
+import { usePageSeo } from "@/lib/seo";
 
 export default function Home() {
+  usePageSeo("home");
+
   return (
     <div id="top" className="min-h-screen bg-background font-body text-foreground">
       <SiteHeader />
