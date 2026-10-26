@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# The owner's dashboard and the sign-in pages are not content.
+Disallow: /owner
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
+
+Sitemap: https://mountainviewresort.me/sitemap.xml

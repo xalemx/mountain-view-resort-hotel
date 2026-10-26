@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useLocaleNav } from "@/lib/useLocaleNav";
 import { BRAND, LANDSCAPE_PHOTO_CREDIT, PROPERTIES } from "@/lib/siteContent";
 
 export default function SiteFooter() {
   const { t, openLanguageChooser } = useLanguage();
+  const { to } = useLocaleNav();
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -28,17 +30,17 @@ export default function SiteFooter() {
           <span>{t.footer.rights}</span>
           <div className="flex flex-wrap items-center gap-6">
             {PROPERTIES.map((property) => (
-              <Link key={property.id} to={property.path} className="transition hover:text-primary-foreground">
+              <Link key={property.id} to={to(property.path)} className="transition hover:text-primary-foreground">
                 {property.name}
               </Link>
             ))}
-            <Link to="/guide" className="transition hover:text-primary-foreground">
+            <Link to={to("/guide")} className="transition hover:text-primary-foreground">
               {t.footer.guide}
             </Link>
-            <Link to="/about" className="transition hover:text-primary-foreground">
+            <Link to={to("/about")} className="transition hover:text-primary-foreground">
               {t.footer.about}
             </Link>
-            <Link to="/contact" className="transition hover:text-primary-foreground">
+            <Link to={to("/contact")} className="transition hover:text-primary-foreground">
               {t.footer.contact}
             </Link>
             <button type="button" onClick={openLanguageChooser} className="transition hover:text-primary-foreground">

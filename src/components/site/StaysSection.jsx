@@ -5,10 +5,12 @@ import SectionHeading from "@/components/site/SectionHeading";
 import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useProperty } from "@/lib/PropertyContext";
+import { useLocaleNav } from "@/lib/useLocaleNav";
 import { PROPERTIES } from "@/lib/siteContent";
 
 export default function StaysSection() {
   const { t } = useLanguage();
+  const { to } = useLocaleNav();
   const { setSelectedProperty } = useProperty();
   const [activeId, setActiveId] = useState(PROPERTIES[0].id);
   const active = PROPERTIES.find((property) => property.id === activeId) || PROPERTIES[0];
@@ -74,7 +76,7 @@ export default function StaysSection() {
               >
                 {t.stays.map} ↗
               </a>
-              <Link to={active.path} className="link-quiet">
+              <Link to={to(active.path)} className="link-quiet">
                 {t.stays.details} ↗
               </Link>
             </div>

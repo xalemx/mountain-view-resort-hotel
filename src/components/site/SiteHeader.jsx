@@ -3,11 +3,13 @@ import { BRAND } from "@/lib/siteContent";
 import { LANGUAGES } from "@/lib/translations";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useAnchorHref } from "@/lib/siteNav";
+import { useLocaleNav } from "@/lib/useLocaleNav";
 import MobileNavMenu from "@/components/site/MobileNavMenu";
 import MobileActionBar from "@/components/site/MobileActionBar";
 
 export default function SiteHeader() {
-  const { t, language, chooseLanguage } = useLanguage();
+  const { t, language } = useLanguage();
+  const { switchLanguage } = useLocaleNav();
   const anchorHref = useAnchorHref();
 
   return (
@@ -40,7 +42,7 @@ export default function SiteHeader() {
             <select
               aria-label="Language"
               value={language}
-              onChange={(event) => chooseLanguage(event.target.value)}
+              onChange={(event) => switchLanguage(event.target.value)}
               className="min-h-[44px] rounded-full border border-border bg-transparent px-3 py-2 font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground outline-none transition hover:border-primary hover:text-primary"
             >
               {LANGUAGES.map((entry) => (

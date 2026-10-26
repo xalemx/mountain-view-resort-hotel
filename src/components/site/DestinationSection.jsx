@@ -4,10 +4,12 @@ import { Image } from "@/components/ui/image";
 import SectionHeading from "@/components/site/SectionHeading";
 import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useLocaleNav } from "@/lib/useLocaleNav";
 import { EXPERIENCES, LANDSCAPE_PHOTO_CREDIT } from "@/lib/siteContent";
 
 export default function DestinationSection() {
   const { t } = useLanguage();
+  const { to } = useLocaleNav();
 
   return (
     <section id="discover" className="bg-secondary/50 py-20 md:py-28">
@@ -55,7 +57,7 @@ export default function DestinationSection() {
           {t.discover.trailNote}
         </p>
 
-        <Link to="/guide" className="link-quiet mt-6 inline-flex">
+        <Link to={to("/guide")} className="link-quiet mt-6 inline-flex">
           {t.guide.title} ↗
         </Link>
       </div>

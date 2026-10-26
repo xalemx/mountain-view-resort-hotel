@@ -2,11 +2,131 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mountain View Resort &amp; Hotel · Gusinje, Montenegro</title>
+    <meta
+      name="description"
+      content="Two places to stay in Gusinje, Montenegro: Mountain View Resort on the Vusanje road and Hotel Mountain View in the town centre, at the foot of the Prokletije mountains."
+    />
+
+    <!-- The Mountain View mark: a square icon that stays legible in a browser tab. -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://media.base44.com/images/public/6add6db1a4366797590573f0/4bb806eab_generated_image.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://media.base44.com/images/public/6add6db1a4366797590573f0/4bb806eab_generated_image.png/v1/fit/w_180,h_180/4bb806eab_generated_image.png"
+    />
+    <meta name="theme-color" content="#111111" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="google-site-verification" content="SzKRUrYILYo8IG8ZUZTTvah_ld_Avrm786PoaINzt_Y" />
-    <title>Base44 APP</title>
+
+    <!-- Site-wide defaults. Each page sets its own title, description, canonical
+         and social tags as it loads (src/lib/seo.js), in the language it is read in. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mountain View Resort &amp; Hotel" />
+    <meta property="og:title" content="Mountain View Resort &amp; Hotel · Gusinje, Montenegro" />
+    <meta
+      property="og:description"
+      content="Two places to stay in Gusinje, Montenegro: Mountain View Resort on the Vusanje road and Hotel Mountain View in the town centre, at the foot of the Prokletije mountains."
+    />
+    <meta
+      property="og:image"
+      content="https://media.base44.com/images/public/6add6db1a4366797590573f0/bdc367c1b_mountain-view-valley.jpg/v1/fill/w_1200,h_630/bdc367c1b_mountain-view-valley.jpg"
+    />
+    <meta property="og:url" content="https://mountainviewresort.me/" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mountain View Resort &amp; Hotel · Gusinje, Montenegro" />
+    <meta
+      name="twitter:description"
+      content="Two places to stay in Gusinje, Montenegro: Mountain View Resort on the Vusanje road and Hotel Mountain View in the town centre, at the foot of the Prokletije mountains."
+    />
+    <meta
+      name="twitter:image"
+      content="https://media.base44.com/images/public/6add6db1a4366797590573f0/bdc367c1b_mountain-view-valley.jpg/v1/fill/w_1200,h_630/bdc367c1b_mountain-view-valley.jpg"
+    />
+
+    <!-- The two houses, described only with what the owner or a named public
+         source confirms: what is included, how a stay is paid for, and where the
+         houses stand. No prices, no arrival times, no facilities we cannot stand
+         behind, and no map pin, since neither pin is confirmed yet. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://mountainviewresort.me/#organisation",
+            "name": "Mountain View Resort & Hotel",
+            "url": "https://mountainviewresort.me/",
+            "telephone": "+382 68 749 749",
+            "sameAs": ["https://www.instagram.com/mountain_view_resortt/"],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Gusinje",
+              "addressCountry": "ME"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://mountainviewresort.me/#website",
+            "url": "https://mountainviewresort.me/",
+            "name": "Mountain View Resort & Hotel",
+            "inLanguage": ["en", "cnr", "ru", "sq"],
+            "publisher": { "@id": "https://mountainviewresort.me/#organisation" }
+          },
+          {
+            "@type": "LodgingBusiness",
+            "@id": "https://mountainviewresort.me/mountain-view-resort#lodging",
+            "name": "Mountain View Resort",
+            "url": "https://mountainviewresort.me/mountain-view-resort",
+            "description": "A family resort on the Vusanje road, about 2 km south of the centre of Gusinje in Montenegro, at the foot of the Prokletije mountains. Breakfast is included, parking is free and private, and there is a garden, an open terrace and a fireplace.",
+            "telephone": "+382 68 749 749",
+            "image": [
+              "https://media.base44.com/images/public/6add6db1a4366797590573f0/8bda5b916_mountain-view-resort-room.jpg",
+              "https://media.base44.com/images/public/6add6db1a4366797590573f0/bdc367c1b_mountain-view-valley.jpg"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Gusinje",
+              "addressCountry": "ME"
+            },
+            "amenityFeature": [
+              { "@type": "LocationFeatureSpecification", "name": "Breakfast included", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Free private parking", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Garden with an outdoor fireplace", "value": true }
+            ],
+            "paymentAccepted": "Cash, credit card",
+            "knowsLanguage": ["en", "cnr", "ru", "sq"],
+            "parentOrganization": { "@id": "https://mountainviewresort.me/#organisation" }
+          },
+          {
+            "@type": "LodgingBusiness",
+            "@id": "https://mountainviewresort.me/hotel-mountain-view#lodging",
+            "name": "Hotel Mountain View",
+            "url": "https://mountainviewresort.me/hotel-mountain-view",
+            "description": "A small hotel in the centre of Gusinje in Montenegro, about 300 m from the town square and 2 km from the resort. Breakfast is included and payment for a stay is on arrival, in cash or by card.",
+            "telephone": "+382 68 749 749",
+            "image": ["https://media.base44.com/images/public/6add6db1a4366797590573f0/4bbcd5227_Screenshot_25-10-2026_34857_wwwgooglecouk.jpeg"],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Gusinje",
+              "addressCountry": "ME"
+            },
+            "amenityFeature": [
+              { "@type": "LocationFeatureSpecification", "name": "Breakfast included", "value": true }
+            ],
+            "paymentAccepted": "Cash, credit card",
+            "knowsLanguage": ["en", "cnr", "ru", "sq"],
+            "parentOrganization": { "@id": "https://mountainviewresort.me/#organisation" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

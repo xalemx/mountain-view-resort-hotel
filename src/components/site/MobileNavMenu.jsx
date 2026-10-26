@@ -3,12 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useAnchorHref } from "@/lib/siteNav";
+import { useLocaleNav } from "@/lib/useLocaleNav";
 
 const ITEM_CLASS =
   "flex min-h-[48px] items-center font-body text-[13px] uppercase tracking-[0.22em] text-muted-foreground transition hover:text-primary";
 
 export default function MobileNavMenu() {
   const { t } = useLanguage();
+  const { to } = useLocaleNav();
   const anchorHref = useAnchorHref();
   const { pathname, hash } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +63,7 @@ export default function MobileNavMenu() {
           <div className="section grid divide-y divide-border/60">
             {items.map((item) =>
               item.to ? (
-                <Link key={item.key} to={item.to} className={ITEM_CLASS} onClick={() => setIsOpen(false)}>
+                <Link key={item.key} to={to(item.to)} className={ITEM_CLASS} onClick={() => setIsOpen(false)}>
                   {item.label}
                 </Link>
               ) : (
