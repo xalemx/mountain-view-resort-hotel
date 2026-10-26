@@ -1,4 +1,3 @@
-import { secrets } from 'base44:runtime';
 import { MAX_LENGTHS, cleanEmail, cleanText } from './enquiryFields.ts';
 
 // One place that decides who the host alert goes to, what it says, and whether
@@ -13,32 +12,13 @@ export const PROPERTY_LABELS: Record<string, string> = {
   either: 'Either property',
 };
 
-// The host address is configured as an app secret. Until it is set we keep
-// alerting the app's administrators, and the record notes which address was used.
-function configuredRecipient() {
-  let value: string | undefined;
-  try {
-    value = secrets.get('HOST_NOTIFICATION_EMAIL');
-  } catch {
-    value = undefined;
-  }
-  if (!value) {
-    try {
-      value = Deno.env.get('HOST_NOTIFICATION_EMAIL');
-    } catch {
-      value = undefined;
-    }
-  }
-  return cleanEmail(value);
-}
+// Every enquiry alert goes to the resort's published contact address: the same
+// address the site prints as the way to write to us, so a guest's request always
+// lands in the inbox the house reads.
+export const ENQUIRY_NOTIFICATION_EMAIL = 'mountainviewresortt@gmail.com';
 
-export async function resolveNotificationRecipient(base44: any) {
-  const configured = configuredRecipient();
-  if (configured) return { email: configured, source: 'configured' };
-
-  const admins = await base44.asServiceRole.entities.User.filter({ role: 'admin' });
-  const email = (admins || []).map((admin: any) => cleanEmail(admin.email)).find(Boolean) || '';
-  return { email, source: 'admin_fallback' };
+export async function resolveNotificationRecipient() {
+  return { email: ENQUIRY_NOTIFICATION_EMAIL, source: 'resort_contact' };
 }
 
 function formatDate(value: string) {
@@ -152,7 +132,7 @@ export async function sendHostNotification(base44: any, enquiry: any) {
     };
   }
 
-  const { email: recipient, source } = await resolveNotificationRecipient(base44);
+  const { email: recipient, source } = await resolveNotificationRecipient();
   const nextAttempts = attempts + 1;
 
   if (!recipient) {
