@@ -73,7 +73,7 @@ export const TRANSLATIONS = {
       roomsEyebrow: "Accommodation",
       roomsTitle: "Rooms & beds",
       roomsNote:
-        "Tell us how many of you are coming and we will confirm which room suits you, how the beds are arranged and how many each room takes.",
+        "Tell us how many of you are coming and we will confirm which type suits you and how many guests it takes.",
       roomsCta: "Ask us about the rooms",
       facilitiesTitle: "Facilities",
       locationEyebrow: "Where it is",
@@ -87,7 +87,7 @@ export const TRANSLATIONS = {
       enquiryText:
         "Tell us your dates and how many of you are coming. We reply with availability and a price for this house — no booking fees, no middleman.",
       resort: {
-        rooms: "Bungalows and rooms built for families and groups.",
+        rooms: "Bungalows built for families and groups.",
         location:
           "In Vusanje, in the Gusinje area, on the Vusanjska road — Vusanjska, 84326 Vusanje, Montenegro — about 2 km from the centre of Gusinje, at the entrance to the Prokletije National Park and the Grebaje valley.",
       },
@@ -365,7 +365,7 @@ export const TRANSLATIONS = {
       roomsEyebrow: "Smještaj",
       roomsTitle: "Sobe i kreveti",
       roomsNote:
-        "Recite nam koliko vas dolazi, pa ćemo potvrditi koja soba vam odgovara, kako su raspoređeni kreveti i koliko koja soba prima gostiju.",
+        "Recite nam koliko vas dolazi, pa ćemo potvrditi koji vam tip odgovara i koliko gostiju prima.",
       roomsCta: "Pitajte nas o sobama",
       facilitiesTitle: "Sadržaji",
       locationEyebrow: "Gdje se nalazi",
@@ -379,7 +379,7 @@ export const TRANSLATIONS = {
       enquiryText:
         "Recite nam datume i koliko vas dolazi. Odgovaramo sa slobodnim terminima i cijenom za ovu kuću — bez naknada za rezervaciju i bez posrednika.",
       resort: {
-        rooms: "Bungalovi i sobe napravljeni za porodice i grupe.",
+        rooms: "Bungalovi napravljeni za porodice i grupe.",
         location:
           "U Vusanju, u gusinjskom kraju, na Vusanjskom putu — Vusanjska, 84326 Vusanje, Crna Gora — oko 2 km od centra Gusinja, na ulazu u Nacionalni park Prokletije i dolinu Grebaje.",
       },
@@ -656,7 +656,7 @@ export const TRANSLATIONS = {
       roomsEyebrow: "Размещение",
       roomsTitle: "Номера и кровати",
       roomsNote:
-        "Напишите, сколько вас приезжает: мы подтвердим, какой номер вам подойдёт, как расставлены кровати и на сколько гостей рассчитан каждый номер.",
+        "Напишите, сколько вас приезжает: мы подтвердим, какой вариант вам подойдёт и на сколько гостей он рассчитан.",
       roomsCta: "Спросите нас о номерах",
       facilitiesTitle: "Удобства",
       locationEyebrow: "Где это",
@@ -670,7 +670,7 @@ export const TRANSLATIONS = {
       enquiryText:
         "Напишите даты и сколько вас приезжает. Мы ответим со свободными датами и ценой для этого дома — без комиссий и посредников.",
       resort: {
-        rooms: "Бунгало и номера для семей и групп.",
+        rooms: "Бунгало для семей и групп.",
         location:
           "В Вусане, в районе Гусине, на Вусаньской дороге — Vusanjska, 84326 Vusanje, Черногория — около 2 км от центра Гусине, у входа в национальный парк Проклетие и долину Гребае.",
       },
@@ -947,7 +947,7 @@ export const TRANSLATIONS = {
       roomsEyebrow: "Qëndrimi",
       roomsTitle: "Dhomat dhe shtratet",
       roomsNote:
-        "Na thoni sa persona vini, dhe do t'ju konfirmojmë cila dhomë ju përshtatet, si janë vendosur shtratet dhe sa mysafirë merr secila dhomë.",
+        "Na thoni sa persona vini, dhe do t'ju konfirmojmë cili opcion ju përshtatet dhe sa mysafirë merr.",
       roomsCta: "Pyetni për dhomat",
       facilitiesTitle: "Shërbimet",
       locationEyebrow: "Ku ndodhet",
@@ -961,7 +961,7 @@ export const TRANSLATIONS = {
       enquiryText:
         "Na thoni datat dhe sa persona vini. Përgjigjemi me disponueshmërinë dhe çmimin për këtë shtëpi — pa tarifa rezervimi dhe pa ndërmjetës.",
       resort: {
-        rooms: "Bungalove dhe dhoma të ndërtuara për familje e grupe.",
+        rooms: "Bungalove të ndërtuara për familje e grupe.",
         location:
           "Në Vusanje, në zonën e Gusinjës, në rrugën e Vusanjes — Vusanjska, 84326 Vusanje, Mali i Zi — rreth 2 km nga qendra e Gusinjës, në hyrje të Parkut Kombëtar të Prokletijeve dhe luginës së Grebajës.",
       },
