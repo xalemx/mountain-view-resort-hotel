@@ -3,7 +3,7 @@ import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import PropertyHero from "@/components/site/PropertyHero";
 import PropertySwitch from "@/components/site/PropertySwitch";
-import PropertyGallery from "@/components/site/PropertyGallery";
+import PropertyGallerySection from "@/components/site/PropertyGallerySection";
 import PropertyRooms from "@/components/site/PropertyRooms";
 import PropertyFacilities from "@/components/site/PropertyFacilities";
 import PropertyLocation from "@/components/site/PropertyLocation";
@@ -31,7 +31,7 @@ export default function Property({ propertyId }) {
       <main>
         <PropertyHero property={property} />
         <PropertySwitch propertyId={property.id} />
-        <PropertyGallery key={property.id} propertyId={property.id} />
+        <PropertyGallerySection key={property.id} property={property} />
         <PropertyRooms property={property} />
         <PropertyFacilities property={property} />
         <PropertyLocation property={property} />

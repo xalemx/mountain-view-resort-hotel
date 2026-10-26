@@ -4,7 +4,7 @@ import { Image } from "@/components/ui/image";
 import SectionHeading from "@/components/site/SectionHeading";
 import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
 import { useLanguage } from "@/lib/LanguageContext";
-import { EXPERIENCES } from "@/lib/siteContent";
+import { EXPERIENCES, LANDSCAPE_PHOTO_CREDIT } from "@/lib/siteContent";
 
 export default function DestinationSection() {
   const { t } = useLanguage();
@@ -38,6 +38,8 @@ export default function DestinationSection() {
             );
           })}
         </div>
+
+        <p className="mt-6 text-xs leading-relaxed text-muted-foreground">{LANDSCAPE_PHOTO_CREDIT}</p>
 
         <div className="mt-14 grid gap-8 border-t border-border/70 pt-10 md:grid-cols-3">
           {t.discover.activities.map((activity, index) => (

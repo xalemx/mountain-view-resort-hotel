@@ -98,6 +98,10 @@ export const TRANSLATIONS = {
         "Bungalows, lawns, the riverbank and the animals at the gate — step through the gallery, or pick a photo to jump straight to it.",
       prev: "Previous photo",
       next: "Next photo",
+      open: "View full screen",
+      close: "Close the full screen view",
+      play: "Play the slideshow",
+      pause: "Pause the slideshow",
       captions: {
         grounds: "The resort and its bungalows",
         aerial: "The resort from the air",
@@ -109,6 +113,7 @@ export const TRANSLATIONS = {
         fence: "Between the road and the mountains",
         entrance: "The entrance by night",
         animals: "Our small petting zoo",
+        front: "Hotel Mountain View at night",
       },
     },
     discover: {
@@ -411,6 +416,10 @@ export const TRANSLATIONS = {
         "Bungalovi, travnjaci, obala rijeke i životinje na ulazu — prođite kroz galeriju ili izaberite fotografiju da odmah pređete na nju.",
       prev: "Prethodna fotografija",
       next: "Sljedeća fotografija",
+      open: "Prikaži preko cijelog ekrana",
+      close: "Zatvori prikaz preko cijelog ekrana",
+      play: "Pokreni prikaz",
+      pause: "Pauziraj prikaz",
       captions: {
         grounds: "Resort i njegovi bungalovi",
         aerial: "Resort iz vazduha",
@@ -422,6 +431,7 @@ export const TRANSLATIONS = {
         fence: "Između puta i planina",
         entrance: "Ulaz noću",
         animals: "Naš mali kutak sa životinjama",
+        front: "Hotel Mountain View noću",
       },
     },
     discover: {
@@ -724,6 +734,10 @@ export const TRANSLATIONS = {
         "Бунгало, газоны, берег реки и животные у входа — листайте галерею или выберите фотографию, чтобы перейти к ней.",
       prev: "Предыдущее фото",
       next: "Следующее фото",
+      open: "Открыть на весь экран",
+      close: "Закрыть полноэкранный просмотр",
+      play: "Запустить показ",
+      pause: "Приостановить показ",
       captions: {
         grounds: "Курорт и его бунгало",
         aerial: "Курорт с высоты",
@@ -735,6 +749,7 @@ export const TRANSLATIONS = {
         fence: "Между дорогой и горами",
         entrance: "Вход ночью",
         animals: "Наш небольшой контактный двор",
+        front: "Отель Mountain View ночью",
       },
     },
     discover: {
@@ -1038,6 +1053,10 @@ export const TRANSLATIONS = {
         "Bungalot, lëndinat, bregu i lumit dhe kafshët në hyrje — rrëshqitni galerinë ose zgjidhni një fotografi për të kaluar direkt tek ajo.",
       prev: "Fotografia e mëparshme",
       next: "Fotografia tjetër",
+      open: "Shiko në ekran të plotë",
+      close: "Mbyll ekranin e plotë",
+      play: "Nis rrëshqitjen",
+      pause: "Ndalo rrëshqitjen",
       captions: {
         grounds: "Resorti dhe bungalot e tij",
         aerial: "Resorti nga ajri",
@@ -1049,6 +1068,7 @@ export const TRANSLATIONS = {
         fence: "Mes rrugës dhe maleve",
         entrance: "Hyrja natën",
         animals: "Këndi ynë i vogël i kafshëve",
+        front: "Hotel Mountain View natën",
       },
     },
     discover: {

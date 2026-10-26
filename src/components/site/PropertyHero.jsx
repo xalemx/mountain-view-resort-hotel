@@ -9,7 +9,13 @@ export default function PropertyHero({ property }) {
 
   return (
     <section className="relative isolate overflow-hidden">
-      <Image src={property.image} alt={property.name} className="absolute inset-0 -z-10 h-full w-full" />
+      <Image
+        src={property.image}
+        alt={property.name}
+        loading="eager"
+        fetchpriority="high"
+        className="absolute inset-0 -z-10 h-full w-full"
+      />
       <div className="absolute inset-0 -z-10 bg-primary/70" />
 
       <div className="section flex min-h-[68vh] flex-col justify-end pb-10 pt-24 md:min-h-[74vh]">

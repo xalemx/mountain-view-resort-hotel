@@ -11,6 +11,8 @@ export default function Hero() {
       <Image
         src={IMAGES.hero}
         alt="The Prokletije mountains above the Grebaje valley"
+        loading="eager"
+        fetchpriority="high"
         className="absolute inset-0 -z-10 h-full w-full"
       />
       <div className="absolute inset-0 -z-10 bg-primary/65" />
