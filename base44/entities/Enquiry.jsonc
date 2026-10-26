@@ -78,6 +78,33 @@
         "closed"
       ],
       "default": "new"
+    },
+    "notification_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "sent",
+        "failed"
+      ],
+      "default": "pending",
+      "description": "Host alert state: pending, accepted for delivery (sent) or failed"
+    },
+    "notification_attempts": {
+      "type": "number",
+      "default": 0,
+      "description": "How many times the host alert has been attempted"
+    },
+    "notification_recipient": {
+      "type": "string",
+      "description": "Address the host alert was sent to"
+    },
+    "notification_error": {
+      "type": "string",
+      "description": "Why the last host alert attempt failed"
+    },
+    "notified_at": {
+      "type": "string",
+      "description": "When the mail service accepted the host alert"
     }
   },
   "required": [

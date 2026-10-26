@@ -19,7 +19,33 @@
     },
     "do": [
       {
-        "notify_host": {
+        "email_host": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "notifyNewEnquiry",
+            "args": {
+              "enquiry_id": "${ .trigger.entity_id }"
+            }
+          },
+          "then": "wait_before_retry",
+          "x-base44": {
+            "title": "Email the host",
+            "description": "Stay dates, guests, how to reply"
+          }
+        }
+      },
+      {
+        "wait_before_retry": {
+          "wait": "PT5M",
+          "then": "retry_email_host",
+          "x-base44": {
+            "title": "Wait five minutes",
+            "description": "Before the retry"
+          }
+        }
+      },
+      {
+        "retry_email_host": {
           "call": "invoke_backend_function",
           "with": {
             "function_name": "notifyNewEnquiry",
@@ -29,8 +55,8 @@
           },
           "then": "end",
           "x-base44": {
-            "title": "Email the host",
-            "description": "Stay dates, guests, contact"
+            "title": "Retry the email once",
+            "description": "Skipped when already sent"
           }
         }
       }

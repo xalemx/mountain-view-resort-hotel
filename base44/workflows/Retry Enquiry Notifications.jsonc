@@ -1,0 +1,44 @@
+{
+  "name": "Retry Enquiry Notifications",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "retry_enquiry_notifications",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "retry_notifications": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "retryEnquiryNotifications"
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Resend failed alerts",
+            "description": "Three attempts each"
+          }
+        }
+      }
+    ]
+  },
+  "description": "Every 15 minutes, sends the host alert again for enquiries that failed, at most three attempts each",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "*/15 * * * *",
+      "one_time_date": null,
+      "timezone": "Europe/London",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  }
+}
