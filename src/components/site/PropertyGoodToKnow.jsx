@@ -2,16 +2,19 @@ import React from "react";
 import { Clock, Coffee, CreditCard, Utensils } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { DINING } from "@/lib/dining";
+import { RESORT_HOUSE_RULES } from "@/lib/houseRules";
 
-// Only what the owner has confirmed: dining and breakfast at the resort, and the
-// way a stay is paid for. Arrival times are not published, because we do not have
-// them yet.
+// Only what the owner has confirmed: dining and breakfast at the resort, the way
+// a stay is paid for, and the resort's times from its listed house rules. The
+// hotel's times are still confirmed with the offer.
 export default function PropertyGoodToKnow({ property }) {
   const { t, language } = useLanguage();
   const dining = DINING[language] || DINING.en;
+  const rules = RESORT_HOUSE_RULES[language] || RESORT_HOUSE_RULES.en;
+  const isResort = property?.id === "resort";
 
   const items = [
-    property?.id === "resort"
+    isResort
       ? {
           key: "dining",
           Icon: Utensils,
@@ -19,7 +22,7 @@ export default function PropertyGoodToKnow({ property }) {
         }
       : { key: "breakfast", Icon: Coffee, lines: [t.property.breakfast] },
     { key: "payment", Icon: CreditCard, lines: [t.property.payment] },
-    { key: "times", Icon: Clock, lines: [t.property.times] },
+    { key: "times", Icon: Clock, lines: [isResort ? rules.times : t.property.times] },
   ];
 
   return (

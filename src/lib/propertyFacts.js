@@ -187,8 +187,19 @@ export const PROPERTY_FACTS = {
       },
       payment: { status: FACT_STATUS.OWNER, text: "Payment for your stay is on arrival, in cash or by card." },
       arrivalTimes: {
-        status: FACT_STATUS.UNCONFIRMED,
-        text: "Not published: the site says arrival and departure times are confirmed with the offer.",
+        status: FACT_STATUS.OWNER,
+        text: "Check-in 12:00–22:00 and check-out 08:00–11:00, as the house is listed. The site still says the times for a stay are confirmed with the offer.",
+      },
+      houseRules: {
+        status: FACT_STATUS.OWNER,
+        source: "Owner, 26 October 2026, from the house rules the property is listed with.",
+        text: "Children of all ages are welcome; cots and extra beds are not available; pets are not allowed; parties and events are not allowed, including hen, stag and similar parties; no minimum check-in age is listed; non-smoking accommodation with a designated smoking area.",
+        shownIn: [
+          "src/lib/houseRules.js",
+          "src/components/site/PropertyRules.jsx",
+          "translations: property.rulesTitle (en, me, ru, sq)",
+          "base44/agents/concierge.jsonc",
+        ],
       },
     },
   },
@@ -381,7 +392,7 @@ export const FACTS_TO_CONFIRM = [
   {
     id: "rooms",
     question:
-      "Room types, beds and sizes are published. Still open: how many guests each bungalow type takes, and the arrival and departure times.",
+      "Room types, beds and sizes are published, and the arrival and departure times are published with the house rules (owner, 26 October 2026). Still open: how many guests each bungalow type takes.",
     affects: ["translations: property.roomsNote, property.times", "src/lib/roomTypes.js", "base44/agents/concierge.jsonc"],
   },
   {
@@ -416,6 +427,17 @@ export const FACTS_TO_CONFIRM = [
       "src/components/site/PropertyActivities.jsx",
       "base44/agents/concierge.jsonc",
       "base44/agents/local_guide.jsonc",
+    ],
+  },
+  {
+    id: "directBookingRules",
+    question:
+      "The listed house rules are published (check-in 12:00–22:00, check-out 08:00–11:00, children of all ages welcome, no cots or extra beds, no pets, no parties or events including hen and stag parties, no minimum check-in age listed, non-smoking with a designated smoking area). Asked on 26 October 2026: do these rules also apply to direct bookings, or are they the listing's conditions only? Until the owner says, the site keeps them as the rules the house is listed with and confirms the times and the conditions for a stay with the offer.",
+    affects: [
+      "src/lib/houseRules.js",
+      "src/components/site/PropertyRules.jsx",
+      "translations: property.times (en, me, ru, sq)",
+      "base44/agents/concierge.jsonc",
     ],
   },
 ];

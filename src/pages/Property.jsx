@@ -8,6 +8,7 @@ import PropertyRooms from "@/components/site/PropertyRooms";
 import PropertyFacilities from "@/components/site/PropertyFacilities";
 import PropertyActivities from "@/components/site/PropertyActivities";
 import PropertyLocation from "@/components/site/PropertyLocation";
+import PropertyRules from "@/components/site/PropertyRules";
 import PropertyGoodToKnow from "@/components/site/PropertyGoodToKnow";
 import EnquirySection from "@/components/site/EnquirySection";
 import { propertyById } from "@/lib/propertyDetails";
@@ -40,6 +41,7 @@ export default function Property({ propertyId }) {
         <PropertyFacilities property={property} />
         {property.id === "resort" && <PropertyActivities property={property} />}
         <PropertyLocation property={property} />
+        {property.id === "resort" && <PropertyRules property={property} />}
         <PropertyGoodToKnow property={property} />
         <EnquirySection
           id="property-offer"
