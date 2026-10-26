@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import MenuCategories from "@/components/site/MenuCategories";
-import MenuPdf from "@/components/site/MenuPdf";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
 import { usePageSeo } from "@/lib/seo";
 import { propertyById } from "@/lib/propertyDetails";
-import { ORIGINAL_MENU_URL, RESTAURANT_COPY } from "@/lib/menu";
+import { EMENU_URL, RESTAURANT_COPY } from "@/lib/menu";
 
 // The restaurant and its menu, under Mountain View Resort and nowhere else.
 export default function RestaurantMenu() {
@@ -50,8 +49,8 @@ export default function RestaurantMenu() {
               <Link to={to("/mountain-view-resort")} className="btn-cream">
                 {copy.backToResort} ↗
               </Link>
-              <a href={ORIGINAL_MENU_URL} target="_blank" rel="noopener" className="btn-outline-light">
-                {copy.originalMenu} ↗
+              <a href={EMENU_URL} target="_blank" rel="noopener" className="btn-outline-light">
+                {copy.emenuLink} ↗
               </a>
             </div>
           </div>
@@ -66,8 +65,6 @@ export default function RestaurantMenu() {
             </div>
           </div>
         </section>
-
-        <MenuPdf />
       </main>
 
       <SiteFooter />
