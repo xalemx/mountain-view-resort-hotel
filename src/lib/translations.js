@@ -58,7 +58,7 @@ export const TRANSLATIONS = {
         place: "Vusanje · Gusinje area",
         description:
           "Our larger property in Vusanje: a resort of bungalows and rooms built for families and groups. A restaurant and bar serve local, Italian and Mediterranean dishes, with vegetarian, vegan and halal options; outside there is a garden, an open terrace and a fireplace, and peaks in view from almost every window.",
-        features: ["Restaurant & bar", "Breakfast included", "Family bungalows", "Free parking", "Airport shuttle", "Terrace & fireplace"],
+        features: ["Restaurant & bar", "Breakfast included", "Family bungalows", "Free parking", "Airport shuttle (extra charge)", "Terrace & fireplace"],
       },
       inn: {
         place: "Gusinje · town centre",
@@ -350,7 +350,7 @@ export const TRANSLATIONS = {
         place: "Vusanje · gusinjski kraj",
         description:
           "Naša veća kuća u Vusanju: resort sa bungalovima i sobama za porodice i grupe. Restoran i bar služe domaća, italijanska i mediteranska jela, uz vegetarijanske, veganske i halal opcije; napolju su bašta, otvorena terasa i ognjište, a vrhovi se vide iz gotovo svakog prozora.",
-        features: ["Restoran i bar", "Doručak uključen", "Porodični bungalovi", "Besplatan parking", "Transfer sa aerodroma", "Terasa i ognjište"],
+        features: ["Restoran i bar", "Doručak uključen", "Porodični bungalovi", "Besplatan parking", "Transfer sa aerodroma (doplata)", "Terasa i ognjište"],
       },
       inn: {
         place: "Gusinje · centar",
@@ -641,7 +641,7 @@ export const TRANSLATIONS = {
         place: "Вусане · район Гусине",
         description:
           "Наш большой дом в Вусане: курорт с бунгало и номерами для семей и групп. Ресторан и бар предлагают местные, итальянские и средиземноморские блюда, в том числе вегетарианские, веганские и халяльные; на улице сад, открытая терраса и камин, а вершины видны почти из каждого окна.",
-        features: ["Ресторан и бар", "Завтрак включён", "Семейные бунгало", "Бесплатная парковка", "Трансфер из аэропорта", "Терраса и камин"],
+        features: ["Ресторан и бар", "Завтрак включён", "Семейные бунгало", "Бесплатная парковка", "Трансфер из аэропорта (доп. плата)", "Терраса и камин"],
       },
       inn: {
         place: "Гусине · центр",
@@ -932,7 +932,7 @@ export const TRANSLATIONS = {
         place: "Vusanje · zona e Gusinjës",
         description:
           "Shtëpia jonë më e madhe në Vusanje: resort me bungalove dhe dhoma për familje e grupe. Restoranti dhe bari ofrojnë gatime vendase, italiane dhe mesdhetare, me opsione vegjetariane, vegane dhe halal; jashtë ka kopsht, tarracë të hapur dhe vatër, ndërsa majat shihen nga pothuajse çdo dritare.",
-        features: ["Restorant dhe bar", "Mëngjes i përfshirë", "Bungalove familjare", "Parkim falas", "Transfert nga aeroporti", "Tarracë dhe vatër"],
+        features: ["Restorant dhe bar", "Mëngjes i përfshirë", "Bungalove familjare", "Parkim falas", "Transfert nga aeroporti (me pagesë shtesë)", "Tarracë dhe vatër"],
       },
       inn: {
         place: "Gusinje · qendra",

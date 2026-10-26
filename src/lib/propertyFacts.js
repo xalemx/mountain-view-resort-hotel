@@ -76,9 +76,13 @@ export const PROPERTY_FACTS = {
       {
         key: "restaurant",
         label: "Restaurant & bar",
-        status: FACT_STATUS.UNCONFIRMED,
-        detail: "Local, Italian and Mediterranean dishes, with vegetarian, vegan and halal options.",
-        shownIn: ["translations: stays.resort.features[0], stays.resort.description (en, me, ru, sq)"],
+        status: FACT_STATUS.OWNER,
+        detail:
+          "A restaurant, a bar and a coffee shop on site (owner, 26 October 2026). The dishes and menus are not published: local, Italian and Mediterranean dishes with vegetarian, vegan and halal options are still to be confirmed.",
+        shownIn: [
+          "translations: stays.resort.features[0], stays.resort.description (en, me, ru, sq)",
+          "src/lib/facilities.js — the resort's facilities list",
+        ],
       },
       {
         key: "breakfast",
@@ -89,36 +93,52 @@ export const PROPERTY_FACTS = {
       {
         key: "bungalows",
         label: "Family bungalows",
-        status: FACT_STATUS.UNCONFIRMED,
-        shownIn: ["translations: stays.resort.features[2], stays.resort.description (en, me, ru, sq)"],
+        status: FACT_STATUS.OWNER,
+        source: "Owner, 26 October 2026: a resort of bungalows in three types.",
+        shownIn: [
+          "translations: stays.resort.features[2], stays.resort.description (en, me, ru, sq)",
+          "src/lib/roomTypes.js",
+        ],
       },
       {
         key: "parking",
         label: "Free parking",
-        status: FACT_STATUS.EXTERNAL,
-        source: "Booking.com lists free private parking at the resort.",
-        shownIn: ["translations: stays.resort.features[3]", "base44/agents/concierge.jsonc"],
+        status: FACT_STATUS.OWNER,
+        source: "Owner, 26 October 2026: free private parking on site, no reservation needed.",
+        shownIn: [
+          "translations: stays.resort.features[3]",
+          "src/lib/facilities.js",
+          "base44/agents/concierge.jsonc",
+        ],
       },
       {
         key: "shuttle",
-        label: "Airport shuttle",
-        status: FACT_STATUS.UNCONFIRMED,
-        note: "The strongest transfer claim on the site. Everything else promises a pick-up from Plav on request, or help arranging a transfer, rather than a scheduled airport shuttle.",
-        shownIn: ["translations: stays.resort.features[4]", "base44/agents/concierge.jsonc"],
+        label: "Airport shuttle (extra charge)",
+        status: FACT_STATUS.OWNER,
+        note: "Owner, 26 October 2026: an airport shuttle and other shuttle services are available at an additional charge, and no price is published. The chip and the facilities list both say the charge applies.",
+        shownIn: [
+          "translations: stays.resort.features[4]",
+          "src/lib/facilities.js",
+          "base44/agents/concierge.jsonc",
+        ],
       },
       {
         key: "terrace",
         label: "Terrace & fireplace",
-        status: FACT_STATUS.EXTERNAL,
-        source: "Public listings describe a garden, an outdoor fireplace and a picnic area.",
-        shownIn: ["translations: stays.resort.features[5], stays.resort.description (en, me, ru, sq)"],
+        status: FACT_STATUS.OWNER,
+        source:
+          "Owner, 26 October 2026: a garden, terrace, sun terrace and outdoor furniture; a picnic area, barbecue facilities and an outdoor fireplace; a children's playground and outdoor play equipment.",
+        shownIn: [
+          "translations: stays.resort.features[5], stays.resort.description (en, me, ru, sq)",
+          "src/lib/facilities.js",
+        ],
       },
       {
         key: "rooms",
-        label: "Bungalows and rooms for families and groups",
-        status: FACT_STATUS.UNCONFIRMED,
-        note: "Room types, bed arrangements and how many each room takes are still unpublished, but the pages say they will be confirmed in the offer.",
-        shownIn: ["translations: property.roomsNote, property.resort.rooms"],
+        label: "Bungalow types",
+        status: FACT_STATUS.OWNER,
+        note: "Owner, 26 October 2026: Bungalow (6 single beds, about 35 m²), Family Bungalow (3 single beds and 1 double bed, about 35 m²) and Standard Bungalow (2 single beds and 1 double bed, about 25 m²), each an entire bungalow with a balcony, a terrace, mountain views, air conditioning, a private bathroom and free Wi-Fi. Maximum occupancy is not confirmed, and neither the number of bedrooms nor how many bungalows there are is published.",
+        shownIn: ["src/lib/roomTypes.js", "translations: property.roomsNote, property.resort.rooms"],
       },
     ],
 
@@ -281,14 +301,15 @@ export const FACTS_TO_CONFIRM = [
   },
   {
     id: "shuttle",
-    question: "Is there an airport shuttle, and is it included in the price? If not, what should the transfer promise say?",
-    affects: ["translations: stays.resort.features[4]", "base44/agents/concierge.jsonc"],
+    question:
+      "Answered on 26 October 2026: an airport shuttle and other shuttle services run at an additional charge, and the feature chip now says so. Still open: should a price be published, or is it always quoted with the offer?",
+    affects: ["translations: stays.resort.features[4]", "src/lib/facilities.js", "base44/agents/concierge.jsonc"],
   },
   {
     id: "restaurant",
     question:
-      "Do the restaurant and bar serve local, Italian and Mediterranean dishes, and are the vegetarian, vegan and halal options confirmed?",
-    affects: ["translations: stays.resort.description, stays.resort.features[0]"],
+      "The restaurant, the bar and the coffee shop are confirmed (26 October 2026). Still open: do they serve local, Italian and Mediterranean dishes, and are the vegetarian, vegan and halal options right?",
+    affects: ["translations: stays.resort.description, stays.resort.features[0]", "src/lib/facilities.js"],
   },
   {
     id: "kitchen",
@@ -297,8 +318,9 @@ export const FACTS_TO_CONFIRM = [
   },
   {
     id: "parking",
-    question: "Is parking free at both houses? The resort is listed as free private parking; nothing is claimed for the hotel.",
-    affects: ["translations: stays.resort.features[3]", "base44/agents/concierge.jsonc"],
+    question:
+      "Answered for the resort on 26 October 2026: free private parking on site, no reservation needed. Still open: nothing is claimed for the hotel.",
+    affects: ["translations: stays.resort.features[3]", "src/lib/facilities.js", "base44/agents/concierge.jsonc"],
   },
   {
     id: "cash",
@@ -313,12 +335,25 @@ export const FACTS_TO_CONFIRM = [
   },
   {
     id: "rooms",
-    question: "Room types, bed arrangements, how many each room takes, and the arrival and departure times.",
-    affects: ["translations: property.roomsNote, property.times", "base44/agents/concierge.jsonc"],
+    question:
+      "Room types, beds and sizes are published. Still open: how many guests each bungalow type takes, and the arrival and departure times.",
+    affects: ["translations: property.roomsNote, property.times", "src/lib/roomTypes.js", "base44/agents/concierge.jsonc"],
   },
   {
     id: "roomsClaim",
     question: '"Peaks in view from almost every window" is published for the resort: keep it or soften it?',
     affects: ["translations: stays.resort.description (en, me, ru, sq)"],
+  },
+  {
+    id: "charging",
+    question:
+      "What does charging an electric vehicle cost? The facilities list says the price is confirmed with the offer, and no price is published.",
+    affects: ["src/lib/facilities.js", "base44/agents/concierge.jsonc"],
+  },
+  {
+    id: "access",
+    question:
+      "The property is listed with accessible facilities and wheelchair access. Which bungalow types suit a wheelchair or a guest with limited mobility, and what should the site say about them?",
+    affects: ["src/lib/facilities.js", "base44/agents/concierge.jsonc"],
   },
 ];
