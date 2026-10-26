@@ -149,6 +149,37 @@ export const PROPERTY_FACTS = {
       },
     ],
 
+    activities: [
+      {
+        key: "activitiesIncluded",
+        label: "Cycling and children's playground",
+        status: FACT_STATUS.OWNER,
+        note: "Owner, 26 October 2026: come with the stay, no extra charge.",
+        shownIn: ["src/lib/activities.js", "src/components/site/PropertyActivities.jsx"],
+      },
+      {
+        key: "activitiesArranged",
+        label: "Bicycle rental, bike tours, walking tours, hiking activities and evening entertainment",
+        status: FACT_STATUS.OWNER,
+        note: "Owner, 26 October 2026: on site, at an additional charge, available to enquire about and subject to arrangements. No price is published.",
+        shownIn: ["src/lib/activities.js", "base44/agents/concierge.jsonc", "base44/agents/local_guide.jsonc"],
+      },
+      {
+        key: "activitiesOffSite",
+        label: "Horse riding and fishing",
+        status: FACT_STATUS.OWNER,
+        note: "Owner, 26 October 2026: off-site activities at an additional charge, arranged on request.",
+        shownIn: ["src/lib/activities.js", "base44/agents/concierge.jsonc"],
+      },
+      {
+        key: "walkingFree",
+        label: "Walking in the area on your own",
+        status: FACT_STATUS.OWNER,
+        note: "Owner, 26 October 2026: no property charge. The waymarked trails are free to walk, and only guided walks and the arranged activities carry one.",
+        shownIn: ["src/lib/activities.js", "base44/agents/local_guide.jsonc"],
+      },
+    ],
+
     policies: {
       breakfast: {
         status: FACT_STATUS.OWNER,
@@ -375,5 +406,16 @@ export const FACTS_TO_CONFIRM = [
     question:
       "Settled on 26 October 2026: no breakfast price is published. The rates that showed optional paid breakfast are Booking's, in its own converted currency, and are not our direct-booking price.",
     affects: ["src/lib/dining.js", "base44/agents/concierge.jsonc"],
+  },
+  {
+    id: "activities",
+    question:
+      "Answered on 26 October 2026: cycling and the children's playground come with the stay; bicycle rental, bike tours, walking tours, hiking activities and evening entertainment are on site at an additional charge and arranged on request; horse riding and fishing are off site at an additional charge. Walking the trails on your own carries no property charge. Still open: is any of it priced, or is every paid activity quoted with the offer?",
+    affects: [
+      "src/lib/activities.js",
+      "src/components/site/PropertyActivities.jsx",
+      "base44/agents/concierge.jsonc",
+      "base44/agents/local_guide.jsonc",
+    ],
   },
 ];
