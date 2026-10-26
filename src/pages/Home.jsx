@@ -3,6 +3,7 @@ import SiteHeader from "@/components/site/SiteHeader";
 import Hero from "@/components/site/Hero";
 import IntroSection from "@/components/site/IntroSection";
 import StaysSection from "@/components/site/StaysSection";
+import GallerySection from "@/components/site/GallerySection";
 import DestinationSection from "@/components/site/DestinationSection";
 import PlanningSection from "@/components/site/PlanningSection";
 import BookingAssistant from "@/components/site/BookingAssistant";
@@ -25,6 +26,7 @@ export default function Home() {
         <Hero />
         <IntroSection />
         <StaysSection />
+        <GallerySection />
         <DestinationSection />
         <PlanningSection />
         <BookingAssistant />

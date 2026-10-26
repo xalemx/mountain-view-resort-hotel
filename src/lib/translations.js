@@ -50,6 +50,26 @@ export const TRANSLATIONS = {
         features: ["Central location", "Shared kitchen", "Cycle storage", "Trail advice", "Breakfast included"],
       },
     },
+    gallery: {
+      eyebrow: "The resort in pictures",
+      title: "Look around before you arrive",
+      aside:
+        "Bungalows, lawns, the riverbank and the animals at the gate — step through the gallery, or pick a photo to jump straight to it.",
+      prev: "Previous photo",
+      next: "Next photo",
+      captions: {
+        grounds: "The resort and its bungalows",
+        aerial: "The resort from the air",
+        valley: "The Gusinje valley and the river",
+        walkway: "The stone walkway through the grounds",
+        river: "Bungalows at the water",
+        main: "The lawn, terrace and main building",
+        lawns: "Lawns and green roofs from above",
+        fence: "Between the road and the mountains",
+        entrance: "The entrance by night",
+        animals: "Our small petting zoo",
+      },
+    },
     discover: {
       eyebrow: "Beyond the door",
       title: "Gusinje & Prokletije",
@@ -279,6 +299,26 @@ export const TRANSLATIONS = {
         description:
           "Mali, opušten hotel u srcu Gusinja. Udobne sobe, zajednička kuhinja na korišćenje i savjet o stazama prije polaska — izbor planinara, biciklista i onih koji putuju polako.",
         features: ["Centar grada", "Zajednička kuhinja", "Ostava za bicikle", "Savjeti o stazama", "Doručak uključen"],
+      },
+    },
+    gallery: {
+      eyebrow: "Resort u slikama",
+      title: "Pogledajte prije nego što dođete",
+      aside:
+        "Bungalovi, travnjaci, obala rijeke i životinje na ulazu — prođite kroz galeriju ili izaberite fotografiju da odmah pređete na nju.",
+      prev: "Prethodna fotografija",
+      next: "Sljedeća fotografija",
+      captions: {
+        grounds: "Resort i njegovi bungalovi",
+        aerial: "Resort iz vazduha",
+        valley: "Gusinjska dolina i rijeka",
+        walkway: "Kamena staza kroz dvorište",
+        river: "Bungalovi uz vodu",
+        main: "Travnjak, terasa i glavna zgrada",
+        lawns: "Travnjaci i zeleni krovovi iz vazduha",
+        fence: "Između puta i planina",
+        entrance: "Ulaz noću",
+        animals: "Naš mali kutak sa životinjama",
       },
     },
     discover: {
@@ -512,6 +552,26 @@ export const TRANSLATIONS = {
         features: ["Центр города", "Общая кухня", "Место для велосипедов", "Советы по тропам", "Завтрак включён"],
       },
     },
+    gallery: {
+      eyebrow: "Курорт в фотографиях",
+      title: "Взгляните перед приездом",
+      aside:
+        "Бунгало, газоны, берег реки и животные у входа — листайте галерею или выберите фотографию, чтобы перейти к ней.",
+      prev: "Предыдущее фото",
+      next: "Следующее фото",
+      captions: {
+        grounds: "Курорт и его бунгало",
+        aerial: "Курорт с высоты",
+        valley: "Гусинская долина и река",
+        walkway: "Каменная дорожка по территории",
+        river: "Бунгало у воды",
+        main: "Газон, терраса и главное здание",
+        lawns: "Газоны и зелёные крыши с высоты",
+        fence: "Между дорогой и горами",
+        entrance: "Вход ночью",
+        animals: "Наш небольшой контактный двор",
+      },
+    },
     discover: {
       eyebrow: "За порогом",
       title: "Гусине и Проклетие",
@@ -741,6 +801,26 @@ export const TRANSLATIONS = {
         description:
           "Një hotel i vogël dhe i thjeshtë në zemër të Gusinjës. Dhoma komode, kuzhinë e përbashkët në dispozicionin tuaj dhe këshilla për shtigjet përpara se të niseni — zgjedhja e ecësve, çiklistëve dhe udhëtarëve të qetë.",
         features: ["Në qendër", "Kuzhinë e përbashkët", "Depo për biçikleta", "Këshilla për shtigjet", "Mëngjes i përfshirë"],
+      },
+    },
+    gallery: {
+      eyebrow: "Resorti në fotografi",
+      title: "Shikoni përpara se të vini",
+      aside:
+        "Bungalot, lëndinat, bregu i lumit dhe kafshët në hyrje — rrëshqitni galerinë ose zgjidhni një fotografi për të kaluar direkt tek ajo.",
+      prev: "Fotografia e mëparshme",
+      next: "Fotografia tjetër",
+      captions: {
+        grounds: "Resorti dhe bungalot e tij",
+        aerial: "Resorti nga ajri",
+        valley: "Lugina e Gusinjës dhe lumi",
+        walkway: "Shtegu i gurët nëpër oborr",
+        river: "Bungalot buzë ujit",
+        main: "Lëndina, tarraca dhe ndërtesa kryesore",
+        lawns: "Lëndinat dhe çatitë e gjelbra nga lart",
+        fence: "Mes rrugës dhe maleve",
+        entrance: "Hyrja natën",
+        animals: "Këndi ynë i vogël i kafshëve",
       },
     },
     discover: {
