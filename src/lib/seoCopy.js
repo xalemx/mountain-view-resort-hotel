@@ -16,6 +16,7 @@ export const SEO_IMAGES = {
   about: social("87bdef98b_mountain-view-prokletije.jpg"),
   guide: social("5b6f78991_mountain-view-gusinje-town.jpg"),
   contact: social("bdc367c1b_mountain-view-valley.jpg"),
+  privacy: social("5b6f78991_mountain-view-gusinje-town.jpg"),
   resort: social("8bda5b916_mountain-view-resort-room.jpg"),
   hotel: social("4bbcd5227_Screenshot_25-10-2026_34857_wwwgooglecouk.jpeg"),
 };
@@ -41,6 +42,11 @@ export const SEO_COPY = {
       title: "Contact & booking enquiry · Mountain View, Gusinje",
       description:
         "Send us your dates and guests, ask a question, or message the host on WhatsApp. Breakfast is included, payment is on arrival, and we answer in four languages.",
+    },
+    privacy: {
+      title: "Privacy · Your enquiry and the automated assistant",
+      description:
+        "What we collect when you send an enquiry or write to the automated assistant, who can read it, how long we keep it, and how to ask us to correct or delete it.",
     },
     resort: {
       title: "Mountain View Resort · Gusinje, Montenegro",
@@ -75,6 +81,11 @@ export const SEO_COPY = {
       description:
         "Pošaljite datume i broj gostiju, postavite pitanje ili pišite domaćinu na WhatsApp. Doručak je uključen, plaćanje je po dolasku, a odgovaramo na četiri jezika.",
     },
+    privacy: {
+      title: "Privatnost · Vaš zahtjev i automatski asistent",
+      description:
+        "Šta prikupljamo kada pošaljete zahtjev ili pišete automatskom asistentu, ko to može čitati, koliko dugo čuvamo i kako zatražiti ispravku ili brisanje.",
+    },
     resort: {
       title: "Mountain View Resort · Gusinje, Crna Gora",
       description:
@@ -108,6 +119,11 @@ export const SEO_COPY = {
       description:
         "Напишите даты и число гостей, задайте вопрос или напишите хозяину в WhatsApp. Завтрак включён, оплата по приезде, отвечаем на четырёх языках.",
     },
+    privacy: {
+      title: "Приватность · Ваш запрос и автоматический помощник",
+      description:
+        "Что мы собираем, когда вы отправляете запрос или пишете автоматическому помощнику, кто это может прочитать, сколько мы храним и как попросить исправить или удалить данные.",
+    },
     resort: {
       title: "Mountain View Resort · Гусине, Черногория",
       description:
@@ -140,6 +156,11 @@ export const SEO_COPY = {
       title: "Kontakt dhe kërkesë për qëndrim · Mountain View",
       description:
         "Dërgoni datat dhe numrin e mysafirëve, bëni një pyetje ose shkruajini pronarit në WhatsApp. Mëngjesi përfshihet, pagesa bëhet në mbërritje dhe përgjigjemi në katër gjuhë.",
+    },
+    privacy: {
+      title: "Privatësia · Kërkesa juaj dhe asistenti automatik",
+      description:
+        "Çfarë mbledhim kur dërgoni një kërkesë ose shkruani asistentit automatik, kush mund t'i lexojë, sa kohë i ruajmë dhe si të kërkoni korrigjim ose fshirje.",
     },
     resort: {
       title: "Mountain View Resort · Gusinje, Mali i Zi",

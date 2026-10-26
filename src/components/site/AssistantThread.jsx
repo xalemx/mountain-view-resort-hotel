@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Loader2, RotateCcw, Send } from "lucide-react";
 import AssistantMessage from "@/components/site/AssistantMessage";
+import { useLocaleNav } from "@/lib/useLocaleNav";
 
 // The conversation itself: what has been said, what the assistant is doing, and
 // — whenever an answer fails or never comes — a plain way to ask again.
 export default function AssistantThread({ topic, thread, copy, onSend, onRetry, onClear }) {
   const [input, setInput] = useState("");
+  const { to } = useLocaleNav();
   const scrollRef = useRef(null);
   const messages = thread.messages || [];
   const pending = thread.pending;
@@ -91,6 +94,9 @@ export default function AssistantThread({ topic, thread, copy, onSend, onRetry, 
           {copy.clear}
         </button>
         <span className="font-body text-[11px] tracking-[0.08em] text-muted-foreground">{copy.privacy}</span>
+        <Link to={to("/privacy")} className="link-quiet">
+          {copy.privacyLink}
+        </Link>
       </div>
     </>
   );

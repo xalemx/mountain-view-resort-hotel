@@ -21,6 +21,7 @@ import ResetPassword from '@/pages/ResetPassword';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Guide from '@/pages/Guide';
+import Privacy from '@/pages/Privacy';
 import OwnerDashboard from '@/pages/OwnerDashboard';
 // Add page imports here
 
@@ -50,6 +51,7 @@ const AuthenticatedApp = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/guide" element={<Guide />} />
+      <Route path="/privacy" element={<Privacy />} />
       <Route path="/mountain-view-resort" element={<Property propertyId="resort" />} />
       <Route path="/hotel-mountain-view" element={<Property propertyId="inn" />} />
       <Route path="/:lang" element={<LanguageRoutes />}>
@@ -57,6 +59,7 @@ const AuthenticatedApp = () => {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="guide" element={<Guide />} />
+        <Route path="privacy" element={<Privacy />} />
         <Route path="mountain-view-resort" element={<Property propertyId="resort" />} />
         <Route path="hotel-mountain-view" element={<Property propertyId="inn" />} />
       </Route>

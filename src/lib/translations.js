@@ -1,4 +1,6 @@
 import { ASK_COPY } from "@/lib/assistantTranslations";
+import { PRIVACY_COPY } from "@/lib/privacyCopy";
+import { HOSTS_COPY, MAP_COPY } from "@/lib/trustCopy";
 import { GUIDE_COPY } from "@/lib/guideTranslations";
 
 export const DEFAULT_LANGUAGE = "en";
@@ -281,6 +283,9 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Or send a request",
     },
+    hosts: HOSTS_COPY.en,
+    map: MAP_COPY.en,
+    privacy: PRIVACY_COPY.en,
     ask: ASK_COPY.en,
     advisor: {
       eyebrow: "Ask the guide",
@@ -568,6 +573,9 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Ili pošaljite zahtjev",
     },
+    hosts: HOSTS_COPY.me,
+    map: MAP_COPY.me,
+    privacy: PRIVACY_COPY.me,
     ask: ASK_COPY.me,
     advisor: {
       eyebrow: "Pitajte vodiča",
@@ -855,6 +863,9 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Или отправьте запрос",
     },
+    hosts: HOSTS_COPY.ru,
+    map: MAP_COPY.ru,
+    privacy: PRIVACY_COPY.ru,
     ask: ASK_COPY.ru,
     advisor: {
       eyebrow: "Спросите гида",
@@ -1143,6 +1154,9 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Ose dërgoni një kërkesë",
     },
+    hosts: HOSTS_COPY.sq,
+    map: MAP_COPY.sq,
+    privacy: PRIVACY_COPY.sq,
     ask: ASK_COPY.sq,
     advisor: {
       eyebrow: "Pyetni udhërrëfyesin",

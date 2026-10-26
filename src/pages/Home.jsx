@@ -7,6 +7,8 @@ import GallerySection from "@/components/site/GallerySection";
 import DestinationSection from "@/components/site/DestinationSection";
 import PlanningSection from "@/components/site/PlanningSection";
 import AskMountainView from "@/components/site/AskMountainView";
+import HostIntroduction from "@/components/site/HostIntroduction";
+import MapSection from "@/components/site/MapSection";
 import EnquirySection from "@/components/site/EnquirySection";
 import SocialSection from "@/components/site/SocialSection";
 import SiteFooter from "@/components/site/SiteFooter";
@@ -22,10 +24,12 @@ export default function Home() {
         <Hero />
         <IntroSection />
         <StaysSection />
+        <MapSection />
         <GallerySection />
         <DestinationSection />
         <PlanningSection />
         <AskMountainView defaultTopic="booking" />
+        <HostIntroduction />
         <EnquirySection />
         <SocialSection />
       </main>

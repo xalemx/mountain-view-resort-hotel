@@ -43,6 +43,9 @@ export default function SiteFooter() {
             <Link to={to("/contact")} className="transition hover:text-primary-foreground">
               {t.footer.contact}
             </Link>
+            <Link to={to("/privacy")} className="transition hover:text-primary-foreground">
+              {t.privacy.eyebrow}
+            </Link>
             <button type="button" onClick={openLanguageChooser} className="transition hover:text-primary-foreground">
               {t.footer.chooseLanguage}
             </button>

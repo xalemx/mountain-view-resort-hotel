@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
 import EnquiryField from "@/components/site/EnquiryField";
 import EnquirySuccess from "@/components/site/EnquirySuccess";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useProperty } from "@/lib/PropertyContext";
+import { useLocaleNav } from "@/lib/useLocaleNav";
 import { PROPERTY_OPTIONS } from "@/lib/siteContent";
 import { EMPTY_ENQUIRY, REPLY_METHODS, todayISO, validateEnquiry } from "@/lib/enquiryValidation";
 
@@ -23,6 +25,7 @@ const BACKEND_ERROR_KEYS = {
 export default function EnquiryForm() {
   const { t, language } = useLanguage();
   const { selectedProperty, setSelectedProperty } = useProperty();
+  const { to } = useLocaleNav();
   const [form, setForm] = useState(EMPTY_ENQUIRY);
   const [status, setStatus] = useState({ type: "idle", text: "" });
   const [submission, setSubmission] = useState(null);
@@ -203,7 +206,15 @@ export default function EnquiryForm() {
         </p>
       ) : null}
 
-      <p className="text-xs leading-relaxed text-muted-foreground">{t.form.privacy}</p>
+      <p className="text-xs leading-relaxed text-muted-foreground">
+        {t.form.privacy}{" "}
+        <Link
+          to={to("/privacy")}
+          className="underline decoration-border underline-offset-4 transition hover:text-primary"
+        >
+          {t.hosts.privacyLink}
+        </Link>
+      </p>
     </form>
   );
 }

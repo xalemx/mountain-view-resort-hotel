@@ -145,6 +145,42 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/contact"/>
   </url>
   <url>
+    <loc>https://mountainviewresort.me/privacy</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mountainviewresort.me/privacy"/>
+    <xhtml:link rel="alternate" hreflang="cnr" href="https://mountainviewresort.me/me/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mountainviewresort.me/ru/privacy"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://mountainviewresort.me/sq/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/privacy"/>
+  </url>
+  <url>
+    <loc>https://mountainviewresort.me/me/privacy</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mountainviewresort.me/privacy"/>
+    <xhtml:link rel="alternate" hreflang="cnr" href="https://mountainviewresort.me/me/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mountainviewresort.me/ru/privacy"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://mountainviewresort.me/sq/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/privacy"/>
+  </url>
+  <url>
+    <loc>https://mountainviewresort.me/ru/privacy</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mountainviewresort.me/privacy"/>
+    <xhtml:link rel="alternate" hreflang="cnr" href="https://mountainviewresort.me/me/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mountainviewresort.me/ru/privacy"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://mountainviewresort.me/sq/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/privacy"/>
+  </url>
+  <url>
+    <loc>https://mountainviewresort.me/sq/privacy</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mountainviewresort.me/privacy"/>
+    <xhtml:link rel="alternate" hreflang="cnr" href="https://mountainviewresort.me/me/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mountainviewresort.me/ru/privacy"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://mountainviewresort.me/sq/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mountainviewresort.me/privacy"/>
+  </url>
+  <url>
     <loc>https://mountainviewresort.me/mountain-view-resort</loc>
     <lastmod>2026-10-26</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://mountainviewresort.me/mountain-view-resort"/>

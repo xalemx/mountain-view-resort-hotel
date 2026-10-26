@@ -30,6 +30,7 @@ export const ASK_COPY = {
     retry: "Try again",
     clear: "Clear this conversation",
     privacy: "Kept for this visit only, in this browser tab.",
+    privacyLink: "How we handle your details",
     tools: {
       working: "Working on this…",
       checking: "Checking our records…",
@@ -72,6 +73,7 @@ export const ASK_COPY = {
     retry: "Pokušajte ponovo",
     clear: "Obriši ovaj razgovor",
     privacy: "Čuva se samo za ovu posjetu, u ovom pregledaču.",
+    privacyLink: "Kako čuvamo vaše podatke",
     tools: {
       working: "Radim na tome…",
       checking: "Provjeravam naše podatke…",
@@ -114,6 +116,7 @@ export const ASK_COPY = {
     retry: "Попробовать снова",
     clear: "Очистить этот разговор",
     privacy: "Хранится только на этот визит, в этой вкладке.",
+    privacyLink: "Как мы обращаемся с вашими данными",
     tools: {
       working: "Работаю над этим…",
       checking: "Проверяю наши данные…",
@@ -156,6 +159,7 @@ export const ASK_COPY = {
     retry: "Provoni përsëri",
     clear: "Fshij këtë bisedë",
     privacy: "Ruhet vetëm për këtë vizitë, në këtë dritare.",
+    privacyLink: "Si i trajtojmë të dhënat tuaja",
     tools: {
       working: "Po punoj për këtë…",
       checking: "Po kontrolloj të dhënat tona…",
