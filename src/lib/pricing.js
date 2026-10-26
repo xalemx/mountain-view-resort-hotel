@@ -53,12 +53,11 @@ export function formatNightly(amount) {
   return formatEuro(amount, 0);
 }
 
-// Every offer request leaves the site on WhatsApp, at the number the owner gave
-// for both houses.
-const OFFER_WHATSAPP = "https://wa.me/38268749749";
-
-export function offerWhatsAppLink(message) {
-  return `${OFFER_WHATSAPP}?text=${encodeURIComponent(message)}`;
+// An offer request leaves the site on the line of the house it is about: the
+// number the guest is reading about, and the resort's line for the restaurant.
+// The house's own WhatsApp link is passed in, so the two are never mixed up.
+export function offerWhatsAppLink(whatsapp, message) {
+  return `${whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
 // The request a guest sends us: the house, the dates, how many are coming, their

@@ -5,7 +5,7 @@ import SiteFooter from "@/components/site/SiteFooter";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
 import { usePageSeo } from "@/lib/seo";
-import { BRAND } from "@/lib/siteContent";
+import PropertyContacts from "@/components/site/PropertyContacts";
 
 // What a request means, what a confirmation means, and what happens when plans
 // change. Written from what the site already publishes, so nothing here commits
@@ -42,23 +42,7 @@ export default function Terms() {
             <p className="eyebrow">{t.hosts.reachTitle}</p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.hosts.reachNote}</p>
 
-            <ul className="mt-6 text-sm text-foreground">
-              <li className="border-b border-border/70 py-3">
-                <a href={BRAND.phoneHref} className="transition hover:text-primary">
-                  {BRAND.phone}
-                </a>
-              </li>
-              <li className="border-b border-border/70 py-3">
-                <a href={BRAND.whatsapp} target="_blank" rel="noopener" className="transition hover:text-primary">
-                  WhatsApp ↗
-                </a>
-              </li>
-              <li className="border-b border-border/70 py-3">
-                <a href={BRAND.emailHref} className="transition hover:text-primary">
-                  {BRAND.email}
-                </a>
-              </li>
-            </ul>
+            <PropertyContacts className="mt-6" />
 
             <Link to={to("/privacy")} className="link-quiet mt-5 inline-flex">
               {copy.privacyLink} ↗

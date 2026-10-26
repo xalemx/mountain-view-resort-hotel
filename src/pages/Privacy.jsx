@@ -3,7 +3,7 @@ import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import { useLanguage } from "@/lib/LanguageContext";
 import { usePageSeo } from "@/lib/seo";
-import { BRAND } from "@/lib/siteContent";
+import PropertyContacts from "@/components/site/PropertyContacts";
 
 // What happens to a guest's details, written for the two ways they reach us:
 // the enquiry form and the automated assistant.
@@ -38,23 +38,7 @@ export default function Privacy() {
             <p className="eyebrow">{copy.contactTitle}</p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy.contactText}</p>
 
-            <ul className="mt-6 text-sm text-foreground">
-              <li className="border-b border-border/70 py-3">
-                <a href={BRAND.phoneHref} className="transition hover:text-primary">
-                  {BRAND.phone}
-                </a>
-              </li>
-              <li className="border-b border-border/70 py-3">
-                <a href={BRAND.whatsapp} target="_blank" rel="noopener" className="transition hover:text-primary">
-                  WhatsApp ↗
-                </a>
-              </li>
-              <li className="border-b border-border/70 py-3">
-                <a href={BRAND.emailHref} className="transition hover:text-primary">
-                  {BRAND.email}
-                </a>
-              </li>
-            </ul>
+            <PropertyContacts className="mt-6" />
 
             <p className="mt-6 text-xs leading-relaxed text-muted-foreground">{copy.updated}</p>
           </aside>

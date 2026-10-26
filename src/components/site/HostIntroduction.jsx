@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
+import PropertyContacts from "@/components/site/PropertyContacts";
 import { BRAND } from "@/lib/siteContent";
 
 // Who a guest is actually writing to. The words are the family's own, taken
@@ -24,23 +25,10 @@ export default function HostIntroduction() {
         <div className="self-start rounded-sm border border-border/70 bg-card p-6 md:p-8">
           <p className="eyebrow">{copy.reachTitle}</p>
 
-          <ul className="mt-5 text-sm text-foreground">
-            <li className="border-b border-border/70 py-3">
-              <a href={BRAND.phoneHref} className="transition hover:text-primary">
-                {BRAND.phone}
-              </a>
-            </li>
-            <li className="border-b border-border/70 py-3">
-              <a href={BRAND.whatsapp} target="_blank" rel="noopener" className="transition hover:text-primary">
-                WhatsApp ↗
-              </a>
-            </li>
-            <li className="border-b border-border/70 py-3">
-              <a href={BRAND.emailHref} className="transition hover:text-primary">
-                {BRAND.email}
-              </a>
-            </li>
-            <li className="border-b border-border/70 py-3">
+          <PropertyContacts className="mt-5" />
+
+          <ul className="mt-3 text-sm text-foreground">
+            <li className="py-1">
               <a
                 href={BRAND.instagram}
                 target="_blank"

@@ -77,8 +77,12 @@ export default function OfferRequestDialog({ property, initialGuests, onClose })
             <p className="whitespace-pre-line rounded-sm border border-border/70 bg-secondary/40 p-4 text-sm leading-relaxed text-foreground">
               {message}
             </p>
+            <p className="text-sm leading-relaxed text-foreground">
+              <span className="eyebrow block">{t.form.property}</span>
+              {property.name} · {property.phone}
+            </p>
             <a
-              href={offerWhatsAppLink(message)}
+              href={offerWhatsAppLink(property.whatsapp, message)}
               target="_blank"
               rel="noopener"
               className="btn-pill w-full justify-center"

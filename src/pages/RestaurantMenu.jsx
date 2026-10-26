@@ -7,6 +7,7 @@ import MenuGallery from "@/components/site/MenuGallery";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
 import { usePageSeo } from "@/lib/seo";
+import { propertyById } from "@/lib/propertyDetails";
 import { ORIGINAL_MENU_URL, RESTAURANT_COPY } from "@/lib/menu";
 
 // The restaurant and its menu, under Mountain View Resort and nowhere else.
@@ -14,6 +15,8 @@ export default function RestaurantMenu() {
   const { language } = useLanguage();
   const { to } = useLocaleNav();
   const copy = RESTAURANT_COPY[language] || RESTAURANT_COPY.en;
+  // The restaurant belongs to the resort, so restaurant enquiries go to its line.
+  const resort = propertyById("resort");
 
   usePageSeo("restaurant");
 
@@ -30,6 +33,18 @@ export default function RestaurantMenu() {
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/85">{copy.intro}</p>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-primary-foreground/70">{copy.breakfastNote}</p>
+
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-primary-foreground/70">
+              {copy.contactNote}{" "}
+              <a
+                href={resort.whatsapp}
+                target="_blank"
+                rel="noopener"
+                className="underline decoration-primary-foreground/40 underline-offset-4 transition hover:decoration-primary-foreground"
+              >
+                {copy.contactAction} · {resort.phone} ↗
+              </a>
+            </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link to={to("/mountain-view-resort")} className="btn-cream">

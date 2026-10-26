@@ -1,13 +1,14 @@
 import React from "react";
 import EnquiryForm from "@/components/site/EnquiryForm";
 import { useLanguage } from "@/lib/LanguageContext";
-import { BRAND } from "@/lib/siteContent";
+import { PROPERTIES } from "@/lib/siteContent";
 
 // The offer block from the home page, reused on a property page with its own words.
 export default function EnquirySection({ id = "offer", eyebrow, title, text, property }) {
   const { t } = useLanguage();
-  // On a house's own page the line to that house is the one to show.
-  const contact = property || BRAND;
+  // On a house's own page the line to that house is the one to show; the home
+  // page speaks for both, so both lines are named there.
+  const houses = property ? [property] : PROPERTIES;
 
   return (
     <section id={id} className="border-t border-border/60 py-20 md:py-28">
@@ -26,14 +27,24 @@ export default function EnquirySection({ id = "offer", eyebrow, title, text, pro
             ))}
           </ol>
 
-          <a
-            href={contact.whatsapp}
-            target="_blank"
-            rel="noopener"
-            className="mt-10 inline-flex font-heading text-lg text-primary underline decoration-border underline-offset-4 transition hover:decoration-primary"
-          >
-            {t.offer.whatsapp} · {contact.phone} ↗
-          </a>
+          <div className="mt-10 space-y-3">
+            {houses.map((house) => (
+              <a
+                key={house.id}
+                href={house.whatsapp}
+                target="_blank"
+                rel="noopener"
+                className="flex flex-wrap items-baseline gap-x-3"
+              >
+                <span className="font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                  {house.name}
+                </span>
+                <span className="font-heading text-lg text-primary underline decoration-border underline-offset-4 transition hover:decoration-primary">
+                  {t.offer.whatsapp} · {house.phone} ↗
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
 
         <EnquiryForm />

@@ -52,6 +52,8 @@ export const RESTAURANT_COPY = {
     openImage: "Enlarge",
     backToResort: "Mountain View Resort",
     where: "The restaurant is at Mountain View Resort, in Vusanje.",
+    contactNote: "The restaurant belongs to Mountain View Resort, so the resort's line is the one that reaches the family.",
+    contactAction: "Message Mountain View Resort",
   },
   me: {
     eyebrow: "Mountain View Resort · restoran",
@@ -69,6 +71,8 @@ export const RESTAURANT_COPY = {
     openImage: "Uvećaj",
     backToResort: "Mountain View Resort",
     where: "Restoran se nalazi u resortu Mountain View, u Vusanju.",
+    contactNote: "Restoran pripada resortu Mountain View, pa je resortov broj onaj koji vodi do porodice.",
+    contactAction: "Pišite resortu Mountain View",
   },
   ru: {
     eyebrow: "Mountain View Resort · ресторан",
@@ -86,6 +90,8 @@ export const RESTAURANT_COPY = {
     openImage: "Увеличить",
     backToResort: "Mountain View Resort",
     where: "Ресторан находится в Mountain View Resort, в Вусане.",
+    contactNote: "Ресторан относится к Mountain View Resort, поэтому до семьи можно добраться по номеру курорта.",
+    contactAction: "Написать в Mountain View Resort",
   },
   sq: {
     eyebrow: "Mountain View Resort · restoranti",
@@ -103,6 +109,8 @@ export const RESTAURANT_COPY = {
     openImage: "Zmadho",
     backToResort: "Mountain View Resort",
     where: "Restoranti ndodhet në Mountain View Resort, në Vusanje.",
+    contactNote: "Restoranti i përket Mountain View Resort, prandaj linja e resortit është ajo që të çon te familja.",
+    contactAction: "Shkruani Mountain View Resort",
   },
 };
 

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
+import PropertyContacts from "@/components/site/PropertyContacts";
 import { BRAND, LANDSCAPE_PHOTO_CREDIT, PROPERTIES } from "@/lib/siteContent";
 
 export default function SiteFooter() {
@@ -11,27 +12,16 @@ export default function SiteFooter() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="section py-12">
-        <div className="flex flex-wrap items-center justify-between gap-6 border-b border-primary-foreground/15 pb-8">
-          <span className="font-heading text-lg">
-            △ {BRAND.name} <span className="text-primary-foreground/60">{t.brandSubtitle}</span>
-          </span>
-          <span className="font-body text-[11px] uppercase tracking-[0.24em] text-primary-foreground/70">
-            {t.place}
-          </span>
-          <div className="flex flex-wrap items-center gap-5">
-            <a
-              href={BRAND.phoneHref}
-              className="text-sm underline decoration-primary-foreground/40 underline-offset-4 transition hover:decoration-primary-foreground"
-            >
-              {BRAND.phone}
-            </a>
-            <a
-              href={BRAND.emailHref}
-              className="text-sm underline decoration-primary-foreground/40 underline-offset-4 transition hover:decoration-primary-foreground"
-            >
-              {BRAND.email}
-            </a>
+        <div className="flex flex-wrap items-start justify-between gap-8 border-b border-primary-foreground/15 pb-8">
+          <div className="space-y-2">
+            <span className="font-heading text-lg">
+              △ {BRAND.name} <span className="text-primary-foreground/60">{t.brandSubtitle}</span>
+            </span>
+            <p className="font-body text-[11px] uppercase tracking-[0.24em] text-primary-foreground/70">
+              {t.place}
+            </p>
           </div>
+          <PropertyContacts tone="dark" className="w-full max-w-md" />
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 font-body text-[11px] uppercase tracking-[0.24em] text-primary-foreground/60">
