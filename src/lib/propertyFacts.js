@@ -301,20 +301,18 @@ export const PROPERTY_FACTS = {
 // Everything the site and the assistants say about reaching Gusinje.
 export const TRAVEL_FACTS = {
   airport: {
-    status: FACT_STATUS.EXTERNAL,
-    text: "The nearest international airport is Podgorica, about three hours by car (roughly 150 km) on the road through Plav. Tivat and Dubrovnik are longer, scenic drives.",
-    source:
-      "Driving tables give Podgorica to Plav as 134 km in about 2 h 35 (2 h 45 in season), then another 15 minutes to Gusinje; a distance calculator gives about 2 h 30 for the whole run. The earlier wording said two and a half hours, which understates it.",
+    status: FACT_STATUS.UNCONFIRMED,
+    text: "The nearest international airport is Podgorica, and Tivat and Dubrovnik are further along scenic routes. No distance and no driving time are published.",
+    note: "Owner, 26 October 2026: the listed distance and the driving tables' figures are not a verified route or journey time, so the roughly 150 km and the about three hours have come off the site and out of the concierge. The route, the distance and how long to allow are to be checked separately, and only the owner's answer puts a figure back on the site.",
     shownIn: [
       "translations: plan.faqs[0].answer, guide.practical[0].text (en, me, ru, sq)",
       "base44/agents/concierge.jsonc — getting here",
     ],
   },
   border: {
-    status: FACT_STATUS.EXTERNAL,
-    text: "The Albanian border crossing at Vermosh is about 10 km from Gusinje, roughly a 20-minute drive.",
-    source:
-      "The crossing sits between Vusanje and Vermosh; travel accounts put Vermosh 7 km from Gusinje. The earlier wording said about an hour from the border via Plav, which is both too long and the wrong road: the crossing is reached south through Vusanje, not through Plav.",
+    status: FACT_STATUS.UNCONFIRMED,
+    text: "The Albanian border crossing nearest the valley is Vermosh, reached south through Vusanje and not through Plav. No distance and no driving time are published.",
+    note: "Owner, 26 October 2026: the about 10 km and the roughly 20-minute drive came from travel accounts rather than a checked route, so neither is published. The crossing's distance and driving time are to be verified separately before a figure goes on the site.",
     shownIn: [
       "translations: plan.faqs[0].answer (en, me, ru, sq)",
       "base44/agents/concierge.jsonc — getting here",
@@ -331,6 +329,12 @@ export const TRAVEL_FACTS = {
     text: "A car helps but is not essential; both houses are in or a short drive from the town centre, and the trailheads can be reached on foot or by taxi from Plav.",
     source: "Consistent with the two pins and the bus service.",
     shownIn: ["translations: plan.faqs[2].answer (en, me, ru, sq)"],
+  },
+  trailheads: {
+    status: FACT_STATUS.UNCONFIRMED,
+    text: "Both houses are a short drive from the trailheads in the Grebaje valley. No driving time is published.",
+    note: "Owner, 26 October 2026: the earlier 'around ten minutes by car from the trailheads' was never measured, so the concierge now says a short drive and that the host confirms how long it takes. The drive time from each house is to be checked separately.",
+    shownIn: ["base44/agents/concierge.jsonc — the two houses"],
   },
   cash: {
     status: FACT_STATUS.UNCONFIRMED,
@@ -490,5 +494,45 @@ export const FACTS_TO_CONFIRM = [
     question:
       "Settled on 26 October 2026: the free-cancellation deadlines, promotional discounts, remaining availability and weekly prices shown on the listing are its marketing, not our rates, and nothing is copied from them. Every price stays an offer quoted for the dates asked about, and no deposit or free cancellation is promised for a direct booking.",
     affects: ["src/lib/termsCopy.js", "src/lib/seoCopy.js"],
+  },
+  {
+    id: "airportRoute",
+    question:
+      "Settled on 26 October 2026: nothing is published for the drive to Podgorica, or to Tivat and Dubrovnik. The listing's distance and the driving tables' times are not a verified route or journey time, so the site and the assistants name the nearest airport and say the route and the timing are confirmed with us. Asked: which route do you recommend, how far is it and how long does it take? Those figures go on the site only from your answer.",
+    affects: [
+      "translations: plan.faqs[0].answer, guide.practical[0].text (en, me, ru, sq)",
+      "base44/agents/concierge.jsonc",
+    ],
+  },
+  {
+    id: "crossingRoute",
+    question:
+      "Settled on 26 October 2026: the Vermosh crossing is named as the nearest one, reached south through Vusanje, and no distance and no driving time are published. Asked: verify the crossing's distance and driving time, and we will publish them.",
+    affects: ["translations: plan.faqs[0].answer (en, me, ru, sq)", "base44/agents/concierge.jsonc"],
+  },
+  {
+    id: "trailheadRoute",
+    question:
+      "The concierge no longer says how long the drive to the Grebaje trailheads takes, because it was never measured. Asked: how long is that drive from each house, and the drive between the hotel and the resort, on the road as it is?",
+    affects: ["base44/agents/concierge.jsonc", "translations: intro.text"],
+  },
+  {
+    id: "guideDistances",
+    question:
+      "Every distance and driving time in the local guide is our own approximation from Gusinje, taken from published accounts and not measured on the road, and the cards now read 'approx.' The walking times for the lake and the other walks come from the same accounts. Asked: verify them separately, place by place, before any of them is relied on, and tell us which figures you want changed.",
+    affects: [
+      "LocalPlace distance_km, drive_minutes, walk_minutes",
+      "guideTranslations labels (en, me, ru, sq)",
+    ],
+  },
+  {
+    id: "reviews",
+    question:
+      "The listing shows 8.7 out of 10 from 144 reviews, checked on 26 October 2026. It is not published on the website, and it is never used as proof of room capacity or facilities. The owner record holds it as a Booking.com snapshot with the date checked and a link to the listing, and says in as many words that it is not a live figure and that reviews prove nothing about capacity or facilities. Asked: do you want the rating shown on the site, and if so with that label only?",
+    affects: [
+      "src/pages/OwnerProperty.jsx",
+      "src/components/admin/PropertyRecordFields.jsx",
+      "base44/agents/concierge.jsonc",
+    ],
   },
 ];

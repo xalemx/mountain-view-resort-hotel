@@ -3,7 +3,7 @@ import React from "react";
 const TEXT_FIELDS = [
   { key: "listing_name", label: "Name as listed" },
   { key: "address", label: "Address as listed" },
-  { key: "guest_rating", label: "Rating as listed" },
+  { key: "guest_rating", label: "Overall rating as listed (Booking.com snapshot, not a live figure)" },
   { key: "breakfast", label: "Breakfast" },
   { key: "parking", label: "Parking" },
   { key: "check_in", label: "Check-in" },

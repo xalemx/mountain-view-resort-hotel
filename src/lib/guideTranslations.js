@@ -17,8 +17,8 @@ export const GUIDE_COPY = {
       "Below is the short list we send guests before they arrive: the places within half an hour of the door that are worth a morning, an afternoon or a full day. Distances are measured from the town centre and driving times are rough, because mountain roads are slow and beautiful. Trail conditions change with the weather, so ask us before you set off and we will tell you what is passable this week.",
     ],
     placesTitle: "Places within half an hour",
-    distanceLabel: "From Gusinje",
-    driveLabel: "By car",
+    distanceLabel: "From Gusinje (approx.)",
+    driveLabel: "By car (approx.)",
     seasonLabel: "Best time",
     mapLink: "Open in Maps",
     categories: {
@@ -33,7 +33,7 @@ export const GUIDE_COPY = {
     practical: [
       {
         title: "Getting here",
-        text: "The nearest international airport is Podgorica, about three hours by car (roughly 150 km) on the road through Plav. Tivat and Dubrovnik are longer but scenic drives. If you are arriving without a car, say so in your request and we will help arrange a transfer.",
+        text: "The nearest international airport is Podgorica, and Tivat and Dubrovnik are further along scenic routes. We have not verified the distances or the driving times ourselves, so we publish no figure: ask us and we will confirm the route and how long to allow. If you are arriving without a car, say so in your request and we will help arrange a transfer.",
       },
       {
         title: "When to come",
@@ -63,8 +63,8 @@ export const GUIDE_COPY = {
       "Ispod je kratak spisak koji šaljemo gostima prije dolaska: mjesta na pola sata od vrata, koja vrijede jutro, popodne ili cijeli dan. Udaljenosti mjerimo od centra grada, a vremena vožnje su približna, jer su planinski putevi spori i lijepi. Stanje staza se mijenja s vremenom, pa nas pitajte prije polaska i reći ćemo vam šta je ove nedjelje prohodno.",
     ],
     placesTitle: "Mjesta na pola sata",
-    distanceLabel: "Od Gusinja",
-    driveLabel: "Autom",
+    distanceLabel: "Od Gusinja (približno)",
+    driveLabel: "Autom (približno)",
     seasonLabel: "Najbolje vrijeme",
     mapLink: "Otvori u Mapama",
     categories: {
@@ -79,7 +79,7 @@ export const GUIDE_COPY = {
     practical: [
       {
         title: "Kako stići",
-        text: "Najbliži međunarodni aerodrom je Podgorica, oko tri sata vožnje (približno 150 km) putem preko Plava. Tivat i Dubrovnik su duže, ali slikovitije rute. Ako dolazite bez auta, napišite nam to u zahtjevu i pomoći ćemo oko transfera.",
+        text: "Najbliži međunarodni aerodrom je Podgorica, a Tivat i Dubrovnik su dalje, slikovitim rutama. Udaljenosti i vremena vožnje nismo sami provjerili, pa ne objavljujemo brojke: pitajte nas i potvrdićemo rutu i koliko vremena treba. Ako dolazite bez auta, napišite nam to u zahtjevu i pomoći ćemo oko transfera.",
       },
       {
         title: "Kada doći",
@@ -109,8 +109,8 @@ export const GUIDE_COPY = {
       "Ниже короткий список, который мы отправляем гостям перед приездом: места в получасе от порога, ради которых стоит выделить утро, полдня или целый день. Расстояния указаны от центра города, а время в пути примерное, потому что горные дороги медленные и красивые. Состояние троп меняется с погодой, поэтому спросите нас перед выходом, и мы скажем, что проходимо на этой неделе.",
     ],
     placesTitle: "Места в получасе",
-    distanceLabel: "От Гусине",
-    driveLabel: "На машине",
+    distanceLabel: "От Гусине (приблизительно)",
+    driveLabel: "На машине (приблизительно)",
     seasonLabel: "Лучшее время",
     mapLink: "Открыть в Картах",
     categories: {
@@ -125,7 +125,7 @@ export const GUIDE_COPY = {
     practical: [
       {
         title: "Как добраться",
-        text: "Ближайший международный аэропорт — Подгорица, около трёх часов на машине (примерно 150 км) по дороге через Плав. Тиват и Дубровник дальше, но живописнее. Если вы приезжаете без машины, напишите об этом в запросе, и мы поможем с трансфером.",
+        text: "Ближайший международный аэропорт — Подгорица, а Тиват и Дубровник дальше, по живописным дорогам. Расстояния и время в пути мы сами не проверяли, поэтому цифр не публикуем: спросите нас, и мы подтвердим маршрут и сколько времени закладывать. Если вы приезжаете без машины, напишите об этом в запросе, и мы поможем с трансфером.",
       },
       {
         title: "Когда приезжать",
@@ -155,8 +155,8 @@ export const GUIDE_COPY = {
       "Më poshtë është lista e shkurtër që u dërgojmë mysafirëve para se të vijnë: vendet brenda gjysmë ore nga dera, që vlejnë një mëngjes, një pasdite ose një ditë të plotë. Distancat maten nga qendra e qytetit dhe kohët e udhëtimit janë të përafërta, sepse rrugët e malit janë të ngadalta dhe të bukura. Gjendja e shtigjeve ndryshon me motin, prandaj na pyesni para se të niseni dhe do t'ju themi çfarë kalon këtë javë.",
     ],
     placesTitle: "Vende brenda gjysmë ore",
-    distanceLabel: "Nga Gusinja",
-    driveLabel: "Me makinë",
+    distanceLabel: "Nga Gusinja (afërsisht)",
+    driveLabel: "Me makinë (afërsisht)",
     seasonLabel: "Koha më e mirë",
     mapLink: "Hap në Harta",
     categories: {
@@ -171,7 +171,7 @@ export const GUIDE_COPY = {
     practical: [
       {
         title: "Si të arrihet",
-        text: "Aeroporti ndërkombëtar më i afërt është Podgorica, rreth tre orë me makinë (afërsisht 150 km) në rrugën përmes Plavës. Tivari dhe Dubrovniku janë më larg, por rrugë piktoreske. Nëse vini pa makinë, na shkruani në kërkesë dhe do t'ju ndihmojmë me transfert.",
+        text: "Aeroporti ndërkombëtar më i afërt është Podgorica, ndërsa Tivari dhe Dubrovniku janë më larg, në rrugë piktoreske. Distancat dhe kohën e udhëtimit nuk i kemi verifikuar vetë, prandaj nuk publikojmë shifra: na pyesni dhe do t'ju konfirmojmë rrugën dhe sa kohë duhet. Nëse vini pa makinë, na shkruani në kërkesë dhe do t'ju ndihmojmë me transfert.",
       },
       {
         title: "Kur të vini",

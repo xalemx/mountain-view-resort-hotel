@@ -175,6 +175,11 @@ export default function OwnerProperty() {
                 live: the resort page, the four translations and both assistants keep their published wording until you
                 settle an item below.
               </p>
+              <p className="mt-3 max-w-3xl font-body text-sm leading-relaxed text-muted-foreground">
+                The overall rating, {form.guest_rating || "not captured yet"}, is a Booking.com snapshot taken on{" "}
+                {form.captured_on || "the day it was saved"} — not a live figure, never updated here, and never used as
+                proof of room capacity or facilities.
+              </p>
               {form.source_url ? (
                 <a
                   href={form.source_url}

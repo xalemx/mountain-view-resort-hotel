@@ -165,7 +165,7 @@ export const TRANSLATIONS = {
         {
           question: "How do I get to Gusinje?",
           answer:
-            "Most guests arrive by car: about three hours from Podgorica, and about twenty minutes from the Albanian border at Vermosh. There is a bus to Plav, and we can arrange a pick-up from Plav on request.",
+            "Most guests arrive by car, or by bus to Plav, where we can arrange a pick-up on request. Podgorica is the nearest international airport and Vermosh the closest border crossing. We have not checked the route or the driving time ourselves, so ask us and we will confirm the way to come and how long to allow.",
         },
         {
           question: "When is the best time to visit?",
@@ -458,7 +458,7 @@ export const TRANSLATIONS = {
         {
           question: "Kako da stignem u Gusinje?",
           answer:
-            "Većina gostiju dolazi autom: oko tri sata iz Podgorice i oko dvadeset minuta od granice sa Albanijom kod Vermoshija. Postoji autobus do Plava, a na zahtjev možemo organizovati i prevoz iz Plava.",
+            "Većina gostiju dolazi autom, ili autobusom do Plava, odakle na zahtjev organizujemo prevoz. Podgorica je najbliži međunarodni aerodrom, a Vermosh najbliži granični prelaz. Rutu i vrijeme vožnje nismo sami provjerili, pa nas pitajte i potvrdićemo kojim putem doći i koliko vremena treba.",
         },
         {
           question: "Kada je najbolje doći?",
@@ -751,7 +751,7 @@ export const TRANSLATIONS = {
         {
           question: "Как добраться до Гусине?",
           answer:
-            "Большинство гостей приезжают на машине: примерно три часа из Подгорицы и около двадцати минут от границы с Албанией (переход Вермош). Есть автобус до Плава, а по запросу мы можем организовать трансфер из Плава.",
+            "Большинство гостей приезжают на машине или на автобусе до Плава, откуда мы по запросу организуем трансфер. Подгорица — ближайший международный аэропорт, Вермош — ближайший пограничный переход. Маршрут и время в пути мы сами не проверяли, поэтому спросите нас, и мы подтвердим, какой дорогой ехать и сколько времени закладывать.",
         },
         {
           question: "Когда лучше приехать?",
@@ -1045,7 +1045,7 @@ export const TRANSLATIONS = {
         {
           question: "Si të arrij në Gusinje?",
           answer:
-            "Shumica e mysafirëve vijnë me makinë: rreth tre orë nga Podgorica dhe rreth njëzet minuta nga kufiri me Shqipërinë në Vermosh. Ka autobus për në Plavë, dhe me kërkesë mund të organizojmë transport nga Plava.",
+            "Shumica e mysafirëve vijnë me makinë, ose me autobus deri në Plavë, nga ku organizojmë transport me kërkesë. Podgorica është aeroporti ndërkombëtar më i afërt, ndërsa Vermoshi kalimi kufitar më i afërt. Rrugën dhe kohën e udhëtimit nuk i kemi verifikuar vetë, prandaj na pyesni dhe do t'ju konfirmojmë nga cila rrugë të vini dhe sa kohë duhet.",
         },
         {
           question: "Kur është koha më e mirë për të ardhur?",
