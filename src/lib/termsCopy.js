@@ -1,7 +1,8 @@
 // Booking and cancellation terms, drafted only from what the site already
 // publishes: a request is answered by the family within 24 hours, a stay is
 // confirmed by message, there is no agency or booking fee, breakfast is
-// included, and payment is made on arrival in cash or by card.
+// available with inclusion depending on the offer, and payment is made on
+// arrival in cash or by card.
 //
 // The cancellation paragraph is deliberately soft: the site has never stated a
 // cancellation schedule, so it commits to nothing more than notice by phone or
@@ -25,7 +26,7 @@ export const TERMS_COPY = {
       },
       {
         title: "Price, fees and payment",
-        text: "The price we quote is the price you pay: no booking fee, no commission and no agency in the middle. Breakfast is included. You pay on arrival, in cash or by card, to the host. This website never asks for card details.",
+        text: "The price we quote is the price you pay: no booking fee, no commission and no agency in the middle. Breakfast is available; whether it is included depends on your offer. You pay on arrival, in cash or by card, to the host. This website never asks for card details.",
       },
       {
         title: "If your plans change",
@@ -64,7 +65,7 @@ export const TERMS_COPY = {
       },
       {
         title: "Cijena, naknade i plaćanje",
-        text: "Cijena koju navedemo je cijena koju plaćate: bez naknade za rezervaciju, bez provizije i bez agencije u sredini. Doručak je uključen. Plaćate po dolasku, u gotovini ili karticom, domaćinu. Ovaj sajt nikada ne traži podatke kartice.",
+        text: "Cijena koju navedemo je cijena koju plaćate: bez naknade za rezervaciju, bez provizije i bez agencije u sredini. Doručak je dostupan; da li je uključen zavisi od vaše ponude. Plaćate po dolasku, u gotovini ili karticom, domaćinu. Ovaj sajt nikada ne traži podatke kartice.",
       },
       {
         title: "Ako se planovi promijene",
@@ -103,7 +104,7 @@ export const TERMS_COPY = {
       },
       {
         title: "Цена, сборы и оплата",
-        text: "Названная цена — это цена, которую вы платите: без сбора за бронирование, без комиссии и без агентства посередине. Завтрак включён. Платите по приезде, наличными или картой, хозяину. Этот сайт никогда не запрашивает данные карты.",
+        text: "Названная цена — это цена, которую вы платите: без сбора за бронирование, без комиссии и без агентства посередине. Завтрак доступен; входит ли он в стоимость, зависит от предложения. Платите по приезде, наличными или картой, хозяину. Этот сайт никогда не запрашивает данные карты.",
       },
       {
         title: "Если планы изменились",
@@ -142,7 +143,7 @@ export const TERMS_COPY = {
       },
       {
         title: "Çmimi, tarifat dhe pagesa",
-        text: "Çmimi që japim është çmimi që paguani: pa tarifë rezervimi, pa komision dhe pa agjenci në mes. Mëngjesi përfshihet. Paguani në mbërritje, me para në dorë ose kartë, tek pronari. Ky sajt nuk kërkon kurrë të dhëna karte.",
+        text: "Çmimi që japim është çmimi që paguani: pa tarifë rezervimi, pa komision dhe pa agjenci në mes. Mëngjesi ofrohet; nëse përfshihet, kjo varet nga oferta juaj. Paguani në mbërritje, me para në dorë ose kartë, tek pronari. Ky sajt nuk kërkon kurrë të dhëna karte.",
       },
       {
         title: "Nëse ndryshojnë planet",

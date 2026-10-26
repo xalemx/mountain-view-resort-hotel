@@ -78,17 +78,24 @@ export const PROPERTY_FACTS = {
         label: "Restaurant & bar",
         status: FACT_STATUS.OWNER,
         detail:
-          "A restaurant, a bar and a coffee shop on site (owner, 26 October 2026). The dishes and menus are not published: local, Italian and Mediterranean dishes with vegetarian, vegan and halal options are still to be confirmed.",
+          "One restaurant, open for breakfast, lunch and dinner, plus a bar and a coffee shop (owner, 26 October 2026). Listed cuisines: Italian, Mediterranean, pizza, seafood, international, European, Croatian, and grill and barbecue, with halal, vegetarian and vegan options and special diet menus on request. The menu itself and every price are not published.",
         shownIn: [
           "translations: stays.resort.features[0], stays.resort.description (en, me, ru, sq)",
+          "src/lib/dining.js",
           "src/lib/facilities.js — the resort's facilities list",
         ],
       },
       {
         key: "breakfast",
-        label: "Breakfast included",
+        label: "Breakfast available",
         status: FACT_STATUS.OWNER,
-        shownIn: ["translations: stays.resort.features[1]", "PropertyGoodToKnow", "base44/agents/concierge.jsonc"],
+        note: "Owner, 26 October 2026: breakfast is available, not included; whether it is included depends on the offer. Listed options: continental, Full English/Irish, vegetarian, halal and breakfast to go. No price is published: the paid-breakfast rates shown on booking sites are theirs, in their own converted currency.",
+        shownIn: [
+          "translations: stays.resort.features[1]",
+          "src/lib/dining.js",
+          "PropertyGoodToKnow",
+          "base44/agents/concierge.jsonc",
+        ],
       },
       {
         key: "bungalows",
@@ -143,7 +150,10 @@ export const PROPERTY_FACTS = {
     ],
 
     policies: {
-      breakfast: { status: FACT_STATUS.OWNER, text: "Breakfast is included in your stay." },
+      breakfast: {
+        status: FACT_STATUS.OWNER,
+        text: "Breakfast is available; whether it is included depends on your offer. No price is published.",
+      },
       payment: { status: FACT_STATUS.OWNER, text: "Payment for your stay is on arrival, in cash or by card." },
       arrivalTimes: {
         status: FACT_STATUS.UNCONFIRMED,
@@ -308,8 +318,12 @@ export const FACTS_TO_CONFIRM = [
   {
     id: "restaurant",
     question:
-      "The restaurant, the bar and the coffee shop are confirmed (26 October 2026). Still open: do they serve local, Italian and Mediterranean dishes, and are the vegetarian, vegan and halal options right?",
-    affects: ["translations: stays.resort.description, stays.resort.features[0]", "src/lib/facilities.js"],
+      "Answered on 26 October 2026: one restaurant serving breakfast, lunch and dinner, with the cuisines, the halal, vegetarian and vegan options, the special diet menus on request and the breakfast options all published.",
+    affects: [
+      "translations: stays.resort.description, stays.resort.features[0]",
+      "src/lib/dining.js",
+      "src/lib/facilities.js",
+    ],
   },
   {
     id: "kitchen",
@@ -355,5 +369,11 @@ export const FACTS_TO_CONFIRM = [
     question:
       "The property is listed with accessible facilities and wheelchair access. Which bungalow types suit a wheelchair or a guest with limited mobility, and what should the site say about them?",
     affects: ["src/lib/facilities.js", "base44/agents/concierge.jsonc"],
+  },
+  {
+    id: "breakfastPrice",
+    question:
+      "Settled on 26 October 2026: no breakfast price is published. The rates that showed optional paid breakfast are Booking's, in its own converted currency, and are not our direct-booking price.",
+    affects: ["src/lib/dining.js", "base44/agents/concierge.jsonc"],
   },
 ];

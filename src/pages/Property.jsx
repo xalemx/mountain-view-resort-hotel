@@ -38,7 +38,7 @@ export default function Property({ propertyId }) {
         <PropertyRooms property={property} />
         <PropertyFacilities property={property} />
         <PropertyLocation property={property} />
-        <PropertyGoodToKnow />
+        <PropertyGoodToKnow property={property} />
         <EnquirySection
           id="property-offer"
           eyebrow={t.property.enquiryEyebrow}
