@@ -1,3 +1,4 @@
+import { ASK_COPY } from "@/lib/assistantTranslations";
 import { GUIDE_COPY } from "@/lib/guideTranslations";
 
 export const DEFAULT_LANGUAGE = "en";
@@ -280,6 +281,7 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Or send a request",
     },
+    ask: ASK_COPY.en,
     advisor: {
       eyebrow: "Ask the guide",
       title: "Not sure where to start? Tell us what you enjoy",
@@ -566,6 +568,7 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Ili pošaljite zahtjev",
     },
+    ask: ASK_COPY.me,
     advisor: {
       eyebrow: "Pitajte vodiča",
       title: "Ne znate odakle da počnete? Recite nam šta volite",
@@ -852,6 +855,7 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Или отправьте запрос",
     },
+    ask: ASK_COPY.ru,
     advisor: {
       eyebrow: "Спросите гида",
       title: "Не знаете, с чего начать? Расскажите, что вам нравится",
@@ -1139,6 +1143,7 @@ export const TRANSLATIONS = {
       threads: "Threads",
       formTitle: "Ose dërgoni një kërkesë",
     },
+    ask: ASK_COPY.sq,
     advisor: {
       eyebrow: "Pyetni udhërrëfyesin",
       title: "Nuk dini nga ta nisni? Na tregoni çfarë ju pëlqen",

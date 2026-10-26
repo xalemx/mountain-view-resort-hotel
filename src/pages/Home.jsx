@@ -6,7 +6,7 @@ import StaysSection from "@/components/site/StaysSection";
 import GallerySection from "@/components/site/GallerySection";
 import DestinationSection from "@/components/site/DestinationSection";
 import PlanningSection from "@/components/site/PlanningSection";
-import BookingAssistant from "@/components/site/BookingAssistant";
+import AskMountainView from "@/components/site/AskMountainView";
 import EnquirySection from "@/components/site/EnquirySection";
 import SocialSection from "@/components/site/SocialSection";
 import SiteFooter from "@/components/site/SiteFooter";
@@ -22,7 +22,7 @@ export default function Home() {
         <GallerySection />
         <DestinationSection />
         <PlanningSection />
-        <BookingAssistant />
+        <AskMountainView defaultTopic="booking" />
         <EnquirySection />
         <SocialSection />
       </main>

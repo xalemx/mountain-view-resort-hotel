@@ -2,7 +2,7 @@ import React from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import EnquiryForm from "@/components/site/EnquiryForm";
-import GuestConcierge from "@/components/site/GuestConcierge";
+import AskMountainView from "@/components/site/AskMountainView";
 import { useLanguage } from "@/lib/LanguageContext";
 import { BRAND } from "@/lib/siteContent";
 
@@ -56,7 +56,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <GuestConcierge />
+        <AskMountainView defaultTopic="practical" />
       </main>
 
       <SiteFooter />
