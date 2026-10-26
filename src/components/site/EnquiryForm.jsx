@@ -214,6 +214,13 @@ export default function EnquiryForm() {
         >
           {t.hosts.privacyLink}
         </Link>
+        <span aria-hidden="true"> · </span>
+        <Link
+          to={to("/terms")}
+          className="underline decoration-border underline-offset-4 transition hover:text-primary"
+        >
+          {t.terms.eyebrow}
+        </Link>
       </p>
     </form>
   );

@@ -17,6 +17,7 @@ export const SEO_IMAGES = {
   guide: social("5b6f78991_mountain-view-gusinje-town.jpg"),
   contact: social("bdc367c1b_mountain-view-valley.jpg"),
   privacy: social("5b6f78991_mountain-view-gusinje-town.jpg"),
+  terms: social("bdc367c1b_mountain-view-valley.jpg"),
   resort: social("8bda5b916_mountain-view-resort-room.jpg"),
   hotel: social("4bbcd5227_Screenshot_25-10-2026_34857_wwwgooglecouk.jpeg"),
 };
@@ -47,6 +48,11 @@ export const SEO_COPY = {
       title: "Privacy · Your enquiry and the automated assistant",
       description:
         "What we collect when you send an enquiry or write to the automated assistant, who can read it, how long we keep it, and how to ask us to correct or delete it.",
+    },
+    terms: {
+      title: "Booking terms · Mountain View Resort & Hotel",
+      description:
+        "A request is answered within 24 hours, a stay is confirmed by message, no booking fee, breakfast included, and payment on arrival by cash or card.",
     },
     resort: {
       title: "Mountain View Resort · Gusinje, Montenegro",
@@ -86,6 +92,11 @@ export const SEO_COPY = {
       description:
         "Šta prikupljamo kada pošaljete zahtjev ili pišete automatskom asistentu, ko to može čitati, koliko dugo čuvamo i kako zatražiti ispravku ili brisanje.",
     },
+    terms: {
+      title: "Uslovi rezervacije · Mountain View Resort i hotel",
+      description:
+        "Zahtjev dobija odgovor u roku od 24 sata, boravak se potvrđuje porukom, bez naknade za rezervaciju, doručak uključen i plaćanje po dolasku u gotovini ili karticom.",
+    },
     resort: {
       title: "Mountain View Resort · Gusinje, Crna Gora",
       description:
@@ -124,6 +135,11 @@ export const SEO_COPY = {
       description:
         "Что мы собираем, когда вы отправляете запрос или пишете автоматическому помощнику, кто это может прочитать, сколько мы храним и как попросить исправить или удалить данные.",
     },
+    terms: {
+      title: "Условия бронирования · Mountain View Resort и отель",
+      description:
+        "На запрос отвечаем в течение 24 часов, проживание подтверждается сообщением, без сбора за бронирование, завтрак включён, оплата по приезде наличными или картой.",
+    },
     resort: {
       title: "Mountain View Resort · Гусине, Черногория",
       description:
@@ -161,6 +177,11 @@ export const SEO_COPY = {
       title: "Privatësia · Kërkesa juaj dhe asistenti automatik",
       description:
         "Çfarë mbledhim kur dërgoni një kërkesë ose shkruani asistentit automatik, kush mund t'i lexojë, sa kohë i ruajmë dhe si të kërkoni korrigjim ose fshirje.",
+    },
+    terms: {
+      title: "Kushtet e rezervimit · Mountain View Resort dhe hoteli",
+      description:
+        "Kërkesa merr përgjigje brenda 24 orëve, qëndrimi konfirmohet me mesazh, pa tarifë rezervimi, mëngjesi përfshihet dhe pagesa në mbërritje me para në dorë ose kartë.",
     },
     resort: {
       title: "Mountain View Resort · Gusinje, Mali i Zi",
