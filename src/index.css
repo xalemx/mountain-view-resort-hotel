@@ -123,4 +123,15 @@
   .field-input {
     @apply w-full rounded-sm border border-border bg-background px-3 py-2.5 font-body text-sm text-foreground outline-none transition focus:border-primary;
   }
+
+  .mobile-action-bar {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* The fixed mobile action bar sits over the page: reserve room for it. */
+@media (max-width: 1023px) {
+  body.has-mobile-bar {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
 }

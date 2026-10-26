@@ -17,6 +17,16 @@ export const TRANSLATIONS = {
       { label: "Plan", href: "#plan" },
       { label: "Request an offer", href: "#offer" },
     ],
+    menu: {
+      label: "Menu",
+      close: "Close menu",
+      home: "Home",
+      stays: "Both properties",
+      gallery: "Gallery",
+      guide: "Local guide",
+      about: "About us",
+      contact: "Contact",
+    },
     hero: {
       eyebrow: "Gusinje · Montenegro",
       intro:
@@ -269,6 +279,16 @@ export const TRANSLATIONS = {
       { label: "Plan", href: "#plan" },
       { label: "Zatražite ponudu", href: "#offer" },
     ],
+    menu: {
+      label: "Meni",
+      close: "Zatvori meni",
+      home: "Početna",
+      stays: "Oba smještaja",
+      gallery: "Galerija",
+      guide: "Lokalni vodič",
+      about: "O nama",
+      contact: "Kontakt",
+    },
     hero: {
       eyebrow: "Gusinje · Crna Gora",
       intro:
@@ -521,6 +541,16 @@ export const TRANSLATIONS = {
       { label: "Планирование", href: "#plan" },
       { label: "Запросить предложение", href: "#offer" },
     ],
+    menu: {
+      label: "Меню",
+      close: "Закрыть меню",
+      home: "Главная",
+      stays: "Оба варианта",
+      gallery: "Галерея",
+      guide: "Местный гид",
+      about: "О нас",
+      contact: "Контакты",
+    },
     hero: {
       eyebrow: "Гусине · Черногория",
       intro:
@@ -773,6 +803,16 @@ export const TRANSLATIONS = {
       { label: "Planifiko", href: "#plan" },
       { label: "Kërkoni një ofertë", href: "#offer" },
     ],
+    menu: {
+      label: "Menyja",
+      close: "Mbyll menyjën",
+      home: "Ballina",
+      stays: "Të dyja qëndrimet",
+      gallery: "Galeria",
+      guide: "Udhërrëfyesi lokal",
+      about: "Rreth nesh",
+      contact: "Kontakt",
+    },
     hero: {
       eyebrow: "Gusinje · Mali i Zi",
       intro:
