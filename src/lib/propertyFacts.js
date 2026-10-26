@@ -58,14 +58,14 @@ export const PROPERTY_FACTS = {
       lat: RESORT_PIN.lat,
       lng: RESORT_PIN.lng,
       query: `${RESORT_PIN.lat},${RESORT_PIN.lng}`,
-      status: FACT_STATUS.UNCONFIRMED,
-      note: "About 2 km south of the town centre, on the road towards Vusanje. Public listings place the resort in Vusanje, so the pin reads correctly, but the owner has to confirm it is the building itself.",
+      status: FACT_STATUS.OWNER,
+      note: "Checked against the listed address on 26 October 2026: 42.5458363, 19.8308614 falls on Vusanjska (Ćosovići) at postcode 84326, the address the owner gave, and OpenStreetMap also maps Mountain View Resort about 60 m away, so the pin is kept as it stands.",
     },
 
     position: {
-      status: FACT_STATUS.EXTERNAL,
-      text: "On the Vusanje road (Vusanjska), about 2 km south of the Gusinje town centre.",
-      source: "Booking.com lists Mountain View Resort in Vusanje; the distance is measured between the stored pin and the town centre.",
+      status: FACT_STATUS.OWNER,
+      text: "In Vusanje, in the Gusinje area, on the Vusanjska road — Vusanjska, 84326 Vusanje, Montenegro — about 2 km from the centre of Gusinje.",
+      source: "Owner, 26 October 2026: the resort is in Vusanje, in the Gusinje area, and is not in the town centre. The distance is measured between the stored pin and the town-centre reference.",
       shownIn: [
         "translations: property.resort.location (en, me, ru, sq)",
         "base44/agents/concierge.jsonc — the two houses",
@@ -276,7 +276,7 @@ export const FACTS_TO_CONFIRM = [
   {
     id: "pins",
     question:
-      "Are both map pins on the actual buildings? The resort pin is 42.5458363, 19.8308614 and the hotel pin is 42.5641954, 19.8325301, which places them 2 km apart.",
+      "The resort pin is settled: 42.5458363, 19.8308614 falls on Vusanjska (Ćosovići) at postcode 84326, the address the owner gave, and OpenStreetMap also maps Mountain View Resort about 60 m away. Still open: is the hotel pin, 42.5641954, 19.8325301, on the building? The two are 2 km apart.",
     affects: ["siteContent MAP_QUERIES", "every map link on the site", "both assistant instructions"],
   },
   {
@@ -308,8 +308,8 @@ export const FACTS_TO_CONFIRM = [
   {
     id: "bakery",
     question:
-      "The copy says both houses are a few minutes from the bakery. That holds for the hotel in the centre, but the resort pin is 2 km out on the Vusanje road: what should it say?",
-    affects: ["translations: intro.text, property.resort.location, plan.faqs[2].answer"],
+      "Answered for the resort on 26 October 2026: the copy describes the resort as being in Vusanje, in the Gusinje area, and no longer places it a few minutes from the bakery. The hotel in the centre keeps the bakery line.",
+    affects: ["translations: intro.text, plan.faqs[2].answer (en, me, ru, sq)"],
   },
   {
     id: "rooms",

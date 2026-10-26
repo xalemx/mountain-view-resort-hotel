@@ -45,7 +45,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Welcome",
       title: "A quiet base at the foot of the Accursed Mountains",
-      text: "Mountain View is family-run, in a small town on the edge of Prokletije National Park. One property is a resort with a garden and room for everyone; the other a hotel in the town centre for people travelling light. Both are a few minutes from the bakery, ten minutes from the trailheads, and a world away from the crowds on the coast.",
+      text: "Mountain View is family-run, in the Gusinje area on the edge of Prokletije National Park. One property is a resort of bungalows in Vusanje, with room for everyone; the other a hotel in the centre of Gusinje for people travelling light. Both are a short drive from the bakery and the trailheads, and a world away from the crowds on the coast.",
     },
     stays: {
       eyebrow: "Two ways to stay",
@@ -55,9 +55,9 @@ export const TRANSLATIONS = {
       map: "See it on the map",
       details: "Full details",
       resort: {
-        place: "Gusinje · Prokletije",
+        place: "Vusanje · Gusinje area",
         description:
-          "Our larger property, with bungalows and rooms built for families and groups. A restaurant and bar serve local, Italian and Mediterranean dishes, with vegetarian, vegan and halal options; outside there is a garden, an open terrace and a fireplace, and peaks in view from almost every window.",
+          "Our larger property in Vusanje: a resort of bungalows and rooms built for families and groups. A restaurant and bar serve local, Italian and Mediterranean dishes, with vegetarian, vegan and halal options; outside there is a garden, an open terrace and a fireplace, and peaks in view from almost every window.",
         features: ["Restaurant & bar", "Breakfast included", "Family bungalows", "Free parking", "Airport shuttle", "Terrace & fireplace"],
       },
       inn: {
@@ -89,7 +89,7 @@ export const TRANSLATIONS = {
       resort: {
         rooms: "Bungalows and rooms built for families and groups.",
         location:
-          "In the Prokletije National Park area, between the Grebaje valley and the lake below Gusinje — a few minutes from the bakery and around ten minutes from the trailheads.",
+          "In Vusanje, in the Gusinje area, on the Vusanjska road — Vusanjska, 84326 Vusanje, Montenegro — about 2 km from the centre of Gusinje, at the entrance to the Prokletije National Park and the Grebaje valley.",
       },
       inn: {
         rooms: "Comfortable rooms, and a shared kitchen you are welcome to use.",
@@ -173,7 +173,7 @@ export const TRANSLATIONS = {
         {
           question: "Do I need a car?",
           answer:
-            "It helps, but it is not essential. Both properties are in or a short walk from the town centre, and the trailheads can be reached on foot or by taxi from Plav. Tell us what you are planning and we will help with the logistics.",
+            "It helps, but it is not essential. The resort is in Vusanje, about 2 km from the centre of Gusinje, and the hotel is in the centre of town; the trailheads can be reached by car or by taxi from Plav. Tell us what you are planning and we will help with the logistics.",
         },
       ],
     },
@@ -256,7 +256,7 @@ export const TRANSLATIONS = {
       eyebrow: "Who we are",
       title: "About Mountain View",
       paragraphs: [
-        "Mountain View is a family-run place to stay in Gusinje, a small mountain town in the north-east of Montenegro, on the edge of Prokletije National Park. We look after two houses: Mountain View Resort, our larger property with a garden, bungalows, a restaurant and a bar, and Hotel Mountain View, a small hotel in the town centre. We have been welcoming guests here for years, and most of them find us by word of mouth.",
+        "Mountain View is a family-run place to stay in the Gusinje area, a small mountain corner of north-east Montenegro on the edge of Prokletije National Park. We look after two houses: Mountain View Resort, our larger property in Vusanje — a resort of bungalows with a garden, a restaurant and a bar — and Hotel Mountain View, a small hotel in the centre of Gusinje. We have been welcoming guests here for years, and most of them find us by word of mouth.",
         "This website is our own booking office. It exists for the people who stay with us — families on holiday with children, hikers and climbers heading for the Grebaje valley, cyclists on the long routes through the Balkans, and travellers who simply want a quiet week in the mountains. Everything written here is for them: where the two houses are, what the rooms and the restaurant are like, how to get to Gusinje, when the trails are at their best, and what the valley offers beyond the door.",
         "There is no agency in the middle. You send us a request with your dates, we reply with availability and a price, and you confirm by message. No booking fees, no commission, and the person who answers your email is the person who will meet you when you arrive.",
         "The site is written and maintained by the family that runs the houses. We keep it deliberately simple: two properties, honest descriptions, our own photographs, and a direct line to us by form, phone or WhatsApp. If anything here does not match what you find on arrival, tell us — we would much rather put it right.",
@@ -337,7 +337,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Dobro došli",
       title: "Miran kutak u podnožju Prokletija",
-      text: "Mountain View je porodični posao u malom gradu na rubu Nacionalnog parka Prokletije. Jedno zdanje je resort sa baštom i mjestom za svakoga, a drugi hotel u centru grada za one koji putuju s malo prtljaga. Oba su nekoliko minuta od pekare, deset minuta od staza i daleko od gužve na primorju.",
+      text: "Mountain View je porodični posao u gusinjskom kraju, na rubu Nacionalnog parka Prokletije. Jedno zdanje je resort sa bungalovima u Vusanju i mjestom za svakoga, a drugi hotel u centru Gusinja za one koji putuju s malo prtljaga. Oba su kratkom vožnjom od pekare i od staza, i daleko od gužve na primorju.",
     },
     stays: {
       eyebrow: "Dva načina da odsjednete",
@@ -347,9 +347,9 @@ export const TRANSLATIONS = {
       map: "Pogledajte na mapi",
       details: "Svi detalji",
       resort: {
-        place: "Gusinje · Prokletije",
+        place: "Vusanje · gusinjski kraj",
         description:
-          "Naša veća kuća, sa bungalovima i sobama za porodice i grupe. Restoran i bar služe domaća, italijanska i mediteranska jela, uz vegetarijanske, veganske i halal opcije; napolju su bašta, otvorena terasa i ognjište, a vrhovi se vide iz gotovo svakog prozora.",
+          "Naša veća kuća u Vusanju: resort sa bungalovima i sobama za porodice i grupe. Restoran i bar služe domaća, italijanska i mediteranska jela, uz vegetarijanske, veganske i halal opcije; napolju su bašta, otvorena terasa i ognjište, a vrhovi se vide iz gotovo svakog prozora.",
         features: ["Restoran i bar", "Doručak uključen", "Porodični bungalovi", "Besplatan parking", "Transfer sa aerodroma", "Terasa i ognjište"],
       },
       inn: {
@@ -381,7 +381,7 @@ export const TRANSLATIONS = {
       resort: {
         rooms: "Bungalovi i sobe napravljeni za porodice i grupe.",
         location:
-          "U području Nacionalnog parka Prokletije, između doline Grebaje i jezera pod Gusinjem — nekoliko minuta od pekare i desetak minuta od početka staza.",
+          "U Vusanju, u gusinjskom kraju, na Vusanjskom putu — Vusanjska, 84326 Vusanje, Crna Gora — oko 2 km od centra Gusinja, na ulazu u Nacionalni park Prokletije i dolinu Grebaje.",
       },
       inn: {
         rooms: "Udobne sobe i zajednička kuhinja na korišćenje.",
@@ -464,7 +464,7 @@ export const TRANSLATIONS = {
         {
           question: "Da li mi treba auto?",
           answer:
-            "Pomaže, ali nije neophodan. Oba objekta su u centru ili na kratkoj šetnji od njega, a do početka staza možete pješke ili taksijem iz Plava. Recite nam šta planirate i pomoći ćemo vam oko logistike.",
+            "Pomaže, ali nije neophodan. Resort je u Vusanju, oko 2 km od centra Gusinja, a hotel je u centru grada; do početka staza možete autom ili taksijem iz Plava. Recite nam šta planirate i pomoći ćemo vam oko logistike.",
         },
       ],
     },
@@ -547,7 +547,7 @@ export const TRANSLATIONS = {
       eyebrow: "Ko smo",
       title: "O nama — Mountain View",
       paragraphs: [
-        "Mountain View je porodični smještaj u Gusinju, malom planinskom gradu na sjeveroistoku Crne Gore, na rubu Nacionalnog parka Prokletije. Vodimo dvije kuće: Mountain View Resort, našu veću kuću sa baštom, bungalovima, restoranom i barom, i Hotel Mountain View, mali hotel u centru grada. Godinama primamo goste, a većina nas pronađe preko priče.",
+        "Mountain View je porodični smještaj u gusinjskom kraju, malom planinskom kutku na sjeveroistoku Crne Gore, na rubu Nacionalnog parka Prokletije. Vodimo dvije kuće: Mountain View Resort, našu veću kuću u Vusanju — resort sa bungalovima, baštom, restoranom i barom — i Hotel Mountain View, mali hotel u centru Gusinja. Godinama primamo goste, a većina nas pronađe preko priče.",
         "Ovaj sajt je naša vlastita recepcija. Namijenjen je ljudima koji odsjedaju kod nas — porodicama s djecom, planinarima i alpinistima koji idu ka dolini Grebaje, biciklistima na dugim rutama kroz Balkan i putnicima koji jednostavno žele mirnu nedjelju u planinama. Sve što je ovdje napisano odnosi se na njih: gdje su dvije kuće, kakve su sobe i restoran, kako stići u Gusinje, kada su staze najbolje i šta dolina nudi iza vrata.",
         "Nema agencije u sredini. Pošaljete nam zahtjev sa datumima, mi odgovorimo sa slobodnim terminima i cijenom, a vi potvrdite porukom. Nema naknada za rezervaciju, nema provizije, a osoba koja odgovori na vaš mejl je ista koja će vas dočekati.",
         "Sajt piše i održava porodica koja vodi kuće. Namjerno ga držimo jednostavnim: dva objekta, iskreni opisi, naše fotografije i direktna veza s nama preko forme, telefona ili WhatsAppa. Ako nešto ovdje ne odgovara onome što zateknete, recite nam — radije ćemo to ispraviti.",
@@ -628,7 +628,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Добро пожаловать",
       title: "Тихое место у подножия Проклятых гор",
-      text: "Mountain View — семейное дело в маленьком городке на краю национального парка Проклетие. Первый дом — курорт с садом и местом для всех, второй — гостиница в центре для тех, кто путешествует налегке. До пекарни несколько минут, до троп десять, а до пляжей побережья — целый мир.",
+      text: "Mountain View — семейное дело в районе Гусине, на краю национального парка Проклетие. Первый дом — курорт с бунгало в Вусане и местом для всех, второй — гостиница в центре Гусине для тех, кто путешествует налегке. До пекарни и до троп — несколько минут на машине, а до пляжей побережья — целый мир.",
     },
     stays: {
       eyebrow: "Два способа остановиться",
@@ -638,9 +638,9 @@ export const TRANSLATIONS = {
       map: "Посмотреть на карте",
       details: "Подробнее",
       resort: {
-        place: "Гусине · Проклетие",
+        place: "Вусане · район Гусине",
         description:
-          "Наш большой дом с бунгало и номерами для семей и групп. Ресторан и бар предлагают местные, итальянские и средиземноморские блюда, в том числе вегетарианские, веганские и халяльные; на улице сад, открытая терраса и камин, а вершины видны почти из каждого окна.",
+          "Наш большой дом в Вусане: курорт с бунгало и номерами для семей и групп. Ресторан и бар предлагают местные, итальянские и средиземноморские блюда, в том числе вегетарианские, веганские и халяльные; на улице сад, открытая терраса и камин, а вершины видны почти из каждого окна.",
         features: ["Ресторан и бар", "Завтрак включён", "Семейные бунгало", "Бесплатная парковка", "Трансфер из аэропорта", "Терраса и камин"],
       },
       inn: {
@@ -672,7 +672,7 @@ export const TRANSLATIONS = {
       resort: {
         rooms: "Бунгало и номера для семей и групп.",
         location:
-          "В районе национального парка Проклетие, между долиной Гребае и озером под Гусине — несколько минут до пекарни и около десяти минут до начала троп.",
+          "В Вусане, в районе Гусине, на Вусаньской дороге — Vusanjska, 84326 Vusanje, Черногория — около 2 км от центра Гусине, у входа в национальный парк Проклетие и долину Гребае.",
       },
       inn: {
         rooms: "Уютные номера и общая кухня в вашем распоряжении.",
@@ -755,7 +755,7 @@ export const TRANSLATIONS = {
         {
           question: "Нужна ли машина?",
           answer:
-            "Она помогает, но не обязательна. Оба дома находятся в центре или в нескольких минутах от него, а к началу троп можно дойти пешком или доехать на такси из Плава. Расскажите о своих планах, и мы поможем с логистикой.",
+            "Она помогает, но не обязательна. Курорт находится в Вусане, около 2 км от центра Гусине, а гостиница — в центре города; к началу троп можно доехать на машине или на такси из Плава. Расскажите о своих планах, и мы поможем с логистикой.",
         },
       ],
     },
@@ -838,7 +838,7 @@ export const TRANSLATIONS = {
       eyebrow: "Кто мы",
       title: "О нас — Mountain View",
       paragraphs: [
-        "Mountain View — семейный гостевой дом в Гусине, небольшом горном городе на северо-востоке Черногории, на краю национального парка Проклетие. Мы принимаем гостей в двух домах: Mountain View Resort — более просторный комплекс с садом, бунгало, рестораном и баром, и Hotel Mountain View — небольшой отель в центре города. Мы работаем здесь много лет, и большинство гостей находят нас по рекомендациям.",
+        "Mountain View — семейный гостевой дом в районе Гусине, небольшом горном уголке на северо-востоке Черногории, на краю национального парка Проклетие. Мы принимаем гостей в двух домах: Mountain View Resort — более просторный дом в Вусане, курорт с бунгало, садом, рестораном и баром, и Hotel Mountain View — небольшой отель в центре Гусине. Мы работаем здесь много лет, и большинство гостей находят нас по рекомендациям.",
         "Этот сайт — наша собственная служба бронирования. Он создан для тех, кто у нас останавливается: семей с детьми, туристов и альпинистов, идущих в долину Гребае, велосипедистов на длинных маршрутах по Балканам и путешественников, которым нужна тихая неделя в горах. Здесь мы рассказываем именно о них: где находятся оба дома, какие в них номера и ресторан, как добраться до Гусине, когда лучше идти по тропам и что долина предлагает за порогом.",
         "Посредников нет. Вы присылаете запрос с датами, мы отвечаем о свободных датах и цене, вы подтверждаете сообщением. Без сборов за бронирование, без комиссии, и на ваше письмо отвечает тот же человек, который встретит вас по приезде.",
         "Сайт ведёт и поддерживает семья, которая управляет домами. Мы намеренно держим его простым: два объекта, честные описания, наши фотографии и прямая связь через форму, телефон или WhatsApp. Если что-то здесь не совпадёт с тем, что вы увидите на месте, напишите нам — мы предпочтём это исправить.",
@@ -919,7 +919,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Mirë se vini",
       title: "Një bazë e qetë në këmbët e Bjeshkëve të Nemuna",
-      text: "Mountain View drejtohet nga familja, në një qytet të vogël në skaj të Parkut Kombëtar të Bjeshkëve të Nemuna. Njëra shtëpi është resort me kopsht dhe vend për të gjithë, tjetra hotel në qendër për ata që udhëtojnë lehtë. Të dyja janë disa minuta nga furra e bukës, dhjetë minuta nga shtigjet dhe një botë larg turmave të bregdetit.",
+      text: "Mountain View drejtohet nga familja, në zonën e Gusinjës, në skaj të Parkut Kombëtar të Bjeshkëve të Nemuna. Njëra shtëpi është resort me bungalove në Vusanje dhe vend për të gjithë, tjetra hotel në qendër të Gusinjës për ata që udhëtojnë lehtë. Të dyja janë pak minuta me makinë nga furra e bukës dhe nga shtigjet, dhe një botë larg turmave të bregdetit.",
     },
     stays: {
       eyebrow: "Dy mënyra për të qëndruar",
@@ -929,9 +929,9 @@ export const TRANSLATIONS = {
       map: "Shiheni në hartë",
       details: "Detaje të plota",
       resort: {
-        place: "Gusinje · Prokletijet",
+        place: "Vusanje · zona e Gusinjës",
         description:
-          "Shtëpia jonë më e madhe, me bungalove dhe dhoma për familje e grupe. Restoranti dhe bari ofrojnë gatime vendase, italiane dhe mesdhetare, me opsione vegjetariane, vegane dhe halal; jashtë ka kopsht, tarracë të hapur dhe vatër, ndërsa majat shihen nga pothuajse çdo dritare.",
+          "Shtëpia jonë më e madhe në Vusanje: resort me bungalove dhe dhoma për familje e grupe. Restoranti dhe bari ofrojnë gatime vendase, italiane dhe mesdhetare, me opsione vegjetariane, vegane dhe halal; jashtë ka kopsht, tarracë të hapur dhe vatër, ndërsa majat shihen nga pothuajse çdo dritare.",
         features: ["Restorant dhe bar", "Mëngjes i përfshirë", "Bungalove familjare", "Parkim falas", "Transfert nga aeroporti", "Tarracë dhe vatër"],
       },
       inn: {
@@ -963,7 +963,7 @@ export const TRANSLATIONS = {
       resort: {
         rooms: "Bungalove dhe dhoma të ndërtuara për familje e grupe.",
         location:
-          "Në zonën e Parkut Kombëtar të Prokletijeve, midis luginës së Grebajës dhe liqenit nën Gusinje — disa minuta nga furra e bukës dhe rreth dhjetë minuta nga nisjet e shtigjeve.",
+          "Në Vusanje, në zonën e Gusinjës, në rrugën e Vusanjes — Vusanjska, 84326 Vusanje, Mali i Zi — rreth 2 km nga qendra e Gusinjës, në hyrje të Parkut Kombëtar të Prokletijeve dhe luginës së Grebajës.",
       },
       inn: {
         rooms: "Dhoma komode dhe kuzhinë e përbashkët në dispozicionin tuaj.",
@@ -1047,7 +1047,7 @@ export const TRANSLATIONS = {
         {
           question: "A më duhet makinë?",
           answer:
-            "Ndihmon, por nuk është e domosdoshme. Të dyja objektet janë në qendër ose pak minuta larg saj, dhe nisjet e shtigjeve arrihen në këmbë ose me taksi nga Plava. Na thoni çfarë planifikoni dhe do t'ju ndihmojmë me logjistikën.",
+            "Ndihmon, por nuk është e domosdoshme. Resorti është në Vusanje, rreth 2 km nga qendra e Gusinjës, dhe hoteli është në qendër të qytetit; nisjet e shtigjeve arrihen me makinë ose me taksi nga Plava. Na thoni çfarë planifikoni dhe do t'ju ndihmojmë me logjistikën.",
         },
       ],
     },
@@ -1130,7 +1130,7 @@ export const TRANSLATIONS = {
       eyebrow: "Kush jemi",
       title: "Rreth Mountain View",
       paragraphs: [
-        "Mountain View është një shtëpi familjare për mysafirë në Gusinje, një qytet i vogël mali në veri-lindje të Malit të Zi, në buzë të Parkut Kombëtar të Prokletijeve. Kujdesemi për dy shtëpi: Mountain View Resort, prona jonë më e madhe me kopsht, bungalove, restorant dhe bar, dhe Hotel Mountain View, një hotel i vogël në qendër të qytetit. Prej vitesh mirëpresim mysafirë, dhe shumica na gjejnë me fjalë të tjera.",
+        "Mountain View është një shtëpi familjare për mysafirë në zonën e Gusinjës, një cep i vogël mali në veri-lindje të Malit të Zi, në buzë të Parkut Kombëtar të Prokletijeve. Kujdesemi për dy shtëpi: Mountain View Resort, prona jonë më e madhe në Vusanje — resort me bungalove, kopsht, restorant dhe bar — dhe Hotel Mountain View, një hotel i vogël në qendër të Gusinjës. Prej vitesh mirëpresim mysafirë, dhe shumica na gjejnë me fjalë të tjera.",
         "Kjo faqe është zyra jonë e rezervimeve. Ekziston për njerëzit që qëndrojnë me ne — familje me fëmijë, ecës dhe alpinistë që nisen drejt luginës së Grebajës, çiklistë në rrugët e gjata të Ballkanit dhe udhëtarë që thjesht duan një javë të qetë në male. Gjithçka e shkruar këtu është për ta: ku janë dy shtëpitë, si janë dhomat dhe restoranti, si të arrihet në Gusinje, kur shtigjet janë më të mirat dhe çfarë ofron lugina përtej derës.",
         "Nuk ka agjenci në mes. Ju dërgoni kërkesën me datat, ne përgjigjemi me disponueshmërinë dhe çmimin, dhe ju konfirmoni me mesazh. Pa tarifa rezervimi, pa komision, dhe personi që përgjigjet është po ai që do t'ju presë në mbërritje.",
         "Këtë faqe e shkruan dhe e mirëmban familja që drejton shtëpitë. E mbajmë qëllimisht të thjeshtë: dy objekte, përshkrime të sinqerta, fotografitë tona dhe një linjë të drejtpërdrejtë me ne përmes formularit, telefonit ose WhatsApp. Nëse diçka këtu nuk përputhet me atë që gjeni kur vini, na thoni — më mirë ta korrigjojmë.",

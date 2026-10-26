@@ -25,14 +25,14 @@ export const SEO_IMAGES = {
 export const SEO_COPY = {
   en: {
     home: {
-      title: "Mountain View Resort & Hotel · Gusinje, Montenegro",
+      title: "Mountain View Resort & Hotel · Vusanje & Gusinje, Montenegro",
       description:
-        "Two places to stay in Gusinje, Montenegro: Mountain View Resort on the Vusanje road and Hotel Mountain View in the town centre, at the foot of the Prokletije mountains.",
+        "Two places to stay in the Gusinje area of Montenegro: Mountain View Resort in Vusanje and Hotel Mountain View in the centre of town, at the foot of the Prokletije mountains.",
     },
     about: {
-      title: "About Mountain View · Two houses in Gusinje",
+      title: "About Mountain View · Two houses in the Gusinje area",
       description:
-        "A family resort and a small hotel in Gusinje, Montenegro, between the Grebaje valley and the Vusanje road, under the peaks of the Prokletije. Breakfast is included at both.",
+        "A family resort of bungalows in Vusanje and a small hotel in Gusinje, Montenegro, between the Grebaje valley and the Prokletije peaks. Breakfast is included at both.",
     },
     guide: {
       title: "Local guide · Walks, lakes and viewpoints near Gusinje",
@@ -55,9 +55,9 @@ export const SEO_COPY = {
         "A request is answered within 24 hours, a stay is confirmed by message, no booking fee, breakfast included, and payment on arrival by cash or card.",
     },
     resort: {
-      title: "Mountain View Resort · Gusinje, Montenegro",
+      title: "Mountain View Resort · Vusanje, Gusinje, Montenegro",
       description:
-        "A family resort on the Vusanje road, about 2 km south of Gusinje, with breakfast included and free private parking, at the foot of the Prokletije mountains.",
+        "A resort of bungalows on the Vusanjska road in Vusanje, in the Gusinje area of Montenegro: breakfast included, free private parking, under the Prokletije peaks.",
     },
     hotel: {
       title: "Hotel Mountain View · Gusinje town centre",
@@ -68,14 +68,14 @@ export const SEO_COPY = {
 
   me: {
     home: {
-      title: "Mountain View Resort & Hotel · Gusinje, Crna Gora",
+      title: "Mountain View Resort & Hotel · Vusanje i Gusinje, Crna Gora",
       description:
-        "Dvije kuće za boravak u Gusinju: Mountain View Resort na Vusanjskom putu i Hotel Mountain View u centru, u podnožju Prokletija.",
+        "Dvije kuće za boravak u gusinjskom kraju: Mountain View Resort u Vusanju i Hotel Mountain View u centru, u podnožju Prokletija.",
     },
     about: {
-      title: "O nama · Dvije kuće u Gusinju",
+      title: "O nama · Dvije kuće u gusinjskom kraju",
       description:
-        "Porodični resort i mali hotel u Gusinju, između doline Grebaje i Vusanjskog puta, pod vrhovima Prokletija. Doručak je uključen u obje kuće.",
+        "Porodični resort sa bungalovima u Vusanju i mali hotel u Gusinju, između doline Grebaje i vrhova Prokletija. Doručak je uključen u obje kuće.",
     },
     guide: {
       title: "Vodič kroz okolinu · Šetnje, jezera i vidikovci",
@@ -98,9 +98,9 @@ export const SEO_COPY = {
         "Zahtjev dobija odgovor u roku od 24 sata, boravak se potvrđuje porukom, bez naknade za rezervaciju, doručak uključen i plaćanje po dolasku u gotovini ili karticom.",
     },
     resort: {
-      title: "Mountain View Resort · Gusinje, Crna Gora",
+      title: "Mountain View Resort · Vusanje, Gusinje, Crna Gora",
       description:
-        "Porodični resort na Vusanjskom putu, oko 2 km južno od Gusinja, sa doručkom uključenim i besplatnim privatnim parkingom, u podnožju Prokletija.",
+        "Porodični resort sa bungalovima na Vusanjskom putu u Vusanju, u gusinjskom kraju: doručak uključen, besplatan privatni parking, u podnožju Prokletija.",
     },
     hotel: {
       title: "Hotel Mountain View · Centar Gusinja",
@@ -111,14 +111,14 @@ export const SEO_COPY = {
 
   ru: {
     home: {
-      title: "Mountain View Resort & Hotel · Гусине, Черногория",
+      title: "Mountain View Resort & Hotel · Вусане и Гусине, Черногория",
       description:
-        "Два дома для проживания в Гусине, Черногория: Mountain View Resort на Вусаньской дороге и отель Mountain View в центре, у подножия Проклетие.",
+        "Два дома для проживания в районе Гусине, Черногория: Mountain View Resort в Вусане и отель Mountain View в центре, у подножия Проклетие.",
     },
     about: {
-      title: "О нас · Два дома в Гусине",
+      title: "О нас · Два дома в районе Гусине",
       description:
-        "Семейный resort и небольшой отель в Гусине, между долиной Гребае и Вусаньской дорогой, под вершинами Проклетие. Завтрак включён в обоих домах.",
+        "Семейный resort с бунгало в Вусане и небольшой отель в Гусине, между долиной Гребае и вершинами Проклетие. Завтрак включён в обоих домах.",
     },
     guide: {
       title: "Гид по окрестностям · Прогулки, озёра и смотровые площадки",
@@ -141,9 +141,9 @@ export const SEO_COPY = {
         "На запрос отвечаем в течение 24 часов, проживание подтверждается сообщением, без сбора за бронирование, завтрак включён, оплата по приезде наличными или картой.",
     },
     resort: {
-      title: "Mountain View Resort · Гусине, Черногория",
+      title: "Mountain View Resort · Вусане, Гусине, Черногория",
       description:
-        "Семейный resort на Вусаньской дороге, около 2 км южнее Гусине, с завтраком и бесплатной частной парковкой, у подножия Проклетие.",
+        "Семейный resort с бунгало на Вусаньской дороге в Вусане, в районе Гусине: завтрак включён, бесплатная частная парковка, у подножия Проклетие.",
     },
     hotel: {
       title: "Отель Mountain View · Центр Гусине",
@@ -154,14 +154,14 @@ export const SEO_COPY = {
 
   sq: {
     home: {
-      title: "Mountain View Resort & Hotel · Gusinje, Mali i Zi",
+      title: "Mountain View Resort & Hotel · Vusanje dhe Gusinje, Mali i Zi",
       description:
-        "Dy shtëpi për qëndrim në Gusinje, Mali i Zi: Mountain View Resort në rrugën e Vusanjes dhe Hotel Mountain View në qendër, në këmbët e Prokletijeve.",
+        "Dy shtëpi për qëndrim në zonën e Gusinjës, Mali i Zi: Mountain View Resort në Vusanje dhe Hotel Mountain View në qendër, në këmbët e Prokletijeve.",
     },
     about: {
-      title: "Rreth nesh · Dy shtëpi në Gusinje",
+      title: "Rreth nesh · Dy shtëpi në zonën e Gusinjës",
       description:
-        "Një resort familjar dhe një hotel i vogël në Gusinje, midis luginës së Grebajës dhe rrugës së Vusanjes, nën majat e Prokletijeve. Mëngjesi përfshihet në të dyja shtëpitë.",
+        "Një resort familjar me bungalove në Vusanje dhe një hotel i vogël në Gusinje, midis luginës së Grebajës dhe majave të Prokletijeve. Mëngjesi përfshihet në të dyja shtëpitë.",
     },
     guide: {
       title: "Udhërrëfyesi i zonës · Ecje, liqene dhe pamje",
@@ -184,14 +184,14 @@ export const SEO_COPY = {
         "Kërkesa merr përgjigje brenda 24 orëve, qëndrimi konfirmohet me mesazh, pa tarifë rezervimi, mëngjesi përfshihet dhe pagesa në mbërritje me para në dorë ose kartë.",
     },
     resort: {
-      title: "Mountain View Resort · Gusinje, Mali i Zi",
+      title: "Mountain View Resort · Vusanje, Gusinje, Mali i Zi",
       description:
-        "Një resort familjar në rrugën e Vusanjes, rreth 2 km në jug të Gusinjes, me mëngjes të përfshirë dhe parkim privat falas, në këmbët e Prokletijeve.",
+        "Një resort familjar me bungalove në rrugën e Vusanjes në Vusanje, në zonën e Gusinjës: mëngjes i përfshirë, parkim privat falas, nën majat e Prokletijeve.",
     },
     hotel: {
-      title: "Hotel Mountain View · Qendra e Gusinjes",
+      title: "Hotel Mountain View · Qendra e Gusinjës",
       description:
-        "Një hotel i vogël në qendër të Gusinjes, rreth 300 m nga sheshi dhe 2 km nga resorti, me mëngjes të përfshirë dhe pagesë në mbërritje.",
+        "Një hotel i vogël në qendër të Gusinjës, rreth 300 m nga sheshi dhe 2 km nga resorti, me mëngjes të përfshirë dhe pagesë në mbërritje.",
     },
   },
 };

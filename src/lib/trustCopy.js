@@ -10,7 +10,7 @@ export const HOSTS_COPY = {
     eyebrow: "Your hosts",
     title: "The family you will meet",
     intro:
-      "Mountain View is a family-run place to stay in Gusinje, a small mountain town in the north-east of Montenegro, on the edge of Prokletije National Park. We look after both houses — the resort on the Vusanje road and the small hotel in the centre of town — and most of our guests find us by word of mouth.",
+      "Mountain View is a family-run place to stay in the Gusinje area, on the edge of Prokletije National Park in the north-east of Montenegro. We look after both houses — the resort of bungalows in Vusanje and the small hotel in the centre of Gusinje — and most of our guests find us by word of mouth.",
     detail:
       "There is no agency in the middle. You send us your dates, we reply with what is available and a price, and the person who answers is the person who meets you when you arrive.",
     reachTitle: "Straight to us",
@@ -23,7 +23,7 @@ export const HOSTS_COPY = {
     eyebrow: "Vaši domaćini",
     title: "Porodica koja vas dočekuje",
     intro:
-      "Mountain View je porodično mjesto za boravak u Gusinju, malom planinskom gradu na sjeveroistoku Crne Gore, na ivici Nacionalnog parka Prokletije. Vodimo obje kuće, resort na Vusanjskom putu i mali hotel u centru, a većina gostiju dolazi nam po preporuci.",
+      "Mountain View je porodično mjesto za boravak u gusinjskom kraju, na ivici Nacionalnog parka Prokletije na sjeveroistoku Crne Gore. Vodimo obje kuće — resort sa bungalovima u Vusanju i mali hotel u centru Gusinja — a većina gostiju dolazi nam po preporuci.",
     detail:
       "Nema agencije u sredini. Pošaljete nam datume, mi odgovorimo šta je slobodno i po kojoj cijeni, a osoba koja odgovori je i osoba koja vas dočekuje.",
     reachTitle: "Direktno do nas",
@@ -36,7 +36,7 @@ export const HOSTS_COPY = {
     eyebrow: "Ваши хозяева",
     title: "Семья, которая вас встретит",
     intro:
-      "Mountain View — семейное место для отдыха в Гусине, небольшом горном городе на северо-востоке Черногории, на краю национального парка Проклетие. Мы содержим оба дома: resort на Вусаньской дороге и небольшой отель в центре. Большинство гостей приезжает к нам по рекомендации.",
+      "Mountain View — семейное место для отдыха в районе Гусине, на краю национального парка Проклетие на северо-востоке Черногории. Мы содержим оба дома: resort с бунгало в Вусане и небольшой отель в центре Гусине. Большинство гостей приезжает к нам по рекомендации.",
     detail:
       "Агентства посередине нет. Вы присылаете даты, мы отвечаем, что свободно и по какой цене, и человек, который отвечает, встречает вас по приезде.",
     reachTitle: "Напрямую к нам",
@@ -49,7 +49,7 @@ export const HOSTS_COPY = {
     eyebrow: "Pritësit tuaj",
     title: "Familja që do t'ju presë",
     intro:
-      "Mountain View është një vend familjar për të qëndruar në Gusinje, një qytet i vogël malor në verilindje të Malit të Zi, në kufi të Parkut Kombëtar të Prokletijeve. Kujdesemi për të dyja shtëpitë, resortin në rrugën e Vusanjes dhe hotelin e vogël në qendër, dhe shumica e mysafirëve vijnë me rekomandim.",
+      "Mountain View është një vend familjar për të qëndruar në zonën e Gusinjës, në kufi të Parkut Kombëtar të Prokletijeve në verilindje të Malit të Zi. Kujdesemi për të dyja shtëpitë — resortin me bungalove në Vusanje dhe hotelin e vogël në qendër të Gusinjës — dhe shumica e mysafirëve vijnë me rekomandim.",
     detail:
       "Nuk ka agjenci në mes. Ju dërgoni datat, ne përgjigjemi çfarë është e lirë dhe me çfarë çmimi, dhe personi që përgjigjet është ai që ju pret kur arrini.",
     reachTitle: "Direkt tek ne",
@@ -63,10 +63,10 @@ export const MAP_COPY = {
   en: {
     eyebrow: "Where we are",
     title: "Two houses, one valley",
-    text: "Mountain View Resort is on the Vusanje road, about 2 km south of the centre of Gusinje. Hotel Mountain View stands in the middle of the town. The two are 2 km apart, and both are a short drive from the trailheads of the Grebaje valley.",
+    text: "Mountain View Resort is in Vusanje, in the Gusinje area — the address is Vusanjska, 84326 Vusanje, about 2 km from the centre of Gusinje on the Vusanjska road. Hotel Mountain View stands in the middle of Gusinje. The two are 2 km apart, and both are a short drive from the trailheads of the Grebaje valley.",
     directions: {
-      resort: "Vusanje road, about 2 km south of the town centre.",
-      inn: "Town centre, about 300 m from the square and 2 km from the resort.",
+      resort: "Vusanje, about 2 km from the centre of Gusinje — Vusanjska, 84326 Vusanje.",
+      inn: "Gusinje town centre, about 300 m from the square and 2 km from the resort.",
     },
     link: "Directions in Google Maps",
     mapLabel: "Map of Gusinje showing both Mountain View houses",
@@ -77,10 +77,10 @@ export const MAP_COPY = {
   me: {
     eyebrow: "Gdje smo",
     title: "Dvije kuće, jedna dolina",
-    text: "Mountain View Resort je na Vusanjskom putu, oko 2 km južno od centra Gusinja. Hotel Mountain View je u središtu grada. Kuće su 2 km jedna od druge, a obje su kratkom vožnjom od ulaza u dolinu Grebaje.",
+    text: "Mountain View Resort je u Vusanju, u gusinjskom kraju — adresa je Vusanjska, 84326 Vusanje, oko 2 km od centra Gusinja na Vusanjskom putu. Hotel Mountain View je u središtu Gusinja. Kuće su 2 km jedna od druge, a obje su kratkom vožnjom od ulaza u dolinu Grebaje.",
     directions: {
-      resort: "Vusanjski put, oko 2 km južno od centra.",
-      inn: "Centar grada, oko 300 m od trga i 2 km od resorta.",
+      resort: "Vusanje, oko 2 km od centra Gusinja — Vusanjska, 84326 Vusanje.",
+      inn: "Centar Gusinja, oko 300 m od trga i 2 km od resorta.",
     },
     link: "Navigacija u Google Mapama",
     mapLabel: "Mapa Gusinja sa obje Mountain View kuće",
@@ -91,10 +91,10 @@ export const MAP_COPY = {
   ru: {
     eyebrow: "Где мы",
     title: "Два дома, одна долина",
-    text: "Mountain View Resort стоит на Вусаньской дороге, около 2 км южнее центра Гусине. Отель Mountain View — в самом центре города. Дома разделяют 2 км, и от обоих недалеко до троп долины Гребае.",
+    text: "Mountain View Resort находится в Вусане, в районе Гусине — адрес: Vusanjska, 84326 Vusanje, около 2 км от центра Гусине на Вусаньской дороге. Отель Mountain View — в самом центре Гусине. Дома разделяют 2 км, и от обоих недалеко до троп долины Гребае.",
     directions: {
-      resort: "Вусаньская дорога, около 2 км южнее центра.",
-      inn: "Центр города, около 300 м от площади и 2 км от resort.",
+      resort: "Вусане, около 2 км от центра Гусине — Vusanjska, 84326 Vusanje.",
+      inn: "Центр Гусине, около 300 м от площади и 2 км от resort.",
     },
     link: "Маршрут в Google Картах",
     mapLabel: "Карта Гусине с двумя домами Mountain View",
@@ -105,13 +105,13 @@ export const MAP_COPY = {
   sq: {
     eyebrow: "Ku jemi",
     title: "Dy shtëpi, një luginë",
-    text: "Mountain View Resort është në rrugën e Vusanjes, rreth 2 km në jug të qendrës së Gusinjes. Hotel Mountain View është në mes të qytetit. Shtëpitë janë 2 km larg njëra-tjetrës dhe të dyja janë pak minuta me makinë nga shtigjet e luginës së Grebajës.",
+    text: "Mountain View Resort është në Vusanje, në zonën e Gusinjës — adresa është Vusanjska, 84326 Vusanje, rreth 2 km nga qendra e Gusinjës në rrugën e Vusanjes. Hotel Mountain View është në mes të Gusinjës. Shtëpitë janë 2 km larg njëra-tjetrës dhe të dyja janë pak minuta me makinë nga shtigjet e luginës së Grebajës.",
     directions: {
-      resort: "Rruga e Vusanjes, rreth 2 km në jug të qendrës.",
-      inn: "Qendra e qytetit, rreth 300 m nga sheshi dhe 2 km nga resorti.",
+      resort: "Vusanje, rreth 2 km nga qendra e Gusinjës — Vusanjska, 84326 Vusanje.",
+      inn: "Qendra e Gusinjës, rreth 300 m nga sheshi dhe 2 km nga resorti.",
     },
     link: "Udhëzime në Google Maps",
-    mapLabel: "Harta e Gusinjes me dy shtëpitë Mountain View",
+    mapLabel: "Harta e Gusinjës me dy shtëpitë Mountain View",
     approximate:
       "Pikat tregojnë përafërsisht vendndodhjen e shtëpive. Hapni shtëpinë në Google Maps për udhëzime, të cilat në telefon hapen në aplikacion.",
   },
