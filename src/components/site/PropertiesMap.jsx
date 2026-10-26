@@ -6,9 +6,9 @@ import { PROPERTIES } from "@/lib/siteContent";
 import { PROPERTY_FACTS } from "@/lib/propertyFacts";
 import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
 
-// The two houses on one map, both labelled. The map is drawn with OpenStreetMap
-// tiles, which are free to use and need no key, and the pins are our own so the
-// map never depends on marker images that a build step can lose.
+// The two houses on one map, both labelled. The map is drawn with CARTO's hosted
+// basemap of OpenStreetMap data, which allows this use without a key, and the
+// pins are our own so the map never depends on marker images a build step can lose.
 const HOUSES = PROPERTIES.map((property) => ({
   id: property.id,
   number: property.number,
@@ -41,8 +41,9 @@ export default function PropertiesMap({ labels }) {
       aria-label={labels.mapLabel}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        url="https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        maxZoom={19}
       />
 
       {HOUSES.map((house) => (
