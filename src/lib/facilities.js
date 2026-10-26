@@ -6,6 +6,11 @@
 // access, which is said as far as it goes — no individual bungalow is described
 // as fully accessible, because the owner has not confirmed the access details of
 // each one yet.
+//
+// The languages are the ones the property is listed with, spoken by the family:
+// Bosnian, English, Croatian, Albanian and Serbian. Russian is a language of the
+// website, not a spoken one, and the line says so, so nobody books expecting to
+// be answered in Russian.
 
 export const RESORT_FACILITIES = {
   en: [
@@ -22,6 +27,7 @@ export const RESORT_FACILITIES = {
     "Airport shuttle and other shuttle services, at an additional charge",
     "Laundry, ironing and dry cleaning, at an additional charge",
     "Accessible facilities and wheelchair access at the property — ask us for the details that matter to you",
+    "Languages spoken: Bosnian, English, Croatian, Albanian and Serbian — the website is also written in Russian",
   ],
   me: [
     "Besplatan Wi-Fi u cijelom objektu",
@@ -37,6 +43,7 @@ export const RESORT_FACILITIES = {
     "Transfer sa aerodroma i drugi transferi, uz doplatu",
     "Pranje rublja, peglanje i hemijsko čišćenje, uz doplatu",
     "Objekat je naveden sa pristupačnim sadržajima i pristupom za kolica — pitajte nas za detalje koji su vam važni",
+    "Jezici koje govorimo: bosanski, engleski, hrvatski, albanski i srpski — sajt je napisan i na ruskom",
   ],
   ru: [
     "Бесплатный Wi-Fi на всей территории",
@@ -52,6 +59,7 @@ export const RESORT_FACILITIES = {
     "Трансфер из аэропорта и другие трансферы, за дополнительную плату",
     "Стирка, глажка и химчистка, за дополнительную плату",
     "Для объекта указаны доступная среда и доступ для инвалидных колясок — напишите нам, что именно для вас важно",
+    "Языки, на которых мы говорим: боснийский, английский, хорватский, албанский и сербский — сайт также написан на русском",
   ],
   sq: [
     "Wi-Fi falas në të gjithë objektin",
@@ -67,5 +75,6 @@ export const RESORT_FACILITIES = {
     "Transfert nga aeroporti dhe transferta të tjera, me pagesë shtesë",
     "Larje, hekurosje dhe pastrim kimik, me pagesë shtesë",
     "Objekti është i listuar me facilitete të aksesueshme dhe akses me karrocë — na pyesni për detajet që ju interesojnë",
+    "Gjuhët që flasim: boshnjake, angleze, kroate, shqipe dhe serbe — sajti është shkruar edhe në rusisht",
   ],
 };

@@ -42,7 +42,7 @@ export const SEO_COPY = {
     contact: {
       title: "Contact & booking enquiry · Mountain View, Gusinje",
       description:
-        "Send us your dates and guests, ask a question, or message the host on WhatsApp. Breakfast is available, payment is on arrival, and we answer in four languages.",
+        "Send us your dates and guests, ask a question, or message the host on WhatsApp. Breakfast is available, payment is on arrival, and we answer in the languages we speak.",
     },
     privacy: {
       title: "Privacy · Your enquiry and the automated assistant",
@@ -85,7 +85,7 @@ export const SEO_COPY = {
     contact: {
       title: "Kontakt i zahtjev za boravak · Mountain View",
       description:
-        "Pošaljite datume i broj gostiju, postavite pitanje ili pišite domaćinu na WhatsApp. Doručak je dostupan, plaćanje je po dolasku, a odgovaramo na četiri jezika.",
+        "Pošaljite datume i broj gostiju, postavite pitanje ili pišite domaćinu na WhatsApp. Doručak je dostupan, plaćanje je po dolasku, a odgovaramo na jezicima koje govorimo.",
     },
     privacy: {
       title: "Privatnost · Vaš zahtjev i automatski asistent",
@@ -128,7 +128,7 @@ export const SEO_COPY = {
     contact: {
       title: "Контакты и запрос на проживание · Mountain View",
       description:
-        "Напишите даты и число гостей, задайте вопрос или напишите хозяину в WhatsApp. Завтрак доступен, оплата по приезде, отвечаем на четырёх языках.",
+        "Напишите даты и число гостей, задайте вопрос или напишите хозяину в WhatsApp. Завтрак доступен, оплата по приезде, отвечаем на языках, на которых говорим.",
     },
     privacy: {
       title: "Приватность · Ваш запрос и автоматический помощник",
@@ -171,7 +171,7 @@ export const SEO_COPY = {
     contact: {
       title: "Kontakt dhe kërkesë për qëndrim · Mountain View",
       description:
-        "Dërgoni datat dhe numrin e mysafirëve, bëni një pyetje ose shkruajini pronarit në WhatsApp. Mëngjesi ofrohet, pagesa bëhet në mbërritje dhe përgjigjemi në katër gjuhë.",
+        "Dërgoni datat dhe numrin e mysafirëve, bëni një pyetje ose shkruajini pronarit në WhatsApp. Mëngjesi ofrohet, pagesa bëhet në mbërritje dhe përgjigjemi në gjuhët që flasim.",
     },
     privacy: {
       title: "Privatësia · Kërkesa juaj dhe asistenti automatik",

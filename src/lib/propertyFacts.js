@@ -180,6 +180,17 @@ export const PROPERTY_FACTS = {
       },
     ],
 
+    languages: {
+      status: FACT_STATUS.OWNER,
+      source: "Owner, 26 October 2026, from the languages the property is listed with.",
+      text: "Spoken by the family: Bosnian, English, Croatian, Albanian and Serbian. The website is written in Montenegrin, English, Albanian and Russian, and that is the only place Russian belongs: it is not a spoken language here, so nobody should book expecting a reply in it.",
+      shownIn: [
+        "src/lib/facilities.js — the resort's facilities list",
+        "index.html structured data (knowsLanguage)",
+        "base44/agents/concierge.jsonc, booking_assistant.jsonc, local_guide.jsonc",
+      ],
+    },
+
     policies: {
       breakfast: {
         status: FACT_STATUS.OWNER,
@@ -463,6 +474,16 @@ export const FACTS_TO_CONFIRM = [
     question:
       "The listing's cancellation and prepayment conditions vary by accommodation option, so none is published. Asked on 26 October 2026: do we want our own cancellation rule and our own rule on anything asked for in advance, for direct bookings? Until the owner says, the terms commit to nothing more than notice by phone or WhatsApp, and no deposit-free or free-cancellation promise is made.",
     affects: ["src/lib/termsCopy.js", "src/lib/privacyCopy.js", "base44/agents/booking_assistant.jsonc"],
+  },
+  {
+    id: "languages",
+    question:
+      "Published on 26 October 2026: the family speaks Bosnian, English, Croatian, Albanian and Serbian, and the site says so beside the note that the website is also written in Russian. The assistants no longer imply the family speaks Russian. Still open: does the hotel share the same five languages, and is there anything else a guest should know about languages at the two houses?",
+    affects: [
+      "src/lib/facilities.js",
+      "index.html structured data",
+      "base44/agents/concierge.jsonc, booking_assistant.jsonc, local_guide.jsonc",
+    ],
   },
   {
     id: "ratesOffers",
