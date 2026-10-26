@@ -39,6 +39,8 @@ export const IMAGES = {
 // licensed landscape photographs taken by other photographers.
 export const OWN_PHOTO_CREDIT = "Photographs of Mountain View Resort are our own.";
 
+export const INN_PHOTO_CREDIT = "Photographs of Hotel Mountain View are our own.";
+
 export const LANDSCAPE_PHOTO_CREDIT =
   "Landscape photographs: Bruno Rijsman (CC BY 2.0), Hladnikm (CC BY-SA 4.0), Etan J. Tal (CC BY 3.0), GjonBala (CC BY-SA 4.0), Planeti (CC BY-SA 4.0), Prasopestilence (CC BY-SA 3.0) — via Wikimedia Commons";
 

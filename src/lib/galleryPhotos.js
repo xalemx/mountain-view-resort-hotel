@@ -1,4 +1,4 @@
-import { IMAGES, OWN_PHOTO_CREDIT } from "@/lib/siteContent";
+import { INN_PHOTO_CREDIT, OWN_PHOTO_CREDIT } from "@/lib/siteContent";
 
 const FILES = "https://media.base44.com/images/public/6add6db1a4366797590573f0/";
 
@@ -18,14 +18,25 @@ const RESORT_PHOTOS = [
   { key: "animals", src: `${FILES}7d8e0a66f_WhatsAppImage2026-10-25at112930.jpeg` },
 ];
 
-// The one photograph of Hotel Mountain View we hold: the house from the road at
-// night. A daytime original takes its place as soon as the owner sends one, and
-// the rooms and shared spaces join this list the same way.
-const INN_PHOTOS = [{ key: "front", src: IMAGES.inn }];
+// The hotel: our own photographs of the house, the reception and the rooms, in
+// the order they are worth looking at. Captions live in the translations, keyed
+// by the photo key.
+const INN_PHOTOS = [
+  { key: "front", src: `${FILES}ebed257b5_WhatsAppImage2026-10-26at114817.jpeg` },
+  { key: "reception", src: `${FILES}cc8efc1a1_WhatsAppImage2026-10-26at1148101166.jpeg` },
+  { key: "stair", src: `${FILES}15273ac44_WhatsAppImage2026-10-26at11481055.jpeg` },
+  { key: "lounge", src: `${FILES}aa71a6694_WhatsAppImage2026-10-26at114810.jpeg` },
+  { key: "hall", src: `${FILES}69c4b23c8_WhatsAppImage2026-10-26at11481077.jpeg` },
+  { key: "room_twin", src: `${FILES}beac00c4c_WhatsAppImage2026-10-26at1148061.jpeg` },
+  { key: "room_family", src: `${FILES}40cc6831e_WhatsAppImage2026-10-26at114807.jpeg` },
+  { key: "room_wide", src: `${FILES}3cc45208c_WhatsAppImage2026-10-26at1148098.jpeg` },
+  { key: "room_tv", src: `${FILES}603f68198_WhatsAppImage2026-10-26at114808.jpeg` },
+  { key: "room_fridge", src: `${FILES}f0eb7faa6_WhatsAppImage2026-10-26at114809.jpeg` },
+];
 
 export const GALLERIES = {
   resort: { photos: RESORT_PHOTOS, credit: OWN_PHOTO_CREDIT },
-  inn: { photos: INN_PHOTOS, credit: null },
+  inn: { photos: INN_PHOTOS, credit: INN_PHOTO_CREDIT },
 };
 
 export function galleryFor(propertyId) {
