@@ -6,6 +6,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
+import WelcomeGate from '@/components/site/WelcomeGate';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import Home from '@/pages/Home';
 import Login from '@/pages/Login';
@@ -66,6 +67,7 @@ function App() {
         <Router>
           <ScrollToTop />
           <AuthenticatedApp />
+          <WelcomeGate />
         </Router>
         <Toaster />
       </QueryClientProvider>

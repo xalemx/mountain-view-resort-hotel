@@ -5,14 +5,17 @@ const STORAGE_KEY = "mountain-view-language";
 
 const LanguageContext = createContext(null);
 
+const readStoredLanguage = () => {
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    return LANGUAGES.some((entry) => entry.code === stored) ? stored : null;
+  } catch (error) {
+    return null;
+  }
+};
+
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState(() => {
-    try {
-      return window.localStorage.getItem(STORAGE_KEY);
-    } catch (error) {
-      return null;
-    }
-  });
+  const [language, setLanguage] = useState(readStoredLanguage);
   const [isChooserOpen, setIsChooserOpen] = useState(false);
 
   useEffect(() => {
@@ -36,6 +39,7 @@ export function LanguageProvider({ children }) {
       hasChosenLanguage: Boolean(language),
       isChooserOpen,
       openLanguageChooser: () => setIsChooserOpen(true),
+      closeLanguageChooser: () => setIsChooserOpen(false),
       chooseLanguage,
       t: TRANSLATIONS[language] || TRANSLATIONS[DEFAULT_LANGUAGE],
     }),

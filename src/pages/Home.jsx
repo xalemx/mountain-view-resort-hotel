@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import Hero from "@/components/site/Hero";
 import IntroSection from "@/components/site/IntroSection";
@@ -10,15 +10,8 @@ import BookingAssistant from "@/components/site/BookingAssistant";
 import EnquirySection from "@/components/site/EnquirySection";
 import SocialSection from "@/components/site/SocialSection";
 import SiteFooter from "@/components/site/SiteFooter";
-import WelcomeGate from "@/components/site/WelcomeGate";
 
 export default function Home() {
-  const [hasEntered, setHasEntered] = useState(false);
-
-  if (!hasEntered) {
-    return <WelcomeGate isLanding onEnter={() => setHasEntered(true)} />;
-  }
-
   return (
     <div id="top" className="min-h-screen bg-background font-body text-foreground">
       <SiteHeader />
@@ -34,7 +27,6 @@ export default function Home() {
         <SocialSection />
       </main>
       <SiteFooter />
-      <WelcomeGate />
     </div>
   );
 }

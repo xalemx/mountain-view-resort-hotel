@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
+import { X } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { useLanguage } from "@/lib/LanguageContext";
 import { LANGUAGES } from "@/lib/translations";
 import { BRAND, IMAGES } from "@/lib/siteContent";
 
-export default function WelcomeGate({ isLanding = false, onEnter }) {
-  const { hasChosenLanguage, isChooserOpen, chooseLanguage } = useLanguage();
-  const isOpen = isLanding || !hasChosenLanguage || isChooserOpen;
+export default function WelcomeGate() {
+  const { hasChosenLanguage, isChooserOpen, chooseLanguage, closeLanguageChooser } = useLanguage();
+  const isOpen = !hasChosenLanguage || isChooserOpen;
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -24,6 +25,17 @@ export default function WelcomeGate({ isLanding = false, onEnter }) {
       <Image src={IMAGES.hero} alt="" className="absolute inset-0 h-full w-full opacity-70" />
       <div className="absolute inset-0 bg-primary/75" />
 
+      {hasChosenLanguage ? (
+        <button
+          type="button"
+          onClick={closeLanguageChooser}
+          aria-label="Close"
+          className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/30 text-primary-foreground/80 transition hover:border-primary-foreground hover:text-primary-foreground"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      ) : null}
+
       <div className="relative w-full max-w-xl text-center">
         <p className="eyebrow text-primary-foreground/60">Gusinje · Crna Gora / Montenegro</p>
         <h1 className="mt-5 font-display text-5xl leading-none text-primary-foreground md:text-6xl">
@@ -38,10 +50,7 @@ export default function WelcomeGate({ isLanding = false, onEnter }) {
             <button
               key={entry.code}
               type="button"
-              onClick={() => {
-                chooseLanguage(entry.code);
-                if (onEnter) onEnter();
-              }}
+              onClick={() => chooseLanguage(entry.code)}
               className="group flex items-center justify-between gap-4 rounded-sm border border-primary-foreground/25 px-5 py-4 text-left transition hover:border-primary-foreground hover:bg-primary-foreground/10"
             >
               <span className="font-heading text-lg text-primary-foreground">{entry.greeting}</span>
