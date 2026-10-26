@@ -15,7 +15,7 @@ export const ASK_COPY = {
     topicHints: {
       booking: "Dates, guests and the house you have in mind. It writes the request up and asks you to check it before anything is saved.",
       activities: "Walks, lakes, viewpoints and days out, taken from our guide.",
-      practical: "Getting here, what is included, how a stay is paid for, cash, parking and the like.",
+      practical: "Getting here, what is included, how a stay is paid for, parking and the like.",
     },
     examples: {
       booking: "Two nights in September, two adults",
@@ -58,7 +58,7 @@ export const ASK_COPY = {
     topicHints: {
       booking: "Datumi, gosti i kuća koju imate na umu. Sastavlja zahtjev i traži da ga provjerite prije nego što se bilo šta sačuva.",
       activities: "Šetnje, jezera, vidikovci i izleti, iz našeg vodiča.",
-      practical: "Kako doći, šta je uključeno, kako se plaća boravak, gotovina, parking i slično.",
+      practical: "Kako doći, šta je uključeno, kako se plaća boravak, parking i slično.",
     },
     examples: {
       booking: "Dvije noći u septembru, dva odrasla",
@@ -101,7 +101,7 @@ export const ASK_COPY = {
     topicHints: {
       booking: "Даты, гости и дом, который вы присмотрели. Он составит запрос и попросит проверить его, прежде чем что-то будет сохранено.",
       activities: "Прогулки, озёра, смотровые площадки и поездки — из нашего путеводителя.",
-      practical: "Как добраться, что входит, как оплачивается проживание, наличные, парковка и подобное.",
+      practical: "Как добраться, что входит, как оплачивается проживание, парковка и подобное.",
     },
     examples: {
       booking: "Две ночи в сентябре, двое взрослых",
@@ -144,7 +144,7 @@ export const ASK_COPY = {
     topicHints: {
       booking: "Datat, mysafirët dhe shtëpia që keni në mendje. Ai shkruan kërkesën dhe ju kërkon ta kontrolloni përpara se të ruhet diçka.",
       activities: "Ecje, liqene, pamje dhe shëtitje — nga udhërrëfyesi ynë.",
-      practical: "Si të vini, çfarë përfshihet, si paguhet qëndrimi, paratë në dorë, parkimi e të ngjashme.",
+      practical: "Si të vini, çfarë përfshihet, si paguhet qëndrimi, parkimi e të ngjashme.",
     },
     examples: {
       booking: "Dy net në shtator, dy të rritur",

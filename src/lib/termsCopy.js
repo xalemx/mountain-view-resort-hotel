@@ -2,7 +2,12 @@
 // publishes: a request is answered by the family within 24 hours, a stay is
 // confirmed by message, there is no agency or booking fee, breakfast is
 // available with inclusion depending on the offer, and payment is made on
-// arrival in cash or by card.
+// arrival at the property. Which payment methods are accepted is not
+// established, so the terms say the way to pay is confirmed with the offer.
+// Nothing is promised about a deposit or free cancellation either: the
+// cancellation and prepayment conditions on the listing vary by accommodation
+// option, and its deadlines, discounts, remaining availability and weekly
+// prices are its own marketing, not ours.
 //
 // The cancellation paragraph is deliberately soft: the site has never stated a
 // cancellation schedule, so it commits to nothing more than notice by phone or
@@ -26,11 +31,11 @@ export const TERMS_COPY = {
       },
       {
         title: "Price, fees and payment",
-        text: "The price we quote is the price you pay: no booking fee, no commission and no agency in the middle. Breakfast is available; whether it is included depends on your offer. You pay on arrival, in cash or by card, to the host. This website never asks for card details.",
+        text: "The price we quote is the price you pay: no booking fee, no commission and no agency in the middle. Breakfast is available; whether it is included depends on your offer. You pay on arrival at the property, to the host, and we confirm how you can pay with your offer. This website never asks for card details.",
       },
       {
         title: "If your plans change",
-        text: "Tell us as early as you can, by phone or WhatsApp, and we will do what we can with the dates. You deal with us directly and we take no deposit through the site, so there is no agency fee to lose; we simply ask for as much notice as you can give.",
+        text: "Tell us as early as you can, by phone or WhatsApp, and we will do what we can with the dates. You deal with us directly, and the conditions for your stay, including anything we might ask for in advance, are confirmed with your offer; we simply ask for as much notice as you can give.",
       },
       {
         title: "What we ask of you",
@@ -65,11 +70,11 @@ export const TERMS_COPY = {
       },
       {
         title: "Cijena, naknade i plaćanje",
-        text: "Cijena koju navedemo je cijena koju plaćate: bez naknade za rezervaciju, bez provizije i bez agencije u sredini. Doručak je dostupan; da li je uključen zavisi od vaše ponude. Plaćate po dolasku, u gotovini ili karticom, domaćinu. Ovaj sajt nikada ne traži podatke kartice.",
+        text: "Cijena koju navedemo je cijena koju plaćate: bez naknade za rezervaciju, bez provizije i bez agencije u sredini. Doručak je dostupan; da li je uključen zavisi od vaše ponude. Plaćate po dolasku u objektu, domaćinu, a način plaćanja potvrđujemo uz ponudu. Ovaj sajt nikada ne traži podatke kartice.",
       },
       {
         title: "Ako se planovi promijene",
-        text: "Javite nam se što ranije, telefonom ili na WhatsApp, i uradićemo što možemo s datumima. Dogovarate se direktno s nama i preko sajta ne uzimamo avans, pa nema agencijske naknade koju gubite; molimo samo da nam date što više vremena.",
+        text: "Javite nam se što ranije, telefonom ili na WhatsApp, i uradićemo što možemo s datumima. Dogovarate se direktno s nama, a uslove boravka, uključujući i sve što bismo mogli tražiti unaprijed, potvrđujemo uz ponudu; molimo samo da nam date što više vremena.",
       },
       {
         title: "Šta tražimo od vas",
@@ -104,11 +109,11 @@ export const TERMS_COPY = {
       },
       {
         title: "Цена, сборы и оплата",
-        text: "Названная цена — это цена, которую вы платите: без сбора за бронирование, без комиссии и без агентства посередине. Завтрак доступен; входит ли он в стоимость, зависит от предложения. Платите по приезде, наличными или картой, хозяину. Этот сайт никогда не запрашивает данные карты.",
+        text: "Названная цена — это цена, которую вы платите: без сбора за бронирование, без комиссии и без агентства посередине. Завтрак доступен; входит ли он в стоимость, зависит от предложения. Платите по приезде на месте, хозяину, а способ оплаты подтверждаем в предложении. Этот сайт никогда не запрашивает данные карты.",
       },
       {
         title: "Если планы изменились",
-        text: "Сообщите нам как можно раньше, по телефону или в WhatsApp, и мы сделаем с датами всё, что сможем. Вы договариваетесь с нами напрямую, аванс через сайт мы не берём, поэтому агентских сборов, которые можно потерять, нет; просим лишь дать нам как можно больше времени.",
+        text: "Сообщите нам как можно раньше, по телефону или в WhatsApp, и мы сделаем с датами всё, что сможем. Вы договариваетесь с нами напрямую, а условия проживания, включая то, что мы можем попросить заранее, подтверждаем в предложении; просим лишь дать нам как можно больше времени.",
       },
       {
         title: "Что мы просим от вас",
@@ -143,11 +148,11 @@ export const TERMS_COPY = {
       },
       {
         title: "Çmimi, tarifat dhe pagesa",
-        text: "Çmimi që japim është çmimi që paguani: pa tarifë rezervimi, pa komision dhe pa agjenci në mes. Mëngjesi ofrohet; nëse përfshihet, kjo varet nga oferta juaj. Paguani në mbërritje, me para në dorë ose kartë, tek pronari. Ky sajt nuk kërkon kurrë të dhëna karte.",
+        text: "Çmimi që japim është çmimi që paguani: pa tarifë rezervimi, pa komision dhe pa agjenci në mes. Mëngjesi ofrohet; nëse përfshihet, kjo varet nga oferta juaj. Paguani në mbërritje në objekt, tek pronari, dhe mënyrën e pagesës e konfirmojmë me ofertën. Ky sajt nuk kërkon kurrë të dhëna karte.",
       },
       {
         title: "Nëse ndryshojnë planet",
-        text: "Na njoftoni sa më herët, me telefon ose në WhatsApp, dhe do të bëjmë çfarë mundemi me datat. Meqë merreni vesh drejtpërdrejt me ne dhe përmes sajtit nuk marrim paradhënie, nuk ka tarifë agjencie për të humbur; ju lutemi vetëm të na jepni sa më shumë kohë.",
+        text: "Na njoftoni sa më herët, me telefon ose në WhatsApp, dhe do të bëjmë çfarë mundemi me datat. Merreni vesh drejtpërdrejt me ne, dhe kushtet e qëndrimit, përfshirë çdo gjë që mund të kërkojmë paraprakisht, i konfirmojmë me ofertën; ju lutemi vetëm të na jepni sa më shumë kohë.",
       },
       {
         title: "Çfarë kërkojmë nga ju",

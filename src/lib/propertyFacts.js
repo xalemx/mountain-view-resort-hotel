@@ -185,7 +185,10 @@ export const PROPERTY_FACTS = {
         status: FACT_STATUS.OWNER,
         text: "Breakfast is available; whether it is included depends on your offer. No price is published.",
       },
-      payment: { status: FACT_STATUS.OWNER, text: "Payment for your stay is on arrival, in cash or by card." },
+      payment: {
+        status: FACT_STATUS.OWNER,
+        text: "Payment for your stay is on arrival at the property, as the offers show. Which payment methods are accepted is not established, so the site says the way to pay is confirmed with the offer.",
+      },
       arrivalTimes: {
         status: FACT_STATUS.OWNER,
         text: "Check-in 12:00–22:00 and check-out 08:00–11:00, as the house is listed. The site still says the times for a stay are confirmed with the offer.",
@@ -272,7 +275,10 @@ export const PROPERTY_FACTS = {
 
     policies: {
       breakfast: { status: FACT_STATUS.OWNER, text: "Breakfast is included in your stay." },
-      payment: { status: FACT_STATUS.OWNER, text: "Payment for your stay is on arrival, in cash or by card." },
+      payment: {
+        status: FACT_STATUS.OWNER,
+        text: "Payment for your stay is on arrival at the property, as the offers show. Which payment methods are accepted is not established, so the site says the way to pay is confirmed with the offer.",
+      },
       arrivalTimes: {
         status: FACT_STATUS.UNCONFIRMED,
         text: "Not published: the site says arrival and departure times are confirmed with the offer.",
@@ -439,5 +445,29 @@ export const FACTS_TO_CONFIRM = [
       "translations: property.times (en, me, ru, sq)",
       "base44/agents/concierge.jsonc",
     ],
+  },
+  {
+    id: "paymentMethods",
+    question:
+      "The offers allow payment at the property, but nothing establishes which methods are accepted. Asked on 26 October 2026: the 'cash or card' claim has been taken off the site and out of both assistants, and the copy now says the way to pay is confirmed with the offer. Which methods can a guest use: cash only, a card, or something else?",
+    affects: [
+      "translations: property.payment (en, me, ru, sq)",
+      "src/lib/termsCopy.js",
+      "src/lib/privacyCopy.js",
+      "index.html structured data",
+      "base44/agents/concierge.jsonc",
+    ],
+  },
+  {
+    id: "cancellation",
+    question:
+      "The listing's cancellation and prepayment conditions vary by accommodation option, so none is published. Asked on 26 October 2026: do we want our own cancellation rule and our own rule on anything asked for in advance, for direct bookings? Until the owner says, the terms commit to nothing more than notice by phone or WhatsApp, and no deposit-free or free-cancellation promise is made.",
+    affects: ["src/lib/termsCopy.js", "src/lib/privacyCopy.js", "base44/agents/booking_assistant.jsonc"],
+  },
+  {
+    id: "ratesOffers",
+    question:
+      "Settled on 26 October 2026: the free-cancellation deadlines, promotional discounts, remaining availability and weekly prices shown on the listing are its marketing, not our rates, and nothing is copied from them. Every price stays an offer quoted for the dates asked about, and no deposit or free cancellation is promised for a direct booking.",
+    affects: ["src/lib/termsCopy.js", "src/lib/seoCopy.js"],
   },
 ];

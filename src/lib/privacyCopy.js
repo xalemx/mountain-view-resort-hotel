@@ -32,7 +32,7 @@ export const PRIVACY_COPY = {
       },
       {
         title: "Payments",
-        text: "You pay for your stay on arrival, in cash or by card, to the host. This website never asks for card details and takes no payment itself.",
+        text: "You pay for your stay on arrival at the property, to the host, and we confirm how you can pay with your offer. This website never asks for card details and takes no payment itself.",
       },
       {
         title: "The automated assistant",
@@ -76,7 +76,7 @@ export const PRIVACY_COPY = {
       },
       {
         title: "Plaćanje",
-        text: "Boravak plaćate po dolasku, u gotovini ili karticom, domaćinu. Ovaj sajt nikada ne traži podatke kartice i sam ne naplaćuje ništa.",
+        text: "Boravak plaćate po dolasku u objektu, domaćinu, a način plaćanja potvrđujemo uz ponudu. Ovaj sajt nikada ne traži podatke kartice i sam ne naplaćuje ništa.",
       },
       {
         title: "Automatski asistent",
@@ -120,7 +120,7 @@ export const PRIVACY_COPY = {
       },
       {
         title: "Оплата",
-        text: "Вы платите за проживание по приезде, наличными или картой, хозяину. Этот сайт никогда не запрашивает данные карты и сам платежей не принимает.",
+        text: "Вы платите за проживание по приезде на месте, хозяину, а способ оплаты подтверждаем в предложении. Этот сайт никогда не запрашивает данные карты и сам платежей не принимает.",
       },
       {
         title: "Автоматический помощник",
@@ -164,7 +164,7 @@ export const PRIVACY_COPY = {
       },
       {
         title: "Pagesat",
-        text: "Qëndrimin e paguani në mbërritje, me para në dorë ose kartë, tek pronari. Ky sajt nuk kërkon kurrë të dhëna karte dhe nuk pranon pagesa vetë.",
+        text: "Qëndrimin e paguani në mbërritje në objekt, tek pronari, dhe mënyrën e pagesës e konfirmojmë me ofertën. Ky sajt nuk kërkon kurrë të dhëna karte dhe nuk pranon pagesa vetë.",
       },
       {
         title: "Asistenti automatik",

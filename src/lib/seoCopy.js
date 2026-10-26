@@ -52,7 +52,7 @@ export const SEO_COPY = {
     terms: {
       title: "Booking terms · Mountain View Resort & Hotel",
       description:
-        "A request is answered within 24 hours, a stay is confirmed by message, no booking fee, breakfast available according to the offer, and payment on arrival by cash or card.",
+        "A request is answered within 24 hours, a stay is confirmed by message, no booking fee, breakfast available according to the offer, and payment on arrival at the property.",
     },
     resort: {
       title: "Mountain View Resort · Vusanje, Gusinje, Montenegro",
@@ -95,7 +95,7 @@ export const SEO_COPY = {
     terms: {
       title: "Uslovi rezervacije · Mountain View Resort i hotel",
       description:
-        "Zahtjev dobija odgovor u roku od 24 sata, boravak se potvrđuje porukom, bez naknade za rezervaciju, doručak dostupan u skladu sa ponudom i plaćanje po dolasku u gotovini ili karticom.",
+        "Zahtjev dobija odgovor u roku od 24 sata, boravak se potvrđuje porukom, bez naknade za rezervaciju, doručak dostupan u skladu sa ponudom i plaćanje po dolasku u objektu.",
     },
     resort: {
       title: "Mountain View Resort · Vusanje, Gusinje, Crna Gora",
@@ -138,7 +138,7 @@ export const SEO_COPY = {
     terms: {
       title: "Условия бронирования · Mountain View Resort и отель",
       description:
-        "На запрос отвечаем в течение 24 часов, проживание подтверждается сообщением, без сбора за бронирование, завтрак доступен в соответствии с предложением, оплата по приезде наличными или картой.",
+        "На запрос отвечаем в течение 24 часов, проживание подтверждается сообщением, без сбора за бронирование, завтрак доступен в соответствии с предложением, оплата по приезде на месте.",
     },
     resort: {
       title: "Mountain View Resort · Вусане, Гусине, Черногория",
@@ -181,7 +181,7 @@ export const SEO_COPY = {
     terms: {
       title: "Kushtet e rezervimit · Mountain View Resort dhe hoteli",
       description:
-        "Kërkesa merr përgjigje brenda 24 orëve, qëndrimi konfirmohet me mesazh, pa tarifë rezervimi, mëngjesi ofrohet sipas ofertës dhe pagesa në mbërritje me para në dorë ose kartë.",
+        "Kërkesa merr përgjigje brenda 24 orëve, qëndrimi konfirmohet me mesazh, pa tarifë rezervimi, mëngjesi ofrohet sipas ofertës dhe pagesa në mbërritje në objekt.",
     },
     resort: {
       title: "Mountain View Resort · Vusanje, Gusinje, Mali i Zi",

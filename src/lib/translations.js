@@ -82,7 +82,7 @@ export const TRANSLATIONS = {
       locationTitle: "Finding the house",
       goodToKnowTitle: "Good to know",
       breakfast: "Breakfast is included in your stay.",
-      payment: "Payment for your stay is on arrival, in cash or by card.",
+      payment: "Payment for your stay is on arrival at the property. We confirm how you can pay with your offer.",
       times: "Arrival and departure times are confirmed with your offer.",
       enquiryEyebrow: "Direct with us",
       enquiryTitle: "Request an offer for this house",
@@ -187,7 +187,7 @@ export const TRANSLATIONS = {
       steps: [
         "Send your request with your dates and group size",
         "We reply within 24 hours with availability and a price",
-        "Confirm by message — payment on arrival, in cash or by card",
+        "Confirm by message — payment on arrival at the property",
       ],
     },
     booking: {
@@ -268,7 +268,7 @@ export const TRANSLATIONS = {
       eyebrow: "Guest support",
       title: "Questions before you come? Ask our concierge",
       intro:
-        "Getting here from Podgorica, whether you need a car, what is included, cash or card, what to do nearby — the concierge answers from what we know about the two houses and the valley.",
+        "Getting here from Podgorica, whether you need a car, what is included, how you pay, what to do nearby — the concierge answers from what we know about the two houses and the valley.",
       placeholder: "How do we get there from Podgorica?",
       chips: ["How do we get there from Podgorica?", "Do we need a car?", "Is breakfast included?"],
       parameters: "Details used",
@@ -376,7 +376,7 @@ export const TRANSLATIONS = {
       locationTitle: "Kako nas naći",
       goodToKnowTitle: "Dobro je znati",
       breakfast: "Doručak je uključen u boravak.",
-      payment: "Plaćanje boravka je na dolasku, kešom ili karticom.",
+      payment: "Plaćanje boravka je po dolasku u objektu. Način plaćanja potvrđujemo uz ponudu.",
       times: "Vrijeme dolaska i odlaska potvrđujemo uz vašu ponudu.",
       enquiryEyebrow: "Direktno s nama",
       enquiryTitle: "Zatražite ponudu za ovu kuću",
@@ -480,7 +480,7 @@ export const TRANSLATIONS = {
       steps: [
         "Pošaljite zahtjev sa datumima i brojem gostiju",
         "Odgovaramo u roku od 24 časa sa slobodnim terminima i cijenom",
-        "Potvrdite porukom — plaćanje na dolasku, keš ili kartica",
+        "Potvrdite porukom — plaćanje po dolasku u objektu",
       ],
     },
     booking: {
@@ -561,7 +561,7 @@ export const TRANSLATIONS = {
       eyebrow: "Podrška gostima",
       title: "Pitanja prije dolaska? Pitajte našeg conciergea",
       intro:
-        "Dolazak iz Podgorice, da li vam treba auto, šta je uključeno, keš ili kartica, šta raditi u okolini — concierge odgovara na osnovu onoga što znamo o dvije kuće i dolini.",
+        "Dolazak iz Podgorice, da li vam treba auto, šta je uključeno, kako se plaća, šta raditi u okolini — concierge odgovara na osnovu onoga što znamo o dvije kuće i dolini.",
       placeholder: "Kako da dođemo iz Podgorice?",
       chips: ["Kako da dođemo iz Podgorice?", "Da li nam treba auto?", "Da li je doručak uključen?"],
       parameters: "Podaci koje je koristio",
@@ -669,7 +669,7 @@ export const TRANSLATIONS = {
       locationTitle: "Как нас найти",
       goodToKnowTitle: "Полезно знать",
       breakfast: "Завтрак включён в проживание.",
-      payment: "Оплата проживания при заселении, наличными или картой.",
+      payment: "Оплата проживания по приезде на месте. Способ оплаты подтверждаем в предложении.",
       times: "Время заезда и выезда подтверждаем вместе с предложением.",
       enquiryEyebrow: "Напрямую с нами",
       enquiryTitle: "Запросите предложение для этого дома",
@@ -773,7 +773,7 @@ export const TRANSLATIONS = {
       steps: [
         "Отправьте запрос с датами и числом гостей",
         "Мы ответим в течение 24 часов со свободными датами и ценой",
-        "Подтвердите сообщением — оплата при заселении, наличными или картой",
+        "Подтвердите сообщением — оплата по приезде на месте",
       ],
     },
     booking: {
@@ -854,7 +854,7 @@ export const TRANSLATIONS = {
       eyebrow: "Поддержка гостей",
       title: "Вопросы перед приездом? Спросите нашего консьержа",
       intro:
-        "Дорога из Подгорицы, нужна ли машина, что входит в проживание, наличные или карта, чем заняться рядом — консьерж отвечает по нашим сведениям о двух домах и долине.",
+        "Дорога из Подгорицы, нужна ли машина, что входит в проживание, как оплачивать, чем заняться рядом — консьерж отвечает по нашим сведениям о двух домах и долине.",
       placeholder: "Как к вам добраться из Подгорицы?",
       chips: ["Как добраться из Подгорицы?", "Нужна ли нам машина?", "Завтрак входит в стоимость?"],
       parameters: "Использованные данные",
@@ -962,7 +962,7 @@ export const TRANSLATIONS = {
       locationTitle: "Si të na gjeni",
       goodToKnowTitle: "Mirë të dihet",
       breakfast: "Mëngjesi përfshihet në qëndrim.",
-      payment: "Pagesa për qëndrimin bëhet në mbërritje, me para në dorë ose kartë.",
+      payment: "Pagesa për qëndrimin bëhet në mbërritje në objekt. Mënyrën e pagesës e konfirmojmë me ofertën.",
       times: "Orarin e mbërritjes dhe të nisjes e konfirmojmë bashkë me ofertën.",
       enquiryEyebrow: "Direkt me ne",
       enquiryTitle: "Kërkoni një ofertë për këtë shtëpi",
@@ -1067,7 +1067,7 @@ export const TRANSLATIONS = {
       steps: [
         "Dërgoni kërkesën me datat dhe numrin e personave",
         "Përgjigjemi brenda 24 orëve me disponueshmërinë dhe çmimin",
-        "Konfirmoni me mesazh — pagesa në mbërritje, me para në dorë ose kartë",
+        "Konfirmoni me mesazh — pagesa në mbërritje në objekt",
       ],
     },
     booking: {
@@ -1148,7 +1148,7 @@ export const TRANSLATIONS = {
       eyebrow: "Ndihmë për mysafirët",
       title: "Pyetje para se të vini? Pyetni concierge-in tonë",
       intro:
-        "Rruga nga Podgorica, a ju nevojitet makinë, çfarë përfshihet, para në dorë apo kartë, çfarë të bëni përreth — concierge përgjigjet bazuar në atë që dimë për dy shtëpitë dhe luginën.",
+        "Rruga nga Podgorica, a ju nevojitet makinë, çfarë përfshihet, si paguhet, çfarë të bëni përreth — concierge përgjigjet bazuar në atë që dimë për dy shtëpitë dhe luginën.",
       placeholder: "Si të vijmë nga Podgorica?",
       chips: ["Si të vijmë nga Podgorica?", "A na nevojitet makinë?", "A përfshihet mëngjesi?"],
       parameters: "Të dhënat e përdorura",
