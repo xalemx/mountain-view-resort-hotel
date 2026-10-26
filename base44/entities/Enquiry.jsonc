@@ -73,11 +73,16 @@
       "type": "string",
       "enum": [
         "new",
-        "replied",
+        "offer_sent",
         "confirmed",
         "closed"
       ],
-      "default": "new"
+      "default": "new",
+      "description": "New, Offer sent, Confirmed or Closed. Only the owner changes this."
+    },
+    "owner_notes": {
+      "type": "string",
+      "description": "Private notes the owner keeps about this enquiry; never shown to the guest"
     },
     "notification_status": {
       "type": "string",

@@ -67,7 +67,7 @@ export const PROPERTY_LABELS = PROPERTY_OPTIONS.reduce((labels, option) => {
 
 export const ENQUIRY_STATUSES = [
   { value: "new", label: "New" },
-  { value: "replied", label: "Replied" },
+  { value: "offer_sent", label: "Offer sent" },
   { value: "confirmed", label: "Confirmed" },
   { value: "closed", label: "Closed" },
 ];

@@ -1,10 +1,11 @@
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
+import ProtectedRoute from '@/components/ProtectedRoute';
 import ScrollToTop from './components/ScrollToTop';
 import WelcomeGate from '@/components/site/WelcomeGate';
 import { LanguageProvider } from '@/lib/LanguageContext';
@@ -17,6 +18,7 @@ import ResetPassword from '@/pages/ResetPassword';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Guide from '@/pages/Guide';
+import OwnerDashboard from '@/pages/OwnerDashboard';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -53,6 +55,11 @@ const AuthenticatedApp = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route
+        element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login?returnTo=%2Fowner" replace />} />}
+      >
+        <Route path="/owner" element={<OwnerDashboard />} />
+      </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
