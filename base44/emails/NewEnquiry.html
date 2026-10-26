@@ -28,6 +28,15 @@
       </mj-column>
     </mj-section>
 
+    <mj-section background-color="#ffffff" padding="18px 36px 6px">
+      <mj-column width="32%">
+        <mj-text mj-class="label">Reference</mj-text>
+      </mj-column>
+      <mj-column width="68%">
+        <mj-text mj-class="value">{{reference_label}}</mj-text>
+      </mj-column>
+    </mj-section>
+
     <mj-section background-color="#ffffff" padding="10px 36px 6px">
       <mj-column width="32%">
         <mj-text mj-class="label">Property</mj-text>
@@ -73,12 +82,21 @@
       </mj-column>
     </mj-section>
 
-    <mj-section background-color="#ffffff" padding="10px 36px 28px">
+    <mj-section background-color="#ffffff" padding="10px 36px 6px">
       <mj-column width="32%">
         <mj-text mj-class="label">Phone</mj-text>
       </mj-column>
       <mj-column width="68%">
         <mj-text mj-class="value">{{phone_label}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="10px 36px 28px">
+      <mj-column width="32%">
+        <mj-text mj-class="label">Reply by</mj-text>
+      </mj-column>
+      <mj-column width="68%">
+        <mj-text mj-class="value">{{reply_label}}</mj-text>
       </mj-column>
     </mj-section>
 
@@ -92,7 +110,7 @@
     <mj-section padding="30px 36px 40px">
       <mj-column>
         <mj-button href="{{reply_link}}">Reply to {{guest_name}}</mj-button>
-        <mj-text color="#6b7280" font-size="13px" padding="14px 0 0 0">Write back to {{guest_email}} with your offer.</mj-text>
+        <mj-text color="#6b7280" font-size="13px" padding="14px 0 0 0">Reply by {{reply_label}} with your offer, quoting {{reference_label}}.</mj-text>
       </mj-column>
     </mj-section>
 

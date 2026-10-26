@@ -2,6 +2,10 @@
   "name": "Enquiry",
   "type": "object",
   "properties": {
+    "reference": {
+      "type": "string",
+      "description": "Short reference shown to the guest, for example MV-7KQ2XA"
+    },
     "guest_name": {
       "type": "string",
       "description": "Name of the guest sending the request"
@@ -12,6 +16,26 @@
     },
     "phone": {
       "type": "string"
+    },
+    "reply_method": {
+      "type": "string",
+      "enum": [
+        "whatsapp",
+        "email"
+      ],
+      "default": "email",
+      "description": "How the guest asked to be answered"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "en",
+        "me",
+        "ru",
+        "sq"
+      ],
+      "default": "en",
+      "description": "Language the guest used on the website"
     },
     "property": {
       "type": "string",
@@ -38,6 +62,10 @@
       "type": "number",
       "default": 0
     },
+    "children_ages": {
+      "type": "string",
+      "description": "Ages of the children, as the guest entered them, for example 6, 9"
+    },
     "notes": {
       "type": "string"
     },
@@ -54,7 +82,6 @@
   },
   "required": [
     "guest_name",
-    "email",
     "arrival",
     "departure"
   ],
