@@ -11,6 +11,7 @@ import WelcomeGate from '@/components/site/WelcomeGate';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { PropertyProvider } from '@/lib/PropertyContext';
 import Home from '@/pages/Home';
+import Property from '@/pages/Property';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
 import ForgotPassword from '@/pages/ForgotPassword';
@@ -51,6 +52,8 @@ const AuthenticatedApp = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/guide" element={<Guide />} />
+      <Route path="/mountain-view-resort" element={<Property propertyId="resort" />} />
+      <Route path="/hotel-mountain-view" element={<Property propertyId="inn" />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Image } from "@/components/ui/image";
 import SectionHeading from "@/components/site/SectionHeading";
 import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
@@ -73,6 +74,9 @@ export default function StaysSection() {
               >
                 {t.stays.map} ↗
               </a>
+              <Link to={active.path} className="link-quiet">
+                {t.stays.details} ↗
+              </Link>
             </div>
           </div>
         </div>

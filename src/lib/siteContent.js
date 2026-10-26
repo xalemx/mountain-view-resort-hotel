@@ -39,6 +39,7 @@ export const PROPERTIES = [
     name: "Mountain View Resort",
     image: IMAGES.resort,
     mapQuery: MAP_QUERIES.resort,
+    path: "/mountain-view-resort",
   },
   {
     id: "inn",
@@ -47,6 +48,7 @@ export const PROPERTIES = [
     name: "Hotel Mountain View",
     image: IMAGES.inn,
     mapQuery: MAP_QUERIES.inn,
+    path: "/hotel-mountain-view",
   },
 ];
 

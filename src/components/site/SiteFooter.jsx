@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
-import { BRAND } from "@/lib/siteContent";
+import { BRAND, PROPERTIES } from "@/lib/siteContent";
 
 export default function SiteFooter() {
   const { t, openLanguageChooser } = useLanguage();
@@ -27,6 +27,11 @@ export default function SiteFooter() {
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 font-body text-[11px] uppercase tracking-[0.24em] text-primary-foreground/60">
           <span>{t.footer.rights}</span>
           <div className="flex flex-wrap items-center gap-6">
+            {PROPERTIES.map((property) => (
+              <Link key={property.id} to={property.path} className="transition hover:text-primary-foreground">
+                {property.name}
+              </Link>
+            ))}
             <Link to="/guide" className="transition hover:text-primary-foreground">
               {t.footer.guide}
             </Link>

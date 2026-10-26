@@ -47,6 +47,7 @@ export const TRANSLATIONS = {
       aside: "Same valley, same welcome — two different rhythms to your days.",
       cta: "Request an offer",
       map: "See it on the map",
+      details: "Full details",
       resort: {
         place: "Gusinje · Prokletije",
         description:
@@ -58,6 +59,36 @@ export const TRANSLATIONS = {
         description:
           "A small, informal hotel in the heart of Gusinje. Comfortable rooms, a shared kitchen you are welcome to use, and advice on the trails before you set off — the choice of hikers, cyclists and slow travellers.",
         features: ["Central location", "Shared kitchen", "Cycle storage", "Trail advice", "Breakfast included"],
+      },
+    },
+    property: {
+      galleryEyebrow: "The house in pictures",
+      galleryTitle: "Look around before you arrive",
+      roomsEyebrow: "Accommodation",
+      roomsTitle: "Rooms & beds",
+      roomsNote:
+        "Tell us how many of you are coming and we will confirm which room suits you, how the beds are arranged and how many each room takes.",
+      roomsCta: "Ask us about the rooms",
+      facilitiesTitle: "Facilities",
+      locationEyebrow: "Where it is",
+      locationTitle: "Finding the house",
+      goodToKnowTitle: "Good to know",
+      breakfast: "Breakfast is included in your stay.",
+      payment: "Payment for your stay is on arrival, in cash or by card.",
+      times: "Arrival and departure times are confirmed with your offer.",
+      enquiryEyebrow: "Direct with us",
+      enquiryTitle: "Request an offer for this house",
+      enquiryText:
+        "Tell us your dates and how many of you are coming. We reply with availability and a price for this house — no booking fees, no middleman.",
+      resort: {
+        rooms: "Bungalows and rooms built for families and groups.",
+        location:
+          "In the Prokletije National Park area, between the Grebaje valley and the lake below Gusinje — a few minutes from the bakery and around ten minutes from the trailheads.",
+      },
+      inn: {
+        rooms: "Comfortable rooms, and a shared kitchen you are welcome to use.",
+        location:
+          "In the centre of Gusinje, a few minutes from the bakery and around ten minutes from the trailheads.",
       },
     },
     gallery: {
@@ -330,6 +361,7 @@ export const TRANSLATIONS = {
       aside: "Ista dolina, ista dobrodošlica — dva različita ritma dana.",
       cta: "Zatražite ponudu",
       map: "Pogledajte na mapi",
+      details: "Svi detalji",
       resort: {
         place: "Gusinje · Prokletije",
         description:
@@ -341,6 +373,35 @@ export const TRANSLATIONS = {
         description:
           "Mali, opušten hotel u srcu Gusinja. Udobne sobe, zajednička kuhinja na korišćenje i savjet o stazama prije polaska — izbor planinara, biciklista i onih koji putuju polako.",
         features: ["Centar grada", "Zajednička kuhinja", "Ostava za bicikle", "Savjeti o stazama", "Doručak uključen"],
+      },
+    },
+    property: {
+      galleryEyebrow: "Kuća u slikama",
+      galleryTitle: "Pogledajte prije nego što dođete",
+      roomsEyebrow: "Smještaj",
+      roomsTitle: "Sobe i kreveti",
+      roomsNote:
+        "Recite nam koliko vas dolazi, pa ćemo potvrditi koja soba vam odgovara, kako su raspoređeni kreveti i koliko koja soba prima gostiju.",
+      roomsCta: "Pitajte nas o sobama",
+      facilitiesTitle: "Sadržaji",
+      locationEyebrow: "Gdje se nalazi",
+      locationTitle: "Kako nas naći",
+      goodToKnowTitle: "Dobro je znati",
+      breakfast: "Doručak je uključen u boravak.",
+      payment: "Plaćanje boravka je na dolasku, kešom ili karticom.",
+      times: "Vrijeme dolaska i odlaska potvrđujemo uz vašu ponudu.",
+      enquiryEyebrow: "Direktno s nama",
+      enquiryTitle: "Zatražite ponudu za ovu kuću",
+      enquiryText:
+        "Recite nam datume i koliko vas dolazi. Odgovaramo sa slobodnim terminima i cijenom za ovu kuću — bez naknada za rezervaciju i bez posrednika.",
+      resort: {
+        rooms: "Bungalovi i sobe napravljeni za porodice i grupe.",
+        location:
+          "U području Nacionalnog parka Prokletije, između doline Grebaje i jezera pod Gusinjem — nekoliko minuta od pekare i desetak minuta od početka staza.",
+      },
+      inn: {
+        rooms: "Udobne sobe i zajednička kuhinja na korišćenje.",
+        location: "U centru Gusinja, nekoliko minuta od pekare i desetak minuta od početka staza.",
       },
     },
     gallery: {
@@ -613,6 +674,7 @@ export const TRANSLATIONS = {
       aside: "Та же долина и то же гостеприимство — но два разных ритма дня.",
       cta: "Запросить предложение",
       map: "Посмотреть на карте",
+      details: "Подробнее",
       resort: {
         place: "Гусине · Проклетие",
         description:
@@ -624,6 +686,35 @@ export const TRANSLATIONS = {
         description:
           "Небольшая простая гостиница в самом центре Гусине. Уютные номера, общая кухня в вашем распоряжении и советы по тропам перед выходом — выбор походников, велосипедистов и неспешных путешественников.",
         features: ["Центр города", "Общая кухня", "Место для велосипедов", "Советы по тропам", "Завтрак включён"],
+      },
+    },
+    property: {
+      galleryEyebrow: "Дом в фотографиях",
+      galleryTitle: "Взгляните перед приездом",
+      roomsEyebrow: "Размещение",
+      roomsTitle: "Номера и кровати",
+      roomsNote:
+        "Напишите, сколько вас приезжает: мы подтвердим, какой номер вам подойдёт, как расставлены кровати и на сколько гостей рассчитан каждый номер.",
+      roomsCta: "Спросите нас о номерах",
+      facilitiesTitle: "Удобства",
+      locationEyebrow: "Где это",
+      locationTitle: "Как нас найти",
+      goodToKnowTitle: "Полезно знать",
+      breakfast: "Завтрак включён в проживание.",
+      payment: "Оплата проживания при заселении, наличными или картой.",
+      times: "Время заезда и выезда подтверждаем вместе с предложением.",
+      enquiryEyebrow: "Напрямую с нами",
+      enquiryTitle: "Запросите предложение для этого дома",
+      enquiryText:
+        "Напишите даты и сколько вас приезжает. Мы ответим со свободными датами и ценой для этого дома — без комиссий и посредников.",
+      resort: {
+        rooms: "Бунгало и номера для семей и групп.",
+        location:
+          "В районе национального парка Проклетие, между долиной Гребае и озером под Гусине — несколько минут до пекарни и около десяти минут до начала троп.",
+      },
+      inn: {
+        rooms: "Уютные номера и общая кухня в вашем распоряжении.",
+        location: "В центре Гусине, несколько минут до пекарни и около десяти минут до начала троп.",
       },
     },
     gallery: {
@@ -896,6 +987,7 @@ export const TRANSLATIONS = {
       aside: "E njëjta luginë, e njëjta mikpritje — dy ritme të ndryshme ditësh.",
       cta: "Kërkoni një ofertë",
       map: "Shiheni në hartë",
+      details: "Detaje të plota",
       resort: {
         place: "Gusinje · Prokletijet",
         description:
@@ -907,6 +999,36 @@ export const TRANSLATIONS = {
         description:
           "Një hotel i vogël dhe i thjeshtë në zemër të Gusinjës. Dhoma komode, kuzhinë e përbashkët në dispozicionin tuaj dhe këshilla për shtigjet përpara se të niseni — zgjedhja e ecësve, çiklistëve dhe udhëtarëve të qetë.",
         features: ["Në qendër", "Kuzhinë e përbashkët", "Depo për biçikleta", "Këshilla për shtigjet", "Mëngjes i përfshirë"],
+      },
+    },
+    property: {
+      galleryEyebrow: "Shtëpia në fotografi",
+      galleryTitle: "Shikoni përpara se të vini",
+      roomsEyebrow: "Qëndrimi",
+      roomsTitle: "Dhomat dhe shtratet",
+      roomsNote:
+        "Na thoni sa persona vini, dhe do t'ju konfirmojmë cila dhomë ju përshtatet, si janë vendosur shtratet dhe sa mysafirë merr secila dhomë.",
+      roomsCta: "Pyetni për dhomat",
+      facilitiesTitle: "Shërbimet",
+      locationEyebrow: "Ku ndodhet",
+      locationTitle: "Si të na gjeni",
+      goodToKnowTitle: "Mirë të dihet",
+      breakfast: "Mëngjesi përfshihet në qëndrim.",
+      payment: "Pagesa për qëndrimin bëhet në mbërritje, me para në dorë ose kartë.",
+      times: "Orarin e mbërritjes dhe të nisjes e konfirmojmë bashkë me ofertën.",
+      enquiryEyebrow: "Direkt me ne",
+      enquiryTitle: "Kërkoni një ofertë për këtë shtëpi",
+      enquiryText:
+        "Na thoni datat dhe sa persona vini. Përgjigjemi me disponueshmërinë dhe çmimin për këtë shtëpi — pa tarifa rezervimi dhe pa ndërmjetës.",
+      resort: {
+        rooms: "Bungalove dhe dhoma të ndërtuara për familje e grupe.",
+        location:
+          "Në zonën e Parkut Kombëtar të Prokletijeve, midis luginës së Grebajës dhe liqenit nën Gusinje — disa minuta nga furra e bukës dhe rreth dhjetë minuta nga nisjet e shtigjeve.",
+      },
+      inn: {
+        rooms: "Dhoma komode dhe kuzhinë e përbashkët në dispozicionin tuaj.",
+        location:
+          "Në qendër të Gusinjës, disa minuta nga furra e bukës dhe rreth dhjetë minuta nga nisjet e shtigjeve.",
       },
     },
     gallery: {
