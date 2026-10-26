@@ -4,7 +4,7 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "Place name as it appears on maps and signposts"
+      "description": "Place name as it appears on maps and signposts. This is the English name and the key the translated names in src/lib/guideContent.js are matched on."
     },
     "description": {
       "type": "string",
@@ -22,6 +22,19 @@
       ],
       "default": "activity"
     },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "easy_walks",
+          "hiking",
+          "family",
+          "sightseeing"
+        ]
+      },
+      "description": "Which guide filters this place belongs under. A place can carry more than one."
+    },
     "distance_km": {
       "type": "number",
       "description": "Approximate distance from Gusinje town centre in kilometres"
@@ -30,9 +43,21 @@
       "type": "number",
       "description": "Approximate driving time from Gusinje in minutes"
     },
+    "walk_minutes": {
+      "type": "number",
+      "description": "Walking time in minutes, entered only where we know it. Left empty, the card simply shows no walking time."
+    },
+    "walk_from": {
+      "type": "string",
+      "description": "Where that walk starts, for example 'the trailhead near Vusanje'. Always shown beside the walking time so it is never read as a walk from the door."
+    },
     "best_season": {
       "type": "string",
       "description": "When it is worth visiting, for example 'May to October'"
+    },
+    "image": {
+      "type": "string",
+      "description": "Optional photograph of the place. Left empty, the card shows no picture rather than a stand-in."
     },
     "map_query": {
       "type": "string",

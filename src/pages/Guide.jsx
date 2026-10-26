@@ -1,28 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { base44 } from "@/api/base44Client";
+import React, { useState } from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import PlaceAdvisor from "@/components/site/PlaceAdvisor";
-import PlaceCard from "@/components/site/PlaceCard";
+import GuideFilters from "@/components/site/GuideFilters";
+import GuidePlaces from "@/components/site/GuidePlaces";
+import useGuidePlaces from "@/lib/useGuidePlaces";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useAnchorHref } from "@/lib/siteNav";
 
 export default function Guide() {
   const { t } = useLanguage();
   const anchorHref = useAnchorHref();
-  const [places, setPlaces] = useState(null);
-
-  useEffect(() => {
-    let active = true;
-
-    base44.entities.LocalPlace.list({ sort: "sort_order", limit: 50 }).then((page) => {
-      if (active) setPlaces(page.items);
-    });
-
-    return () => {
-      active = false;
-    };
-  }, []);
+  const [tag, setTag] = useState("");
+  const { places, status, retry } = useGuidePlaces(tag);
 
   return (
     <div id="top" className="min-h-screen bg-background font-body text-foreground">
@@ -45,19 +35,11 @@ export default function Guide() {
         <section className="mt-16">
           <h2 className="font-heading text-2xl text-primary md:text-3xl">{t.guide.placesTitle}</h2>
 
-          {places === null ? (
-            <div className="mt-8 space-y-6" aria-hidden="true">
-              {[0, 1].map((row) => (
-                <div key={row} className="h-32 animate-pulse rounded-sm bg-secondary/60" />
-              ))}
-            </div>
-          ) : (
-            <div className="mt-8 grid gap-10 md:grid-cols-2 md:gap-x-14">
-              {places.map((place) => (
-                <PlaceCard key={place.id} place={place} />
-              ))}
-            </div>
-          )}
+          <GuideFilters active={tag || "all"} onChange={setTag} />
+
+          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">{t.guide.conditionsNote}</p>
+
+          <GuidePlaces status={status} places={places} retry={retry} />
         </section>
 
         <PlaceAdvisor />
