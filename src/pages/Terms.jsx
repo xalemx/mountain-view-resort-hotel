@@ -53,6 +53,11 @@ export default function Terms() {
                   WhatsApp ↗
                 </a>
               </li>
+              <li className="border-b border-border/70 py-3">
+                <a href={BRAND.emailHref} className="transition hover:text-primary">
+                  {BRAND.email}
+                </a>
+              </li>
             </ul>
 
             <Link to={to("/privacy")} className="link-quiet mt-5 inline-flex">

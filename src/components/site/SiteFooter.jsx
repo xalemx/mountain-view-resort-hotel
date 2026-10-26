@@ -18,12 +18,20 @@ export default function SiteFooter() {
           <span className="font-body text-[11px] uppercase tracking-[0.24em] text-primary-foreground/70">
             {t.place}
           </span>
-          <a
-            href={BRAND.phoneHref}
-            className="text-sm underline decoration-primary-foreground/40 underline-offset-4 transition hover:decoration-primary-foreground"
-          >
-            {BRAND.phone}
-          </a>
+          <div className="flex flex-wrap items-center gap-5">
+            <a
+              href={BRAND.phoneHref}
+              className="text-sm underline decoration-primary-foreground/40 underline-offset-4 transition hover:decoration-primary-foreground"
+            >
+              {BRAND.phone}
+            </a>
+            <a
+              href={BRAND.emailHref}
+              className="text-sm underline decoration-primary-foreground/40 underline-offset-4 transition hover:decoration-primary-foreground"
+            >
+              {BRAND.email}
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 font-body text-[11px] uppercase tracking-[0.24em] text-primary-foreground/60">

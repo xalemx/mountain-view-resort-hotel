@@ -45,6 +45,7 @@ export default function Property({ propertyId }) {
         <PropertyGoodToKnow property={property} />
         <EnquirySection
           id="property-offer"
+          property={property}
           eyebrow={t.property.enquiryEyebrow}
           title={t.property.enquiryTitle}
           text={t.property.enquiryText}

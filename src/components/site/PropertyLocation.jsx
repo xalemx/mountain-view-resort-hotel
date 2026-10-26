@@ -33,13 +33,18 @@ export default function PropertyLocation({ property }) {
 
           <ul className="mt-6 text-sm text-foreground">
             <li className="border-b border-border/70 py-3">
-              <a href={BRAND.phoneHref} className="transition hover:text-primary">
-                {BRAND.phone}
+              <a href={property.phoneHref} className="transition hover:text-primary">
+                {property.phone}
               </a>
             </li>
             <li className="border-b border-border/70 py-3">
-              <a href={BRAND.whatsapp} target="_blank" rel="noopener" className="transition hover:text-primary">
+              <a href={property.whatsapp} target="_blank" rel="noopener" className="transition hover:text-primary">
                 {t.offer.whatsapp} ↗
+              </a>
+            </li>
+            <li className="border-b border-border/70 py-3">
+              <a href={BRAND.emailHref} className="transition hover:text-primary">
+                {BRAND.email}
               </a>
             </li>
           </ul>

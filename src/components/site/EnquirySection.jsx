@@ -4,8 +4,10 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { BRAND } from "@/lib/siteContent";
 
 // The offer block from the home page, reused on a property page with its own words.
-export default function EnquirySection({ id = "offer", eyebrow, title, text }) {
+export default function EnquirySection({ id = "offer", eyebrow, title, text, property }) {
   const { t } = useLanguage();
+  // On a house's own page the line to that house is the one to show.
+  const contact = property || BRAND;
 
   return (
     <section id={id} className="border-t border-border/60 py-20 md:py-28">
@@ -25,12 +27,12 @@ export default function EnquirySection({ id = "offer", eyebrow, title, text }) {
           </ol>
 
           <a
-            href={BRAND.whatsapp}
+            href={contact.whatsapp}
             target="_blank"
             rel="noopener"
             className="mt-10 inline-flex font-heading text-lg text-primary underline decoration-border underline-offset-4 transition hover:decoration-primary"
           >
-            {t.offer.whatsapp} · {BRAND.phone} ↗
+            {t.offer.whatsapp} · {contact.phone} ↗
           </a>
         </div>
 

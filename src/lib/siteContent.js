@@ -7,6 +7,9 @@ export const BRAND = {
   phone: "+382 68 749 749",
   phoneHref: "tel:+38268749749",
   whatsapp: "https://wa.me/38268749749",
+  // Written contact for both houses.
+  email: "mountainviewresortt@gmail.com",
+  emailHref: "mailto:mountainviewresortt@gmail.com",
   instagram: "https://www.instagram.com/mountain_view_resortt/",
   instagramHandle: "@mountain_view_resortt",
   threads: "https://www.threads.com/@mountain_view_resortt",
@@ -39,6 +42,9 @@ export const OWN_PHOTO_CREDIT = "Photographs of Mountain View Resort are our own
 export const LANDSCAPE_PHOTO_CREDIT =
   "Landscape photographs: Bruno Rijsman (CC BY 2.0), Hladnikm (CC BY-SA 4.0), Etan J. Tal (CC BY 3.0), GjonBala (CC BY-SA 4.0), Planeti (CC BY-SA 4.0), Prasopestilence (CC BY-SA 3.0) — via Wikimedia Commons";
 
+// Each house has its own line, published as the number to call and the number to
+// message on WhatsApp. The resort's is the one the rest of the site carries; the
+// hotel's is used wherever a guest is reading about that house.
 export const PROPERTIES = [
   {
     id: "resort",
@@ -48,6 +54,9 @@ export const PROPERTIES = [
     image: IMAGES.resort,
     mapQuery: MAP_QUERIES.resort,
     path: "/mountain-view-resort",
+    phone: "+382 68 749 749",
+    phoneHref: "tel:+38268749749",
+    whatsapp: "https://wa.me/38268749749",
   },
   {
     id: "inn",
@@ -57,6 +66,9 @@ export const PROPERTIES = [
     image: IMAGES.inn,
     mapQuery: MAP_QUERIES.inn,
     path: "/hotel-mountain-view",
+    phone: "+382 69 883 075",
+    phoneHref: "tel:+38269883075",
+    whatsapp: "https://wa.me/38269883075",
   },
 ];
 

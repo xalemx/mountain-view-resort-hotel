@@ -36,6 +36,11 @@ export default function HostIntroduction() {
               </a>
             </li>
             <li className="border-b border-border/70 py-3">
+              <a href={BRAND.emailHref} className="transition hover:text-primary">
+                {BRAND.email}
+              </a>
+            </li>
+            <li className="border-b border-border/70 py-3">
               <a
                 href={BRAND.instagram}
                 target="_blank"

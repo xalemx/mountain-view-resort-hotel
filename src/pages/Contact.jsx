@@ -4,16 +4,25 @@ import SiteFooter from "@/components/site/SiteFooter";
 import EnquiryForm from "@/components/site/EnquiryForm";
 import AskMountainView from "@/components/site/AskMountainView";
 import { useLanguage } from "@/lib/LanguageContext";
-import { BRAND } from "@/lib/siteContent";
+import { BRAND, PROPERTIES } from "@/lib/siteContent";
 import { usePageSeo } from "@/lib/seo";
 
 export default function Contact() {
   const { t } = useLanguage();
   usePageSeo("contact");
 
+  // Each house is listed with the number that reaches it, for a call and for WhatsApp.
   const methods = [
-    { label: t.contact.whatsapp, value: BRAND.phone, href: BRAND.whatsapp, external: true },
-    { label: t.contact.phone, value: BRAND.phone, href: BRAND.phoneHref },
+    ...PROPERTIES.flatMap((property) => [
+      {
+        label: `${t.contact.whatsapp} · ${property.name}`,
+        value: property.phone,
+        href: property.whatsapp,
+        external: true,
+      },
+      { label: `${t.contact.phone} · ${property.name}`, value: property.phone, href: property.phoneHref },
+    ]),
+    { label: t.contact.email, value: BRAND.email, href: BRAND.emailHref },
     { label: t.contact.instagram, value: BRAND.instagramHandle, href: BRAND.instagram, external: true },
     { label: t.contact.threads, value: BRAND.instagramHandle, href: BRAND.threads, external: true },
   ];

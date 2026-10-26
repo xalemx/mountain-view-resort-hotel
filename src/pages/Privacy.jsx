@@ -49,6 +49,11 @@ export default function Privacy() {
                   WhatsApp ↗
                 </a>
               </li>
+              <li className="border-b border-border/70 py-3">
+                <a href={BRAND.emailHref} className="transition hover:text-primary">
+                  {BRAND.email}
+                </a>
+              </li>
             </ul>
 
             <p className="mt-6 text-xs leading-relaxed text-muted-foreground">{copy.updated}</p>
