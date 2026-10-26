@@ -6,6 +6,7 @@ import { toast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import PropertyRecordFields from "@/components/admin/PropertyRecordFields";
 import PropertyFactsList from "@/components/admin/PropertyFactsList";
+import ConfirmationChecklist from "@/components/admin/ConfirmationChecklist";
 
 const RESORT = "mountain_view_resort";
 const LIST_KEYS = ["room_types", "amenities", "house_rules", "activities", "languages"];
@@ -63,6 +64,15 @@ export default function OwnerProperty() {
       ...previous,
       facts_to_confirm: (previous.facts_to_confirm || []).map((fact, position) =>
         position === index ? { ...fact, decision } : fact
+      ),
+    }));
+
+  // One answer on the checklist settles every record item grouped under it.
+  const decideArea = (topics, decision) =>
+    setForm((previous) => ({
+      ...previous,
+      facts_to_confirm: (previous.facts_to_confirm || []).map((fact) =>
+        topics.includes(fact.topic) ? { ...fact, decision } : fact
       ),
     }));
 
@@ -211,15 +221,33 @@ export default function OwnerProperty() {
             </section>
 
             <section>
-              <p className="eyebrow">For confirmation</p>
+              <p className="eyebrow">Before anything else changes</p>
+              <h2 className="mt-2 font-heading text-xl text-foreground">Final confirmation checklist</h2>
+              <p className="mt-2 max-w-3xl font-body text-sm leading-relaxed text-muted-foreground">
+                Eight questions, and only you can settle them. Each one gathers the items on this record that answer
+                it, so you decide once: mark the whole area, save, and we bring the site, the four translations and
+                both assistants into line with your answer.
+              </p>
+              <div className="mt-6">
+                <ConfirmationChecklist facts={facts} onDecide={decideArea} />
+              </div>
+              <div className="mt-6">
+                <Button onClick={save} disabled={saving} className="rounded-sm">
+                  {saving ? "Saving..." : "Save the record"}
+                </Button>
+              </div>
+            </section>
+
+            <section>
+              <p className="eyebrow">The full record, item by item</p>
               <h2 className="mt-2 font-heading text-xl text-foreground">
                 {facts.length === 0
                   ? "Nothing flagged"
                   : `${settled} of ${facts.length} settled`}
               </h2>
               <p className="mt-2 max-w-3xl font-body text-sm leading-relaxed text-muted-foreground">
-                Every item below is either a place the listing and the site disagree, or something the listing says
-                that the site does not say yet. Mark each one, save, and we will bring the resort page, the ME, RU and
+                The checklist above groups these items; here they are one by one. Each is either a place the listing
+                and the site disagree, or something the listing says that the site does not say yet. Mark each one, save, and we will bring the resort page, the ME, RU and
                 SQ translations, the enquiry wording and both assistants into line.
               </p>
               <div className="mt-6">
