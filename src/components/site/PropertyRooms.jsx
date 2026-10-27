@@ -13,10 +13,10 @@ export default function PropertyRooms({ property }) {
   const featuresLabel = ROOM_FEATURES_LABEL[language] || ROOM_FEATURES_LABEL.en;
 
   return (
-    <section className="border-t border-border/60 py-20 md:py-28">
+    <section id="rooms" className="border-t border-border/60 py-20 md:py-28">
       <div className="section">
         <SectionHeading eyebrow={t.property.roomsEyebrow} title={t.property.roomsTitle} />
-        <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-foreground">{copy.rooms}</p>
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-foreground">{copy.rooms}</p>
 
         {property.id === "resort" ? (
           <>

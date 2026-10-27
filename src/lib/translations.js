@@ -16,18 +16,20 @@ export const TRANSLATIONS = {
   en: {
     place: "Gusinje · Montenegro",
     brandSubtitle: "Resort & Hotel",
-    nav: [
-      { label: "The stays", href: "#stays" },
-      { label: "Discover", href: "#discover" },
-      { label: "Plan", href: "#plan" },
-      { label: "Request an offer", href: "#offer" },
-    ],
+    nav: {
+      properties: "Our properties",
+      restaurant: "Restaurant",
+      guide: "Local guide",
+      contact: "Contact",
+      offer: "Request an offer",
+    },
     menu: {
       label: "Menu",
       close: "Close menu",
       home: "Home",
       stays: "Both properties",
       gallery: "Gallery",
+      restaurant: "Restaurant menu",
       guide: "Local guide",
       about: "About us",
       contact: "Contact",
@@ -35,7 +37,7 @@ export const TRANSLATIONS = {
     hero: {
       eyebrow: "Gusinje · Montenegro",
       intro:
-        "Two places to stay, one extraordinary corner of Montenegro. A resort and a hotel at the foot of the Prokletije mountains, between the Grebaje valley and the small town of Gusinje.",
+        "Two places to stay in Montenegro: private bungalows in Vusanje and hotel rooms in the centre of Gusinje.",
       cta: "Find your stay",
       ctaSecondary: "Request an offer",
       footLeft: "Two places to stay · A world to discover",
@@ -44,7 +46,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Welcome",
       title: "A quiet base at the foot of the Accursed Mountains",
-      text: "Mountain View is family-run, in the Gusinje area on the edge of Prokletije National Park. One property is a resort of bungalows in Vusanje, with room for everyone; the other a hotel in the centre of Gusinje for people travelling light. Both are a short drive from the bakery and the trailheads, and a world away from the crowds on the coast.",
+      text:         "Mountain View is family-run, in the Gusinje area on the edge of Prokletije National Park. One property is a resort of bungalows in Vusanje, with room for everyone; the other a hotel in the centre of Gusinje for people travelling light. Both are close to the bakery and the trailheads, and a world away from the crowds on the coast.",
     },
     stays: {
       eyebrow: "Two ways to stay",
@@ -53,17 +55,18 @@ export const TRANSLATIONS = {
       cta: "Request an offer",
       map: "See it on the map",
       details: "Full details",
+      viewProperty: "View property",
+      viewPrices: "View prices",
       resort: {
         place: "Vusanje · Gusinje area",
         description:
-          "Our larger property in Vusanje: a resort of bungalows and rooms built for families and groups. One restaurant serves breakfast, lunch and dinner, listed with Italian, Mediterranean, pizza, seafood, international, European, Croatian and grill and barbecue cuisines, halal, vegetarian and vegan options and special diet menus on request; outside there is a garden, an open terrace and a fireplace, and peaks in view from almost every window.",
-        features: ["Restaurant & bar", "Breakfast available", "Family bungalows", "Free parking", "Airport shuttle (extra charge)", "Terrace & fireplace"],
+          "Private bungalows in Vusanje, with a garden, a restaurant and space for families and groups.",
+        features: ["Restaurant & bar", "Breakfast at the restaurant, €5 a serving", "Family bungalows", "Free parking", "Airport shuttle (extra charge)", "Terrace & fireplace"],
       },
       inn: {
         place: "Gusinje · town centre",
-        description:
-          "A small, informal hotel in the heart of Gusinje. Comfortable rooms, a shared kitchen you are welcome to use, and advice on the trails before you set off — the choice of hikers, cyclists and slow travellers.",
-        features: ["Central location", "Shared kitchen", "Cycle storage", "Trail advice", "Breakfast included"],
+        description: "Hotel rooms in the centre of Gusinje, for travellers who want to be in the town.",
+        features: ["Central location", "Trail advice"],
       },
     },
     property: {
@@ -74,13 +77,21 @@ export const TRANSLATIONS = {
       roomsNote:
         "Tell us how many of you are coming and we will confirm which type suits you and how many guests it takes.",
       roomsCta: "Ask us about the rooms",
+      sectionsLabel: "On this page",
+      sections: {
+        prices: "Prices",
+        rooms: "Accommodation",
+        photos: "Photos",
+        facilities: "Facilities",
+        location: "Location",
+      },
       facilitiesTitle: "Facilities",
       activitiesTitle: "Activities",
       rulesTitle: "House rules",
       locationEyebrow: "Where it is",
       locationTitle: "Finding the house",
       goodToKnowTitle: "Good to know",
-      breakfast: "Breakfast is included in your stay.",
+      breakfast: "Breakfast is not included in the room price.",
       payment: "Payment for your stay is on arrival at the property. We confirm how you can pay with your offer.",
       times: "Arrival and departure times are confirmed with your offer.",
       enquiryEyebrow: "Direct with us",
@@ -93,9 +104,8 @@ export const TRANSLATIONS = {
           "In Vusanje, in the Gusinje area, on the Vusanjska road — Vusanjska, 84326 Vusanje, Montenegro — about 2 km from the centre of Gusinje, at the entrance to the Prokletije National Park and the Grebaje valley.",
       },
       inn: {
-        rooms: "Comfortable rooms, and a shared kitchen you are welcome to use.",
-        location:
-          "In the centre of Gusinje, a few minutes from the bakery and around ten minutes from the trailheads.",
+        rooms: "Comfortable rooms in the centre of Gusinje.",
+        location: "In the centre of Gusinje.",
       },
     },
     gallery: {
@@ -319,18 +329,20 @@ export const TRANSLATIONS = {
   me: {
     place: "Gusinje · Crna Gora",
     brandSubtitle: "Resort i hotel",
-    nav: [
-      { label: "Smještaj", href: "#stays" },
-      { label: "Otkrijte", href: "#discover" },
-      { label: "Plan", href: "#plan" },
-      { label: "Zatražite ponudu", href: "#offer" },
-    ],
+    nav: {
+      properties: "Naši objekti",
+      restaurant: "Restoran",
+      guide: "Lokalni vodič",
+      contact: "Kontakt",
+      offer: "Zatražite ponudu",
+    },
     menu: {
       label: "Meni",
       close: "Zatvori meni",
       home: "Početna",
       stays: "Oba smještaja",
       gallery: "Galerija",
+      restaurant: "Jelovnik restorana",
       guide: "Lokalni vodič",
       about: "O nama",
       contact: "Kontakt",
@@ -338,7 +350,7 @@ export const TRANSLATIONS = {
     hero: {
       eyebrow: "Gusinje · Crna Gora",
       intro:
-        "Dva mjesta za boravak, jedan izuzetan kutak Crne Gore. Resort i hotel u podnožju Prokletija, između doline Grebaje i malog grada Gusinja.",
+        "Dva mjesta za boravak u Crnoj Gori: privatni bungalovi u Vusanju i hotelske sobe u centru Gusinja.",
       cta: "Nađite svoj smještaj",
       ctaSecondary: "Zatražite ponudu",
       footLeft: "Dva mjesta za boravak · Svijet da otkrijete",
@@ -347,7 +359,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Dobro došli",
       title: "Miran kutak u podnožju Prokletija",
-      text: "Mountain View je porodični posao u gusinjskom kraju, na rubu Nacionalnog parka Prokletije. Jedno zdanje je resort sa bungalovima u Vusanju i mjestom za svakoga, a drugi hotel u centru Gusinja za one koji putuju s malo prtljaga. Oba su kratkom vožnjom od pekare i od staza, i daleko od gužve na primorju.",
+      text:         "Mountain View je porodični posao u gusinjskom kraju, na rubu Nacionalnog parka Prokletije. Jedno zdanje je resort sa bungalovima u Vusanju i mjestom za svakoga, a drugi hotel u centru Gusinja za one koji putuju s malo prtljaga. Oba su blizu pekare i staza, i daleko od gužve na primorju.",
     },
     stays: {
       eyebrow: "Dva načina da odsjednete",
@@ -356,17 +368,18 @@ export const TRANSLATIONS = {
       cta: "Zatražite ponudu",
       map: "Pogledajte na mapi",
       details: "Svi detalji",
+      viewProperty: "Pogledajte objekat",
+      viewPrices: "Pogledajte cijene",
       resort: {
         place: "Vusanje · gusinjski kraj",
         description:
-          "Naša veća kuća u Vusanju: resort sa bungalovima i sobama za porodice i grupe. Jedan restoran služi doručak, ručak i večeru, sa italijanskom, mediteranskom, picom, morskim plodovima, internacionalnom, evropskom, hrvatskom i roštilj kuhinjom, halal, vegetarijanskim i veganskim opcijama i jelovnicima za posebne dijete na zahtjev; napolju su bašta, otvorena terasa i ognjište, a vrhovi se vide iz gotovo svakog prozora.",
-        features: ["Restoran i bar", "Doručak dostupan", "Porodični bungalovi", "Besplatan parking", "Transfer sa aerodroma (doplata)", "Terasa i ognjište"],
+          "Privatni bungalovi u Vusanju, sa baštom, restoranom i mjestom za porodice i grupe.",
+        features: ["Restoran i bar", "Doručak u restoranu, €5 po porciji", "Porodični bungalovi", "Besplatan parking", "Transfer sa aerodroma (doplata)", "Terasa i ognjište"],
       },
       inn: {
         place: "Gusinje · centar",
-        description:
-          "Mali, opušten hotel u srcu Gusinja. Udobne sobe, zajednička kuhinja na korišćenje i savjet o stazama prije polaska — izbor planinara, biciklista i onih koji putuju polako.",
-        features: ["Centar grada", "Zajednička kuhinja", "Ostava za bicikle", "Savjeti o stazama", "Doručak uključen"],
+        description: "Hotelske sobe u centru Gusinja, za goste koji žele da budu u gradu.",
+        features: ["Centar grada", "Savjeti o stazama"],
       },
     },
     property: {
@@ -377,13 +390,21 @@ export const TRANSLATIONS = {
       roomsNote:
         "Recite nam koliko vas dolazi, pa ćemo potvrditi koji vam tip odgovara i koliko gostiju prima.",
       roomsCta: "Pitajte nas o sobama",
+      sectionsLabel: "Na ovoj stranici",
+      sections: {
+        prices: "Cijene",
+        rooms: "Smještaj",
+        photos: "Fotografije",
+        facilities: "Sadržaji",
+        location: "Lokacija",
+      },
       facilitiesTitle: "Sadržaji",
       activitiesTitle: "Aktivnosti",
       rulesTitle: "Kućni red",
       locationEyebrow: "Gdje se nalazi",
       locationTitle: "Kako nas naći",
       goodToKnowTitle: "Dobro je znati",
-      breakfast: "Doručak je uključen u boravak.",
+      breakfast: "Doručak nije uključen u cijenu sobe.",
       payment: "Plaćanje boravka je po dolasku u objektu. Način plaćanja potvrđujemo uz ponudu.",
       times: "Vrijeme dolaska i odlaska potvrđujemo uz vašu ponudu.",
       enquiryEyebrow: "Direktno s nama",
@@ -396,8 +417,8 @@ export const TRANSLATIONS = {
           "U Vusanju, u gusinjskom kraju, na Vusanjskom putu — Vusanjska, 84326 Vusanje, Crna Gora — oko 2 km od centra Gusinja, na ulazu u Nacionalni park Prokletije i dolinu Grebaje.",
       },
       inn: {
-        rooms: "Udobne sobe i zajednička kuhinja na korišćenje.",
-        location: "U centru Gusinja, nekoliko minuta od pekare i desetak minuta od početka staza.",
+        rooms: "Udobne sobe u centru Gusinja.",
+        location: "U centru Gusinja.",
       },
     },
     gallery: {
@@ -621,18 +642,20 @@ export const TRANSLATIONS = {
   ru: {
     place: "Гусине · Черногория",
     brandSubtitle: "Курорт и гостиница",
-    nav: [
-      { label: "Размещение", href: "#stays" },
-      { label: "О регионе", href: "#discover" },
-      { label: "Планирование", href: "#plan" },
-      { label: "Запросить предложение", href: "#offer" },
-    ],
+    nav: {
+      properties: "Наши дома",
+      restaurant: "Ресторан",
+      guide: "Местный гид",
+      contact: "Контакты",
+      offer: "Запросить предложение",
+    },
     menu: {
       label: "Меню",
       close: "Закрыть меню",
       home: "Главная",
       stays: "Оба варианта",
       gallery: "Галерея",
+      restaurant: "Меню ресторана",
       guide: "Местный гид",
       about: "О нас",
       contact: "Контакты",
@@ -640,7 +663,7 @@ export const TRANSLATIONS = {
     hero: {
       eyebrow: "Гусине · Черногория",
       intro:
-        "Два места для отдыха в одном удивительном уголке Черногории. Курорт и гостиница у подножия гор Проклетие, между долиной Гребае и маленьким городом Гусине.",
+        "Два места для отдыха в Черногории: отдельные бунгало в Вусане и номера в гостинице в центре Гусине.",
       cta: "Найти своё жильё",
       ctaSecondary: "Запросить предложение",
       footLeft: "Два места для отдыха · Мир для открытий",
@@ -649,7 +672,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Добро пожаловать",
       title: "Тихое место у подножия Проклятых гор",
-      text: "Mountain View — семейное дело в районе Гусине, на краю национального парка Проклетие. Первый дом — курорт с бунгало в Вусане и местом для всех, второй — гостиница в центре Гусине для тех, кто путешествует налегке. До пекарни и до троп — несколько минут на машине, а до пляжей побережья — целый мир.",
+      text:         "Mountain View — семейное дело в районе Гусине, на краю национального парка Проклетие. Первый дом — курорт с бунгало в Вусане и местом для всех, второй — гостиница в центре Гусине для тех, кто путешествует налегке. Пекарня и тропы рядом, а до пляжей побережья — целый мир.",
     },
     stays: {
       eyebrow: "Два способа остановиться",
@@ -658,17 +681,18 @@ export const TRANSLATIONS = {
       cta: "Запросить предложение",
       map: "Посмотреть на карте",
       details: "Подробнее",
+      viewProperty: "Смотреть дом",
+      viewPrices: "Смотреть цены",
       resort: {
         place: "Вусане · район Гусине",
         description:
-          "Наш большой дом в Вусане: курорт с бунгало и номерами для семей и групп. Один ресторан работает на завтрак, обед и ужин: итальянская, средиземноморская кухня, пицца, морепродукты, интернациональная, европейская, хорватская кухня и гриль, с халяльными, вегетарианскими и веганскими блюдами и меню для особых диет по запросу; на улице сад, открытая терраса и камин, а вершины видны почти из каждого окна.",
-        features: ["Ресторан и бар", "Завтрак доступен", "Семейные бунгало", "Бесплатная парковка", "Трансфер из аэропорта (доп. плата)", "Терраса и камин"],
+          "Отдельные бунгало в Вусане: сад, ресторан и место для семей и групп.",
+        features: ["Ресторан и бар", "Завтрак в ресторане, €5 за порцию", "Семейные бунгало", "Бесплатная парковка", "Трансфер из аэропорта (доп. плата)", "Терраса и камин"],
       },
       inn: {
         place: "Гусине · центр",
-        description:
-          "Небольшая простая гостиница в самом центре Гусине. Уютные номера, общая кухня в вашем распоряжении и советы по тропам перед выходом — выбор походников, велосипедистов и неспешных путешественников.",
-        features: ["Центр города", "Общая кухня", "Место для велосипедов", "Советы по тропам", "Завтрак включён"],
+        description: "Номера в гостинице в центре Гусине, для тех, кто хочет быть в городе.",
+        features: ["Центр города", "Советы по тропам"],
       },
     },
     property: {
@@ -679,13 +703,21 @@ export const TRANSLATIONS = {
       roomsNote:
         "Напишите, сколько вас приезжает: мы подтвердим, какой вариант вам подойдёт и на сколько гостей он рассчитан.",
       roomsCta: "Спросите нас о номерах",
+      sectionsLabel: "На этой странице",
+      sections: {
+        prices: "Цены",
+        rooms: "Размещение",
+        photos: "Фотографии",
+        facilities: "Удобства",
+        location: "Расположение",
+      },
       facilitiesTitle: "Удобства",
       activitiesTitle: "Активности",
       rulesTitle: "Правила дома",
       locationEyebrow: "Где это",
       locationTitle: "Как нас найти",
       goodToKnowTitle: "Полезно знать",
-      breakfast: "Завтрак включён в проживание.",
+      breakfast: "Завтрак не включён в стоимость номера.",
       payment: "Оплата проживания по приезде на месте. Способ оплаты подтверждаем в предложении.",
       times: "Время заезда и выезда подтверждаем вместе с предложением.",
       enquiryEyebrow: "Напрямую с нами",
@@ -698,8 +730,8 @@ export const TRANSLATIONS = {
           "В Вусане, в районе Гусине, на Вусаньской дороге — Vusanjska, 84326 Vusanje, Черногория — около 2 км от центра Гусине, у входа в национальный парк Проклетие и долину Гребае.",
       },
       inn: {
-        rooms: "Уютные номера и общая кухня в вашем распоряжении.",
-        location: "В центре Гусине, несколько минут до пекарни и около десяти минут до начала троп.",
+        rooms: "Уютные номера в центре Гусине.",
+        location: "В центре Гусине.",
       },
     },
     gallery: {
@@ -923,18 +955,20 @@ export const TRANSLATIONS = {
   sq: {
     place: "Gusinje · Mali i Zi",
     brandSubtitle: "Resort dhe hotel",
-    nav: [
-      { label: "Qëndrimet", href: "#stays" },
-      { label: "Zbulo", href: "#discover" },
-      { label: "Planifiko", href: "#plan" },
-      { label: "Kërkoni një ofertë", href: "#offer" },
-    ],
+    nav: {
+      properties: "Shtëpitë tona",
+      restaurant: "Restoranti",
+      guide: "Udhërrëfyesi lokal",
+      contact: "Kontakt",
+      offer: "Kërkoni një ofertë",
+    },
     menu: {
       label: "Menyja",
       close: "Mbyll menyjën",
       home: "Ballina",
       stays: "Të dyja qëndrimet",
       gallery: "Galeria",
+      restaurant: "Menuja e restorantit",
       guide: "Udhërrëfyesi lokal",
       about: "Rreth nesh",
       contact: "Kontakt",
@@ -942,7 +976,7 @@ export const TRANSLATIONS = {
     hero: {
       eyebrow: "Gusinje · Mali i Zi",
       intro:
-        "Dy vende për të qëndruar, një cep i jashtëzakonshëm i Malit të Zi. Një resort dhe një hotel në këmbët e bjeshkëve të Prokletijeve, midis luginës së Grebajës dhe qytetit të vogël të Gusinjës.",
+        "Dy vende për të qëndruar në Malin e Zi: bungalove private në Vusanje dhe dhoma hoteli në qendër të Gusinjës.",
       cta: "Gjeni qëndrimin tuaj",
       ctaSecondary: "Kërkoni një ofertë",
       footLeft: "Dy vende për të qëndruar · Një botë për të zbuluar",
@@ -951,7 +985,7 @@ export const TRANSLATIONS = {
     intro: {
       eyebrow: "Mirë se vini",
       title: "Një bazë e qetë në këmbët e Bjeshkëve të Nemuna",
-      text: "Mountain View drejtohet nga familja, në zonën e Gusinjës, në skaj të Parkut Kombëtar të Bjeshkëve të Nemuna. Njëra shtëpi është resort me bungalove në Vusanje dhe vend për të gjithë, tjetra hotel në qendër të Gusinjës për ata që udhëtojnë lehtë. Të dyja janë pak minuta me makinë nga furra e bukës dhe nga shtigjet, dhe një botë larg turmave të bregdetit.",
+      text:         "Mountain View drejtohet nga familja, në zonën e Gusinjës, në skaj të Parkut Kombëtar të Bjeshkëve të Nemuna. Njëra shtëpi është resort me bungalove në Vusanje dhe vend për të gjithë, tjetra hotel në qendër të Gusinjës për ata që udhëtojnë lehtë. Të dyja janë afër furrës së bukës dhe shtigjeve, dhe një botë larg turmave të bregdetit.",
     },
     stays: {
       eyebrow: "Dy mënyra për të qëndruar",
@@ -960,17 +994,18 @@ export const TRANSLATIONS = {
       cta: "Kërkoni një ofertë",
       map: "Shiheni në hartë",
       details: "Detaje të plota",
+      viewProperty: "Shiko shtëpinë",
+      viewPrices: "Shiko çmimet",
       resort: {
         place: "Vusanje · zona e Gusinjës",
         description:
-          "Shtëpia jonë më e madhe në Vusanje: resort me bungalove dhe dhoma për familje e grupe. Një restorant ofron mëngjes, drekë dhe darkë, me kuzhinë italiane, mesdhetare, pica, ushqime deti, ndërkombëtare, evropiane, kroate dhe skarë, opsione halal, vegjetariane e vegane dhe menu për dieta të veçanta me kërkesë; jashtë ka kopsht, tarracë të hapur dhe vatër, ndërsa majat shihen nga pothuajse çdo dritare.",
-        features: ["Restorant dhe bar", "Mëngjesi ofrohet", "Bungalove familjare", "Parkim falas", "Transfert nga aeroporti (me pagesë shtesë)", "Tarracë dhe vatër"],
+          "Bungalove private në Vusanje, me kopsht, restorant dhe hapësirë për familje e grupe.",
+        features: ["Restorant dhe bar", "Mëngjesi në restorant, €5 për porcion", "Bungalove familjare", "Parkim falas", "Transfert nga aeroporti (me pagesë shtesë)", "Tarracë dhe vatër"],
       },
       inn: {
         place: "Gusinje · qendra",
-        description:
-          "Një hotel i vogël dhe i thjeshtë në zemër të Gusinjës. Dhoma komode, kuzhinë e përbashkët në dispozicionin tuaj dhe këshilla për shtigjet përpara se të niseni — zgjedhja e ecësve, çiklistëve dhe udhëtarëve të qetë.",
-        features: ["Në qendër", "Kuzhinë e përbashkët", "Depo për biçikleta", "Këshilla për shtigjet", "Mëngjes i përfshirë"],
+        description: "Dhoma hoteli në qendër të Gusinjës, për udhëtarët që duan të jenë në qytet.",
+        features: ["Në qendër", "Këshilla për shtigjet"],
       },
     },
     property: {
@@ -981,13 +1016,21 @@ export const TRANSLATIONS = {
       roomsNote:
         "Na thoni sa persona vini, dhe do t'ju konfirmojmë cili opcion ju përshtatet dhe sa mysafirë merr.",
       roomsCta: "Pyetni për dhomat",
+      sectionsLabel: "Në këtë faqe",
+      sections: {
+        prices: "Çmimet",
+        rooms: "Qëndrimi",
+        photos: "Fotografitë",
+        facilities: "Shërbimet",
+        location: "Vendndodhja",
+      },
       facilitiesTitle: "Shërbimet",
       activitiesTitle: "Aktivitete",
       rulesTitle: "Rregullat e shtëpisë",
       locationEyebrow: "Ku ndodhet",
       locationTitle: "Si të na gjeni",
       goodToKnowTitle: "Mirë të dihet",
-      breakfast: "Mëngjesi përfshihet në qëndrim.",
+      breakfast: "Mëngjesi nuk përfshihet në çmimin e dhomës.",
       payment: "Pagesa për qëndrimin bëhet në mbërritje në objekt. Mënyrën e pagesës e konfirmojmë me ofertën.",
       times: "Orarin e mbërritjes dhe të nisjes e konfirmojmë bashkë me ofertën.",
       enquiryEyebrow: "Direkt me ne",
@@ -1000,9 +1043,8 @@ export const TRANSLATIONS = {
           "Në Vusanje, në zonën e Gusinjës, në rrugën e Vusanjes — Vusanjska, 84326 Vusanje, Mali i Zi — rreth 2 km nga qendra e Gusinjës, në hyrje të Parkut Kombëtar të Prokletijeve dhe luginës së Grebajës.",
       },
       inn: {
-        rooms: "Dhoma komode dhe kuzhinë e përbashkët në dispozicionin tuaj.",
-        location:
-          "Në qendër të Gusinjës, disa minuta nga furra e bukës dhe rreth dhjetë minuta nga nisjet e shtigjeve.",
+        rooms: "Dhoma komode në qendër të Gusinjës.",
+        location: "Në qendër të Gusinjës.",
       },
     },
     gallery: {

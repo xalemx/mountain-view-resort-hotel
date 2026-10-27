@@ -30,7 +30,7 @@ export default function EnquirySuccess({ submission, onStartOver }) {
     <div className="rounded-sm border border-border/70 bg-card p-6 md:p-8">
       <p className="eyebrow">{t.form.referenceLabel}</p>
       <p className="mt-3 font-display text-3xl tracking-wide text-primary">{submission.reference}</p>
-      <p className="mt-4 text-[15px] leading-relaxed text-foreground">{t.form.success}</p>
+      <p className="mt-4 text-base leading-relaxed text-foreground">{t.form.success}</p>
 
       <dl className="mt-6 border-y border-border/60">
         {rows.map((row) => (

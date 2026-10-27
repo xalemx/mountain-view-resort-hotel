@@ -26,14 +26,14 @@ export default function Terms() {
         <h1 className="mt-4 max-w-3xl font-heading text-3xl leading-tight text-primary md:text-[2.6rem]">
           {copy.title}
         </h1>
-        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">{copy.intro}</p>
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">{copy.intro}</p>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
           <div className="space-y-8">
             {copy.sections.map((section) => (
               <section key={section.title} className="border-t border-border/70 pt-6">
                 <h2 className="font-heading text-lg text-primary">{section.title}</h2>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">{section.text}</p>
+                <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">{section.text}</p>
               </section>
             ))}
           </div>

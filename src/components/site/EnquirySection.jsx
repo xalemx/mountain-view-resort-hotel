@@ -16,7 +16,11 @@ export default function EnquirySection({ id = "offer", eyebrow, title, text, pro
         <div>
           <p className="eyebrow">{eyebrow || t.offer.eyebrow}</p>
           <h2 className="mt-4 font-heading text-3xl leading-tight text-primary md:text-[2.6rem]">{title || t.offer.title}</h2>
-          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted-foreground">{text || t.offer.text}</p>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">{text || t.offer.text}</p>
+
+          <p className="mt-5 max-w-md rounded-sm border border-border/70 bg-secondary/40 p-4 text-sm leading-relaxed text-foreground">
+            {t.form.notConfirmed}
+          </p>
 
           <ol className="mt-10 space-y-4">
             {t.offer.steps.map((step, index) => (

@@ -27,7 +27,7 @@ export default function Guide() {
 
         <div className="mt-8 max-w-3xl space-y-5">
           {t.guide.intro.map((paragraph, index) => (
-            <p key={index} className="text-[15px] leading-relaxed text-muted-foreground">
+            <p key={index} className="text-base leading-relaxed text-muted-foreground">
               {paragraph}
             </p>
           ))}
@@ -49,7 +49,7 @@ export default function Guide() {
             {t.guide.practical.map((item) => (
               <div key={item.title} className="border-t border-border/70 pt-6">
                 <h3 className="font-heading text-lg text-primary">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">{item.text}</p>
               </div>
             ))}
           </div>

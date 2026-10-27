@@ -3,11 +3,12 @@ import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import PropertyHero from "@/components/site/PropertyHero";
 import PropertySwitch from "@/components/site/PropertySwitch";
-import PropertyGallerySection from "@/components/site/PropertyGallerySection";
-import PropertyRooms from "@/components/site/PropertyRooms";
+import PropertySectionNav from "@/components/site/PropertySectionNav";
 import AccommodationPrices from "@/components/site/AccommodationPrices";
-import RestaurantTeaser from "@/components/site/RestaurantTeaser";
+import PropertyRooms from "@/components/site/PropertyRooms";
+import PropertyGallerySection from "@/components/site/PropertyGallerySection";
 import PropertyFacilities from "@/components/site/PropertyFacilities";
+import RestaurantTeaser from "@/components/site/RestaurantTeaser";
 import PropertyActivities from "@/components/site/PropertyActivities";
 import PropertyLocation from "@/components/site/PropertyLocation";
 import PropertyRules from "@/components/site/PropertyRules";
@@ -19,6 +20,8 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { usePageSeo } from "@/lib/seo";
 
 // One page per house. Everything on it comes from what the owner has confirmed.
+// The prices sit directly under the opening and the switch, so the first thing a
+// guest meets after the description is what a night costs.
 export default function Property({ propertyId }) {
   const { t } = useLanguage();
   const { setSelectedProperty } = useProperty();
@@ -38,11 +41,12 @@ export default function Property({ propertyId }) {
       <main>
         <PropertyHero property={property} />
         <PropertySwitch propertyId={property.id} />
-        <PropertyGallerySection key={property.id} property={property} />
-        <PropertyRooms property={property} />
+        <PropertySectionNav />
         <AccommodationPrices property={property} />
-        {property.id === "resort" && <RestaurantTeaser />}
+        <PropertyRooms property={property} />
+        <PropertyGallerySection key={property.id} property={property} />
         <PropertyFacilities property={property} />
+        {property.id === "resort" && <RestaurantTeaser />}
         {property.id === "resort" && <PropertyActivities property={property} />}
         <PropertyLocation property={property} />
         {property.id === "resort" && <PropertyRules property={property} />}

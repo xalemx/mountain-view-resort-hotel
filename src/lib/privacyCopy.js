@@ -1,11 +1,10 @@
 // The privacy page, written from what this website actually does: which fields
 // the enquiry form collects, who can read them (the owner's account only, see
-// the Enquiry rules in base44/entities/Enquiry.jsonc), how the automated
-// assistant works, and what the browser stores.
+// the Enquiry rules in base44/entities/Enquiry.jsonc), where the maps links lead,
+// and what the browser stores.
 //
-// The owner is asked to confirm the retention sentence in "How long we keep it"
-// and the assistant's wording, so the page can be brought fully into line with
-// their own practice.
+// The owner is asked to confirm the retention sentence in "How long we keep it",
+// so the page can be brought fully into line with their own practice.
 
 export const PRIVACY_COPY = {
   en: {
@@ -16,7 +15,7 @@ export const PRIVACY_COPY = {
     sections: [
       {
         title: "What we collect when you write to us",
-        text: "Your name, your email address and, if you give one, your phone number. The house you are asking about, your arrival and departure dates, how many adults and children are coming, the children's ages if you tell us, anything you write in the notes, how you would rather be answered (WhatsApp or email), and the language you read the site in. If you write to the assistant instead of the form, the same details arrive in the same request.",
+        text: "Your name, your email address and, if you give one, your phone number. The house you are asking about, your arrival and departure dates, how many adults and children are coming, the children's ages if you tell us, anything you write in the notes, how you would rather be answered (WhatsApp or email), and the language you read the site in.",
       },
       {
         title: "Why we collect it",
@@ -35,12 +34,8 @@ export const PRIVACY_COPY = {
         text: "You pay for your stay on arrival at the property, to the host, and we confirm how you can pay with your offer. This website never asks for card details and takes no payment itself.",
       },
       {
-        title: "The automated assistant",
-        text: "Ask Mountain View is an automated assistant, not a person. When you write to it, your message is turned into a reply by the AI service of Base44, the platform this website runs on, and the conversation is kept there so the assistant can follow the thread. In your browser the conversation is held only for that visit and only in that tab, and the Clear button in the panel ends it. Please do not send anything you would not want a machine to read: for anything personal or urgent, use the phone or WhatsApp.",
-      },
-      {
         title: "Maps, language and cookies",
-        text: "We set no advertising or tracking cookies. The site remembers the language you chose in your own browser. If you open the map, your browser loads map images from OpenStreetMap, which sees your IP address exactly as any website you visit would. Our platform keeps anonymous counts of which pages are read.",
+        text: "We set no advertising or tracking cookies. The site remembers the language you chose in your own browser. When you follow a directions link, you leave this site and Google Maps opens, and it sees your request exactly as any website you visit would. Our platform keeps anonymous counts of which pages are read.",
       },
       {
         title: "Your choices",
@@ -49,7 +44,7 @@ export const PRIVACY_COPY = {
     ],
     contactTitle: "Questions about your data",
     contactText: "Write to us on WhatsApp or call, and the family that keeps these records will answer.",
-    updated: "Last updated 26 October 2026",
+    updated: "Last updated 27 October 2026",
   },
 
   me: {
@@ -60,7 +55,7 @@ export const PRIVACY_COPY = {
     sections: [
       {
         title: "Šta prikupljamo kada nam pišete",
-        text: "Ime, email adresu i, ako je date, telefonski broj. Kuću o kojoj pitate, datume dolaska i odlaska, broj odraslih i djece, uzrast djece ako nam ga navedete, sve što napišete u napomeni, način na koji želite odgovor (WhatsApp ili email) i jezik na kojem čitate sajt. Ako pišete asistentu umjesto preko forme, isti podaci dolaze u isti zahtjev.",
+        text: "Ime, email adresu i, ako je date, telefonski broj. Kuću o kojoj pitate, datume dolaska i odlaska, broj odraslih i djece, uzrast djece ako nam ga navedete, sve što napišete u napomeni, način na koji želite odgovor (WhatsApp ili email) i jezik na kojem čitate sajt.",
       },
       {
         title: "Zašto ih prikupljamo",
@@ -79,12 +74,8 @@ export const PRIVACY_COPY = {
         text: "Boravak plaćate po dolasku u objektu, domaćinu, a način plaćanja potvrđujemo uz ponudu. Ovaj sajt nikada ne traži podatke kartice i sam ne naplaćuje ništa.",
       },
       {
-        title: "Automatski asistent",
-        text: "Pitajte Mountain View je automatski asistent, ne osoba. Kada mu pišete, vašu poruku u odgovor pretvara AI servis platforme Base44, na kojoj ovaj sajt radi, i razgovor se tamo čuva kako bi asistent mogao pratiti temu. U vašem pregledaču razgovor se čuva samo za tu posjetu i samo u tom tabu, a dugme Obriši ga završava. Molimo ne šaljite ništa što ne biste željeli da čita mašina: za sve lično ili hitno koristite telefon ili WhatsApp.",
-      },
-      {
         title: "Mape, jezik i kolačići",
-        text: "Ne postavljamo reklamne ni tracking kolačiće. Sajt pamti izabrani jezik u vašem pregledaču. Ako otvorite mapu, pregledač učitava slike mape sa OpenStreetMap, koja vidi vašu IP adresu kao i svaki sajt koji posjetite. Naša platforma vodi anonimno brojanje čitanih stranica.",
+        text: "Ne postavljamo reklamne ni tracking kolačiće. Sajt pamti izabrani jezik u vašem pregledaču. Kada otvorite link za navigaciju, napuštate ovaj sajt i otvara se Google Maps, koji vidi vaš zahtjev kao i svaki drugi sajt koji posjetite. Naša platforma vodi anonimno brojanje čitanih stranica.",
       },
       {
         title: "Vaš izbor",
@@ -93,7 +84,7 @@ export const PRIVACY_COPY = {
     ],
     contactTitle: "Pitanja o vašim podacima",
     contactText: "Pišite nam na WhatsApp ili pozovite, i odgovoriće porodica koja vodi ovu evidenciju.",
-    updated: "Posljednja izmjena 26. oktobar 2026.",
+    updated: "Posljednja izmjena 27. oktobar 2026.",
   },
 
   ru: {
@@ -104,7 +95,7 @@ export const PRIVACY_COPY = {
     sections: [
       {
         title: "Что мы собираем, когда вы нам пишете",
-        text: "Имя, адрес электронной почты и, если вы его указали, номер телефона. Дом, о котором вы спрашиваете, даты приезда и отъезда, число взрослых и детей, возраст детей, если вы его указали, всё, что вы написали в примечании, способ ответа (WhatsApp или email) и язык, на котором вы читаете сайт. Если вы пишете помощнику, а не через форму, те же данные попадают в тот же запрос.",
+        text: "Имя, адрес электронной почты и, если вы его указали, номер телефона. Дом, о котором вы спрашиваете, даты приезда и отъезда, число взрослых и детей, возраст детей, если вы его указали, всё, что вы написали в примечании, способ ответа (WhatsApp или email) и язык, на котором вы читаете сайт.",
       },
       {
         title: "Зачем мы их собираем",
@@ -123,12 +114,8 @@ export const PRIVACY_COPY = {
         text: "Вы платите за проживание по приезде на месте, хозяину, а способ оплаты подтверждаем в предложении. Этот сайт никогда не запрашивает данные карты и сам платежей не принимает.",
       },
       {
-        title: "Автоматический помощник",
-        text: "Спросите Mountain View — это автоматический помощник, а не человек. Когда вы ему пишете, ваше сообщение превращает в ответ AI-сервис платформы Base44, на которой работает этот сайт, и переписка хранится там, чтобы помощник мог продолжать тему. В вашем браузере переписка хранится только на время этого визита и только в этой вкладке, а кнопка Очистить её завершает. Пожалуйста, не отправляйте то, что не хотели бы показывать машине: для личного или срочного используйте телефон или WhatsApp.",
-      },
-      {
         title: "Карты, язык и файлы cookie",
-        text: "Мы не ставим рекламные и отслеживающие файлы cookie. Сайт запоминает выбранный язык в вашем браузере. Если вы откроете карту, браузер загрузит изображения карты с OpenStreetMap, который видит ваш IP-адрес так же, как любой посещаемый сайт. Наша платформа ведёт анонимный подсчёт прочитанных страниц.",
+        text: "Мы не ставим рекламные и отслеживающие файлы cookie. Сайт запоминает выбранный язык в вашем браузере. Открывая ссылку с маршрутом, вы покидаете этот сайт и открывается Google Maps, который видит ваш запрос так же, как любой посещаемый сайт. Наша платформа ведёт анонимный подсчёт прочитанных страниц.",
       },
       {
         title: "Ваш выбор",
@@ -137,7 +124,7 @@ export const PRIVACY_COPY = {
     ],
     contactTitle: "Вопросы о ваших данных",
     contactText: "Напишите нам в WhatsApp или позвоните, и ответит семья, которая ведёт эти записи.",
-    updated: "Обновлено 26 октября 2026",
+    updated: "Обновлено 27 октября 2026",
   },
 
   sq: {
@@ -148,7 +135,7 @@ export const PRIVACY_COPY = {
     sections: [
       {
         title: "Çfarë mbledhim kur na shkruani",
-        text: "Emrin, adresën e emailit dhe, nëse e jepni, numrin e telefonit. Shtëpinë për të cilën pyesni, datat e mbërritjes dhe të nisjes, numrin e të rriturve dhe fëmijëve, moshën e fëmijëve nëse na e thoni, çdo gjë që shkruani në shënime, mënyrën si dëshironi përgjigjen (WhatsApp ose email) dhe gjuhën në të cilën lexoni sajtin. Nëse i shkruani asistentit në vend të formularit, të njëjtat të dhëna mbërrijnë në të njëjtën kërkesë.",
+        text: "Emrin, adresën e emailit dhe, nëse e jepni, numrin e telefonit. Shtëpinë për të cilën pyesni, datat e mbërritjes dhe të nisjes, numrin e të rriturve dhe fëmijëve, moshën e fëmijëve nëse na e thoni, çdo gjë që shkruani në shënime, mënyrën si dëshironi përgjigjen (WhatsApp ose email) dhe gjuhën në të cilën lexoni sajtin.",
       },
       {
         title: "Pse i mbledhim",
@@ -167,12 +154,8 @@ export const PRIVACY_COPY = {
         text: "Qëndrimin e paguani në mbërritje në objekt, tek pronari, dhe mënyrën e pagesës e konfirmojmë me ofertën. Ky sajt nuk kërkon kurrë të dhëna karte dhe nuk pranon pagesa vetë.",
       },
       {
-        title: "Asistenti automatik",
-        text: "Pyetni Mountain View është asistent automatik, jo një person. Kur i shkruani, mesazhin tuaj e kthen në përgjigje shërbimi AI i platformës Base44, mbi të cilën funksionon ky sajt, dhe biseda ruhet atje që asistenti të vazhdojë temën. Në shfletuesin tuaj biseda mbahet vetëm për atë vizitë dhe vetëm në atë dritare, ndërsa butoni Fshij e mbyll atë. Ju lutemi mos dërgoni çfarë nuk do të donit të lexonte një makinë: për çdo gjë personale ose urgjente përdorni telefonin ose WhatsApp.",
-      },
-      {
         title: "Harta, gjuha dhe cookies",
-        text: "Nuk vendosim cookies reklamimi ose gjurmimi. Sajti mban mend gjuhën e zgjedhur në shfletuesin tuaj. Nëse hapni hartën, shfletuesi ngarkon imazhet e hartës nga OpenStreetMap, e cila e sheh adresën tuaj IP si çdo sajt që vizitoni. Platforma jonë mban numërime anonime të faqeve të lexuara.",
+        text: "Nuk vendosim cookies reklamimi ose gjurmimi. Sajti mban mend gjuhën e zgjedhur në shfletuesin tuaj. Kur hapni një lidhje udhëzimesh, lini këtë sajt dhe hapet Google Maps, e cila e sheh kërkesën tuaj si çdo sajt që vizitoni. Platforma jonë mban numërime anonime të faqeve të lexuara.",
       },
       {
         title: "Zgjedhja juaj",
@@ -181,6 +164,6 @@ export const PRIVACY_COPY = {
     ],
     contactTitle: "Pyetje për të dhënat tuaja",
     contactText: "Shkruajani në WhatsApp ose telefononi, dhe do t'ju përgjigjet familia që mban këto të dhëna.",
-    updated: "Përditësuar më 26 tetor 2026",
+    updated: "Përditësuar më 27 tetor 2026",
   },
 };

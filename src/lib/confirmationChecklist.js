@@ -21,9 +21,9 @@ export const CHECKLIST_AREAS = [
   },
   {
     id: "breakfast",
-    title: "Breakfast price, and which direct offers include it",
-    ask: "Does any direct offer include breakfast, and what does it cost when it does not? No price is published, and the site says whether breakfast is included depends on the offer. The paid-breakfast rates on the listing are Booking's, in its own converted currency, and are not our direct-booking price.",
-    affects: "the dining section, the facilities list, the resort room copy and the concierge",
+    title: "Breakfast at the hotel, and what a serving costs there",
+    ask: "Settled on 27 October 2026: breakfast is not included in the accommodation prices at either house, and every page, translation and structured-data entry now says so. The resort's restaurant serves breakfast at €5 a serving and charges it separately from the accommodation. Still open: does the hotel serve breakfast at all, and if it does, what does a serving cost and where is it served?",
+    affects: "the dining section, the facilities list, the resort room copy, the prices section and the hotel's good-to-know card",
     matches: ["breakfast"],
   },
   {

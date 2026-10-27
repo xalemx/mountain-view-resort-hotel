@@ -11,7 +11,7 @@ export default function PlanningSection() {
       <div className="section grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
         <div>
           <SectionHeading tone="dark" eyebrow={t.plan.eyebrow} title={t.plan.title} />
-          <p className="mt-6 max-w-md text-[15px] leading-relaxed text-primary-foreground/75">{t.plan.text}</p>
+          <p className="mt-6 max-w-md text-base leading-relaxed text-primary-foreground/75">{t.plan.text}</p>
           <a
             href={BRAND.tourism}
             target="_blank"

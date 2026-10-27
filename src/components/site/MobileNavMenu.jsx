@@ -2,16 +2,19 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import { useAnchorHref } from "@/lib/siteNav";
+import { useAnchorHref, useOfferHref } from "@/lib/siteNav";
 import { useLocaleNav } from "@/lib/useLocaleNav";
+import { MENU_PATH } from "@/lib/menu";
+import { PROPERTIES } from "@/lib/siteContent";
 
 const ITEM_CLASS =
-  "flex min-h-[48px] items-center font-body text-[13px] uppercase tracking-[0.22em] text-muted-foreground transition hover:text-primary";
+  "flex min-h-[48px] items-center font-body text-[15px] font-medium text-foreground transition hover:text-primary";
 
 export default function MobileNavMenu() {
   const { t } = useLanguage();
   const { to } = useLocaleNav();
   const anchorHref = useAnchorHref();
+  const offerHref = useOfferHref();
   const { pathname, hash } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
@@ -31,13 +34,15 @@ export default function MobileNavMenu() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [isOpen]);
 
+  // Both houses are named one by one and the restaurant menu is one tap away:
+  // nobody has to open the home page first to reach either of them.
   const items = [
-    { key: "home", label: t.menu.home, to: "/" },
-    { key: "stays", label: t.menu.stays, anchor: "#stays" },
-    { key: "gallery", label: t.menu.gallery, anchor: "#gallery" },
-    { key: "guide", label: t.menu.guide, to: "/guide" },
+    { key: "properties", label: t.nav.properties, anchor: "#stays" },
+    ...PROPERTIES.map((property) => ({ key: property.id, label: property.name, to: property.path })),
+    { key: "restaurant", label: t.menu.restaurant, to: MENU_PATH },
+    { key: "guide", label: t.nav.guide, to: "/guide" },
     { key: "about", label: t.menu.about, to: "/about" },
-    { key: "contact", label: t.menu.contact, to: "/contact" },
+    { key: "contact", label: t.nav.contact, to: "/contact" },
   ];
 
   return (
@@ -58,7 +63,7 @@ export default function MobileNavMenu() {
         <nav
           id="mobile-menu"
           aria-label={t.menu.label}
-          className="absolute left-0 right-0 top-full border-b border-border bg-background shadow-lg lg:hidden"
+          className="absolute left-0 right-0 top-full max-h-[80vh] overflow-y-auto border-b border-border bg-background shadow-lg lg:hidden"
         >
           <div className="section grid divide-y divide-border/60">
             {items.map((item) =>
@@ -72,6 +77,12 @@ export default function MobileNavMenu() {
                 </a>
               )
             )}
+          </div>
+
+          <div className="section pb-4 pt-2">
+            <a href={offerHref} className="btn-pill w-full" onClick={() => setIsOpen(false)}>
+              {t.nav.offer}
+            </a>
           </div>
         </nav>
       ) : null}

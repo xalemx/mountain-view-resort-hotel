@@ -14,7 +14,7 @@ export default function MapSection() {
     <section id="map" className="border-t border-border/60 py-20 md:py-24">
       <div className="section">
         <SectionHeading eyebrow={copy.eyebrow} title={copy.title} />
-        <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-muted-foreground">{copy.text}</p>
+        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground">{copy.text}</p>
 
         <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-12">
           {PROPERTIES.map((property) => (

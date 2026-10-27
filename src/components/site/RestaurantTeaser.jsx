@@ -19,7 +19,7 @@ export default function RestaurantTeaser() {
         <div>
           <p className="eyebrow">{copy.eyebrow}</p>
           <h2 className="mt-4 font-heading text-3xl leading-tight text-primary md:text-[2.4rem]">{copy.title}</h2>
-          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-foreground">{copy.intro}</p>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground">{copy.intro}</p>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{copy.breakfastNote}</p>
 
           <Link to={to(MENU_PATH)} className="btn-pill mt-8 px-8">

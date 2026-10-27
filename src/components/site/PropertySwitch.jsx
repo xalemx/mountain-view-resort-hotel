@@ -13,12 +13,12 @@ export default function PropertySwitch({ propertyId }) {
   return (
     <div className="border-b border-border/60 bg-secondary/50">
       <div className="section flex flex-wrap items-center justify-between gap-4 py-5">
-        <span className="font-body text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{t.menu.stays}</span>
+        <span className="font-body text-sm font-medium text-muted-foreground">{t.menu.stays}</span>
 
         <div className="flex flex-wrap gap-3">
           {PROPERTIES.map((property) => {
             const isCurrent = property.id === propertyId;
-            const className = `rounded-full border px-5 py-2.5 font-body text-[11px] uppercase tracking-[0.2em] transition ${
+            const className = `inline-flex min-h-[44px] items-center rounded-full border px-5 py-2.5 font-body text-sm font-medium transition ${
               isCurrent
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-border text-muted-foreground hover:border-primary hover:text-primary"

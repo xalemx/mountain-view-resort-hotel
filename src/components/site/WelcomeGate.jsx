@@ -31,27 +31,17 @@ export default function WelcomeGate() {
 
   if (!isFirstVisit && !isChooserOpen) return null;
 
+  // Both renderings of the chooser sit on the dark green band, so every option is
+  // written light-on-dark and each language is named in full rather than by code.
   const options = LANGUAGES.map((entry) => (
     <button
       key={entry.code}
       type="button"
       onClick={() => switchLanguage(entry.code)}
-      className={`group flex min-h-[48px] items-center justify-between gap-4 rounded-sm border px-5 py-3 text-left transition ${
-        isDialog
-          ? "border-primary-foreground/25 hover:border-primary-foreground hover:bg-primary-foreground/10"
-          : "border-border hover:border-primary hover:bg-secondary/60"
-      }`}
+      className="group flex min-h-[48px] items-center justify-between gap-4 rounded-sm border border-primary-foreground/30 px-5 py-3 text-left transition hover:border-primary-foreground hover:bg-primary-foreground/10"
     >
-      <span className={`font-heading text-base ${isDialog ? "text-primary-foreground" : "text-primary"}`}>
-        {entry.greeting}
-      </span>
-      <span
-        className={`font-body text-[10px] uppercase tracking-[0.24em] ${
-          isDialog ? "text-primary-foreground/60" : "text-muted-foreground"
-        }`}
-      >
-        {entry.short}
-      </span>
+      <span className="font-heading text-base text-primary-foreground">{entry.greeting}</span>
+      <span className="font-body text-sm text-primary-foreground/85">{entry.label}</span>
     </button>
   ));
 

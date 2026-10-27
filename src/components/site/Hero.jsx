@@ -3,6 +3,9 @@ import { Image } from "@/components/ui/image";
 import { useLanguage } from "@/lib/LanguageContext";
 import { BRAND, IMAGES } from "@/lib/siteContent";
 
+// The opening band is deliberately short: the name, one sentence saying what the
+// two houses are, and the way further into the page. The two properties are the
+// next thing on the screen.
 export default function Hero() {
   const { t } = useLanguage();
 
@@ -15,27 +18,24 @@ export default function Hero() {
         fetchpriority="high"
         className="absolute inset-0 -z-10 h-full w-full"
       />
-      <div className="absolute inset-0 -z-10 bg-primary/65" />
+      <div className="absolute inset-0 -z-10 bg-primary/70" />
 
-      <div className="section flex min-h-[85vh] flex-col justify-end pb-10 pt-24 md:min-h-[88vh]">
-        <p className="eyebrow text-primary-foreground/70">{t.hero.eyebrow}</p>
-        <h1 className="mt-5 max-w-3xl font-display text-[3.4rem] leading-[0.95] text-primary-foreground md:text-[5.4rem]">
+      <div className="section flex min-h-[58vh] flex-col justify-end pb-12 pt-20 md:min-h-[62vh]">
+        <p className="eyebrow text-primary-foreground/75">{t.hero.eyebrow}</p>
+        <h1 className="mt-4 max-w-3xl font-display text-[2.6rem] leading-[0.98] text-primary-foreground md:text-[4.2rem]">
           {BRAND.name}
         </h1>
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/85">{t.hero.intro}</p>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary-foreground md:text-lg">
+          {t.hero.intro}
+        </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-4">
+        <div className="mt-8 flex flex-wrap items-center gap-4">
           <a href="#stays" className="btn-cream">
-            {t.hero.cta} ↗
+            {t.hero.cta}
           </a>
           <a href="#offer" className="btn-outline-light">
             {t.hero.ctaSecondary}
           </a>
-        </div>
-
-        <div className="mt-14 flex items-center justify-between border-t border-primary-foreground/25 pt-5 font-body text-[10px] uppercase tracking-[0.3em] text-primary-foreground/70">
-          <span>{t.hero.footLeft}</span>
-          <span className="hidden sm:inline">{t.hero.footRight}</span>
         </div>
       </div>
     </section>

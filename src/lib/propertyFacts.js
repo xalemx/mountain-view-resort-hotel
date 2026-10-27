@@ -259,13 +259,15 @@ export const PROPERTY_FACTS = {
         key: "kitchen",
         label: "Shared kitchen",
         status: FACT_STATUS.UNCONFIRMED,
-        shownIn: ["translations: stays.inn.features[1], stays.inn.description", "base44/agents/concierge.jsonc"],
+        note: "Came off the site on 27 October 2026: it was published for the hotel from an earlier draft and nothing recorded here establishes it. Nothing is claimed for the hotel until the owner confirms it.",
+        shownIn: ["not published — awaiting the owner"],
       },
       {
         key: "bikes",
         label: "Cycle storage",
         status: FACT_STATUS.UNCONFIRMED,
-        shownIn: ["translations: stays.inn.features[2]", "base44/agents/concierge.jsonc"],
+        note: "Came off the site on 27 October 2026 for the same reason as the kitchen, and is not claimed for the hotel until the owner confirms it.",
+        shownIn: ["not published — awaiting the owner"],
       },
       {
         key: "advice",
@@ -275,9 +277,11 @@ export const PROPERTY_FACTS = {
       },
       {
         key: "breakfast",
-        label: "Breakfast included",
+        label: "Breakfast not included in the room price",
         status: FACT_STATUS.OWNER,
-        shownIn: ["translations: stays.inn.features[4]", "PropertyGoodToKnow", "base44/agents/concierge.jsonc"],
+        source:
+          "Owner, 27 October 2026: breakfast is not included in the accommodation prices at either house. The resort's restaurant serves breakfast at €5 a serving and charges it separately; the hotel has no breakfast of its own to publish.",
+        shownIn: ["translations: property.breakfast, stays.inn.features (en, me, ru, sq)", "PropertyGoodToKnow"],
       },
       {
         key: "parking",
@@ -307,7 +311,10 @@ export const PROPERTY_FACTS = {
     },
 
     policies: {
-      breakfast: { status: FACT_STATUS.OWNER, text: "Breakfast is included in your stay, as the property is listed. Still open: the note under the published prices says breakfast is not included, so which of the two holds for the hotel is to be settled." },
+      breakfast: {
+        status: FACT_STATUS.OWNER,
+        text: "Breakfast is not included in the room price, settled by the owner on 27 October 2026. The resort's restaurant serves breakfast at €5 a serving, charged separately from the accommodation, and that is the only breakfast the site describes.",
+      },
       payment: {
         status: FACT_STATUS.OWNER,
         text: "Payment for your stay is on arrival at the property, as the offers show. Which payment methods are accepted is not established, so the site says the way to pay is confirmed with the offer.",
@@ -412,8 +419,9 @@ export const FACTS_TO_CONFIRM = [
   },
   {
     id: "kitchen",
-    question: "Does the hotel have a shared kitchen guests may use, and cycle storage?",
-    affects: ["translations: stays.inn.description, stays.inn.features", "base44/agents/concierge.jsonc"],
+    question:
+      "Does the hotel have a shared kitchen guests may use, and cycle storage? Both were published from an earlier draft and came off the site on 27 October 2026, so nothing is claimed for the hotel until you confirm it.",
+    affects: ["translations: stays.inn.features", "src/lib/propertyFacts.js — the hotel's facilities list"],
   },
   {
     id: "parking",
@@ -458,8 +466,8 @@ export const FACTS_TO_CONFIRM = [
   {
     id: "breakfastPrice",
     question:
-      "Answered on 26 October 2026: breakfast at the resort's restaurant is €5 per serving and is charged separately from the accommodation, and that price is published on the menu and in the dining card. Still open: the hotel is published as having breakfast included, while the note under the published prices says breakfast is not included. Which is right for the hotel, and does its breakfast still come with the room?",
-    affects: ["src/lib/dining.js", "src/lib/pricing.js", "base44/agents/concierge.jsonc"],
+      "Settled on 27 October 2026: breakfast is not included in the accommodation prices at either house. The resort's restaurant serves breakfast at €5 per serving, charged separately, and the hotel's room price does not include breakfast. Every page, every translation and the structured data now say so. Still open: if you want a breakfast price published for the hotel, tell us and we will add it.",
+    affects: ["src/lib/dining.js", "src/lib/pricing.js", "src/lib/seoCopy.js", "index.html structured data"],
   },
   {
     id: "seasonDates",

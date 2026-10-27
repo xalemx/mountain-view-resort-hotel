@@ -16,7 +16,7 @@ export default function SocialSection() {
         <div>
           <p className="eyebrow">{t.social.eyebrow}</p>
           <h2 className="mt-4 font-heading text-3xl text-primary md:text-[2.6rem]">{t.social.title}</h2>
-          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted-foreground">{t.social.text}</p>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">{t.social.text}</p>
         </div>
 
         <div className="grid gap-4">

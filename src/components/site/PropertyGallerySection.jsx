@@ -9,7 +9,7 @@ export default function PropertyGallerySection({ property }) {
   const gallery = galleryFor(property.id);
 
   return (
-    <section className="border-t border-border/60 py-20 md:py-28">
+    <section id="photos" className="border-t border-border/60 py-20 md:py-28">
       <div className="section">
         <SectionHeading eyebrow={t.property.galleryEyebrow} title={t.property.galleryTitle} />
         <PhotoGallery

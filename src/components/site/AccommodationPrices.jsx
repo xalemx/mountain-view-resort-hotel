@@ -13,62 +13,41 @@ import {
 
 const fill = (text, values) => text.replace(/\{(\w+)\}/g, (match, key) => values[key] ?? "");
 
-// The nightly prices for the house being read, winter and summer, straight from
-// src/lib/pricing.js. Where there is room the two seasons sit side by side in one
-// table; on a phone the chosen season is listed row by row. Every row asks for an
-// offer on WhatsApp, and nothing here is a booking.
+// The nightly prices for the house being read, straight from src/lib/pricing.js.
+//
+// Winter and summer are both in view all the time, on a phone as well as a wide
+// screen: no season is picked for the guest, because the season dates have not
+// been given to us yet, and no stay is ever totalled. Every row asks for an offer
+// on WhatsApp, and nothing here is a booking.
 export default function AccommodationPrices({ property }) {
   const { language } = useLanguage();
   const copy = PRICING_COPY[language] || PRICING_COPY.en;
-  const [season, setSeason] = useState("winter");
   const [offer, setOffer] = useState(null);
 
   const rows = NIGHTLY_PRICES[property.id] || [];
   const heading = copy[property.id] || copy.resort;
   const isInn = property.id === "inn";
-  const seasonColumn = (entry) => (season === entry ? "bg-secondary/60" : "");
 
   return (
     <section id="prices" className="border-t border-border/60 py-20 md:py-28">
       <div className="section">
         <SectionHeading eyebrow={copy.eyebrow} title={heading.title} aside={heading.aside} />
 
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <span className="eyebrow">{copy.seasonLabel}</span>
-          <div role="group" aria-label={copy.seasonLabel} className="flex flex-wrap gap-2">
-            {SEASONS.map((entry) => (
-              <button
-                key={entry}
-                type="button"
-                onClick={() => setSeason(entry)}
-                aria-pressed={season === entry}
-                className={`min-h-[44px] rounded-full border px-5 font-body text-[11px] uppercase tracking-[0.2em] transition motion-reduce:transition-none ${
-                  season === entry
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border text-muted-foreground hover:border-primary hover:text-primary"
-                }`}
-              >
-                {copy.season[entry]}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-8 hidden md:block">
-          <table className="w-full border-collapse text-sm">
+        <div className="mt-10 hidden md:block">
+          <table className="w-full border-collapse">
             <caption className="sr-only">{fill(copy.table.caption, { property: property.name })}</caption>
             <thead>
               <tr className="border-b border-border">
-                <th scope="col" className="eyebrow py-3 pr-4 text-left">
+                <th scope="col" className="py-3 pr-4 text-left font-body text-sm font-semibold text-foreground">
                   {copy.table.guests}
                 </th>
-                {SEASONS.map((entry) => (
+                {SEASONS.map((season) => (
                   <th
-                    key={entry}
+                    key={season}
                     scope="col"
-                    className={`eyebrow py-3 px-4 text-right ${season === entry ? "text-primary" : ""}`}
+                    className="px-4 py-3 text-right font-body text-sm font-semibold text-foreground"
                   >
-                    {copy.table[entry]}
+                    {copy.table[season]}
                   </th>
                 ))}
                 <th scope="col" className="py-3 pl-4">
@@ -82,14 +61,12 @@ export default function AccommodationPrices({ property }) {
                   <th scope="row" className="py-4 pr-4 text-left font-heading text-lg font-normal text-primary">
                     {row.guests}
                   </th>
-                  {SEASONS.map((entry) => (
+                  {SEASONS.map((season) => (
                     <td
-                      key={entry}
-                      className={`px-4 py-4 text-right font-display text-lg tabular-nums ${
-                        season === entry ? `text-primary ${seasonColumn(entry)}` : "text-muted-foreground"
-                      }`}
+                      key={season}
+                      className="px-4 py-4 text-right font-display text-xl tabular-nums text-primary"
                     >
-                      {formatNightly(row[entry])}
+                      {formatNightly(row[season])}
                     </td>
                   ))}
                   <td className="py-3 pl-4 text-right">
@@ -110,27 +87,31 @@ export default function AccommodationPrices({ property }) {
 
         <ul className="mt-8 grid gap-3 md:hidden">
           {rows.map((row) => (
-            <li
-              key={row.guests}
-              className="flex items-center justify-between gap-4 rounded-sm border border-border/70 bg-card p-4"
-            >
-              <div>
-                <p className="font-heading text-base text-primary">{fill(copy.guestsValue, { n: row.guests })}</p>
-                <p className="mt-1 font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                  {copy.season[season]} · {copy.table.perNight}
-                </p>
-              </div>
-              <div className="text-right">
-                <p className="font-display text-xl tabular-nums text-primary">{formatNightly(row[season])}</p>
-                <button
-                  type="button"
-                  onClick={() => setOffer({ guests: row.guests })}
-                  className="link-quiet mt-2"
-                  aria-label={`${copy.table.request} — ${fill(copy.guestsValue, { n: row.guests })}`}
-                >
-                  {copy.table.request} ↗
-                </button>
-              </div>
+            <li key={row.guests} className="rounded-sm border border-border/70 bg-card p-4">
+              <p className="font-heading text-lg text-primary">{fill(copy.guestsValue, { n: row.guests })}</p>
+
+              <dl className="mt-3 space-y-2">
+                {SEASONS.map((season) => (
+                  <div
+                    key={season}
+                    className="flex items-baseline justify-between gap-4 border-b border-border/60 pb-1"
+                  >
+                    <dt className="font-body text-sm text-muted-foreground">
+                      {copy.season[season]} · {copy.table.perNight}
+                    </dt>
+                    <dd className="font-display text-xl tabular-nums text-primary">{formatNightly(row[season])}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <button
+                type="button"
+                onClick={() => setOffer({ guests: row.guests })}
+                className="btn-outline-dark mt-4 w-full"
+                aria-label={`${copy.table.request} — ${fill(copy.guestsValue, { n: row.guests })}`}
+              >
+                {copy.table.request}
+              </button>
             </li>
           ))}
         </ul>
@@ -138,19 +119,15 @@ export default function AccommodationPrices({ property }) {
         {isInn ? (
           <div className="mt-8 rounded-sm border border-border/70 bg-secondary/40 p-6">
             <p className="eyebrow">{copy.fourGuests.title}</p>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground">{copy.fourGuests.text}</p>
-            <button
-              type="button"
-              onClick={() => setOffer({ guests: INN_FOUR_GUESTS })}
-              className="btn-pill mt-5"
-            >
-              {copy.fourGuests.cta} ↗
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-foreground">{copy.fourGuests.text}</p>
+            <button type="button" onClick={() => setOffer({ guests: INN_FOUR_GUESTS })} className="btn-pill mt-5">
+              {copy.fourGuests.cta}
             </button>
           </div>
         ) : null}
 
         <div className="mt-8 max-w-2xl space-y-3">
-          <p className="text-sm leading-relaxed text-foreground">{copy.note}</p>
+          <p className="text-base font-medium leading-relaxed text-foreground">{copy.note}</p>
           {seasonDatesConfigured() ? null : (
             <p className="text-sm leading-relaxed text-muted-foreground">{copy.seasonNote}</p>
           )}

@@ -9,7 +9,7 @@ export default function PropertyFacilities({ property }) {
     property.id === "resort" ? RESORT_FACILITIES[language] || RESORT_FACILITIES.en : t.stays[property.id].features;
 
   return (
-    <section className="border-t border-border/60 bg-secondary/50 py-20 md:py-28">
+    <section id="facilities" className="border-t border-border/60 bg-secondary/50 py-20 md:py-28">
       <div className="section">
         <SectionHeading eyebrow={property.name} title={t.property.facilitiesTitle} />
 

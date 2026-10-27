@@ -18,7 +18,7 @@ export default function HostIntroduction() {
         <div>
           <p className="eyebrow">{copy.eyebrow}</p>
           <h2 className="mt-4 max-w-2xl font-heading text-2xl text-primary md:text-3xl">{copy.title}</h2>
-          <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-foreground">{copy.intro}</p>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground">{copy.intro}</p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">{copy.detail}</p>
         </div>
 

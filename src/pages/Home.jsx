@@ -1,8 +1,8 @@
 import React from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import Hero from "@/components/site/Hero";
-import IntroSection from "@/components/site/IntroSection";
 import StaysSection from "@/components/site/StaysSection";
+import IntroSection from "@/components/site/IntroSection";
 import GallerySection from "@/components/site/GallerySection";
 import DestinationSection from "@/components/site/DestinationSection";
 import PlanningSection from "@/components/site/PlanningSection";
@@ -13,6 +13,9 @@ import SocialSection from "@/components/site/SocialSection";
 import SiteFooter from "@/components/site/SiteFooter";
 import { usePageSeo } from "@/lib/seo";
 
+// The order of the page is the order a visitor needs it in: a short opening, the
+// two houses and their prices straight away, then the supporting reading about
+// the valley, and the map and the request form at the bottom.
 export default function Home() {
   usePageSeo("home");
 
@@ -21,13 +24,13 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <IntroSection />
         <StaysSection />
-        <MapSection />
+        <IntroSection />
         <GallerySection />
         <DestinationSection />
         <PlanningSection />
         <HostIntroduction />
+        <MapSection />
         <EnquirySection />
         <SocialSection />
       </main>

@@ -33,7 +33,7 @@ export const SEO_COPY = {
     about: {
       title: "About Mountain View · Two houses in the Gusinje area",
       description:
-        "A family resort of bungalows in Vusanje and a small hotel in Gusinje, Montenegro, between the Grebaje valley and the Prokletije peaks. Breakfast is available at both houses, and included according to the offer.",
+        "A family resort of bungalows in Vusanje and a small hotel in Gusinje, Montenegro, between the Grebaje valley and the Prokletije peaks. Breakfast is not included in the accommodation price.",
     },
     guide: {
       title: "Local guide · Walks, lakes and viewpoints near Gusinje",
@@ -43,17 +43,17 @@ export const SEO_COPY = {
     contact: {
       title: "Contact & booking enquiry · Mountain View, Gusinje",
       description:
-        "Send us your dates and guests, ask a question, or message the host on WhatsApp. Breakfast is available, payment is on arrival, and we answer in the languages we speak.",
+        "Send us your dates and guests, ask a question, or message the host on WhatsApp. Breakfast is not included in the accommodation price, payment is on arrival, and we answer in the languages we speak.",
     },
     privacy: {
-      title: "Privacy · Your enquiry and the automated assistant",
+      title: "Privacy · Your enquiry and your details",
       description:
-        "What we collect when you send an enquiry or write to the automated assistant, who can read it, how long we keep it, and how to ask us to correct or delete it.",
+        "What we collect when you send an enquiry, who can read it, how long we keep it, and how to ask us to correct or delete it.",
     },
     terms: {
       title: "Booking terms · Mountain View Resort & Hotel",
       description:
-        "A request is answered within 24 hours, a stay is confirmed by message, no booking fee, breakfast available according to the offer, and payment on arrival at the property.",
+        "A request is answered within 24 hours, a stay is confirmed by message, no booking fee, breakfast not included in the accommodation price, and payment on arrival at the property.",
     },
     resort: {
       title: "Mountain View Resort · Vusanje, Gusinje, Montenegro",
@@ -68,7 +68,7 @@ export const SEO_COPY = {
     hotel: {
       title: "Hotel Mountain View · Gusinje town centre",
       description:
-        "A small hotel in the centre of Gusinje, about 300 m from the town square and 2 km from the resort, with breakfast included and payment on arrival.",
+        "A small hotel in the centre of Gusinje, with rooms priced per night for the stated number of guests, breakfast not included, and payment on arrival at the property.",
     },
   },
 
@@ -81,7 +81,7 @@ export const SEO_COPY = {
     about: {
       title: "O nama · Dvije kuće u gusinjskom kraju",
       description:
-        "Porodični resort sa bungalovima u Vusanju i mali hotel u Gusinju, između doline Grebaje i vrhova Prokletija. Doručak je dostupan u obje kuće, a uključen je u skladu sa ponudom.",
+        "Porodični resort sa bungalovima u Vusanju i mali hotel u Gusinju, između doline Grebaje i vrhova Prokletija. Doručak nije uključen u cijenu smještaja.",
     },
     guide: {
       title: "Vodič kroz okolinu · Šetnje, jezera i vidikovci",
@@ -91,17 +91,17 @@ export const SEO_COPY = {
     contact: {
       title: "Kontakt i zahtjev za boravak · Mountain View",
       description:
-        "Pošaljite datume i broj gostiju, postavite pitanje ili pišite domaćinu na WhatsApp. Doručak je dostupan, plaćanje je po dolasku, a odgovaramo na jezicima koje govorimo.",
+        "Pošaljite datume i broj gostiju, postavite pitanje ili pišite domaćinu na WhatsApp. Doručak nije uključen u cijenu smještaja, plaćanje je po dolasku, a odgovaramo na jezicima koje govorimo.",
     },
     privacy: {
-      title: "Privatnost · Vaš zahtjev i automatski asistent",
+      title: "Privatnost · Vaš zahtjev i vaši podaci",
       description:
-        "Šta prikupljamo kada pošaljete zahtjev ili pišete automatskom asistentu, ko to može čitati, koliko dugo čuvamo i kako zatražiti ispravku ili brisanje.",
+        "Šta prikupljamo kada pošaljete zahtjev, ko to može čitati, koliko dugo čuvamo i kako zatražiti ispravku ili brisanje.",
     },
     terms: {
       title: "Uslovi rezervacije · Mountain View Resort i hotel",
       description:
-        "Zahtjev dobija odgovor u roku od 24 sata, boravak se potvrđuje porukom, bez naknade za rezervaciju, doručak dostupan u skladu sa ponudom i plaćanje po dolasku u objektu.",
+        "Zahtjev dobija odgovor u roku od 24 sata, boravak se potvrđuje porukom, bez naknade za rezervaciju, doručak nije uključen u cijenu smještaja i plaćanje po dolasku u objektu.",
     },
     resort: {
       title: "Mountain View Resort · Vusanje, Gusinje, Crna Gora",
@@ -116,7 +116,7 @@ export const SEO_COPY = {
     hotel: {
       title: "Hotel Mountain View · Centar Gusinja",
       description:
-        "Mali hotel u centru Gusinja, oko 300 m od trga i 2 km od resorta, sa doručkom uključenim i plaćanjem po dolasku.",
+        "Mali hotel u centru Gusinja, sa cijenama po noći za navedeni broj gostiju, doručak nije uključen i plaćanje po dolasku u objektu.",
     },
   },
 
@@ -129,7 +129,7 @@ export const SEO_COPY = {
     about: {
       title: "О нас · Два дома в районе Гусине",
       description:
-        "Семейный resort с бунгало в Вусане и небольшой отель в Гусине, между долиной Гребае и вершинами Проклетие. Завтрак доступен в обоих домах и включён в соответствии с предложением.",
+        "Семейный resort с бунгало в Вусане и небольшой отель в Гусине, между долиной Гребае и вершинами Проклетие. Завтрак не включён в стоимость проживания.",
     },
     guide: {
       title: "Гид по окрестностям · Прогулки, озёра и смотровые площадки",
@@ -139,17 +139,17 @@ export const SEO_COPY = {
     contact: {
       title: "Контакты и запрос на проживание · Mountain View",
       description:
-        "Напишите даты и число гостей, задайте вопрос или напишите хозяину в WhatsApp. Завтрак доступен, оплата по приезде, отвечаем на языках, на которых говорим.",
+        "Напишите даты и число гостей, задайте вопрос или напишите хозяину в WhatsApp. Завтрак не включён в стоимость проживания, оплата по приезде, отвечаем на языках, на которых говорим.",
     },
     privacy: {
-      title: "Приватность · Ваш запрос и автоматический помощник",
+      title: "Приватность · Ваш запрос и ваши данные",
       description:
-        "Что мы собираем, когда вы отправляете запрос или пишете автоматическому помощнику, кто это может прочитать, сколько мы храним и как попросить исправить или удалить данные.",
+        "Что мы собираем, когда вы отправляете запрос, кто это может прочитать, сколько мы храним и как попросить исправить или удалить данные.",
     },
     terms: {
       title: "Условия бронирования · Mountain View Resort и отель",
       description:
-        "На запрос отвечаем в течение 24 часов, проживание подтверждается сообщением, без сбора за бронирование, завтрак доступен в соответствии с предложением, оплата по приезде на месте.",
+        "На запрос отвечаем в течение 24 часов, проживание подтверждается сообщением, без сбора за бронирование, завтрак не включён в стоимость проживания, оплата по приезде на месте.",
     },
     resort: {
       title: "Mountain View Resort · Вусане, Гусине, Черногория",
@@ -164,7 +164,7 @@ export const SEO_COPY = {
     hotel: {
       title: "Отель Mountain View · Центр Гусине",
       description:
-        "Небольшой отель в центре Гусине, около 300 м от площади и 2 км от resort, с завтраком и оплатой по приезде.",
+        "Небольшой отель в центре Гусине: цены за ночь для указанного числа гостей, завтрак не включён, оплата по приезде на месте.",
     },
   },
 
@@ -177,7 +177,7 @@ export const SEO_COPY = {
     about: {
       title: "Rreth nesh · Dy shtëpi në zonën e Gusinjës",
       description:
-        "Një resort familjar me bungalove në Vusanje dhe një hotel i vogël në Gusinje, midis luginës së Grebajës dhe majave të Prokletijeve. Mëngjesi ofrohet në të dyja shtëpitë, sipas ofertës.",
+        "Një resort familjar me bungalove në Vusanje dhe një hotel i vogël në Gusinje, midis luginës së Grebajës dhe majave të Prokletijeve. Mëngjesi nuk përfshihet në çmimin e qëndrimit.",
     },
     guide: {
       title: "Udhërrëfyesi i zonës · Ecje, liqene dhe pamje",
@@ -187,17 +187,17 @@ export const SEO_COPY = {
     contact: {
       title: "Kontakt dhe kërkesë për qëndrim · Mountain View",
       description:
-        "Dërgoni datat dhe numrin e mysafirëve, bëni një pyetje ose shkruajini pronarit në WhatsApp. Mëngjesi ofrohet, pagesa bëhet në mbërritje dhe përgjigjemi në gjuhët që flasim.",
+        "Dërgoni datat dhe numrin e mysafirëve, bëni një pyetje ose shkruajini pronarit në WhatsApp. Mëngjesi nuk përfshihet në çmimin e qëndrimit, pagesa bëhet në mbërritje dhe përgjigjemi në gjuhët që flasim.",
     },
     privacy: {
-      title: "Privatësia · Kërkesa juaj dhe asistenti automatik",
+      title: "Privatësia · Kërkesa juaj dhe të dhënat tuaja",
       description:
-        "Çfarë mbledhim kur dërgoni një kërkesë ose shkruani asistentit automatik, kush mund t'i lexojë, sa kohë i ruajmë dhe si të kërkoni korrigjim ose fshirje.",
+        "Çfarë mbledhim kur dërgoni një kërkesë, kush mund t'i lexojë, sa kohë i ruajmë dhe si të kërkoni korrigjim ose fshirje.",
     },
     terms: {
       title: "Kushtet e rezervimit · Mountain View Resort dhe hoteli",
       description:
-        "Kërkesa merr përgjigje brenda 24 orëve, qëndrimi konfirmohet me mesazh, pa tarifë rezervimi, mëngjesi ofrohet sipas ofertës dhe pagesa në mbërritje në objekt.",
+        "Kërkesa merr përgjigje brenda 24 orëve, qëndrimi konfirmohet me mesazh, pa tarifë rezervimi, mëngjesi nuk përfshihet në çmimin e qëndrimit dhe pagesa në mbërritje në objekt.",
     },
     resort: {
       title: "Mountain View Resort · Vusanje, Gusinje, Mali i Zi",
@@ -212,7 +212,7 @@ export const SEO_COPY = {
     hotel: {
       title: "Hotel Mountain View · Qendra e Gusinjës",
       description:
-        "Një hotel i vogël në qendër të Gusinjës, rreth 300 m nga sheshi dhe 2 km nga resorti, me mëngjes të përfshirë dhe pagesë në mbërritje.",
+        "Një hotel i vogël në qendër të Gusinjës: çmimet për natë për numrin e mysafirëve të shënuar, mëngjesi nuk përfshihet dhe pagesa në mbërritje në objekt.",
     },
   },
 };

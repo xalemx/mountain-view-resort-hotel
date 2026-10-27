@@ -9,11 +9,11 @@ export default function PropertyLocation({ property }) {
   const copy = t.property[property.id];
 
   return (
-    <section className="border-t border-border/60 bg-secondary/50 py-20 md:py-28">
+    <section id="location" className="border-t border-border/60 bg-secondary/50 py-20 md:py-28">
       <div className="section grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
         <div>
           <SectionHeading eyebrow={t.property.locationEyebrow} title={t.property.locationTitle} />
-          <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-foreground">{copy.location}</p>
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-foreground">{copy.location}</p>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">{t.plan.faqs[0].answer}</p>
 
           <a

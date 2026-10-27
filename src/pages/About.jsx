@@ -22,7 +22,7 @@ export default function About() {
           {t.about.paragraphs.map((paragraph, index) => (
             <p
               key={index}
-              className={`text-[15px] leading-relaxed ${
+              className={`text-base leading-relaxed ${
                 index === 0 ? "text-foreground" : "text-muted-foreground"
               }`}
             >

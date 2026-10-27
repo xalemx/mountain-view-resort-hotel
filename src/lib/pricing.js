@@ -88,7 +88,7 @@ export const PRICING_COPY = {
       caption: "Prices per night for {property}, winter and summer, by number of guests.",
     },
     guestsValue: "Guests: {n}",
-    note: "Prices are per night for the stated number of guests. Breakfast is not included. Request an offer to confirm availability and the price for your dates.",
+    note: "Prices are per room or bungalow, per night, for the stated number of guests. Breakfast is not included. Request an offer to confirm availability and the price for your dates.",
     seasonNote: "The season dates are not fixed yet, so tell us your dates and we will confirm which season applies.",
     fourGuests: {
       title: "Four guests",
@@ -134,7 +134,7 @@ export const PRICING_COPY = {
       caption: "Cijene po noći za {property}, zima i ljeto, prema broju gostiju.",
     },
     guestsValue: "Gosti: {n}",
-    note: "Cijene su po noći za navedeni broj gostiju. Doručak nije uključen. Zatražite ponudu da potvrdimo slobodne termine i cijenu za vaše datume.",
+    note: "Cijene su po noći za sobu ili bungalov, za navedeni broj gostiju. Doručak nije uključen. Zatražite ponudu da potvrdimo slobodne termine i cijenu za vaše datume.",
     seasonNote: "Datumi sezona još nisu utvrđeni, pa nam recite svoje datume i potvrdićemo koji sezon važi.",
     fourGuests: {
       title: "Četiri gosta",
@@ -180,7 +180,7 @@ export const PRICING_COPY = {
       caption: "Цены за ночь для {property}, зима и лето, по числу гостей.",
     },
     guestsValue: "Гости: {n}",
-    note: "Цены указаны за ночь для указанного числа гостей. Завтрак не включён. Запросите предложение, чтобы мы подтвердили свободные даты и цену для ваших дат.",
+    note: "Цены указаны за комнату или бунгало за ночь, для указанного числа гостей. Завтрак не включён. Запросите предложение, чтобы мы подтвердили свободные даты и цену для ваших дат.",
     seasonNote: "Даты сезонов пока не определены: напишите свои даты, и мы подтвердим, какой сезон действует.",
     fourGuests: {
       title: "Четверо гостей",
@@ -226,7 +226,7 @@ export const PRICING_COPY = {
       caption: "Çmimet për natë për {property}, dimër dhe verë, sipas numrit të mysafirëve.",
     },
     guestsValue: "Mysafirë: {n}",
-    note: "Çmimet janë për natë për numrin e mysafirëve të shënuar. Mëngjesi nuk përfshihet. Kërkoni një ofertë për të konfirmuar disponueshmërinë dhe çmimin për datat tuaja.",
+    note: "Çmimet janë për dhomë ose bungalow, për natë, për numrin e mysafirëve të shënuar. Mëngjesi nuk përfshihet. Kërkoni një ofertë për të konfirmuar disponueshmërinë dhe çmimin për datat tuaja.",
     seasonNote: "Datat e stinëve nuk janë caktuar ende, prandaj na thoni datat tuaja dhe do t'ju konfirmojmë cila stinë vlen.",
     fourGuests: {
       title: "Katër mysafirë",

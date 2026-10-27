@@ -35,7 +35,7 @@ export default function Contact() {
         <h1 className="mt-4 max-w-3xl font-heading text-3xl leading-tight text-primary md:text-[2.6rem]">
           {t.contact.title}
         </h1>
-        <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted-foreground">{t.contact.intro}</p>
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">{t.contact.intro}</p>
 
         <div className="mt-14 grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
           <ul className="space-y-4">
