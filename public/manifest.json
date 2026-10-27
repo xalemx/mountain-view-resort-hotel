@@ -1,0 +1,16 @@
+{
+  "name": "Mountain View Resort & Hotel",
+  "short_name": "Mountain View",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#111111",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://media.base44.com/images/public/6add6db1a4366797590573f0/4bb806eab_generated_image.png",
+      "type": "image/png",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}
