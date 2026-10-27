@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
 import EnquiryField from "@/components/site/EnquiryField";
@@ -20,6 +20,7 @@ const BACKEND_ERROR_KEYS = {
   phone: "errorPhone",
   email: "errorEmail",
   notes: "errorNotes",
+  rate_limit: "errorRateLimit",
 };
 
 export default function EnquiryForm() {
@@ -29,6 +30,10 @@ export default function EnquiryForm() {
   const [form, setForm] = useState(EMPTY_ENQUIRY);
   const [status, setStatus] = useState({ type: "idle", text: "" });
   const [submission, setSubmission] = useState(null);
+  // Spam traps: the hidden field below is only ever filled by software, and the
+  // moment the form appeared lets the backend tell a typed request from a posted one.
+  const [honeypot, setHoneypot] = useState("");
+  const openedAt = useRef(Date.now());
 
   // Follows the property picked on the site, without touching the other fields.
   useEffect(() => {
@@ -70,6 +75,8 @@ export default function EnquiryForm() {
         adults: Number(form.adults),
         children,
         language,
+        website: honeypot,
+        form_opened_at: openedAt.current,
       });
       const data = response.data || {};
       setSubmission({
@@ -222,6 +229,19 @@ export default function EnquiryForm() {
           {t.terms.eyebrow}
         </Link>
       </p>
+
+      {/* Off-screen, out of the keyboard order and hidden from screen readers:
+          a person never reaches it, software filling every field always does. */}
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(event) => setHoneypot(event.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[9999px] top-0 h-0 w-0 opacity-0"
+      />
     </form>
   );
 }

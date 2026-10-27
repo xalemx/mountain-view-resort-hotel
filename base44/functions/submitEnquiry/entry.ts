@@ -17,6 +17,9 @@ const LANGUAGES = ['en', 'me', 'ru', 'sq'];
 
 const MAX_AGE = 17;
 const DUPLICATE_WINDOW_MS = 3 * 60 * 1000;
+const MIN_FILL_MS = 3 * 1000;
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
+const RATE_LIMIT_MAX = 5;
 
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -46,6 +49,19 @@ function makeReference() {
   return `MV-${code}`;
 }
 
+// Spam traps. The hidden "website" field is only ever filled by software, and a
+// form that comes back a moment after it was shown was not filled in by a person.
+// Both are answered exactly like a real enquiry, so a bot learns nothing.
+function isAutomated(body: any) {
+  if (typeof body.website === 'string' && body.website.trim().length > 0) return true;
+  const openedAt = Number(body.form_opened_at);
+  return Number.isFinite(openedAt) && openedAt > 0 && Date.now() - openedAt < MIN_FILL_MS;
+}
+
+function trapAnswer() {
+  return Response.json({ duplicate: false, reference: makeReference() });
+}
+
 function fail(code: string) {
   return Response.json({ error: 'Invalid enquiry', code }, { status: 400 });
 }
@@ -53,6 +69,8 @@ function fail(code: string) {
 export default async function (req: Request): Promise<Response> {
   try {
     const body = await req.json().catch(() => ({}));
+
+    if (isAutomated(body)) return trapAnswer();
 
     const property = typeof body.property === 'string' ? body.property : '';
     if (!PROPERTIES.includes(property)) return fail('property');
@@ -116,6 +134,17 @@ export default async function (req: Request): Promise<Response> {
         reference: cleanText(duplicate.reference, 20),
         enquiry_id: duplicate.id,
       });
+    }
+
+    // One sender, one hour: once five requests are in from the same address,
+    // the next one is refused instead of piling more records into the queue.
+    const since = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString();
+    const recent = await base44.asServiceRole.entities.Enquiry.count({
+      ...(replyMethod === 'whatsapp' ? { phone } : { email }),
+      created_date: { $gte: since },
+    });
+    if (recent >= RATE_LIMIT_MAX) {
+      return Response.json({ error: 'Too many enquiries', code: 'rate_limit' }, { status: 429 });
     }
 
     const reference = makeReference();

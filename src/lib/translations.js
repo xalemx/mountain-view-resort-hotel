@@ -246,6 +246,8 @@ export const TRANSLATIONS = {
       errorAges: "Please give the age of every child, separated by commas.",
       errorPhone: "Please add a phone number so we can reply on WhatsApp.",
       errorEmail: "Please add an email address so we can reply by email.",
+      errorRateLimit:
+        "We have already received several requests from you in the last hour. Please wait a little, or message us on WhatsApp.",
       errorNotes: "Your notes are a little too long, please shorten them.",
       error: "We could not send that. Please try again, or message us on WhatsApp.",
       optionEither: "Either property",
@@ -559,6 +561,8 @@ export const TRANSLATIONS = {
       errorAges: "Unesite godine svakog djeteta, odvojene zarezom.",
       errorPhone: "Dodajte broj telefona da bismo odgovorili na WhatsAppu.",
       errorEmail: "Dodajte email adresu da bismo odgovorili emailom.",
+      errorRateLimit:
+        "U zadnji sat smo od vas već primili nekoliko zahtjeva. Sačekajte malo ili nam pišite na WhatsApp.",
       errorNotes: "Vaša napomena je predugačka, skratite je.",
       error: "Nijesmo uspjeli da pošaljemo zahtjev. Pokušajte ponovo ili nam pišite na WhatsApp.",
       optionEither: "Bilo koji smještaj",
@@ -872,6 +876,8 @@ export const TRANSLATIONS = {
       errorAges: "Укажите возраст каждого ребёнка через запятую.",
       errorPhone: "Добавьте номер телефона, чтобы мы ответили в WhatsApp.",
       errorEmail: "Добавьте адрес email, чтобы мы ответили письмом.",
+      errorRateLimit:
+        "За последний час от вас уже поступило несколько запросов. Подождите немного или напишите нам в WhatsApp.",
       errorNotes: "Ваше примечание слишком длинное, сократите его.",
       error: "Не удалось отправить запрос. Попробуйте ещё раз или напишите нам в WhatsApp.",
       optionEither: "Любой вариант",
@@ -1185,6 +1191,8 @@ export const TRANSLATIONS = {
       errorAges: "Shkruani moshën e çdo fëmije, të ndara me presje.",
       errorPhone: "Shtoni një numër telefoni që t'ju përgjigjemi në WhatsApp.",
       errorEmail: "Shtoni një adresë email që t'ju përgjigjemi me email.",
+      errorRateLimit:
+        "Brenda orës së fundit kemi marrë tashmë disa kërkesa nga ju. Prisni pak ose na shkruani në WhatsApp.",
       errorNotes: "Shënimi juaj është pak i gjatë, shkurtojeni.",
       error: "Nuk arritëm ta dërgonim kërkesën. Provoni përsëri ose na shkruani në WhatsApp.",
       optionEither: "Pa preferencë",
