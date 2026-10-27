@@ -110,6 +110,11 @@
     "notified_at": {
       "type": "string",
       "description": "When the mail service accepted the host alert"
+    },
+    "guest_confirmation_sent": {
+      "type": "boolean",
+      "default": false,
+      "description": "True once the guest's own copy of the request has been accepted for delivery, so it is only ever sent once"
     }
   },
   "required": [

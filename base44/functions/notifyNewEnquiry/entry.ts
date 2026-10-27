@@ -1,5 +1,5 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.54';
-import { sendHostNotification } from '../../shared/enquiryNotifications.ts';
+import { sendGuestConfirmation, sendHostNotification } from '../../shared/enquiryNotifications.ts';
 
 // Called by the enquiry workflow, which runs as an app admin. Its URL is public,
 // so the admin check stays: a guest must not be able to trigger host emails.
@@ -20,7 +20,12 @@ export default async function (req: Request): Promise<Response> {
     // The outcome is written onto the enquiry: sent, or failed with the reason.
     const outcome = await sendHostNotification(base44, enquiry);
 
-    return Response.json({ enquiry_id: enquiryId, ...outcome });
+    // The guest's own copy goes out after the host alert and reports its own
+    // failure instead of throwing, so it can never change either the host alert
+    // or the saved enquiry. It is sent in the language the guest read.
+    const guestConfirmation = await sendGuestConfirmation(base44, enquiry);
+
+    return Response.json({ enquiry_id: enquiryId, ...outcome, guest_confirmation: guestConfirmation });
   } catch (error) {
     return Response.json({ error: (error as Error).message }, { status: 500 });
   }
