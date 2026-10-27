@@ -1,4 +1,6 @@
+import React, { Suspense, lazy } from 'react';
 import { Toaster } from "@/components/ui/toaster"
+import RouteFallback from '@/components/RouteFallback';
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
@@ -15,17 +17,20 @@ import { PropertyProvider } from '@/lib/PropertyContext';
 import Home from '@/pages/Home';
 import Property from '@/pages/Property';
 import RestaurantMenu from '@/pages/RestaurantMenu';
-import Login from '@/pages/Login';
-import Register from '@/pages/Register';
-import ForgotPassword from '@/pages/ForgotPassword';
-import ResetPassword from '@/pages/ResetPassword';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Guide from '@/pages/Guide';
-import OwnerProperty from '@/pages/OwnerProperty';
 import Privacy from '@/pages/Privacy';
 import Terms from '@/pages/Terms';
-import OwnerDashboard from '@/pages/OwnerDashboard';
+
+// The sign-in screens and the owner's dashboard load on demand: a guest reading
+// the site never downloads them.
+const Login = lazy(() => import('@/pages/Login'));
+const Register = lazy(() => import('@/pages/Register'));
+const ForgotPassword = lazy(() => import('@/pages/ForgotPassword'));
+const ResetPassword = lazy(() => import('@/pages/ResetPassword'));
+const OwnerProperty = lazy(() => import('@/pages/OwnerProperty'));
+const OwnerDashboard = lazy(() => import('@/pages/OwnerDashboard'));
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -99,7 +104,11 @@ function App() {
           {/* The language chooser sits above the content on a first visit, never
               in front of it, so the page is readable without clicking it. */}
           <WelcomeGate />
-          <AuthenticatedApp />
+          {/* The routed pages arrive in their own chunks, so a first visit carries
+              the site itself and nothing an owner would use. */}
+          <Suspense fallback={<RouteFallback />}>
+            <AuthenticatedApp />
+          </Suspense>
         </Router>
         <Toaster />
       </QueryClientProvider>
