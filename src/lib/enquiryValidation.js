@@ -1,3 +1,5 @@
+import { MAX_ADULTS, MAX_CHILDREN, MAX_LENGTHS } from "@/lib/enquiryLimits";
+
 export const REPLY_METHODS = ["whatsapp", "email"];
 
 export const EMPTY_ENQUIRY = {
@@ -15,10 +17,7 @@ export const EMPTY_ENQUIRY = {
 };
 
 const EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-const MAX_ADULTS = 50;
-const MAX_CHILDREN = 30;
 const MAX_AGE = 17;
-const MAX_NOTES = 1000;
 
 export const todayISO = () => new Date().toISOString().slice(0, 10);
 
@@ -59,7 +58,7 @@ export function validateEnquiry(form) {
     return "errorEmail";
   }
 
-  if ((form.notes || "").length > MAX_NOTES) return "errorNotes";
+  if ((form.notes || "").length > MAX_LENGTHS.notes) return "errorNotes";
 
   return null;
 }

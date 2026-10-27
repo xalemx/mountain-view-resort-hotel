@@ -8,6 +8,9 @@ import { useProperty } from "@/lib/PropertyContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
 import { PROPERTY_OPTIONS } from "@/lib/siteContent";
 import { EMPTY_ENQUIRY, REPLY_METHODS, todayISO, validateEnquiry } from "@/lib/enquiryValidation";
+// The same limits the endpoint accepts, so nothing a guest types is quietly
+// shortened on the way in.
+import { MAX_ADULTS, MAX_CHILDREN, MAX_LENGTHS } from "@/lib/enquiryLimits";
 
 // Codes the backend can reject with, mapped to the same messages the form shows.
 const BACKEND_ERROR_KEYS = {
@@ -131,10 +134,10 @@ export default function EnquiryForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <EnquiryField label={t.form.adults}>
-          <input type="number" min="1" max="50" value={form.adults} onChange={update("adults")} className="field-input" />
+          <input type="number" min="1" max={MAX_ADULTS} value={form.adults} onChange={update("adults")} className="field-input" />
         </EnquiryField>
         <EnquiryField label={t.form.children}>
-          <input type="number" min="0" max="30" value={form.children} onChange={update("children")} className="field-input" />
+          <input type="number" min="0" max={MAX_CHILDREN} value={form.children} onChange={update("children")} className="field-input" />
         </EnquiryField>
       </div>
 
@@ -142,7 +145,7 @@ export default function EnquiryForm() {
         <EnquiryField label={t.form.childrenAges}>
           <input
             type="text"
-            maxLength={60}
+            maxLength={MAX_LENGTHS.ages}
             value={form.children_ages}
             onChange={update("children_ages")}
             className="field-input"
@@ -157,7 +160,7 @@ export default function EnquiryForm() {
       <EnquiryField label={t.form.name}>
         <input
           type="text"
-          maxLength={80}
+          maxLength={MAX_LENGTHS.name}
           value={form.guest_name}
           onChange={update("guest_name")}
           className="field-input"
@@ -192,15 +195,15 @@ export default function EnquiryForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <EnquiryField label={`${t.form.phone}${isWhatsapp ? " *" : ""}`}>
-          <input type="tel" maxLength={40} value={form.phone} onChange={update("phone")} className="field-input" />
+          <input type="tel" maxLength={MAX_LENGTHS.phone} value={form.phone} onChange={update("phone")} className="field-input" />
         </EnquiryField>
         <EnquiryField label={`${t.form.email}${isWhatsapp ? "" : " *"}`}>
-          <input type="email" maxLength={254} value={form.email} onChange={update("email")} className="field-input" />
+          <input type="email" maxLength={MAX_LENGTHS.email} value={form.email} onChange={update("email")} className="field-input" />
         </EnquiryField>
       </div>
 
       <EnquiryField label={t.form.notes}>
-        <textarea rows={3} maxLength={1000} value={form.notes} onChange={update("notes")} className="field-input" />
+        <textarea rows={3} maxLength={MAX_LENGTHS.notes} value={form.notes} onChange={update("notes")} className="field-input" />
       </EnquiryField>
 
       <button type="submit" disabled={isSending} className="btn-pill w-full justify-center disabled:opacity-60">
