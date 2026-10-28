@@ -135,7 +135,8 @@ export default function GuideItinerary() {
                       {day.places.map((id) => {
                         const place = placeById(id);
                         const placeCopy = guidePageCopy(id, language);
-                        if (!place || !placeCopy || place.status !== "published") {
+                        // A place with no page of its own is named, never linked.
+                        if (!place || !placeCopy || place.status !== "published" || place.hubOnly) {
                           return placeCopy ? (
                             <span key={id} className="text-sm text-muted-foreground">
                               {placeCopy.name}

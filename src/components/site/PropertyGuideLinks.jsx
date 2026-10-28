@@ -10,7 +10,7 @@ import { guidePageCopy } from "@/lib/guidePages";
 // are never linked from here.
 const PLACE_IDS = {
   resort: ["grebaje-valley", "ropojana-valley", "hrid-lake"],
-  inn: ["gusinje-town", "ali-pasha-springs", "plav-lake"],
+  inn: ["ali-pasha-springs", "grebaje-valley", "hrid-lake"],
 };
 
 export default function PropertyGuideLinks({ property }) {
@@ -20,7 +20,7 @@ export default function PropertyGuideLinks({ property }) {
 
   const places = (PLACE_IDS[property.id] || [])
     .map((id) => placeById(id))
-    .filter((place) => place && place.status === "published")
+    .filter((place) => place && place.status === "published" && !place.hubOnly)
     .map((place) => ({ place, copy: guidePageCopy(place.id, language) }))
     .filter((entry) => entry.copy);
 

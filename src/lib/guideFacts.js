@@ -299,7 +299,9 @@ export function placesForFilter(filter) {
 }
 
 export function relatedPlaces(place) {
-  return (place.related || []).map(placeById).filter((entry) => entry && entry.status === "published");
+  return (place.related || [])
+    .map(placeById)
+    .filter((entry) => entry && entry.status === "published" && !entry.hubOnly);
 }
 
 export const ITINERARY_ID = "three-days-in-gusinje";
