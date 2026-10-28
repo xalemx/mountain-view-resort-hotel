@@ -22,6 +22,7 @@ function clean(name, properties) {
   const allowed = EVENTS[name];
   if (!allowed) return null;
 
+  /** @type {Record<string, string | number>} */
   const safe = {};
   Object.keys(allowed).forEach((key) => {
     const value = properties[key];

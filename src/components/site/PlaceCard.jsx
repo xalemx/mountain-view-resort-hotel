@@ -5,7 +5,6 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
 import { guideUi } from "@/lib/guideUi";
 import { guidePageCopy } from "@/lib/guidePages";
-import { LANDSCAPE_PHOTO_CREDIT } from "@/lib/siteContent";
 import { trackEvent } from "@/lib/analytics";
 
 const DURATION_LABELS = { short: "durationShort", half_day: "durationHalfDay", full_day: "durationFullDay" };

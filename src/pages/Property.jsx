@@ -11,6 +11,7 @@ import PropertyFacilities from "@/components/site/PropertyFacilities";
 import RestaurantTeaser from "@/components/site/RestaurantTeaser";
 import PropertyActivities from "@/components/site/PropertyActivities";
 import PropertyLocation from "@/components/site/PropertyLocation";
+import PropertyGuideLinks from "@/components/site/PropertyGuideLinks";
 import PropertyRules from "@/components/site/PropertyRules";
 import PropertyGoodToKnow from "@/components/site/PropertyGoodToKnow";
 import EnquirySection from "@/components/site/EnquirySection";
@@ -49,6 +50,7 @@ export default function Property({ propertyId }) {
         {property.id === "resort" && <RestaurantTeaser />}
         {property.id === "resort" && <PropertyActivities property={property} />}
         <PropertyLocation property={property} />
+        <PropertyGuideLinks property={property} />
         {property.id === "resort" && <PropertyRules property={property} />}
         <PropertyGoodToKnow property={property} />
         <EnquirySection

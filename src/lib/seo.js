@@ -58,7 +58,7 @@ function upsertJsonLd(data) {
     if (existing) existing.remove();
     return;
   }
-  const script = existing || document.createElement("script");
+  const script = /** @type {HTMLScriptElement} */ (existing || document.createElement("script"));
   script.id = id;
   script.type = "application/ld+json";
   script.textContent = JSON.stringify(data);

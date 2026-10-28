@@ -16,6 +16,7 @@ import { PROPERTIES } from "@/lib/siteContent";
 import { MAX_ADULTS, MAX_LENGTHS } from "@/lib/enquiryLimits";
 import { isISODate, todayISO, validateOfferRequest } from "@/lib/enquiryValidation";
 import { PRICING_COPY, buildOfferMessage, offerWhatsAppLink } from "@/lib/pricing";
+import { guideUi } from "@/lib/guideUi";
 
 // The request behind a price row, and behind every offer button on the site. The
 // guest chooses how it leaves: on WhatsApp they still have to press Send, and
@@ -34,12 +35,18 @@ export default function OfferRequestDialog({ request, onClose }) {
   const house =
     PROPERTIES.find((property) => property.value === (request.property || selectedProperty)) || PROPERTIES[0];
 
+  // A guide page says what the guest is asking about; it goes into the notes,
+  // which they are free to change or clear.
+  const activityLine = request.activity
+    ? guideUi(language).activityLine.replace("{activity}", request.activity)
+    : "";
+
   const [form, setForm] = useState({
     arrival: "",
     departure: "",
     guests: request.guests ? String(request.guests) : "2",
     guest_name: "",
-    notes: "",
+    notes: activityLine,
   });
   const [errors, setErrors] = useState({});
   const [focusTarget, setFocusTarget] = useState(null);
@@ -154,6 +161,12 @@ export default function OfferRequestDialog({ request, onClose }) {
               <span className="eyebrow block">{t.form.property}</span>
               {house.name}
             </p>
+
+            {request.activity ? (
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {guideUi(language).enquireActivity.replace("{activity}", request.activity)}
+              </p>
+            ) : null}
 
             <div className="grid gap-5 sm:grid-cols-2">
               <EnquiryField id="offer-arrival" label={t.form.arrival} error={messageFor(errors.arrival)}>

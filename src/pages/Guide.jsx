@@ -10,6 +10,7 @@ import { useOfferRequest } from "@/lib/OfferRequestContext";
 import { usePageSeo } from "@/lib/seo";
 import { guideUi } from "@/lib/guideUi";
 import { ITINERARY_ID, publishedPlaces } from "@/lib/guideFacts";
+import { itineraryCopy } from "@/lib/guideItinerary";
 
 const EMPTY_FILTERS = { kind: "", duration: "", difficulty: "" };
 
@@ -67,7 +68,9 @@ export default function Guide() {
         <section className="mt-20 border-t border-border/70 pt-8">
           <p className="eyebrow">{u.itineraryEyebrow}</p>
           <h2 className="mt-3 font-heading text-2xl text-primary md:text-3xl">{u.itineraryIntroTitle}</h2>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">{u.itineraryTeaser}</p>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            {itineraryCopy(language).lead}
+          </p>
           <Link to={to(`/guide/${ITINERARY_ID}`)} className="link-quiet mt-5 inline-block">
             {u.itineraryLink} →
           </Link>
