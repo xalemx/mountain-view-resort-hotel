@@ -11,6 +11,14 @@ const FILES = "https://media.base44.com/images/public/6add6db1a4366797590573f0/"
 // The same crop the platform uses for shared images: 1200 by 630.
 const social = (file) => `${FILES}${file}/v1/fill/w_1200,h_630/${file}`;
 
+// Any of our own photographs, cropped the way a sharing card needs it.
+export const socialCrop = (url) => {
+  if (!url) return null;
+  if (url.includes("/v1/")) return url;
+  const file = url.split("/").pop();
+  return `${url}/v1/fill/w_1200,h_630/${file}`;
+};
+
 export const SEO_IMAGES = {
   home: social("bdc367c1b_mountain-view-valley.jpg"),
   about: social("87bdef98b_mountain-view-prokletije.jpg"),
