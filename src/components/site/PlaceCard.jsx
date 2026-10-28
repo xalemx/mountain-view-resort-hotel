@@ -21,6 +21,10 @@ export default function PlaceCard({ place }) {
 
   if (!copy) return null;
 
+  // The town and the lake are named here but have no page of their own, so
+  // nothing on their card pretends to open one.
+  const hasPage = !place.hubOnly && place.status === "published";
+
   const facts = [
     `${u.duration}: ${u[DURATION_LABELS[place.duration]] || ""}`,
     `${u.filtersDifficulty}: ${u[DIFFICULTY_LABELS[place.difficulty]] || ""} · ${
@@ -31,19 +35,27 @@ export default function PlaceCard({ place }) {
   return (
     <article className="border-t border-border/70 pt-6">
       {place.image ? (
-        <Link to={to(`/guide/${place.id}`)} aria-hidden="true" tabIndex={-1}>
+        hasPage ? (
+          <Link to={to(`/guide/${place.id}`)} aria-hidden="true" tabIndex={-1}>
+            <Image src={place.image} alt={copy.imageAlt} quality={75} className="mb-6 h-44 w-full rounded-sm md:h-52" />
+          </Link>
+        ) : (
           <Image src={place.image} alt={copy.imageAlt} quality={75} className="mb-6 h-44 w-full rounded-sm md:h-52" />
-        </Link>
+        )
       ) : null}
 
       <h3 className="font-heading text-xl text-primary">
-        <Link
-          to={to(`/guide/${place.id}`)}
-          onClick={() => trackEvent("guide_card_click", { page: place.id })}
-          className="underline-offset-4 hover:underline"
-        >
-          {copy.name}
-        </Link>
+        {hasPage ? (
+          <Link
+            to={to(`/guide/${place.id}`)}
+            onClick={() => trackEvent("guide_card_click", { page: place.id })}
+            className="underline-offset-4 hover:underline"
+          >
+            {copy.name}
+          </Link>
+        ) : (
+          copy.name
+        )}
       </h3>
       <p className="mt-3 text-base leading-relaxed text-muted-foreground">{copy.lead}</p>
 
@@ -53,9 +65,11 @@ export default function PlaceCard({ place }) {
         ))}
       </div>
 
-      <Link to={to(`/guide/${place.id}`)} className="link-quiet mt-4 inline-block text-sm">
-        {u.readMore} →
-      </Link>
+      {hasPage ? (
+        <Link to={to(`/guide/${place.id}`)} className="link-quiet mt-4 inline-block text-sm">
+          {u.readMore} →
+        </Link>
+      ) : null}
     </article>
   );
 }

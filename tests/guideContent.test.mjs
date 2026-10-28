@@ -12,6 +12,7 @@ import {
   GUIDE_PLACES,
   ITINERARY_ID,
   placeById,
+  relatedPlaces,
 } from "@/lib/guideFacts";
 import { guidePageCopy } from "@/lib/guidePages";
 import { itineraryCopy } from "@/lib/guideItinerary";
@@ -59,6 +60,10 @@ test("related places exist and are linked from both sides", () => {
     (place.related || []).forEach((id) => {
       assert.ok(placeById(id), `${place.id} points at ${id}, which does not exist`);
     });
+    // Only places with a page of their own are ever offered as a link.
+    relatedPlaces(place).forEach((entry) => {
+      assert.ok(!entry.hubOnly, `${place.id} links to ${entry.id}, which has no page`);
+    });
   });
 });
 
@@ -92,4 +97,16 @@ test("the sitemap lists published pages only, in every language", () => {
   PAGES.filter((place) => place.status === "draft").forEach((place) => {
     assert.ok(!SITEMAP.includes(`/guide/${place.id}`), `${place.id} is a draft but is in the sitemap`);
   });
+
+  // A place with no page of its own has no address to offer a search engine.
+  GUIDE_PLACES.filter((place) => place.hubOnly).forEach((place) => {
+    assert.ok(!SITEMAP.includes(`/guide/${place.id}`), `${place.id} has no page but is in the sitemap`);
+  });
+});
+
+test("the sitemap is still a well-formed list of addresses", () => {
+  const opened = (SITEMAP.match(/<url>/g) || []).length;
+  const closed = (SITEMAP.match(/<\/url>/g) || []).length;
+  assert.equal(opened, closed, "an address block was left unclosed");
+  assert.ok(SITEMAP.trimEnd().endsWith("</urlset>"), "the sitemap does not end with its closing tag");
 });
