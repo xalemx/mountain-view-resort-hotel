@@ -26,7 +26,8 @@ export const ITINERARY_COPY = {
             text: "Start on foot in Gusinje: the bakery, the small streets, a coffee. Walk out to the springs where the Ljuča comes out of the rock, and be back in town in time for lunch. From the hotel this is all on foot; from the resort it is a short drive in.",
             places: ["gusinje-town", "ali-pasha-springs"],
             weather: "If it rains, keep the town half and leave the springs for another day; the cafés and the hotel lounge are the fallback.",
-            transport: "No car needed. From Mountain View Resort, drive into Gusinje and park in the centre.",
+            transport:
+              "No car needed from Hotel Mountain View, which is in town. From the resort it is a short drive into Gusinje: park in the centre and carry on on foot.",
           },
           {
             title: "Plav lake, and the drive that leads to it",
@@ -76,7 +77,7 @@ export const ITINERARY_COPY = {
       "The days are suggestions, not a package. Nothing here is booked, and no guide, vehicle or ticket is included.",
       "The order is worth swapping to suit the weather: the lake and the high routes want the clearest day.",
       "Snow can close the upper routes outside the summer months, and a valley road can be rough after rain. Ask us the day before.",
-      "Two of the three days in each version need a car. If you are arriving without one, tell us and we will say what can be arranged.",
+      "From the resort two of the three days need a car, and the town day needs a short drive in; from the hotel the town day is on foot. If you are arriving without one, tell us and we will say what can be arranged.",
     ],
   },
 
@@ -100,7 +101,8 @@ export const ITINERARY_COPY = {
             text: "Počnite pješke po Gusinju: pekara, male ulice, kafa. Prošetajte do izvora gdje Ljuča izbija iz stijene i vratite se na ručak. Iz hotela je sve pješke; iz resorta je kratka vožnja.",
             places: ["gusinje-town", "ali-pasha-springs"],
             weather: "Ako pada kiša, zadržite dio u gradu, a izvore ostavite za drugi dan; kafići i salon hotela su rezerva.",
-            transport: "Auto nije potreban. Iz Mountain View Resorta vozite do Gusinja i parkirate u centru.",
+            transport:
+              "Iz Hotela Mountain View, koji je u gradu, sve je pješke. Iz resorta je kratka vožnja do Gusinja: parkirate u centru i dalje idete pješke.",
           },
           {
             title: "Plavsko jezero i put do njega",
@@ -150,7 +152,7 @@ export const ITINERARY_COPY = {
       "Dani su predlog, ne paket. Ništa ovdje nije rezervisano i nijedan vodič, vozilo ni ulaznica nijesu uključeni.",
       "Redoslijed vrijedi zamijeniti prema vremenu: jezero i visoke rute traže najvedriji dan.",
       "Snijeg van ljeta može zatvoriti gornje rute, a put kroz dolinu može biti loš poslije kiše. Pitajte nas dan prije.",
-      "Dva od tri dana u svakoj verziji traže auto. Ako dolazite bez njega, recite nam i reći ćemo šta se može dogovoriti.",
+      "Iz resorta dva od tri dana traže auto, a dan u gradu kratku vožnju; iz hotela je dan u gradu pješke. Ako dolazite bez auta, recite nam i reći ćemo šta se može dogovoriti.",
     ],
   },
 
@@ -174,7 +176,8 @@ export const ITINERARY_COPY = {
             text: "Начните пешком по Гусине: пекарня, узкие улицы, кофе. Дойдите до источников, где Люча выходит из скалы, и вернитесь к обеду. Из отеля всё пешком, из резорта — короткая поездка.",
             places: ["gusinje-town", "ali-pasha-springs"],
             weather: "Если пойдёт дождь, оставьте городскую часть, а источники перенесите на другой день; кафе и гостиная отеля — запасной вариант.",
-            transport: "Машина не нужна. Из Mountain View Resort доезжайте до Гусине и паркуйтесь в центре.",
+            transport:
+              "Из отеля Mountain View, который стоит в городе, всё пешком. С резорта — короткая поездка до Гусине: паркуйтесь в центре и дальше идите пешком.",
           },
           {
             title: "Плавское озеро и дорога к нему",
@@ -224,7 +227,7 @@ export const ITINERARY_COPY = {
       "Дни — предложение, а не пакет. Здесь ничего не забронировано, и ни гид, ни машина, ни билет не включены.",
       "Порядок стоит менять под погоду: озеро и высокие маршруты хотят самый ясный день.",
       "Вне лета снег может закрыть верхние маршруты, а дорога в долину — быть плохой после дождя. Спросите нас за день.",
-      "Два дня из трёх в каждом варианте требуют машины. Если вы приезжаете без неё, скажите, и мы ответим, что можно устроить.",
+      "С резорта два дня из трёх требуют машины, а городской день — короткой поездки; из отеля городской день пешком. Если вы приезжаете без машины, скажите, и мы ответим, что можно устроить.",
     ],
   },
 
@@ -248,7 +251,8 @@ export const ITINERARY_COPY = {
             text: "Nisuni në këmbë në Gusinje: furra e bukës, rrugët e vogla, një kafe. Ecni deri te burimet ku Ljuça del nga shkëmbi dhe kthehuni për drekë. Nga hoteli gjithçka bëhet në këmbë; nga resorti është një xhiro e shkurtër me makinë.",
             places: ["gusinje-town", "ali-pasha-springs"],
             weather: "Nëse bie shi, mbani pjesën e qytetit dhe lërini burimet për një ditë tjetër; kafenetë dhe salloni i hotelit janë zgjidhja.",
-            transport: "Nuk duhet makinë. Nga Mountain View Resort shkoni me makinë në Gusinje dhe parkoni në qendër.",
+            transport:
+              "Nga Hotel Mountain View, që ndodhet në qytet, gjithçka bëhet në këmbë. Nga resorti është një xhiro e shkurtër me makinë në Gusinje: parkoni në qendër dhe vazhdoni në këmbë.",
           },
           {
             title: "Liqeni i Plavës dhe rruga drejt tij",
@@ -298,7 +302,7 @@ export const ITINERARY_COPY = {
       "Ditët janë sugjerim, jo paketë. Asgjë nuk është rezervuar dhe as guidë, as makinë, as biletë nuk përfshihen.",
       "Renditja ia vlen të ndërrohet sipas motit: liqeni dhe shtigjet e larta duan ditën më të kthjellët.",
       "Jashtë verës bora mund të mbyllë shtigjet e sipërme, dhe rruga e luginës mund të jetë e keqe pas shiut. Na pyesni një ditë përpara.",
-      "Dy nga tri ditët në secilin version kërkojnë makinë. Nëse vini pa të, na thoni dhe do t'ju themi çfarë mund të rregullohet.",
+      "Nga resorti dy nga tri ditët kërkojnë makinë, dhe dita e qytetit një xhiro të shkurtër; nga hoteli dita e qytetit bëhet në këmbë. Nëse vini pa makinë, na thoni dhe do t'ju themi çfarë mund të rregullohet.",
     ],
   },
 };
