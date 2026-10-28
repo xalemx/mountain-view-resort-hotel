@@ -4,7 +4,11 @@ import { MAX_LENGTHS, cleanEmail, cleanText } from './enquiryFields.ts';
 // it was accepted for delivery. Both the workflow-triggered function and the
 // retry sweep call this, so an enquiry can never be alerted twice.
 export const MAX_NOTIFICATION_ATTEMPTS = 3;
+export const MAX_GUEST_CONFIRMATION_ATTEMPTS = 3;
 export const NOTIFICATION_WINDOW_DAYS = 7;
+// How long one worker may hold an enquiry before another run may take it over.
+// Longer than a function can run, so a live send is never taken away from it.
+export const SEND_LEASE_MS = 10 * 60 * 1000;
 
 export const PROPERTY_LABELS: Record<string, string> = {
   mountain_view_resort: 'Mountain View Resort',
@@ -86,30 +90,117 @@ export function buildNotificationVariables(enquiry: any) {
   };
 }
 
-async function recordOutcome(
-  base44: any,
-  id: string,
-  { status, attempts, recipient, error, notifiedAt }: {
+// The two emails keep their own state on the record, under their own fields.
+const HOST_FIELDS = {
+  status: 'notification_status',
+  attempts: 'notification_attempts',
+  claim: 'notification_claim_id',
+  claimedAt: 'notification_claimed_at',
+  error: 'notification_error',
+  acceptedAt: 'notified_at',
+};
+
+const GUEST_FIELDS = {
+  status: 'guest_confirmation_status',
+  attempts: 'guest_confirmation_attempts',
+  claim: 'guest_confirmation_claim_id',
+  claimedAt: 'guest_confirmation_claimed_at',
+  error: 'guest_confirmation_error',
+  acceptedAt: 'guest_confirmation_at',
+};
+
+type SendFields = {
+  status: string;
+  attempts: string;
+  claim: string;
+  claimedAt: string;
+  error: string;
+  acceptedAt: string;
+};
+
+async function readEnquiry(base44: any, id: string) {
+  return base44.asServiceRole.entities.Enquiry.get(id).catch((error: any) =>
+    error && error.status === 404 ? null : Promise.reject(error)
+  );
+}
+
+// A worker that stopped between claiming and reporting would otherwise leave the
+// record marked as being sent for ever, and the enquiry would never be retried.
+// Once the lease has run out the unfinished attempt is counted and released.
+async function releaseStaleClaim(base44: any, row: any, fields: SendFields) {
+  if (row[fields.status] !== 'sending') return;
+
+  const claimedAt = row[fields.claimedAt] ? new Date(row[fields.claimedAt]).getTime() : 0;
+  if (Number.isFinite(claimedAt) && claimedAt > Date.now() - SEND_LEASE_MS) return;
+
+  // The status is the guard: a row another worker has already released no longer
+  // matches, so its attempt is not counted twice.
+  const guard: Record<string, unknown> = { id: row.id, [fields.status]: 'sending' };
+  if (row[fields.claim]) guard[fields.claim] = row[fields.claim];
+
+  await base44.asServiceRole.entities.Enquiry.updateMany(
+    guard,
+    {
+      $set: {
+        [fields.status]: 'failed',
+        [fields.attempts]: (Number(row[fields.attempts]) || 0) + 1,
+        [fields.error]: 'The previous attempt did not finish, so it may or may not have arrived.',
+      },
+    }
+  );
+}
+
+// Takes the enquiry for this worker, or says why it cannot. The condition is
+// applied by the database in one write, so of two workers reaching the same
+// record only one leaves its own claim id behind; the other reads back someone
+// else's claim and stops without sending anything.
+async function claimSend(base44: any, id: string, fields: SendFields, blocked: string[]) {
+  const current = await readEnquiry(base44, id);
+  if (!current) return { won: false, row: null, reason: 'record_not_found' };
+
+  await releaseStaleClaim(base44, current, fields);
+
+  const claimId = crypto.randomUUID();
+  await base44.asServiceRole.entities.Enquiry.updateMany(
+    { id, [fields.status]: { $nin: blocked } },
+    {
+      $set: {
+        [fields.status]: 'sending',
+        [fields.claim]: claimId,
+        [fields.claimedAt]: new Date().toISOString(),
+      },
+    }
+  );
+
+  const claimed = await readEnquiry(base44, id);
+  if (!claimed) return { won: false, row: null, reason: 'record_not_found' };
+  if (claimed[fields.claim] !== claimId) return { won: false, row: claimed, reason: 'claimed_elsewhere' };
+
+  return { won: true, row: claimed, reason: '' };
+}
+
+function outcomePatch(
+  fields: SendFields,
+  { status, attempts, error, acceptedAt }: {
     status: string;
     attempts: number;
-    recipient: string;
     error: string;
-    notifiedAt?: string;
+    acceptedAt?: string;
   }
 ) {
   const patch: Record<string, unknown> = {
-    notification_status: status,
-    notification_attempts: attempts,
-    notification_recipient: recipient,
-    notification_error: error,
+    [fields.status]: status,
+    [fields.attempts]: attempts,
+    [fields.error]: error,
   };
-  if (notifiedAt) patch.notified_at = notifiedAt;
-  await base44.asServiceRole.entities.Enquiry.update(id, patch);
+  if (acceptedAt) patch[fields.acceptedAt] = acceptedAt;
+  return patch;
 }
 
 // Safe to call repeatedly: an enquiry already reported as sent is left alone,
-// so a retry can never send the host a second alert. "Sent" means the mail
-// service accepted the message, never that it reached an inbox.
+// and one another worker is sending is left to that worker, so a retry can never
+// send the host a second alert. "Sent" means the mail service accepted the
+// message, never that it reached an inbox.
 export async function sendHostNotification(base44: any, enquiry: any) {
   if (!enquiry?.id) return { sent: false, skipped: true, reason: 'record_not_found' };
 
@@ -122,8 +213,7 @@ export async function sendHostNotification(base44: any, enquiry: any) {
     };
   }
 
-  const attempts = Number(enquiry.notification_attempts) || 0;
-  if (attempts >= MAX_NOTIFICATION_ATTEMPTS) {
+  if ((Number(enquiry.notification_attempts) || 0) >= MAX_NOTIFICATION_ATTEMPTS) {
     return {
       sent: false,
       skipped: true,
@@ -132,40 +222,87 @@ export async function sendHostNotification(base44: any, enquiry: any) {
     };
   }
 
-  const { email: recipient, source } = await resolveNotificationRecipient();
+  const lease = await claimSend(base44, enquiry.id, HOST_FIELDS, ['sent', 'sending']);
+  if (!lease.won) {
+    return {
+      sent: false,
+      skipped: true,
+      reason: lease.reason,
+      recipient: enquiry.notification_recipient || '',
+    };
+  }
+
+  const row = lease.row;
+  const attempts = Number(row.notification_attempts) || 0;
+  if (attempts >= MAX_NOTIFICATION_ATTEMPTS) {
+    await base44.asServiceRole.entities.Enquiry.update(
+      row.id,
+      outcomePatch(HOST_FIELDS, {
+        status: 'failed',
+        attempts,
+        error: row.notification_error || 'No attempts left.',
+      })
+    );
+    return {
+      sent: false,
+      skipped: true,
+      reason: 'attempts_exhausted',
+      recipient: row.notification_recipient || '',
+    };
+  }
+
   const nextAttempts = attempts + 1;
+  const { email: recipient, source } = await resolveNotificationRecipient();
 
   if (!recipient) {
-    await recordOutcome(base44, enquiry.id, {
-      status: 'failed',
-      attempts: nextAttempts,
-      recipient: '',
-      error: 'No host notification recipient configured',
-    });
+    await base44.asServiceRole.entities.Enquiry.update(
+      row.id,
+      outcomePatch(HOST_FIELDS, {
+        status: 'failed',
+        attempts: nextAttempts,
+        error: 'No host notification recipient configured',
+      })
+    );
     return { sent: false, recipient: '', source, error: 'No host notification recipient configured' };
   }
 
   try {
-    await base44.asServiceRole.integrations.Core.SendEmail({
+    const result = await base44.asServiceRole.integrations.Core.SendEmail({
       to: recipient,
       template_name: 'NewEnquiry',
-      variables: buildNotificationVariables(enquiry),
+      variables: buildNotificationVariables(row),
     });
-    await recordOutcome(base44, enquiry.id, {
-      status: 'sent',
-      attempts: nextAttempts,
-      recipient,
-      error: '',
-      notifiedAt: new Date().toISOString(),
+
+    // A blocked address is reported back as an answer, not as an error thrown.
+    // It still means the alert did not go out, so it is never recorded as sent.
+    if (result && result.success === false) {
+      const refusal = result.reason || 'refused';
+      await base44.asServiceRole.entities.Enquiry.update(row.id, {
+        ...outcomePatch(HOST_FIELDS, {
+          status: 'failed',
+          attempts: nextAttempts,
+          error: `The mail service did not accept the alert (${refusal}).`,
+        }),
+        notification_recipient: recipient,
+      });
+      return { sent: false, recipient, source, attempts: nextAttempts, error: refusal };
+    }
+
+    await base44.asServiceRole.entities.Enquiry.update(row.id, {
+      ...outcomePatch(HOST_FIELDS, {
+        status: 'sent',
+        attempts: nextAttempts,
+        error: '',
+        acceptedAt: new Date().toISOString(),
+      }),
+      notification_recipient: recipient,
     });
     return { sent: true, recipient, source, attempts: nextAttempts };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    await recordOutcome(base44, enquiry.id, {
-      status: 'failed',
-      attempts: nextAttempts,
-      recipient,
-      error: message,
+    await base44.asServiceRole.entities.Enquiry.update(row.id, {
+      ...outcomePatch(HOST_FIELDS, { status: 'failed', attempts: nextAttempts, error: message }),
+      notification_recipient: recipient,
     });
     return { sent: false, recipient, source, attempts: nextAttempts, error: message };
   }
@@ -325,26 +462,65 @@ export function buildGuestConfirmationVariables(enquiry: any) {
 // A guest who asked to be answered by email, and gave an address, gets one copy
 // of their own request: never a second one, and never a promise it was read. The
 // outcome is reported rather than thrown, so it cannot take the host alert or the
-// saved enquiry down with it, and a failure leaves the flag clear for the retry.
+// saved enquiry down with it. Its state is its own — status, attempts and failure
+// reason — so a copy that failed is retried on its own, without touching the
+// host alert.
 export async function sendGuestConfirmation(base44: any, enquiry: any) {
   if (!enquiry?.id) return { sent: false, skipped: true, reason: 'record_not_found' };
 
-  if (enquiry.reply_method !== 'email') {
-    return { sent: false, skipped: true, reason: 'not_an_email_reply' };
+  const to = cleanEmail(enquiry?.email);
+
+  // Nothing to confirm to: the guest asked to be answered on WhatsApp, or left no
+  // address. Marked so the retry sweep does not keep revisiting the record.
+  if (enquiry.reply_method !== 'email' || !to) {
+    const reason = enquiry.reply_method !== 'email' ? 'not_an_email_reply' : 'no_address';
+    await base44.asServiceRole.entities.Enquiry.updateMany(
+      { id: enquiry.id, guest_confirmation_status: { $nin: ['sent', 'sending', 'skipped'] } },
+      { $set: { guest_confirmation_status: 'skipped' } }
+    );
+    return { sent: false, skipped: true, reason };
   }
 
-  const to = cleanEmail(enquiry.email);
-  if (!to) return { sent: false, skipped: true, reason: 'no_address' };
-
-  if (enquiry.guest_confirmation_sent === true) {
+  if (enquiry.guest_confirmation_sent === true || enquiry.guest_confirmation_status === 'sent') {
     return { sent: false, skipped: true, reason: 'already_sent', recipient: to };
   }
+
+  if ((Number(enquiry.guest_confirmation_attempts) || 0) >= MAX_GUEST_CONFIRMATION_ATTEMPTS) {
+    return { sent: false, skipped: true, reason: 'attempts_exhausted', recipient: to };
+  }
+
+  const lease = await claimSend(base44, enquiry.id, GUEST_FIELDS, ['sent', 'sending', 'skipped']);
+  if (!lease.won) return { sent: false, skipped: true, reason: lease.reason, recipient: to };
+
+  const row = lease.row;
+
+  // A record written before the guest copy had a state of its own: the flag is
+  // what says whether the guest already has it.
+  if (row.guest_confirmation_sent === true) {
+    await base44.asServiceRole.entities.Enquiry.update(row.id, { guest_confirmation_status: 'sent' });
+    return { sent: false, skipped: true, reason: 'already_sent', recipient: to };
+  }
+
+  const attempts = Number(row.guest_confirmation_attempts) || 0;
+  if (attempts >= MAX_GUEST_CONFIRMATION_ATTEMPTS) {
+    await base44.asServiceRole.entities.Enquiry.update(
+      row.id,
+      outcomePatch(GUEST_FIELDS, {
+        status: 'failed',
+        attempts,
+        error: row.guest_confirmation_error || 'No attempts left.',
+      })
+    );
+    return { sent: false, skipped: true, reason: 'attempts_exhausted', recipient: to };
+  }
+
+  const nextAttempts = attempts + 1;
 
   try {
     const result = await base44.asServiceRole.integrations.Core.SendEmail({
       to,
       template_name: 'GuestEnquiryReceived',
-      variables: buildGuestConfirmationVariables(enquiry),
+      variables: buildGuestConfirmationVariables(row),
       // The guest's own record of their request: a receipt, not marketing, so it
       // carries no unsubscribe link.
       category: 'transactional',
@@ -352,12 +528,34 @@ export async function sendGuestConfirmation(base44: any, enquiry: any) {
 
     // A blocked recipient comes back as a refusal, not as a thrown error.
     if (result && result.success === false) {
-      return { sent: false, recipient: to, error: result.reason || 'refused' };
+      const refusal = result.reason || 'refused';
+      await base44.asServiceRole.entities.Enquiry.update(
+        row.id,
+        outcomePatch(GUEST_FIELDS, {
+          status: 'failed',
+          attempts: nextAttempts,
+          error: `The mail service did not accept the guest copy (${refusal}).`,
+        })
+      );
+      return { sent: false, recipient: to, attempts: nextAttempts, error: refusal };
     }
 
-    await base44.asServiceRole.entities.Enquiry.update(enquiry.id, { guest_confirmation_sent: true });
-    return { sent: true, recipient: to };
+    await base44.asServiceRole.entities.Enquiry.update(row.id, {
+      ...outcomePatch(GUEST_FIELDS, {
+        status: 'sent',
+        attempts: nextAttempts,
+        error: '',
+        acceptedAt: new Date().toISOString(),
+      }),
+      guest_confirmation_sent: true,
+    });
+    return { sent: true, recipient: to, attempts: nextAttempts };
   } catch (error) {
-    return { sent: false, recipient: to, error: error instanceof Error ? error.message : String(error) };
+    const message = error instanceof Error ? error.message : String(error);
+    await base44.asServiceRole.entities.Enquiry.update(
+      row.id,
+      outcomePatch(GUEST_FIELDS, { status: 'failed', attempts: nextAttempts, error: message })
+    );
+    return { sent: false, recipient: to, attempts: nextAttempts, error: message };
   }
 }

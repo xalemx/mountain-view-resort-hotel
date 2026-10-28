@@ -23,7 +23,7 @@
       }
     ]
   },
-  "description": "Every 15 minutes, sends the host alert again for enquiries that failed, at most three attempts each",
+  "description": "Every 15 minutes, resends failed host alerts and guests' copies from the last seven days, at most three attempts each",
   "trigger": {
     "condition": null,
     "config": {

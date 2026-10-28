@@ -17,7 +17,6 @@ const LANGUAGES = ['en', 'me', 'ru', 'sq'];
 
 const MAX_AGE = 17;
 const DUPLICATE_WINDOW_MS = 3 * 60 * 1000;
-const MIN_FILL_MS = 3 * 1000;
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 const RATE_LIMIT_MAX = 5;
 
@@ -49,13 +48,12 @@ function makeReference() {
   return `MV-${code}`;
 }
 
-// Spam traps. The hidden "website" field is only ever filled by software, and a
-// form that comes back a moment after it was shown was not filled in by a person.
-// Both are answered exactly like a real enquiry, so a bot learns nothing.
+// The spam trap: a hidden "website" field that only software fills, answered
+// exactly like a real enquiry so a bot learns nothing. Speed alone is never a
+// reason to drop a request — a guest who types fast, or whose browser fills the
+// form in for them, is sending a real enquiry that must reach the host.
 function isAutomated(body: any) {
-  if (typeof body.website === 'string' && body.website.trim().length > 0) return true;
-  const openedAt = Number(body.form_opened_at);
-  return Number.isFinite(openedAt) && openedAt > 0 && Date.now() - openedAt < MIN_FILL_MS;
+  return typeof body.website === 'string' && body.website.trim().length > 0;
 }
 
 function trapAnswer() {

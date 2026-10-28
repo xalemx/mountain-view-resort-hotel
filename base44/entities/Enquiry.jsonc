@@ -88,11 +88,12 @@
       "type": "string",
       "enum": [
         "pending",
+        "sending",
         "sent",
         "failed"
       ],
       "default": "pending",
-      "description": "Host alert state: pending, accepted for delivery (sent) or failed"
+      "description": "Host alert state: pending, being sent by one worker (sending), accepted for delivery (sent) or failed"
     },
     "notification_attempts": {
       "type": "number",
@@ -110,6 +111,47 @@
     "notified_at": {
       "type": "string",
       "description": "When the mail service accepted the host alert"
+    },
+    "notification_claim_id": {
+      "type": "string",
+      "description": "The worker that is sending, or last sent, the host alert. Written atomically so two workers cannot both send it"
+    },
+    "notification_claimed_at": {
+      "type": "string",
+      "description": "When that worker took the enquiry. Once the lease runs out an unfinished attempt may be taken over"
+    },
+    "guest_confirmation_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "sending",
+        "sent",
+        "failed",
+        "skipped"
+      ],
+      "default": "pending",
+      "description": "The guest's own copy of the request, kept separate from the host alert: pending, sending, sent, failed, or skipped when the guest left no address to send it to"
+    },
+    "guest_confirmation_attempts": {
+      "type": "number",
+      "default": 0,
+      "description": "How many times the guest's copy has been attempted"
+    },
+    "guest_confirmation_error": {
+      "type": "string",
+      "description": "Why the last attempt to send the guest their copy failed"
+    },
+    "guest_confirmation_at": {
+      "type": "string",
+      "description": "When the mail service accepted the guest's copy"
+    },
+    "guest_confirmation_claim_id": {
+      "type": "string",
+      "description": "The worker sending, or last sending, the guest's copy. Written atomically so it is never sent twice"
+    },
+    "guest_confirmation_claimed_at": {
+      "type": "string",
+      "description": "When that worker took the guest's copy. Once the lease runs out an unfinished attempt may be taken over"
     },
     "guest_confirmation_sent": {
       "type": "boolean",
