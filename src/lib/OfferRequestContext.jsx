@@ -11,7 +11,14 @@ export function OfferRequestProvider({ children }) {
   const [prefill, setPrefill] = useState(null);
 
   const openOffer = useCallback(
-    (options = {}) => setRequest({ property: options.property || null, guests: options.guests || null }),
+    (options = {}) =>
+      setRequest({
+        property: options.property || null,
+        guests: options.guests || null,
+        // A guide page opens the same dialog already knowing what the guest is
+        // asking about, so the request mentions the outing.
+        activity: options.activity || null,
+      }),
     []
   );
   const closeOffer = useCallback(() => setRequest(null), []);

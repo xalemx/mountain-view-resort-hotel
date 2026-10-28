@@ -26,6 +26,8 @@ const RestaurantMenu = lazy(() => import('@/pages/RestaurantMenu'));
 const About = lazy(() => import('@/pages/About'));
 const Contact = lazy(() => import('@/pages/Contact'));
 const Guide = lazy(() => import('@/pages/Guide'));
+const GuidePlace = lazy(() => import('@/pages/GuidePlace'));
+const GuideItinerary = lazy(() => import('@/pages/GuideItinerary'));
 const Privacy = lazy(() => import('@/pages/Privacy'));
 const Terms = lazy(() => import('@/pages/Terms'));
 
@@ -65,6 +67,8 @@ const AuthenticatedApp = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/guide" element={<Guide />} />
+      <Route path="/guide/three-days-in-gusinje" element={<GuideItinerary />} />
+      <Route path="/guide/:slug" element={<GuidePlace />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/owner/property" element={<OwnerProperty />} />
@@ -76,6 +80,8 @@ const AuthenticatedApp = () => {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="guide" element={<Guide />} />
+        <Route path="guide/three-days-in-gusinje" element={<GuideItinerary />} />
+        <Route path="guide/:slug" element={<GuidePlace />} />
         <Route path="privacy" element={<Privacy />} />
         <Route path="terms" element={<Terms />} />
         <Route path="mountain-view-resort" element={<Property propertyId="resort" />} />
