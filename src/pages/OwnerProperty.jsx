@@ -148,6 +148,19 @@ export default function OwnerProperty() {
       </header>
 
       <div className="section py-8">
+        {/* Nothing on this page is published. Saying so plainly is the point:
+            the difference between a private record and the live website is the
+            one thing an owner must not have to guess. */}
+        <div className="mb-6 rounded-sm border border-border/70 bg-secondary/40 p-5">
+          <p className="eyebrow">Saved here, not on the website</p>
+          <p className="mt-2 max-w-3xl font-body text-sm leading-relaxed text-foreground">
+            Everything on this page is a private record: the saved listing, your own notes and your decision on each
+            difference stay with this record and are never shown to a guest. Saving here does not change the published
+            website. What a guest reads — wording, prices, photographs — changes only when the site itself is updated,
+            so until that is done the site keeps saying exactly what it says today.
+          </p>
+        </div>
+
         {state === "loading" ? (
           <div className="flex items-center gap-3 font-body text-sm text-muted-foreground">
             <span className="h-4 w-4 animate-spin rounded-full border-2 border-border border-t-primary" />

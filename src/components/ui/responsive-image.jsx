@@ -3,6 +3,7 @@ import { cn } from "../../lib/utils"
 import { buildSrcSet, buildTransformUrl, splitImageProps } from "./image-helpers"
 import { useResponsiveImage } from "./use-responsive-image"
 
+/** @type {React.ForwardRefExoticComponent<any>} */
 export const ResponsiveImage = React.forwardRef(
   ({ src, parsed, fittingType, focalPoint, quality, className, style, aspectRatio, onLoad, onSourceChange, ...props }, ref) => {
     const { wrapperRef, imgRef, loaded, options, handleLoad } = useResponsiveImage(

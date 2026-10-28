@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SectionHeading({ eyebrow, title, aside, tone = "light" }) {
+export default function SectionHeading({ eyebrow, title, aside = null, tone = "light" }) {
   const isDark = tone === "dark";
 
   return (

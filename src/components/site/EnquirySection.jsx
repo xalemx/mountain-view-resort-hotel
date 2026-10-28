@@ -4,7 +4,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { PROPERTIES } from "@/lib/siteContent";
 
 // The offer block from the home page, reused on a property page with its own words.
-export default function EnquirySection({ id = "offer", eyebrow, title, text, property }) {
+export default function EnquirySection({ id = "offer", eyebrow = null, title = null, text = null, property = null }) {
   const { t } = useLanguage();
   // On a house's own page the line to that house is the one to show; the home
   // page speaks for both, so both lines are named there.

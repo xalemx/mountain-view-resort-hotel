@@ -17,13 +17,17 @@ import { PropertyProvider } from '@/lib/PropertyContext';
 import { OfferRequestProvider } from '@/lib/OfferRequestContext';
 import OfferRequestHost from '@/components/site/OfferRequestHost';
 import Home from '@/pages/Home';
-import Property from '@/pages/Property';
-import RestaurantMenu from '@/pages/RestaurantMenu';
-import About from '@/pages/About';
-import Contact from '@/pages/Contact';
-import Guide from '@/pages/Guide';
-import Privacy from '@/pages/Privacy';
-import Terms from '@/pages/Terms';
+
+// Only the front page is carried by the first load. Every other page — the two
+// houses, the menu, the guide — arrives in its own file when it is opened, so a
+// visitor reading the front page never downloads the whole site first.
+const Property = lazy(() => import('@/pages/Property'));
+const RestaurantMenu = lazy(() => import('@/pages/RestaurantMenu'));
+const About = lazy(() => import('@/pages/About'));
+const Contact = lazy(() => import('@/pages/Contact'));
+const Guide = lazy(() => import('@/pages/Guide'));
+const Privacy = lazy(() => import('@/pages/Privacy'));
+const Terms = lazy(() => import('@/pages/Terms'));
 
 // The sign-in screens and the owner's dashboard load on demand: a guest reading
 // the site never downloads them.

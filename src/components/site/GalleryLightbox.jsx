@@ -42,7 +42,7 @@ export default function GalleryLightbox({ label, photos, captions, credit, index
     return () => {
       window.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = previousOverflow;
-      restoreFocus?.focus?.();
+      if (restoreFocus instanceof HTMLElement) restoreFocus.focus();
     };
   }, [onIndexChange, total]);
 

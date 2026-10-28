@@ -50,7 +50,7 @@ export default function EnquiryForm() {
   const [submission, setSubmission] = useState(null);
   // Every problem at once, on the field it belongs to, so nothing is hidden behind
   // a single line at the bottom.
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState(/** @type {Record<string, any>} */ ({}));
   const [focusTarget, setFocusTarget] = useState(null);
   // Spam trap: the hidden field below is only ever filled by software.
   const [honeypot, setHoneypot] = useState("");

@@ -4,7 +4,7 @@ import React, { cloneElement, isValidElement } from "react";
 // it. The control is given the ids that tie the three together, so a screen reader
 // reads the label, the hint and the error as one thing, and the field is marked
 // invalid only while it actually is.
-export default function EnquiryField({ id, label, error, hint, children, className = "" }) {
+export default function EnquiryField({ id, label, error = null, hint = null, children, className = "" }) {
   const hintId = hint && id ? `${id}-hint` : null;
   const errorId = error && id ? `${id}-error` : null;
   const describedBy = [hintId, errorId].filter(Boolean).join(" ");

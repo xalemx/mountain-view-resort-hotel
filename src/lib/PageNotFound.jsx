@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
@@ -6,6 +7,16 @@ import { useQuery } from '@tanstack/react-query';
 export default function PageNotFound({}) {
     const location = useLocation();
     const pageName = location.pathname.substring(1);
+
+    // A direct visit to an address that does not exist answers with a real 404
+    // rather than a page that merely looks like one.
+    useEffect(() => {
+        const status = document.createElement('meta');
+        status.setAttribute('name', 'prerender-status-code');
+        status.setAttribute('content', '404');
+        document.head.appendChild(status);
+        return () => status.remove();
+    }, []);
 
     const { data: authData, isFetched } = useQuery({
         queryKey: ['user'],
