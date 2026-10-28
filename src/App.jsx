@@ -14,6 +14,8 @@ import LanguageRoutes from '@/components/site/LanguageRoutes';
 import LanguageUrlSync from '@/components/site/LanguageUrlSync';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { PropertyProvider } from '@/lib/PropertyContext';
+import { OfferRequestProvider } from '@/lib/OfferRequestContext';
+import OfferRequestHost from '@/components/site/OfferRequestHost';
 import Home from '@/pages/Home';
 import Property from '@/pages/Property';
 import RestaurantMenu from '@/pages/RestaurantMenu';
@@ -106,9 +108,14 @@ function App() {
           <WelcomeGate />
           {/* The routed pages arrive in their own chunks, so a first visit carries
               the site itself and nothing an owner would use. */}
-          <Suspense fallback={<RouteFallback />}>
-            <AuthenticatedApp />
-          </Suspense>
+          {/* Every offer button on the site opens the one request dialog, and the
+              dialog can hand its details to the request form. */}
+          <OfferRequestProvider>
+            <Suspense fallback={<RouteFallback />}>
+              <AuthenticatedApp />
+            </Suspense>
+            <OfferRequestHost />
+          </OfferRequestProvider>
         </Router>
         <Toaster />
       </QueryClientProvider>

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -8,45 +9,81 @@ import {
 } from "@/components/ui/dialog";
 import EnquiryField from "@/components/site/EnquiryField";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useProperty } from "@/lib/PropertyContext";
+import { useOfferRequest } from "@/lib/OfferRequestContext";
+import { useLocaleNav } from "@/lib/useLocaleNav";
+import { PROPERTIES } from "@/lib/siteContent";
+import { MAX_ADULTS, MAX_LENGTHS } from "@/lib/enquiryLimits";
+import { isISODate, todayISO, validateOfferRequest } from "@/lib/enquiryValidation";
 import { PRICING_COPY, buildOfferMessage, offerWhatsAppLink } from "@/lib/pricing";
-import { todayISO } from "@/lib/enquiryValidation";
 
-// The request behind a price row. It is written here, handed to WhatsApp, and
-// sent by the guest pressing Send there: the site files nothing, confirms
-// nothing, and never shows it as a booking.
-export default function OfferRequestDialog({ property, initialGuests, onClose }) {
+// The request behind a price row, and behind every offer button on the site. The
+// guest chooses how it leaves: on WhatsApp they still have to press Send, and
+// nothing is filed here; on the website it is saved with a reference number and
+// answered by email. Neither one is a booking.
+export default function OfferRequestDialog({ request, onClose }) {
   const { t, language } = useLanguage();
+  const { selectedProperty } = useProperty();
+  const { handOff } = useOfferRequest();
+  const { to } = useLocaleNav();
+  const navigate = useNavigate();
   const copy = PRICING_COPY[language] || PRICING_COPY.en;
   const offer = copy.offer;
   const today = todayISO();
 
+  const house =
+    PROPERTIES.find((property) => property.value === (request.property || selectedProperty)) || PROPERTIES[0];
+
   const [form, setForm] = useState({
     arrival: "",
     departure: "",
-    guests: String(initialGuests || 2),
+    guests: request.guests ? String(request.guests) : "2",
     guest_name: "",
     notes: "",
   });
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({});
+  const [focusTarget, setFocusTarget] = useState(null);
   const [message, setMessage] = useState("");
 
-  const update = (field) => (event) => setForm((previous) => ({ ...previous, [field]: event.target.value }));
+  // The first field with a problem takes the focus, once the message is on screen.
+  useEffect(() => {
+    if (!focusTarget) return;
+    document.getElementById(focusTarget)?.focus();
+    setFocusTarget(null);
+  }, [focusTarget]);
 
-  const prepare = (event) => {
+  const messageFor = (key) => (key === "errorGuests" ? offer.errorGuests : t.form[key]);
+  const inputClass = (field) => (errors[field] ? "field-input field-input-invalid" : "field-input");
+
+  const update = (field) => (event) => {
+    const { value } = event.target;
+    setForm((previous) => ({ ...previous, [field]: value }));
+    setErrors((previous) => (previous[field] ? { ...previous, [field]: undefined } : previous));
+  };
+
+  // Both ways out check the same things first, with the same rules the request
+  // form uses.
+  const check = () => {
+    const { errors: found, first } = validateOfferRequest(form);
+    if (!first) {
+      setErrors({});
+      return true;
+    }
+    setErrors(found);
+    setFocusTarget(`offer-${first}`);
+    return false;
+  };
+
+  const prepareWhatsApp = (event) => {
     event.preventDefault();
+    if (!check()) return;
 
-    if (!form.guest_name.trim()) return setError(t.form.errorName);
-    if (!form.arrival) return setError(t.form.errorArrival);
-    if (!form.departure || form.departure <= form.arrival) return setError(t.form.errorDates);
-    if (!Number(form.guests)) return setError(offer.errorGuests);
-
-    setError("");
     setMessage(
       buildOfferMessage({
         template: offer.messageTemplate,
         noteLine: offer.noteLine,
         values: {
-          property: property.name,
+          property: house.name,
           arrival: form.arrival,
           departure: form.departure,
           guests: form.guests,
@@ -55,6 +92,23 @@ export default function OfferRequestDialog({ property, initialGuests, onClose })
         note: form.notes,
       })
     );
+  };
+
+  const sendOnWebsite = () => {
+    if (!check()) return;
+
+    handOff({
+      property: house.value,
+      arrival: form.arrival,
+      departure: form.departure,
+      adults: String(form.guests),
+      guest_name: form.guest_name.trim(),
+      notes: form.notes,
+    });
+
+    const section = document.getElementById("offer") || document.getElementById("property-offer");
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+    else navigate(`${to("/")}#offer`);
   };
 
   return (
@@ -79,10 +133,10 @@ export default function OfferRequestDialog({ property, initialGuests, onClose })
             </p>
             <p className="text-sm leading-relaxed text-foreground">
               <span className="eyebrow block">{t.form.property}</span>
-              {property.name} · {property.phone}
+              {house.name} · {house.phone}
             </p>
             <a
-              href={offerWhatsAppLink(property.whatsapp, message)}
+              href={offerWhatsAppLink(house.whatsapp, message)}
               target="_blank"
               rel="noopener"
               className="btn-pill w-full justify-center"
@@ -95,63 +149,80 @@ export default function OfferRequestDialog({ property, initialGuests, onClose })
             </button>
           </div>
         ) : (
-          <form onSubmit={prepare} noValidate className="space-y-5">
+          <form onSubmit={prepareWhatsApp} noValidate className="space-y-5">
             <p className="text-sm text-foreground">
               <span className="eyebrow block">{t.form.property}</span>
-              {property.name}
+              {house.name}
             </p>
 
             <div className="grid gap-5 sm:grid-cols-2">
-              <EnquiryField label={t.form.arrival}>
-                <input type="date" min={today} value={form.arrival} onChange={update("arrival")} className="field-input" />
-              </EnquiryField>
-              <EnquiryField label={t.form.departure}>
+              <EnquiryField id="offer-arrival" label={t.form.arrival} error={messageFor(errors.arrival)}>
                 <input
                   type="date"
-                  min={form.arrival || today}
+                  min={today}
+                  value={form.arrival}
+                  onChange={update("arrival")}
+                  className={inputClass("arrival")}
+                />
+              </EnquiryField>
+
+              <EnquiryField id="offer-departure" label={t.form.departure} error={messageFor(errors.departure)}>
+                <input
+                  type="date"
+                  min={isISODate(form.arrival) ? form.arrival : today}
                   value={form.departure}
                   onChange={update("departure")}
-                  className="field-input"
+                  className={inputClass("departure")}
                 />
               </EnquiryField>
             </div>
 
-            <EnquiryField label={offer.guests}>
+            <EnquiryField id="offer-guests" label={offer.guests} error={messageFor(errors.guests)}>
               <input
                 type="number"
                 min="1"
-                max="30"
+                max={MAX_ADULTS}
+                step="1"
+                inputMode="numeric"
                 value={form.guests}
                 onChange={update("guests")}
-                className="field-input"
+                className={inputClass("guests")}
+                required
               />
             </EnquiryField>
 
-            <EnquiryField label={t.form.name}>
+            <EnquiryField id="offer-guest_name" label={t.form.name} error={messageFor(errors.guest_name)}>
               <input
                 type="text"
-                maxLength={80}
+                maxLength={MAX_LENGTHS.name}
+                autoComplete="name"
                 value={form.guest_name}
                 onChange={update("guest_name")}
-                className="field-input"
+                className={inputClass("guest_name")}
+                required
               />
             </EnquiryField>
 
-            <EnquiryField label={t.form.notes}>
-              <textarea rows={3} maxLength={600} value={form.notes} onChange={update("notes")} className="field-input" />
+            <EnquiryField id="offer-notes" label={t.form.notes} error={messageFor(errors.notes)}>
+              <textarea
+                rows={3}
+                maxLength={MAX_LENGTHS.notes}
+                value={form.notes}
+                onChange={update("notes")}
+                className={inputClass("notes")}
+              />
             </EnquiryField>
 
-            <button type="submit" className="btn-pill w-full justify-center">
-              {offer.submit} ↗
-            </button>
+            <div className="space-y-3">
+              <button type="submit" className="btn-pill w-full justify-center">
+                {offer.submit} ↗
+              </button>
+              <button type="button" onClick={sendOnWebsite} className="btn-outline-dark w-full justify-center">
+                {offer.sendWebsite}
+              </button>
+            </div>
 
-            {error ? (
-              <p role="alert" className="text-sm text-destructive">
-                {error}
-              </p>
-            ) : null}
-
-            <p className="text-xs leading-relaxed text-muted-foreground">{t.form.notConfirmed}</p>
+            <p className="text-xs leading-relaxed text-muted-foreground">{offer.pathNote}</p>
           </form>
         )}
       </DialogContent>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Image } from "@/components/ui/image";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useOfferRequest } from "@/lib/OfferRequestContext";
 import { BRAND, IMAGES } from "@/lib/siteContent";
 
 // The opening band is deliberately short: the name, one sentence saying what the
@@ -8,6 +9,7 @@ import { BRAND, IMAGES } from "@/lib/siteContent";
 // next thing on the screen.
 export default function Hero() {
   const { t } = useLanguage();
+  const { openOffer } = useOfferRequest();
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -33,9 +35,9 @@ export default function Hero() {
           <a href="#stays" className="btn-cream">
             {t.hero.cta}
           </a>
-          <a href="#offer" className="btn-outline-light">
+          <button type="button" onClick={() => openOffer()} className="btn-outline-light">
             {t.hero.ctaSecondary}
-          </a>
+          </button>
         </div>
       </div>
     </section>

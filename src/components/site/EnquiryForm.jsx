@@ -6,8 +6,9 @@ import EnquirySuccess from "@/components/site/EnquirySuccess";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useProperty } from "@/lib/PropertyContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
+import { useOfferRequest } from "@/lib/OfferRequestContext";
 import { PROPERTY_OPTIONS } from "@/lib/siteContent";
-import { EMPTY_ENQUIRY, REPLY_METHODS, todayISO, validateEnquiry } from "@/lib/enquiryValidation";
+import { EMPTY_ENQUIRY, REPLY_METHODS, todayISO, validateEnquiryFields } from "@/lib/enquiryValidation";
 // The same limits the endpoint accepts, so nothing a guest types is quietly
 // shortened on the way in.
 import { MAX_ADULTS, MAX_CHILDREN, MAX_LENGTHS } from "@/lib/enquiryLimits";
@@ -26,15 +27,32 @@ const BACKEND_ERROR_KEYS = {
   rate_limit: "errorRateLimit",
 };
 
+// The field each of those belongs to, so the message lands on the field itself.
+const BACKEND_FIELD_BY_CODE = {
+  name: "guest_name",
+  arrival: "arrival",
+  dates: "departure",
+  adults: "adults",
+  children: "children",
+  ages: "children_ages",
+  phone: "phone",
+  email: "email",
+  notes: "notes",
+};
+
 export default function EnquiryForm() {
   const { t, language } = useLanguage();
   const { selectedProperty, setSelectedProperty } = useProperty();
   const { to } = useLocaleNav();
+  const { prefill, clearPrefill } = useOfferRequest();
   const [form, setForm] = useState(EMPTY_ENQUIRY);
   const [status, setStatus] = useState({ type: "idle", text: "" });
   const [submission, setSubmission] = useState(null);
-  // Spam traps: the hidden field below is only ever filled by software, and the
-  // moment the form appeared lets the backend tell a typed request from a posted one.
+  // Every problem at once, on the field it belongs to, so nothing is hidden behind
+  // a single line at the bottom.
+  const [errors, setErrors] = useState({});
+  const [focusTarget, setFocusTarget] = useState(null);
+  // Spam trap: the hidden field below is only ever filled by software.
   const [honeypot, setHoneypot] = useState("");
   const openedAt = useRef(Date.now());
 
@@ -45,6 +63,22 @@ export default function EnquiryForm() {
     );
   }, [selectedProperty]);
 
+  // A request prepared in the offer dialog arrives with the house, the dates, the
+  // number of guests and the name already filled in.
+  useEffect(() => {
+    if (!prefill) return;
+    setForm((previous) => ({ ...previous, ...prefill }));
+    if (prefill.property) setSelectedProperty(prefill.property);
+    clearPrefill();
+  }, [prefill, clearPrefill, setSelectedProperty]);
+
+  // The first field with a problem takes the focus, once its message is on screen.
+  useEffect(() => {
+    if (!focusTarget) return;
+    document.getElementById(focusTarget)?.focus();
+    setFocusTarget(null);
+  }, [focusTarget]);
+
   const options = PROPERTY_OPTIONS.map((option) =>
     option.value === "either" ? { ...option, label: t.form.optionEither } : option
   );
@@ -54,7 +88,15 @@ export default function EnquiryForm() {
   const children = Number(form.children) || 0;
   const today = todayISO();
 
-  const update = (field) => (event) => setForm((previous) => ({ ...previous, [field]: event.target.value }));
+  const inputClass = (field) => (errors[field] ? "field-input field-input-invalid" : "field-input");
+
+  const update = (field) => (event) => {
+    const { value } = event.target;
+    setForm((previous) => ({ ...previous, [field]: value }));
+    // The field's problem goes the moment the guest starts fixing it.
+    setErrors((previous) => (previous[field] ? { ...previous, [field]: undefined } : previous));
+    setStatus((previous) => (previous.type === "error" ? { type: "idle", text: "" } : previous));
+  };
 
   const changeProperty = (event) => {
     setSelectedProperty(event.target.value);
@@ -65,13 +107,17 @@ export default function EnquiryForm() {
     event.preventDefault();
     if (isSending || submission) return;
 
-    const errorKey = validateEnquiry(form);
-    if (errorKey) {
-      setStatus({ type: "error", text: t.form[errorKey] });
+    const { errors: found, first } = validateEnquiryFields(form);
+    if (first) {
+      setErrors(found);
+      setStatus({ type: "error", text: t.form.errorSummary });
+      setFocusTarget(`enquiry-${first}`);
       return;
     }
 
+    setErrors({});
     setStatus({ type: "sending", text: "" });
+
     try {
       const response = await base44.functions.invoke("submitEnquiry", {
         ...form,
@@ -91,13 +137,22 @@ export default function EnquiryForm() {
     } catch (error) {
       const code = error?.response?.data?.code;
       const key = BACKEND_ERROR_KEYS[code];
-      setStatus({ type: "error", text: (key && t.form[key]) || t.form.error });
+      const field = BACKEND_FIELD_BY_CODE[code];
+
+      if (field && key) {
+        setErrors({ [field]: key });
+        setStatus({ type: "error", text: t.form.errorSummary });
+        setFocusTarget(`enquiry-${field}`);
+      } else {
+        setStatus({ type: "error", text: (key && t.form[key]) || t.form.error });
+      }
     }
   };
 
   const startOver = () => {
     setSubmission(null);
     setForm({ ...EMPTY_ENQUIRY, property: selectedProperty });
+    setErrors({});
     setStatus({ type: "idle", text: "" });
   };
 
@@ -107,7 +162,7 @@ export default function EnquiryForm() {
 
   return (
     <form onSubmit={submit} noValidate className="space-y-5 rounded-sm border border-border/70 bg-card p-6 md:p-8">
-      <EnquiryField label={t.form.property}>
+      <EnquiryField id="enquiry-property" label={t.form.property}>
         <select value={form.property} onChange={changeProperty} className="field-input">
           {options.map((option) => (
             <option key={option.value} value={option.value}>
@@ -118,58 +173,92 @@ export default function EnquiryForm() {
       </EnquiryField>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <EnquiryField label={t.form.arrival}>
-          <input type="date" min={today} value={form.arrival} onChange={update("arrival")} className="field-input" />
+        <EnquiryField id="enquiry-arrival" label={t.form.arrival} error={t.form[errors.arrival]}>
+          <input
+            type="date"
+            min={today}
+            value={form.arrival}
+            onChange={update("arrival")}
+            className={inputClass("arrival")}
+            required
+          />
         </EnquiryField>
-        <EnquiryField label={t.form.departure}>
+
+        <EnquiryField id="enquiry-departure" label={t.form.departure} error={t.form[errors.departure]}>
           <input
             type="date"
             min={form.arrival || today}
             value={form.departure}
             onChange={update("departure")}
-            className="field-input"
+            className={inputClass("departure")}
+            required
           />
         </EnquiryField>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <EnquiryField label={t.form.adults}>
-          <input type="number" min="1" max={MAX_ADULTS} value={form.adults} onChange={update("adults")} className="field-input" />
+        <EnquiryField id="enquiry-adults" label={t.form.adults} error={t.form[errors.adults]}>
+          <input
+            type="number"
+            min="1"
+            max={MAX_ADULTS}
+            step="1"
+            inputMode="numeric"
+            value={form.adults}
+            onChange={update("adults")}
+            className={inputClass("adults")}
+            required
+          />
         </EnquiryField>
-        <EnquiryField label={t.form.children}>
-          <input type="number" min="0" max={MAX_CHILDREN} value={form.children} onChange={update("children")} className="field-input" />
+
+        <EnquiryField id="enquiry-children" label={t.form.children} error={t.form[errors.children]}>
+          <input
+            type="number"
+            min="0"
+            max={MAX_CHILDREN}
+            step="1"
+            inputMode="numeric"
+            value={form.children}
+            onChange={update("children")}
+            className={inputClass("children")}
+            required
+          />
         </EnquiryField>
       </div>
 
       {children > 0 ? (
-        <EnquiryField label={t.form.childrenAges}>
+        <EnquiryField
+          id="enquiry-children_ages"
+          label={t.form.childrenAges}
+          hint={t.form.childrenAgesHint}
+          error={t.form[errors.children_ages]}
+        >
           <input
             type="text"
             maxLength={MAX_LENGTHS.ages}
             value={form.children_ages}
             onChange={update("children_ages")}
-            className="field-input"
-            aria-describedby="children-ages-hint"
+            className={inputClass("children_ages")}
           />
-          <span id="children-ages-hint" className="mt-2 block text-xs leading-relaxed text-muted-foreground">
-            {t.form.childrenAgesHint}
-          </span>
         </EnquiryField>
       ) : null}
 
-      <EnquiryField label={t.form.name}>
+      <EnquiryField id="enquiry-guest_name" label={t.form.name} error={t.form[errors.guest_name]}>
         <input
           type="text"
           maxLength={MAX_LENGTHS.name}
+          autoComplete="name"
           value={form.guest_name}
           onChange={update("guest_name")}
-          className="field-input"
+          className={inputClass("guest_name")}
+          required
         />
       </EnquiryField>
 
       <fieldset>
         <legend className="eyebrow">{t.form.replyMethod}</legend>
-        <div className="mt-2 grid gap-3 sm:grid-cols-2">
+        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{t.form.replyHint}</p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
           {REPLY_METHODS.map((method) => (
             <label
               key={method}
@@ -194,16 +283,49 @@ export default function EnquiryForm() {
       </fieldset>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <EnquiryField label={`${t.form.phone}${isWhatsapp ? " *" : ""}`}>
-          <input type="tel" maxLength={MAX_LENGTHS.phone} value={form.phone} onChange={update("phone")} className="field-input" />
+        <EnquiryField
+          id="enquiry-phone"
+          label={`${t.form.phone}${isWhatsapp ? " *" : ""}`}
+          error={t.form[errors.phone]}
+        >
+          <input
+            type="tel"
+            maxLength={MAX_LENGTHS.phone}
+            autoComplete="tel"
+            inputMode="tel"
+            value={form.phone}
+            onChange={update("phone")}
+            className={inputClass("phone")}
+            required={isWhatsapp}
+          />
         </EnquiryField>
-        <EnquiryField label={`${t.form.email}${isWhatsapp ? "" : " *"}`}>
-          <input type="email" maxLength={MAX_LENGTHS.email} value={form.email} onChange={update("email")} className="field-input" />
+
+        <EnquiryField
+          id="enquiry-email"
+          label={`${t.form.email}${isWhatsapp ? "" : " *"}`}
+          error={t.form[errors.email]}
+        >
+          <input
+            type="email"
+            maxLength={MAX_LENGTHS.email}
+            autoComplete="email"
+            inputMode="email"
+            value={form.email}
+            onChange={update("email")}
+            className={inputClass("email")}
+            required={!isWhatsapp}
+          />
         </EnquiryField>
       </div>
 
-      <EnquiryField label={t.form.notes}>
-        <textarea rows={3} maxLength={MAX_LENGTHS.notes} value={form.notes} onChange={update("notes")} className="field-input" />
+      <EnquiryField id="enquiry-notes" label={t.form.notes} error={t.form[errors.notes]}>
+        <textarea
+          rows={3}
+          maxLength={MAX_LENGTHS.notes}
+          value={form.notes}
+          onChange={update("notes")}
+          className={inputClass("notes")}
+        />
       </EnquiryField>
 
       <button type="submit" disabled={isSending} className="btn-pill w-full justify-center disabled:opacity-60">
@@ -215,6 +337,10 @@ export default function EnquiryForm() {
           {status.text}
         </p>
       ) : null}
+
+      <p className="rounded-sm border border-border/70 bg-secondary/40 p-4 text-xs leading-relaxed text-foreground">
+        {t.form.savedNote}
+      </p>
 
       <p className="text-xs leading-relaxed text-muted-foreground">
         {t.form.privacy}{" "}

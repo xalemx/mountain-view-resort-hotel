@@ -2,11 +2,13 @@ import React from "react";
 import { Image } from "@/components/ui/image";
 import { mapsWebUrl, openInMaps } from "@/lib/mapsLink";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useOfferRequest } from "@/lib/OfferRequestContext";
 
 // The opening of a house's own page: what it is, and the three things a guest
 // wants from here — its prices, a request for it, and the way to it on a map.
 export default function PropertyHero({ property }) {
   const { t } = useLanguage();
+  const { openOffer } = useOfferRequest();
   const copy = t.stays[property.id];
 
   return (
@@ -33,9 +35,13 @@ export default function PropertyHero({ property }) {
           <a href="#prices" className="btn-cream">
             {t.property.sections.prices}
           </a>
-          <a href="#property-offer" className="btn-outline-light">
+          <button
+            type="button"
+            onClick={() => openOffer({ property: property.value })}
+            className="btn-outline-light"
+          >
             {t.stays.cta}
-          </a>
+          </button>
         </div>
 
         <p className="mt-5">

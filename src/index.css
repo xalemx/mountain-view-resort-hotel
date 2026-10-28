@@ -148,6 +148,11 @@
     @apply w-full rounded-sm border border-border bg-background px-3 py-2.5 font-body text-sm text-foreground outline-none transition focus:border-primary;
   }
 
+  /* A field with a problem is marked in colour as well as in words. */
+  .field-input-invalid {
+    @apply border-destructive focus:border-destructive;
+  }
+
   .mobile-action-bar {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }

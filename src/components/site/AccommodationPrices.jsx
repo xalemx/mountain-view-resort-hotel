@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import SectionHeading from "@/components/site/SectionHeading";
-import OfferRequestDialog from "@/components/site/OfferRequestDialog";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useOfferRequest } from "@/lib/OfferRequestContext";
 import {
   INN_FOUR_GUESTS,
   NIGHTLY_PRICES,
@@ -17,12 +17,12 @@ const fill = (text, values) => text.replace(/\{(\w+)\}/g, (match, key) => values
 //
 // Winter and summer are both in view all the time, on a phone as well as a wide
 // screen: no season is picked for the guest, because the season dates have not
-// been given to us yet, and no stay is ever totalled. Every row asks for an offer
-// on WhatsApp, and nothing here is a booking.
+// been given to us yet, and no stay is ever totalled. Every row opens the offer
+// request with its own number of guests filled in, and nothing here is a booking.
 export default function AccommodationPrices({ property }) {
   const { language } = useLanguage();
   const copy = PRICING_COPY[language] || PRICING_COPY.en;
-  const [offer, setOffer] = useState(null);
+  const { openOffer } = useOfferRequest();
 
   const rows = NIGHTLY_PRICES[property.id] || [];
   const heading = copy[property.id] || copy.resort;
@@ -72,7 +72,7 @@ export default function AccommodationPrices({ property }) {
                   <td className="py-3 pl-4 text-right">
                     <button
                       type="button"
-                      onClick={() => setOffer({ guests: row.guests })}
+                      onClick={() => openOffer({ property: property.value, guests: row.guests })}
                       className="btn-outline-dark"
                       aria-label={`${copy.table.request} — ${fill(copy.guestsValue, { n: row.guests })}`}
                     >
@@ -106,7 +106,7 @@ export default function AccommodationPrices({ property }) {
 
               <button
                 type="button"
-                onClick={() => setOffer({ guests: row.guests })}
+                onClick={() => openOffer({ property: property.value, guests: row.guests })}
                 className="btn-outline-dark mt-4 w-full"
                 aria-label={`${copy.table.request} — ${fill(copy.guestsValue, { n: row.guests })}`}
               >
@@ -120,7 +120,11 @@ export default function AccommodationPrices({ property }) {
           <div className="mt-8 rounded-sm border border-border/70 bg-secondary/40 p-6">
             <p className="eyebrow">{copy.fourGuests.title}</p>
             <p className="mt-3 max-w-2xl text-base leading-relaxed text-foreground">{copy.fourGuests.text}</p>
-            <button type="button" onClick={() => setOffer({ guests: INN_FOUR_GUESTS })} className="btn-pill mt-5">
+            <button
+              type="button"
+              onClick={() => openOffer({ property: property.value, guests: INN_FOUR_GUESTS })}
+              className="btn-pill mt-5"
+            >
               {copy.fourGuests.cta}
             </button>
           </div>
@@ -132,10 +136,6 @@ export default function AccommodationPrices({ property }) {
             <p className="text-sm leading-relaxed text-muted-foreground">{copy.seasonNote}</p>
           )}
         </div>
-
-        {offer ? (
-          <OfferRequestDialog property={property} initialGuests={offer.guests} onClose={() => setOffer(null)} />
-        ) : null}
       </div>
     </section>
   );

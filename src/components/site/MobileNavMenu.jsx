@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import { useAnchorHref, useOfferHref } from "@/lib/siteNav";
+import { useAnchorHref } from "@/lib/siteNav";
+import { useOfferRequest } from "@/lib/OfferRequestContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
 import { MENU_PATH } from "@/lib/menu";
 import { PROPERTIES } from "@/lib/siteContent";
@@ -14,7 +15,7 @@ export default function MobileNavMenu() {
   const { t } = useLanguage();
   const { to } = useLocaleNav();
   const anchorHref = useAnchorHref();
-  const offerHref = useOfferHref();
+  const { openOffer } = useOfferRequest();
   const { pathname, hash } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
@@ -80,9 +81,16 @@ export default function MobileNavMenu() {
           </div>
 
           <div className="section pb-4 pt-2">
-            <a href={offerHref} className="btn-pill w-full" onClick={() => setIsOpen(false)}>
+            <button
+              type="button"
+              className="btn-pill w-full"
+              onClick={() => {
+                setIsOpen(false);
+                openOffer();
+              }}
+            >
               {t.nav.offer}
-            </a>
+            </button>
           </div>
         </nav>
       ) : null}

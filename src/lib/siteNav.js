@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
 import { localePath, splitLanguage } from "@/lib/localePaths";
 import { MENU_PATH } from "@/lib/menu";
-import { PROPERTIES } from "@/lib/siteContent";
 
 /**
  * Keeps the one-page anchor links working from the standalone pages, and keeps
@@ -29,18 +28,3 @@ export const NAV_LINKS = [
   { key: "guide", path: "/guide" },
   { key: "contact", path: "/contact" },
 ];
-
-/**
- * The address the offer button leads to. On a house's own page that is the
- * request form on the same page, with the house already chosen, so nobody is
- * sent back to the home page to ask about the house they are reading about.
- */
-export function useOfferHref() {
-  const anchorHref = useAnchorHref();
-  const { pathname } = useLocation();
-  const { rest } = splitLanguage(pathname);
-
-  const onPropertyPage = PROPERTIES.some((property) => property.path === rest);
-
-  return onPropertyPage ? "#property-offer" : anchorHref("#offer");
-}

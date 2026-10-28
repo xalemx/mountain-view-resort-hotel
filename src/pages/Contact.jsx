@@ -60,7 +60,7 @@ export default function Contact() {
 
           <div>
             <h2 className="font-heading text-xl text-primary md:text-2xl">{t.contact.formTitle}</h2>
-            <div className="mt-6">
+            <div id="offer" className="mt-6">
               <EnquiryForm />
             </div>
           </div>

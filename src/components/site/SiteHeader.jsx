@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { BRAND } from "@/lib/siteContent";
 import { LANGUAGES } from "@/lib/translations";
 import { useLanguage } from "@/lib/LanguageContext";
-import { NAV_LINKS, useAnchorHref, useOfferHref } from "@/lib/siteNav";
+import { NAV_LINKS, useAnchorHref } from "@/lib/siteNav";
+import { useOfferRequest } from "@/lib/OfferRequestContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
 import MobileNavMenu from "@/components/site/MobileNavMenu";
 import MobileActionBar from "@/components/site/MobileActionBar";
@@ -14,7 +15,7 @@ export default function SiteHeader() {
   const { t, language } = useLanguage();
   const { switchLanguage, to } = useLocaleNav();
   const anchorHref = useAnchorHref();
-  const offerHref = useOfferHref();
+  const { openOffer } = useOfferRequest();
 
   return (
     <>
@@ -62,9 +63,9 @@ export default function SiteHeader() {
 
             <MobileNavMenu />
 
-            <a href={offerHref} className="btn-pill hidden sm:inline-flex">
+            <button type="button" onClick={() => openOffer()} className="btn-pill hidden sm:inline-flex">
               {t.nav.offer}
-            </a>
+            </button>
           </div>
         </div>
       </header>
