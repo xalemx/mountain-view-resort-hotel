@@ -5,13 +5,13 @@ import GuideFilters from "@/components/site/GuideFilters";
 import GuidePlaces from "@/components/site/GuidePlaces";
 import useGuidePlaces from "@/lib/useGuidePlaces";
 import { useLanguage } from "@/lib/LanguageContext";
-import { useAnchorHref } from "@/lib/siteNav";
+import { useOfferRequest } from "@/lib/OfferRequestContext";
 import { usePageSeo } from "@/lib/seo";
 
 export default function Guide() {
   const { t } = useLanguage();
   usePageSeo("guide");
-  const anchorHref = useAnchorHref();
+  const { openOffer } = useOfferRequest();
   const [tag, setTag] = useState("");
   const { places, status, retry } = useGuidePlaces(tag);
 
@@ -54,9 +54,9 @@ export default function Guide() {
             ))}
           </div>
 
-          <a href={anchorHref("#offer")} className="btn-pill mt-12">
+          <button type="button" onClick={() => openOffer()} className="btn-pill mt-12">
             {t.guide.cta}
-          </a>
+          </button>
         </section>
       </main>
 

@@ -2,7 +2,6 @@ import React from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import Hero from "@/components/site/Hero";
 import StaysSection from "@/components/site/StaysSection";
-import IntroSection from "@/components/site/IntroSection";
 import GallerySection from "@/components/site/GallerySection";
 import DestinationSection from "@/components/site/DestinationSection";
 import PlanningSection from "@/components/site/PlanningSection";
@@ -25,7 +24,6 @@ export default function Home() {
       <main>
         <Hero />
         <StaysSection />
-        <IntroSection />
         <GallerySection />
         <DestinationSection />
         <PlanningSection />

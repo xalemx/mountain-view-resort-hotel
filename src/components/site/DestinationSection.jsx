@@ -43,17 +43,7 @@ export default function DestinationSection() {
 
         <p className="mt-6 text-xs leading-relaxed text-muted-foreground">{LANDSCAPE_PHOTO_CREDIT}</p>
 
-        <div className="mt-14 grid gap-8 border-t border-border/70 pt-10 md:grid-cols-3">
-          {t.discover.activities.map((activity, index) => (
-            <article key={activity.title}>
-              <span className="font-display text-sm text-muted-foreground">{String(index + 1).padStart(2, "0")} /</span>
-              <h3 className="mt-3 font-heading text-xl text-primary">{activity.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{activity.text}</p>
-            </article>
-          ))}
-        </div>
-
-        <p className="mt-10 max-w-3xl border-l-2 border-primary/30 pl-5 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-12 max-w-3xl border-l-2 border-primary/30 pl-5 text-sm leading-relaxed text-muted-foreground">
           {t.discover.trailNote}
         </p>
 

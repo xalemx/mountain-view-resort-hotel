@@ -57,6 +57,14 @@ export const TRANSLATIONS = {
       details: "Full details",
       viewProperty: "View property",
       viewPrices: "View prices",
+      compare: {
+        title: "The two houses, side by side",
+        where: "Where",
+        what: "What it is",
+        from: "From",
+        goodToKnow: "Good to know",
+        note: "Nightly prices are per room or bungalow, for the stated number of guests. Breakfast is not included. Which house suits you best is confirmed with your offer.",
+      },
       resort: {
         place: "Vusanje · Gusinje area",
         description:
@@ -377,6 +385,14 @@ export const TRANSLATIONS = {
       details: "Svi detalji",
       viewProperty: "Pogledajte objekat",
       viewPrices: "Pogledajte cijene",
+      compare: {
+        title: "Dvije kuće, jedna uz drugu",
+        where: "Gdje je",
+        what: "Šta je",
+        from: "Od",
+        goodToKnow: "Dobro je znati",
+        note: "Cijene po noći su za sobu ili bungalov, za navedeni broj gostiju. Doručak nije uključen. Koja kuća vam najbolje odgovara potvrđuje se uz ponudu.",
+      },
       resort: {
         place: "Vusanje · gusinjski kraj",
         description:
@@ -697,6 +713,14 @@ export const TRANSLATIONS = {
       details: "Подробнее",
       viewProperty: "Смотреть дом",
       viewPrices: "Смотреть цены",
+      compare: {
+        title: "Два дома рядом",
+        where: "Где",
+        what: "Что это",
+        from: "От",
+        goodToKnow: "Полезно знать",
+        note: "Цены за ночь — за номер или бунгало, для указанного числа гостей. Завтрак не включён. Какой дом вам подходит больше, подтверждаем в предложении.",
+      },
       resort: {
         place: "Вусане · район Гусине",
         description:
@@ -1017,6 +1041,14 @@ export const TRANSLATIONS = {
       details: "Detaje të plota",
       viewProperty: "Shiko shtëpinë",
       viewPrices: "Shiko çmimet",
+      compare: {
+        title: "Dy shtëpitë, krah për krah",
+        where: "Ku",
+        what: "Çfarë është",
+        from: "Nga",
+        goodToKnow: "Mirë të dihet",
+        note: "Çmimet për natë janë për dhomë ose bungalow, për numrin e shënuar të mysafirëve. Mëngjesi nuk përfshihet. Cila shtëpi ju përshtatet më mirë konfirmohet me ofertën.",
+      },
       resort: {
         place: "Vusanje · zona e Gusinjës",
         description:

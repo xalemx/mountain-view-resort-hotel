@@ -10,7 +10,7 @@ export const CHECKLIST_AREAS = [
     title: "Maximum occupancy and bedroom layout, bungalow by bungalow",
     ask: "How many guests does each bungalow type take, and how is it laid out inside? The site publishes Bungalow (6 single beds), Family Bungalow (3 single beds and 1 double) and Standard Bungalow (2 single beds and 1 double), but no occupancy figure, so the assistants are told never to say how many a bungalow takes and never to describe how one is divided inside.",
     affects: "the room cards on the resort page, the ME, RU and SQ translations, and both assistants",
-    matches: ["occupancy", "room types", "beds"],
+    matches: ["occupancy", "room types", "beds", "capacity", "sleeps", "how many guests"],
   },
   {
     id: "location",
@@ -27,11 +27,18 @@ export const CHECKLIST_AREAS = [
     matches: ["breakfast"],
   },
   {
+    id: "seasons",
+    title: "The season dates behind the two price tables",
+    ask: "The prices are published as winter and summer rates, but the dates each season begins and ends have not been given to us, so the site cannot say which season a guest's dates fall in and the prices section says so plainly. Tell us the start and end of each season, and whether both houses follow the same dates.",
+    affects: "the prices section on both house pages, the four translations, and every offer we reply to",
+    matches: ["season", "seasonal"],
+  },
+  {
     id: "payment",
     title: "The payment methods you accept",
     ask: "Which methods can a guest use: cash only, a card, or something else? The site says payment is on arrival and that the way to pay is confirmed with the offer. Nothing about cash or card is claimed anywhere.",
     affects: "the terms, the privacy page, the structured data and the concierge",
-    matches: ["payment method", "way to pay"],
+    matches: ["payment method", "way to pay", "cash", "card"],
   },
   {
     id: "bookingTerms",
@@ -49,10 +56,10 @@ export const CHECKLIST_AREAS = [
   },
   {
     id: "transfers",
-    title: "Transfers and activities: what is arranged, and what it costs",
-    ask: "The airport shuttle and the other shuttle services run at an additional charge, and the paid activities are arranged on request, but no price is published anywhere. Tell us what should be quoted with the offer, and whether any charge is fixed.",
-    affects: "the facilities list, the activities section, the enquiry wording and the concierge",
-    matches: ["shuttle", "transfer", "activit", "charging"],
+    title: "Travel, transfers and activities: what is arranged, and what it costs",
+    ask: "The airport shuttle and the other shuttle services run at an additional charge, and the paid activities are arranged on request, but no price is published anywhere. Nothing on the site states a driving time or a distance to an airport, because we have not checked any. Tell us what should be quoted with the offer, whether any charge is fixed, and the journeys you are willing to describe.",
+    affects: "the facilities list, the activities section, the enquiry wording and the travel answers",
+    matches: ["shuttle", "transfer", "activit", "charging", "travel", "airport", "driving", "route", "distance"],
   },
   {
     id: "differences",
