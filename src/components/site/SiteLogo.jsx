@@ -17,13 +17,13 @@ export default function SiteLogo() {
         src={LOGO_URL}
         alt={BRAND.name}
         fittingType="fit"
-        className="site-logo-mark h-10 w-10 flex-none rounded-sm shadow-[0_2px_3px_rgba(0,0,0,0.2)] sm:h-[46px] sm:w-[46px]"
+        className="site-logo-mark h-10 w-10 flex-none rounded-sm shadow-[0_1px_2px_rgba(23,59,50,0.12)] sm:h-[46px] sm:w-[46px]"
       />
       <span className="flex flex-col gap-[5px]">
-        <span className="font-body text-[15px] font-bold leading-[1.1] tracking-[-0.035em] text-[#F8F6F2] sm:text-[18px]">
+        <span className="font-body text-[15px] font-bold leading-[1.1] tracking-[-0.035em] text-primary sm:text-[18px]">
           {BRAND.name}
         </span>
-        <span className="hidden text-[10px] font-medium leading-[1.35] tracking-[0.025em] text-[#d9e1da] sm:block">
+        <span className="hidden text-[10px] font-medium leading-[1.35] tracking-[0.025em] text-muted-foreground sm:block">
           {t.brandSubtitle} · {t.place}
         </span>
       </span>

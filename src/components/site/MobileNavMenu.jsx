@@ -55,7 +55,7 @@ export default function MobileNavMenu() {
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
         aria-label={isOpen ? t.menu.close : t.menu.label}
-        className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-[#31584c] text-[#F8F6F2] transition hover:border-[#D5A24A] hover:text-[#D5A24A] lg:hidden"
+        className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition hover:border-primary hover:text-primary lg:hidden"
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>

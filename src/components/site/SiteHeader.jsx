@@ -9,8 +9,7 @@ import MobileNavMenu from "@/components/site/MobileNavMenu";
 import MobileActionBar from "@/components/site/MobileActionBar";
 import SiteLogo from "@/components/site/SiteLogo";
 
-const NAV_CLASS =
-  "font-body text-sm font-medium text-[#F8F6F2] transition hover:text-[#D5A24A]";
+const NAV_CLASS = "font-body text-sm font-medium text-foreground transition hover:text-primary";
 
 export default function SiteHeader() {
   const { t, language } = useLanguage();
@@ -20,7 +19,7 @@ export default function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-[#31584c] bg-[#173B32] text-[#F8F6F2] shadow-[0_8px_20px_rgba(23,59,50,0.18)]">
+      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur">
         <div className="section flex items-center justify-between gap-3 py-3 md:py-4">
           <a href={anchorHref("#top")} className="flex min-w-0 items-center">
             <SiteLogo />
@@ -45,10 +44,10 @@ export default function SiteHeader() {
               aria-label={t.footer.chooseLanguage}
               value={language}
               onChange={(event) => switchLanguage(event.target.value)}
-              className="min-h-[44px] max-w-[8rem] rounded-full border border-[#31584c] bg-[#173B32] px-2.5 py-2 font-body text-sm text-[#F8F6F2] outline-none transition hover:border-[#D5A24A] sm:max-w-[10.5rem] sm:px-3"
+              className="min-h-[44px] max-w-[8rem] rounded-full border border-border bg-background px-2.5 py-2 font-body text-sm text-foreground outline-none transition hover:border-primary sm:max-w-[10.5rem] sm:px-3"
             >
               {LANGUAGES.map((entry) => (
-                <option key={entry.code} value={entry.code} className="bg-[#173B32] text-[#F8F6F2]">
+                <option key={entry.code} value={entry.code} className="bg-background text-foreground">
                   {entry.label}
                 </option>
               ))}
@@ -56,11 +55,7 @@ export default function SiteHeader() {
 
             <MobileNavMenu />
 
-            <button
-              type="button"
-              onClick={() => openOffer()}
-              className="hidden min-h-[44px] items-center justify-center rounded-full bg-[#D5A24A] px-5 py-2.5 font-body text-sm font-semibold text-[#173B32] transition hover:bg-[#e0b45f] sm:inline-flex"
-            >
+            <button type="button" onClick={() => openOffer()} className="btn-pill hidden sm:inline-flex">
               {t.nav.offer}
             </button>
           </div>
