@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BRAND } from "@/lib/siteContent";
 import { LANGUAGES } from "@/lib/translations";
 import { useLanguage } from "@/lib/LanguageContext";
 import { NAV_LINKS, useAnchorHref } from "@/lib/siteNav";
@@ -8,8 +7,10 @@ import { useOfferRequest } from "@/lib/OfferRequestContext";
 import { useLocaleNav } from "@/lib/useLocaleNav";
 import MobileNavMenu from "@/components/site/MobileNavMenu";
 import MobileActionBar from "@/components/site/MobileActionBar";
+import SiteLogo from "@/components/site/SiteLogo";
 
-const NAV_CLASS = "font-body text-sm font-medium text-foreground transition hover:text-primary";
+const NAV_CLASS =
+  "font-body text-sm font-medium text-[#F8F6F2] transition hover:text-[#D5A24A]";
 
 export default function SiteHeader() {
   const { t, language } = useLanguage();
@@ -19,21 +20,13 @@ export default function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-[#31584c] bg-[#173B32] text-[#F8F6F2] shadow-[0_8px_20px_rgba(23,59,50,0.18)]">
         <div className="section flex items-center justify-between gap-3 py-3 md:py-4">
-          <a href={anchorHref("#top")} className="flex items-center gap-3">
-            <span className="font-display text-2xl leading-none text-primary">△</span>
-            <span className="leading-none">
-              <span className="block font-heading text-sm uppercase tracking-[0.14em] text-primary">
-                {BRAND.name}
-              </span>
-              <span className="mt-1 hidden font-body text-xs tracking-[0.08em] text-muted-foreground sm:block">
-                {t.brandSubtitle} · {t.place}
-              </span>
-            </span>
+          <a href={anchorHref("#top")} className="flex min-w-0 items-center">
+            <SiteLogo />
           </a>
 
-          <nav aria-label={t.menu.label} className="hidden items-center gap-7 lg:flex">
+          <nav aria-label={t.menu.label} className="hidden items-center gap-5 lg:flex xl:gap-7">
             {NAV_LINKS.map((link) =>
               link.path ? (
                 <Link key={link.key} to={to(link.path)} className={NAV_CLASS}>
@@ -52,10 +45,10 @@ export default function SiteHeader() {
               aria-label={t.footer.chooseLanguage}
               value={language}
               onChange={(event) => switchLanguage(event.target.value)}
-              className="min-h-[44px] max-w-[10.5rem] rounded-full border border-border bg-background px-3 py-2 font-body text-sm text-foreground outline-none transition hover:border-primary"
+              className="min-h-[44px] max-w-[8rem] rounded-full border border-[#31584c] bg-[#173B32] px-2.5 py-2 font-body text-sm text-[#F8F6F2] outline-none transition hover:border-[#D5A24A] sm:max-w-[10.5rem] sm:px-3"
             >
               {LANGUAGES.map((entry) => (
-                <option key={entry.code} value={entry.code} className="bg-background text-foreground">
+                <option key={entry.code} value={entry.code} className="bg-[#173B32] text-[#F8F6F2]">
                   {entry.label}
                 </option>
               ))}
@@ -63,7 +56,11 @@ export default function SiteHeader() {
 
             <MobileNavMenu />
 
-            <button type="button" onClick={() => openOffer()} className="btn-pill hidden sm:inline-flex">
+            <button
+              type="button"
+              onClick={() => openOffer()}
+              className="hidden min-h-[44px] items-center justify-center rounded-full bg-[#D5A24A] px-5 py-2.5 font-body text-sm font-semibold text-[#173B32] transition hover:bg-[#e0b45f] sm:inline-flex"
+            >
               {t.nav.offer}
             </button>
           </div>
