@@ -31,7 +31,7 @@ export default function SiteHeader() {
               src={LOGO_URL}
               alt={BRAND.name}
               fittingType="fit"
-              className="h-10 w-10 flex-none rounded-sm"
+              className="h-20 w-20 flex-none rounded-sm"
             />
             <span className="leading-none">
               <span className="block font-heading text-sm uppercase tracking-[0.14em] text-primary">
