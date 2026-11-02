@@ -35,14 +35,6 @@ export default function SiteHeader() {
               originHeight={1024}
               className="w-28 flex-none sm:w-40"
             />
-            <span className="leading-none">
-              <span className="block font-heading text-sm uppercase tracking-[0.14em] text-primary">
-                {BRAND.name}
-              </span>
-              <span className="mt-1 hidden font-body text-xs tracking-[0.08em] text-muted-foreground sm:block">
-                {t.brandSubtitle} · {t.place}
-              </span>
-            </span>
           </a>
 
           <nav aria-label={t.menu.label} className="hidden flex-none items-center gap-7 lg:flex">
