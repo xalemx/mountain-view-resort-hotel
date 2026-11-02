@@ -25,15 +25,15 @@ export default function SiteHeader() {
   return (
     <>
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur">
-        <div className="section flex items-center justify-between gap-3 py-3 md:py-4">
-          <a href={anchorHref("#top")} className="flex items-center gap-3">
+        <div className="section flex items-center justify-between gap-4 py-2 md:gap-8 md:py-3">
+          <a href={anchorHref("#top")} className="flex min-w-0 items-center gap-4">
             <Image
               src={LOGO_URL}
               alt={BRAND.name}
               fittingType="fit"
               originWidth={1536}
               originHeight={1024}
-              className="w-40 flex-none"
+              className="w-28 flex-none sm:w-40"
             />
             <span className="leading-none">
               <span className="block font-heading text-sm uppercase tracking-[0.14em] text-primary">
@@ -45,7 +45,7 @@ export default function SiteHeader() {
             </span>
           </a>
 
-          <nav aria-label={t.menu.label} className="hidden items-center gap-7 lg:flex">
+          <nav aria-label={t.menu.label} className="hidden flex-none items-center gap-7 lg:flex">
             {NAV_LINKS.map((link) =>
               link.path ? (
                 <Link key={link.key} to={to(link.path)} className={NAV_CLASS}>
@@ -59,7 +59,7 @@ export default function SiteHeader() {
             )}
           </nav>
 
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex flex-none items-center gap-2 md:gap-3 lg:border-l lg:border-border/60 lg:pl-6">
             <select
               aria-label={t.footer.chooseLanguage}
               value={language}
